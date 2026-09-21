@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<script>(function(){try{var s=localStorage.getItem('gb-theme');var d=s==='dark'||(!s&&window.matchMedia&&window.matchMedia('(prefers-color-scheme:dark)').matches);if(d){document.documentElement.setAttribute('data-gb-theme','dark');var t=document.createElement('style');t.id='gb-preboot';t.textContent='html,body{background:#15130F!important}body{opacity:0}';(document.head||document.documentElement).appendChild(t);setTimeout(function(){var g=document.getElementById('gb-preboot');if(g&&g.textContent.indexOf('opacity:0')>-1){g.textContent='html,body{background:#15130F}';}},1200);}}catch(e){}})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>STS — discovery research · Gayatri Bodke</title>
+<meta name="description" content="Months of interviews on why people stay loyal to their corner shop, and what an app owes that trust.">
+<meta name="color-scheme" content="light dark">
+<meta property="og:title" content="STS — discovery research · Gayatri Bodke">
+<meta property="og:description" content="Months of interviews on why people stay loyal to their corner shop, and what an app owes that trust.">
+<meta property="og:type" content="website">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Hanken+Grotesk:wght@400;500;600;700&family=Shantell+Sans:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { background: #FFFFFF; }
+  a { color: #111111; }
+  a:hover { color: #2A6B62; }
+  ::selection { background: #DDEBE7; }
+  @keyframes gb-float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-14px); } }
+  .heroDevice { animation: gb-float 5.5s ease-in-out infinite; }
+  @media (prefers-reduced-motion: reduce) { .heroDevice { animation: none !important; } }
+  .tvBtn { transition: transform .2s ease; }
+  .tvBtn:hover { transform: translateY(-2px); }
+  .tvNextArrow { transition: transform .2s ease; }
+  .tvNext:hover .tvNextArrow { transform: translateX(7px); }
+  .tvNext:hover .tvNextName { color: #2A6B62; }
+  .tvNavNext { transition: color .18s ease; }
+  .tvNavNext:hover { color: #2A6B62; }
+  .tvScroll::-webkit-scrollbar { height: 10px; }
+  .tvScroll::-webkit-scrollbar-thumb { background: #DDDCD9; border-radius: 20px; }
+  .tvScroll::-webkit-scrollbar-track { background: #F5F4F2; border-radius: 20px; }
+  .csRail::before { content:""; position:absolute; inset:-14px -16px; border-radius:16px; background:rgba(255,255,255,.86); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); opacity:0; transition:opacity .25s ease; z-index:-1; }
+  .csRail:hover::before { opacity: 1; }
+  .csTop:hover { background:#111111 !important; color:#FFFFFF !important; border-color:#111111 !important; }
+  @media (max-width: 1180px) { .csRail { display: none !important; } }
+  @media (max-width: 640px) { .tvNavNext { display: none !important; } }
+  [data-sts] img[src$="thematic-network.png"] { aspect-ratio: 1402/1122; }
+  [data-sts] img[src$="research-process.png"] { aspect-ratio: 1023/1537; }
+  [data-sts] img[src$="order-tracking.png"] { aspect-ratio: 407/858; }
+  [data-sts] img[src$="shop-profile.png"] { aspect-ratio: 407/858; }
+  [data-sts] img[src$="home.png"] { aspect-ratio: 316/652; }
+  .stsGuess { transition: border-color .18s ease, background .18s ease, transform .18s ease; }
+  .stsGuess:hover { border-color: #2A6B62 !important; background: #FFFFFF !important; }
+  .stsSkip { transition: color .18s ease; }
+  .stsSkip:hover { color: #111 !important; }
+  .stsChip { transition: border-color .18s ease, background .18s ease, box-shadow .18s ease; }
+  .stsChip:hover { border-color: #2A6B62 !important; }
+  .stsBin { transition: border-color .18s ease, background .18s ease; }
+  [data-sts] img[src$="feedback-liked.png"] { aspect-ratio: 507/262; }
+  [data-sts] img[src$="feedback-improve.png"] { aspect-ratio: 497/240; }
+  @media (max-width: 900px) {
+    [data-sts] .stsHero { grid-template-columns: 1fr !important; gap: 40px !important; }
+    [data-sts] .stsHeroDevice { order: -1; }
+  }
+  @media (max-width: 820px) {
+    [data-sts] .stsTwo { grid-template-columns: 1fr !important; }
+    [data-sts] .stsThree { grid-template-columns: 1fr !important; }
+    [data-sts] .stsJourney { grid-template-columns: 1fr !important; }
+    [data-sts] .stsPhone { order: -1 !important; max-width: 240px; }
+    [data-sts] .stsProto { grid-template-columns: 1fr !important; }
+    [data-sts] .stsMetrics { grid-template-columns: 1fr !important; }
+    [data-sts] .stsNote { max-width: none !important; }
+  }
+  html[data-gb-theme="dark"] .lpFootArt img { filter: brightness(.55) saturate(.72); }
+  html[data-gb-theme="dark"] .lpFootFade { background: linear-gradient(180deg,#141310 0%,rgba(20,19,16,.72) 26%,rgba(20,19,16,0) 62%) !important; }
+</style>
+<script src="./page-loader.js"></script>
+<script src="./case-nav.js"></script>
+<script src="./theme-toggle.js"></script>
+<template id="__bundler_thumbnail">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#FFFFFF"/><rect x="10" y="10" width="80" height="80" rx="16" fill="#F5F4F2"/><text x="50" y="63" font-family="Georgia,serif" font-size="26" letter-spacing="1.5" fill="#111" text-anchor="middle">STS</text></svg>
+</template>
+</helmet>
+<div ref="{{ rootRef }}" data-sts data-screen-label="STS case study" style="font-family:'Hanken Grotesk',system-ui,sans-serif; background:#FFFFFF; color:#111111; min-height:100vh; overflow-x:clip">
+
+  <!-- SECTION RAIL -->
+  <nav class="csRail" aria-label="Jump to section" style="position:fixed; right:30px; top:50%; transform:translateY(-50%); z-index:25; display:flex; flex-direction:column; gap:6px; align-items:flex-end">
+    <a class="railItem" data-nav="context" href="#context" style="display:flex; align-items:center; gap:12px; text-decoration:none"><span class="railLabel" style="font-size:12.5px; color:#9a958d; white-space:nowrap; opacity:0; transform:translateX(6px); transition:opacity .25s ease, transform .25s ease, color .25s ease">Context</span><span class="railTick" style="width:16px; height:2px; border-radius:2px; background:#DDDCD9; transition:width .25s ease, background .25s ease"></span></a>
+    <a class="railItem" data-nav="challenge" href="#challenge" style="display:flex; align-items:center; gap:12px; text-decoration:none"><span class="railLabel" style="font-size:12.5px; color:#9a958d; white-space:nowrap; opacity:0; transform:translateX(6px); transition:opacity .25s ease, transform .25s ease, color .25s ease">Research challenge</span><span class="railTick" style="width:16px; height:2px; border-radius:2px; background:#DDDCD9; transition:width .25s ease, background .25s ease"></span></a>
+    <a class="railItem" data-nav="process" href="#process" style="display:flex; align-items:center; gap:12px; text-decoration:none"><span class="railLabel" style="font-size:12.5px; color:#9a958d; white-space:nowrap; opacity:0; transform:translateX(6px); transition:opacity .25s ease, transform .25s ease, color .25s ease">Process</span><span class="railTick" style="width:16px; height:2px; border-radius:2px; background:#DDDCD9; transition:width .25s ease, background .25s ease"></span></a>
+    <a class="railItem" data-nav="findings" href="#findings" style="display:flex; align-items:center; gap:12px; text-decoration:none"><span class="railLabel" style="font-size:12.5px; color:#9a958d; white-space:nowrap; opacity:0; transform:translateX(6px); transition:opacity .25s ease, transform .25s ease, color .25s ease">Findings</span><span class="railTick" style="width:16px; height:2px; border-radius:2px; background:#DDDCD9; transition:width .25s ease, background .25s ease"></span></a>
+    <a class="railItem" data-nav="synthesis" href="#synthesis" style="display:flex; align-items:center; gap:12px; text-decoration:none"><span class="railLabel" style="font-size:12.5px; color:#9a958d; white-space:nowrap; opacity:0; transform:translateX(6px); transition:opacity .25s ease, transform .25s ease, color .25s ease">Synthesis</span><span class="railTick" style="width:16px; height:2px; border-radius:2px; background:#DDDCD9; transition:width .25s ease, background .25s ease"></span></a>
+    <a class="railItem" data-nav="strategy" href="#strategy" style="display:flex; align-items:center; gap:12px; text-decoration:none"><span class="railLabel" style="font-size:12.5px; color:#9a958d; white-space:nowrap; opacity:0; transform:translateX(6px); transition:opacity .25s ease, transform .25s ease, color .25s ease">Design strategy</span><span class="railTick" style="width:16px; height:2px; border-radius:2px; background:#DDDCD9; transition:width .25s ease, background .25s ease"></span></a>
+    <a class="railItem" data-nav="experience" href="#experience" style="display:flex; align-items:center; gap:12px; text-decoration:none"><span class="railLabel" style="font-size:12.5px; color:#9a958d; white-space:nowrap; opacity:0; transform:translateX(6px); transition:opacity .25s ease, transform .25s ease, color .25s ease">Experience</span><span class="railTick" style="width:16px; height:2px; border-radius:2px; background:#DDDCD9; transition:width .25s ease, background .25s ease"></span></a>
+    <a class="railItem" data-nav="validation" href="#validation" style="display:flex; align-items:center; gap:12px; text-decoration:none"><span class="railLabel" style="font-size:12.5px; color:#9a958d; white-space:nowrap; opacity:0; transform:translateX(6px); transition:opacity .25s ease, transform .25s ease, color .25s ease">Validation</span><span class="railTick" style="width:16px; height:2px; border-radius:2px; background:#DDDCD9; transition:width .25s ease, background .25s ease"></span></a>
+    <a class="railItem" data-nav="reflection" href="#reflection" style="display:flex; align-items:center; gap:12px; text-decoration:none"><span class="railLabel" style="font-size:12.5px; color:#9a958d; white-space:nowrap; opacity:0; transform:translateX(6px); transition:opacity .25s ease, transform .25s ease, color .25s ease">Reflection</span><span class="railTick" style="width:16px; height:2px; border-radius:2px; background:#DDDCD9; transition:width .25s ease, background .25s ease"></span></a>
+    <a class="railItem" data-nav="honest" href="#honest" style="display:flex; align-items:center; gap:12px; text-decoration:none"><span class="railLabel" style="font-size:12.5px; color:#9a958d; white-space:nowrap; opacity:0; transform:translateX(6px); transition:opacity .25s ease, transform .25s ease, color .25s ease">The honest part</span><span class="railTick" style="width:16px; height:2px; border-radius:2px; background:#DDDCD9; transition:width .25s ease, background .25s ease"></span></a>
+  </nav>
+
+  <!-- BACK TO TOP -->
+  <a class="csTop" href="#top" aria-label="Back to top" style="position:fixed; right:26px; bottom:26px; z-index:30; display:inline-flex; align-items:center; gap:8px; padding:10px 17px; border-radius:30px; border:1px solid #E8E7E4; background:rgba(255,255,255,.9); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); color:#111111; font-family:'Hanken Grotesk',system-ui,sans-serif; font-size:13.5px; line-height:1; text-decoration:none; cursor:pointer; box-shadow:0 10px 26px rgba(30,30,30,.12); opacity:0; pointer-events:none; transition:opacity .3s ease, background .18s ease, color .18s ease, border-color .18s ease">↑ Top</a>
+
+  <!-- NAV -->
+  <header id="top" style="position:sticky; top:0; z-index:20; background:rgba(255,255,255,.85); backdrop-filter:blur(10px); border-bottom:1px solid #E8E7E4">
+    <div style="max-width:1180px; margin:0; display:flex; align-items:center; justify-content:space-between; padding:15px clamp(24px,5vw,56px) 15px clamp(28px,7vw,80px)">
+      <a href="index.html" style="text-decoration:none; color:#111111; font-size:14px; display:inline-flex; align-items:center; gap:8px">← All work</a>
+      <div style="display:flex; align-items:center; gap:22px">
+        <a href="aarogyam.html" class="tvNavNext" style="text-decoration:none; color:#111111; font-size:13.5px; white-space:nowrap; display:inline-flex; align-items:center; gap:8px"><span style="color:#9a958d">next</span>Aarogyam <span style="color:#2A6B62">→</span></a>
+        <a href="mailto:gayatribodke18@gmail.com" class="tvBtn" style="text-decoration:none; color:#FFFFFF; background:#111111; padding:9px 18px; border-radius:30px; font-size:13.5px; white-space:nowrap; display:inline-flex; align-items:center">Get in touch</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section style="max-width:1180px; margin:0; padding:48px clamp(24px,5vw,56px) 26px clamp(28px,7vw,80px)">
+    <div class="stsHero" style="display:grid; grid-template-columns:1.15fr .85fr; gap:48px; align-items:center">
+      <div>
+        <div style="display:flex; align-items:center; gap:14px; margin-bottom:22px">
+          <span style="font-family:'Instrument Serif',serif; font-size:44px; letter-spacing:1px">STS</span>
+          <span style="font-size:13px; color:#888; background:#F5F4F2; padding:6px 12px; border-radius:30px">small traditional shops</span>
+        </div>
+        <h1 style="font-family:'Instrument Serif',serif; font-weight:400; font-size:clamp(30px,4.4vw,46px); line-height:1.12; letter-spacing:-.5px; margin:0 0 20px; max-width:20ch">Online, but still the corner shop</h1>
+        <p style="font-size:18px; line-height:1.65; color:#111; margin:0 0 30px; max-width:52ch">A two-sided ordering app for India's kirana shops, shaped entirely by five interviews. The interesting part wasn't the ordering. It was working out what a digital shop is not allowed to flatten.</p>
+        <div style="display:flex; gap:16px 28px; flex-wrap:wrap; font-size:13.5px; line-height:1.4; color:#111111; padding-top:20px; border-top:1px solid #E8E7E4">
+          <div><div style="color:#999999; font-size:12px; margin-bottom:4px">Role</div>Sole researcher &amp; designer</div>
+          <div><div style="color:#999999; font-size:12px; margin-bottom:4px">Context</div>MSc dissertation project</div>
+          <div><div style="color:#999999; font-size:12px; margin-bottom:4px">Platform</div>Two-sided mobile app</div>
+          <div><div style="color:#999999; font-size:12px; margin-bottom:4px">Timeline</div>5 months, 2022</div>
+        </div>
+      </div>
+      <div class="stsHeroDevice" style="display:flex; justify-content:center; align-items:center">
+        <div style="position:relative">
+          <div style="position:absolute; inset:-14% -18%; background:radial-gradient(58% 52% at 50% 42%, rgba(42,107,98,.16), transparent 72%); filter:blur(10px); z-index:0"></div>
+          <img src="assets/sts/home.png" alt="STS home screen: nearby shops and live stock" class="heroDevice" style="position:relative; z-index:1; display:block; width:auto; max-width:min(252px,62vw); height:auto; max-height:min(520px,56vh); border-radius:26px; box-shadow:0 40px 90px rgba(30,40,35,.26)">
+          <div style="position:absolute; z-index:2; bottom:26px; right:-16px; background:#FFFFFF; border:1px solid #E8E7E4; box-shadow:0 12px 30px rgba(30,30,30,.12); border-radius:30px; padding:8px 15px; display:flex; align-items:center; gap:8px">
+            <span style="width:8px; height:8px; border-radius:50%; background:#2A6B62"></span>
+            <span style="font-family:'Shantell Sans',cursive; font-size:13px; color:#111; white-space:nowrap">the shop, in your hand</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SHORT VERSION -->
+  <section style="max-width:1040px; margin:0; padding:18px clamp(24px,5vw,56px) 0 clamp(28px,7vw,80px)">
+    <div style="background:#F5F4F2; border-radius:20px; padding:28px 30px">
+      <p style="font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:#999; margin:0 0 16px">the short version</p>
+      <div style="display:flex; flex-direction:column; gap:13px">
+        <div style="display:flex; gap:12px; align-items:flex-start"><span style="color:#2A6B62; font-weight:700; line-height:1.5">→</span><span style="font-size:15.5px; line-height:1.6; color:#111">Customer and shop owner share one order, and neither can see what the other knows.</span></div>
+        <div style="display:flex; gap:12px; align-items:flex-start"><span style="color:#2A6B62; font-weight:700; line-height:1.5">→</span><span style="font-size:15.5px; line-height:1.6; color:#111">Five interviews, coded line by line in NVivo, produced three themes I could design against.</span></div>
+        <div style="display:flex; gap:12px; align-items:flex-start"><span style="color:#2A6B62; font-weight:700; line-height:1.5">→</span><span style="font-size:15.5px; line-height:1.6; color:#111">Every feature traces back to a line of research, and the owner's relationship with the customer stays intact.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 01 CONTEXT -->
+  <section style="max-width:1040px; margin:0; padding:76px clamp(24px,5vw,56px) 0 clamp(28px,7vw,80px)">
+    <div id="context" style="scroll-margin-top:90px; display:flex; align-items:baseline; gap:14px; margin-bottom:20px">
+      <span style="font-family:'Instrument Serif',serif; font-size:30px; color:#2A6B62">01</span>
+      <h2 style="font-family:'Instrument Serif',serif; font-weight:400; font-size:28px; letter-spacing:-.3px; margin:0">The context</h2>
+    </div>
+    <p style="font-size:19px; line-height:1.6; color:#111; margin:0 0 18px; font-weight:500; max-width:52ch">A shop on every street, run the same way for decades.</p>
+    <p style="font-size:17px; line-height:1.7; color:#111; margin:0 0 16px; max-width:64ch">Kirana and mom-and-pop stores sit on almost every street in India. People shop there out of habit and trust: the owner knows your name, remembers your usuals, and lets you settle up at the end of the month.</p>
+    <p style="font-size:17px; line-height:1.7; color:#111; margin:0 0 24px; max-width:64ch">But the way they run has barely changed. Orders arrive by phone call, get written into a paper notebook, and go out on memory. As quick-commerce apps move into the same neighbourhoods, shops have no digital way to keep up without handing their customers to a platform that doesn't care who they are.</p>
+    <div style="border-left:3px solid #2A6B62; padding:6px 0 6px 22px">
+      <p style="font-family:'Instrument Serif',serif; font-size:clamp(22px,3.2vw,28px); line-height:1.3; margin:0; max-width:26ch">Could a digital tool help these shops without erasing the relationship that keeps people loyal?</p>
+      <p style="font-size:14px; color:#888; margin:12px 0 0">The question the whole project was answering.</p>
+    </div>
+  </section>
+
+  <!-- 02 RESEARCH CHALLENGE -->
+  <section style="max-width:1040px; margin:0; padding:80px clamp(24px,5vw,56px) 0 clamp(28px,7vw,80px)">
+    <div id="challenge" style="scroll-margin-top:90px; display:flex; align-items:baseline; gap:14px; margin-bottom:20px">
+      <span style="font-family:'Instrument Serif',serif; font-size:30px; color:#2A6B62">02</span>
+      <h2 style="font-family:'Instrument Serif',serif; font-weight:400; font-size:28px; letter-spacing:-.3px; margin:0">The research challenge</h2>
+    </div>
+    <p style="font-size:17px; line-height:1.7; color:#111; margin:0 0 26px; max-width:62ch">Two questions, and the second mattered as much as the first.</p>
+    <div style="display:flex; flex-direction:column; gap:12px; margin-bottom:22px">
+      <div style="border:1px solid #E8E7E4; border-radius:18px; overflow:hidden">
+        <div style="background:#F2F7F5; padding:11px 22px; font-size:11px; letter-spacing:.09em; text-transform:uppercase; color:#2A6B62">Main research question</div>
+        <div style="padding:20px 22px; font-family:'Instrument Serif',serif; font-size:clamp(20px,2.6vw,25px); line-height:1.35; color:#111">How can the customer experience of small traditional shops in India be improved through a digital solution?</div>
+      </div>
+      <div style="border:1px solid #E8E7E4; border-radius:18px; overflow:hidden">
+        <div style="background:#F5F4F2; padding:11px 22px; font-size:11px; letter-spacing:.09em; text-transform:uppercase; color:#999">Sub-question</div>
+        <div style="padding:20px 22px; font-family:'Instrument Serif',serif; font-size:clamp(20px,2.6vw,25px); line-height:1.35; color:#111">What do customers and owners each need from it, and what must stay exactly as it is?</div>
+      </div>
+    </div>
+    <p style="font-size:17px; line-height:1.7; color:#111; margin:0; max-width:64ch">It would have been easy to bolt a generic e-commerce flow onto a kirana shop and call it progress. The harder question was what to <em>protect</em>: the trust, the familiarity, the owner's judgement.</p>
+  </section>
+
+  <!-- 03 RESEARCH PROCESS -->
+  <section style="max-width:1040px; margin:0; padding:80px clamp(24px,5vw,56px) 0 clamp(28px,7vw,80px)">
+    <div id="process" style="scroll-margin-top:90px; display:flex; align-items:baseline; gap:14px; margin-bottom:20px">
+      <span style="font-family:'Instrument Serif',serif; font-size:30px; color:#2A6B62">03</span>
+      <h2 style="font-family:'Instrument Serif',serif; font-weight:400; font-size:28px; letter-spacing:-.3px; margin:0">I talked to people before I drew anything</h2>
+    </div>
+    <div style="display:flex; flex-wrap:wrap; gap:34px; align-items:flex-start; margin-bottom:28px">
+      <div style="flex:1 1 380px; min-width:280px">
+        <p style="font-size:17px; line-height:1.7; color:#111; margin:0 0 16px">Before opening Figma I ran five semi-structured interviews: three regular customers and two shop owners. I deliberately spoke to both sides, because a fix that helps the customer but adds work for the owner would never survive in a real shop.</p>
+        <p style="font-size:17px; line-height:1.7; color:#111; margin:0">Qualitative interviews were the right instrument. I needed the <em>why</em> behind the behaviour, the small frictions people never put on a survey, not another set of numbers.</p>
+      </div>
+      <div class="stsNote" style="flex:0 0 auto; position:relative; align-self:flex-start; max-width:230px; margin-top:6px; background:#F7E9BE; color:#111; font-family:'Shantell Sans',cursive; font-size:14.5px; line-height:1.5; padding:22px 18px 16px; border-radius:3px; transform:rotate(-2.2deg); box-shadow:0 10px 22px rgba(60,50,30,.16)">
+        <span style="position:absolute; top:-9px; left:50%; transform:translateX(-50%) rotate(3deg); width:64px; height:18px; background:rgba(255,255,255,.75); border:1px solid rgba(0,0,0,.05); border-radius:1px"></span>
+        five people, both sides. small on purpose, so I could optimise for depth, not headcount.
+      </div>
+    </div>
+
+    <div style="display:flex; flex-direction:column; gap:12px; max-width:70ch">
+      <div style="border:1px solid #E8E7E4; border-radius:16px; background:#FBFAF8; overflow:hidden">
+        <button onClick="{{ toggleMethod }}" aria-label="Toggle method detail" style="width:100%; display:flex; align-items:center; justify-content:space-between; gap:12px; background:none; border:none; cursor:pointer; padding:16px 20px; text-align:left; color:#2A6B62; font-family:'Hanken Grotesk',system-ui,sans-serif; font-size:14.5px">
+          <span>Go deeper · exactly how the interviews ran</span>
+          <sc-if value="{{ closedMethod }}" hint-placeholder-val="{{ true }}"><span style="font-size:20px; line-height:1">+</span></sc-if>
+          <sc-if value="{{ openMethod }}" hint-placeholder-val="{{ false }}"><span style="font-size:20px; line-height:1">–</span></sc-if>
+        </button>
+        <sc-if value="{{ openMethod }}" hint-placeholder-val="{{ false }}">
+          <div style="padding:0 20px 20px; border-top:1px solid #E8E7E4; background:#FFFFFF">
+            <p style="font-size:15.5px; line-height:1.65; color:#111; margin:16px 0 20px; max-width:64ch">Five participants: three customers who buy from a local shop weekly, and two owners running shops in Panchavati, Nashik. Each interview followed a loose guide but let the person lead. I recorded and transcribed all five, then organised the transcripts in NVivo 12 with a naming convention that kept customer and retailer voices separate, so I could compare the two sides directly.</p>
+            <figure style="margin:0; max-width:400px"><img src="assets/sts/research-process.png" alt="Seven-step research process from introduction to conclusion, each looping back for review" style="display:block; width:100%; height:auto; border-radius:10px; border:1px solid #E8E7E4"><figcaption style="font-size:13px; color:#888; margin-top:10px">the research process, each stage loops back to review before moving on</figcaption></figure>
+          </div>
+        </sc-if>
+      </div>
+      <div style="border:1px solid #E8E7E4; border-radius:16px; background:#FBFAF8; overflow:hidden">
+        <button onClick="{{ toggleOnion }}" aria-label="Toggle methodology detail" style="width:100%; display:flex; align-items:center; justify-content:space-between; gap:12px; background:none; border:none; cursor:pointer; padding:16px 20px; text-align:left; color:#2A6B62; font-family:'Hanken Grotesk',system-ui,sans-serif; font-size:14.5px">
+          <span>Go deeper · the methodology behind the method</span>
+          <sc-if value="{{ closedOnion }}" hint-placeholder-val="{{ true }}"><span style="font-size:20px; line-height:1">+</span></sc-if>
+          <sc-if value="{{ openOnion }}" hint-placeholder-val="{{ false }}"><span style="font-size:20px; line-height:1">–</span></sc-if>
+        </button>
+        <sc-if value="{{ openOnion }}" hint-placeholder-val="{{ false }}">
+          <div style="padding:16px 20px 22px; border-top:1px solid #E8E7E4; background:#FFFFFF">
+            <p style="font-size:15.5px; line-height:1.65; color:#111; margin:0 0 20px; max-width:64ch">This began as an MSc dissertation, so the method was deliberate: an action-case approach that sits between understanding a problem and changing it.</p>
+            <div class="stsTwo" style="display:grid; grid-template-columns:1fr 1fr; gap:20px">
+              <figure style="margin:0"><img src="assets/sts/research-onion.png" alt="The research onion, layered methodological choices" style="display:block; width:100%; height:auto; border-radius:10px; border:1px solid #E8E7E4"><figcaption style="font-size:13px; color:#888; margin-top:10px">the research onion, my methodological choices</figcaption></figure>
+              <figure style="margin:0"><img src="assets/sts/research-triangle.png" alt="Action-case research positioning between understanding and change" style="display:block; width:100%; height:auto; border-radius:10px; border:1px solid #E8E7E4"><figcaption style="font-size:13px; color:#888; margin-top:10px">action-case: where change meets understanding</figcaption></figure>
+            </div>
+          </div>
+        </sc-if>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 FINDINGS -->
+  <section style="max-width:1040px; margin:0; padding:80px clamp(24px,5vw,56px) 0 clamp(28px,7vw,80px)">
+    <div id="findings" style="scroll-margin-top:90px; display:flex; align-items:baseline; gap:14px; margin-bottom:20px">
+      <span style="font-family:'Instrument Serif',serif; font-size:30px; color:#2A6B62">04</span>
+      <h2 style="font-family:'Instrument Serif',serif; font-weight:400; font-size:28px; letter-spacing:-.3px; margin:0">What the research revealed</h2>
+    </div>
+    <p style="font-size:17px; line-height:1.7; color:#111; margin:0 0 30px; max-width:62ch">The pain was never the shopping. It was everything around it. One frustration surfaced in almost every conversation.</p>
+
+    <sc-if value="{{ guessOpen }}" hint-placeholder-val="{{ true }}">
+      <div style="border:1px solid #E8E7E4; border-radius:18px; background:#FBFAF8; padding:24px 26px 22px; margin-bottom:36px; max-width:66ch">
+        <p style="font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:#2A6B62; margin:0 0 10px">before I tell you</p>
+        <p style="font-family:'Instrument Serif',serif; font-size:clamp(20px,2.8vw,26px); line-height:1.3; margin:0 0 6px; max-width:30ch">Which frustration do you think came up in almost every conversation?</p>
+        <p style="font-size:14px; color:#888; margin:0 0 18px">Take a guess. It takes a second, and the answer lands harder.</p>
+        <div style="display:flex; flex-direction:column; gap:8px">
+          <button class="stsGuess" onClick="{{ guessA }}" style="font-family:'Hanken Grotesk',system-ui,sans-serif; text-align:left; cursor:pointer; background:#FFFFFF; border:1px solid #E8E7E4; border-radius:13px; padding:13px 16px; font-size:15.5px; line-height:1.45; color:#111">Prices creeping above the online apps</button>
+          <button class="stsGuess" onClick="{{ guessB }}" style="font-family:'Hanken Grotesk',system-ui,sans-serif; text-align:left; cursor:pointer; background:#FFFFFF; border:1px solid #E8E7E4; border-radius:13px; padding:13px 16px; font-size:15.5px; line-height:1.45; color:#111">Never knowing where the order had got to</button>
+          <button class="stsGuess" onClick="{{ guessC }}" style="font-family:'Hanken Grotesk',system-ui,sans-serif; text-align:left; cursor:pointer; background:#FFFFFF; border:1px solid #E8E7E4; border-radius:13px; padding:13px 16px; font-size:15.5px; line-height:1.45; color:#111">Shops shutting before people finish work</button>
+        </div>
+        <button class="stsSkip" onClick="{{ guessSkip }}" style="font-family:'Hanken Grotesk',system-ui,sans-serif; background:none; border:none; padding:0; margin-top:14px; cursor:pointer; font-size:13.5px; color:#999">skip, just show me &rarr;</button>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ guessDone }}" hint-placeholder-val="{{ false }}">
+      <div>
+        <sc-if value="{{ hasVerdict }}" hint-placeholder-val="{{ false }}">
+          <p style="font-size:15.5px; line-height:1.6; color:#111; margin:0 0 26px; max-width:58ch; border-left:3px solid #2A6B62; padding-left:18px">{{ verdict }}</p>
+        </sc-if>
+        <p style="font-size:13px; letter-spacing:.1em; text-transform:uppercase; color:#999; margin:0 0 14px">the friction, in one line</p>
+        <blockquote style="font-family:'Instrument Serif',serif; font-weight:400; font-size:clamp(26px,4.6vw,44px); line-height:1.15; letter-spacing:-.5px; color:#111; margin:0 0 12px; max-width:18ch">"I had to call again just to check where my order was."</blockquote>
+        <p style="font-size:14px; color:#888; margin:0 0 36px">Customer (C2).</p>
+      </div>
+    </sc-if>
+
+    <p style="font-size:13px; letter-spacing:.1em; text-transform:uppercase; color:#999; margin:0 0 14px">and two more the conversations kept returning to</p>
+    <div class="stsTwo" style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:36px">
+      <div style="border:1px solid #E8E7E4; border-radius:16px; padding:22px 24px">
+        <p style="font-family:'Instrument Serif',serif; font-style:italic; font-size:19px; line-height:1.45; color:#111; margin:0 0 10px">"I have to physically go and check if the product is even there."</p>
+        <p style="font-size:14px; line-height:1.55; color:#888; margin:0">Customer. Stock is invisible until you're standing in the shop.</p>
+      </div>
+      <div style="border:1px solid #E8E7E4; border-radius:16px; padding:22px 24px">
+        <p style="font-family:'Instrument Serif',serif; font-style:italic; font-size:19px; line-height:1.45; color:#111; margin:0 0 10px">Missed calls quietly become lost orders.</p>
+        <p style="font-size:14px; line-height:1.55; color:#888; margin:0">Owner, observed. When something goes wrong there is no record of what was promised.</p>
+      </div>
+    </div>
+
+    <div style="border-left:3px solid #2A6B62; padding:6px 0 6px 22px">
+      <p style="font-size:13px; letter-spacing:.1em; text-transform:uppercase; color:#999; margin:0 0 12px">but one thing has to stay exactly as it is</p>
+      <p style="font-family:'Instrument Serif',serif; font-size:clamp(22px,3.2vw,30px); line-height:1.3; margin:0; max-width:24ch">"People stay with a shop because of the person behind the counter."</p>
+      <p style="font-size:14px; color:#888; margin:12px 0 0; max-width:56ch">Retailer. The owner's real asset is the relationship, not the catalogue, and that became the one thing the design was not allowed to flatten.</p>
+    </div>
+  </section>
+
+  <!-- 05 SYNTHESIS -->
+  <section style="max-width:1040px; margin:0; padding:80px clamp(24px,5vw,56px) 0 clamp(28px,7vw,80px)">
+    <div id="synthesis" style="scroll-margin-top:90px; display:flex; align-items:baseline; gap:14px; margin-bottom:20px">
+      <span style="font-family:'Instrument Serif',serif; font-size:30px; color:#2A6B62">05</span>
+      <h2 style="font-family:'Instrument Serif',serif; font-weight:400; font-size:28px; letter-spacing:-.3px; margin:0">From transcripts to a pattern I could trust</h2>
+    </div>
+    <p style="font-size:17px; line-height:1.7; color:#111; margin:0 0 26px; max-width:62ch">I coded every transcript in NVivo, line by line, until the recurring statements clustered into three themes. Coding is how I told a real pattern from the loudest quote. Each code is anchored to a participant's own words and points up to a theme.</p>
+
+    <div style="border:1px solid #E8E7E4; border-radius:18px; overflow:hidden; margin-bottom:12px">
+      <div style="background:#F5F4F2; padding:18px 22px; display:flex; align-items:center; gap:16px">
+        <span style="font-family:'Instrument Serif',serif; font-size:22px; color:#2A6B62; width:46px; height:46px; flex:none; border-radius:50%; background:#FFFFFF; border:1px solid #E4E2DD; display:flex; align-items:center; justify-content:center">06</span>
+        <div>
+          <h3 style="font-size:17px; margin:0 0 4px; letter-spacing:-.2px">Challenges customers face in services offered by small shops</h3>
+          <p style="font-size:14px; line-height:1.45; color:#888; margin:0">Barriers, frustrations and inefficiencies customers experience with existing services.</p>
+        </div>
+      </div>
+      <div style="padding:20px 22px">
+        <p style="font-size:11px; letter-spacing:.09em; text-transform:uppercase; color:#aaa; margin:0 0 10px">In their words (C2)</p>
+        <p style="font-family:'Instrument Serif',serif; font-style:italic; font-size:18px; line-height:1.5; color:#111; margin:0; max-width:64ch">"I will only have to then just say that they deliver it and if they don't deliver in the given time, then I will only have to call them back to check what is the status, and this is how I follow up with them."</p>
+      </div>
+      <div class="stsThree" style="display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:#E8E7E4; border-top:1px solid #E8E7E4">
+        <div style="background:#FBFAF8; padding:14px 22px"><p style="font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:#aaa; margin:0 0 4px">Related theme</p><p style="font-size:14px; color:#111; margin:0">Customer experience &amp; expectations</p></div>
+        <div style="background:#FBFAF8; padding:14px 22px"><p style="font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:#aaa; margin:0 0 4px">Source</p><p style="font-size:14px; color:#111; margin:0">Customer interviews</p></div>
+        <div style="background:#FBFAF8; padding:14px 22px"><p style="font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:#aaa; margin:0 0 4px">Type</p><p style="font-size:14px; color:#111; margin:0">Barrier / challenge</p></div>
+      </div>
+    </div>
+
+    <div style="border:1px solid #E8E7E4; border-radius:16px; background:#FBFAF8; overflow:hidden; max-width:70ch">
+      <button onClick="{{ toggleBook }}" aria-label="Toggle more codebook entries" style="width:100%; display:flex; align-items:center; justify-content:space-between; gap:12px; background:none; border:none; cursor:pointer; padding:16px 20px; text-align:left; color:#2A6B62; font-family:'Hanken Grotesk',system-ui,sans-serif; font-size:14.5px">
+        <span>Go deeper · two more entries, a benefit and the theme they feed</span>
+        <sc-if value="{{ closedBook }}" hint-placeholder-val="{{ true }}"><span style="font-size:20px; line-height:1">+</span></sc-if>
+        <sc-if value="{{ openBook }}" hint-placeholder-val="{{ false }}"><span style="font-size:20px; line-height:1">–</span></sc-if>
+      </button>
+      <sc-if value="{{ openBook }}" hint-placeholder-val="{{ false }}">
+        <div style="padding:18px 20px 22px; border-top:1px solid #E8E7E4; background:#FFFFFF; display:flex; flex-direction:column; gap:14px">
+          <div style="border:1px solid #E8E7E4; border-radius:16px; overflow:hidden">
+            <div style="background:#F5F4F2; padding:16px 20px; display:flex; align-items:center; gap:14px">
+              <span style="font-family:'Instrument Serif',serif; font-size:20px; color:#2A6B62; width:42px; height:42px; flex:none; border-radius:50%; background:#FFFFFF; border:1px solid #E4E2DD; display:flex; align-items:center; justify-content:center">04</span>
+              <h4 style="font-size:16px; margin:0; letter-spacing:-.2px">Connecting customers with quality service</h4>
+            </div>
+            <div class="stsTwo" style="display:grid; grid-template-columns:1fr 1fr; gap:16px 24px; padding:18px 20px">
+              <div><p style="font-size:11px; letter-spacing:.09em; text-transform:uppercase; color:#aaa; margin:0 0 5px">Definition</p><p style="font-size:14.5px; line-height:1.55; color:#111; margin:0">Whenever participants describe how an online service is going to help them.</p></div>
+              <div><p style="font-size:11px; letter-spacing:.09em; text-transform:uppercase; color:#aaa; margin:0 0 5px">When not to use</p><p style="font-size:14.5px; line-height:1.55; color:#111; margin:0">Do not use if participants are complaining about services.</p></div>
+              <div style="grid-column:1 / -1"><p style="font-size:11px; letter-spacing:.09em; text-transform:uppercase; color:#aaa; margin:0 0 5px">Example (C2)</p><p style="font-family:'Instrument Serif',serif; font-style:italic; font-size:17px; line-height:1.5; color:#111; margin:0">"Any online application will be a very good step towards a better customer experience, because if I'm ordering something, I'll be able to see what I am ordering and when it will be delivered."</p></div>
+            </div>
+          </div>
+          <div style="border:1px solid #E8E7E4; border-radius:16px; overflow:hidden">
+            <div style="background:#F2F7F5; padding:16px 20px; display:flex; align-items:center; gap:14px">
+              <span style="font-family:'Instrument Serif',serif; font-size:20px; color:#2A6B62; width:42px; height:42px; flex:none; border-radius:50%; background:#FFFFFF; border:1px solid #DDEBE7; display:flex; align-items:center; justify-content:center">02</span>
+              <div>
+                <p style="font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:#2A6B62; margin:0 0 4px">Theme-level code</p>
+                <h4 style="font-size:16px; margin:0; line-height:1.35; letter-spacing:-.2px">Strengthening engagement and communication between valued customers and small businesses</h4>
+              </div>
+            </div>
+            <div style="padding:18px 20px"><p style="font-size:14.5px; line-height:1.6; color:#111; margin:0; max-width:64ch">A parent theme, not a raw quote. Codes 04 and 06 feed up into it, which is exactly how the individual observations aggregated into the communication theme.</p></div>
+          </div>
+        </div>
+      </sc-if>
+    </div>
+
+    <figure style="margin:34px 0 0">
+      <div style="border:1px solid #E8E7E4; border-radius:18px; padding:20px; background:#FFFFFF"><img src="assets/sts/thematic-network.png" alt="Thematic analysis network diagram showing codes clustered into themes" style="display:block; width:100%; height:auto"></div>
+      <figcaption style="font-size:13.5px; color:#888; margin-top:12px">the codes cluster into a thematic network, three themes rise to the top · tap to enlarge</figcaption>
+    </figure>
+
+    <div style="border:1px solid #E8E7E4; border-radius:18px; background:#FBFAF8; padding:24px 26px 26px; margin-top:34px">
+      <div style="display:flex; align-items:baseline; justify-content:space-between; gap:16px; flex-wrap:wrap; margin-bottom:4px">
+        <p style="font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:#2A6B62; margin:0">your turn at the transcripts</p>
+        <sc-if value="{{ sortOpen }}" hint-placeholder-val="{{ true }}">
+          <button class="stsSkip" onClick="{{ sortSkip }}" style="font-family:'Hanken Grotesk',system-ui,sans-serif; background:none; border:none; padding:0; cursor:pointer; font-size:13.5px; color:#999">skip this &rarr;</button>
+        </sc-if>
+      </div>
+      <p style="font-family:'Instrument Serif',serif; font-size:clamp(20px,2.6vw,25px); line-height:1.3; margin:8px 0 6px; max-width:34ch">Four real quotes, three themes. Where would you file them?</p>
+
+      <sc-if value="{{ sortOpen }}" hint-placeholder-val="{{ true }}">
+        <div>
+          <p style="font-size:14px; color:#888; margin:0 0 18px">{{ sortHint }}</p>
+          <div style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:20px; min-height:42px">
+            <sc-for list="{{ pool }}" as="q" hint-placeholder-count="4">
+              <button class="stsChip" onClick="{{ q.pick }}" style="{{ q.style }}">{{ q.short }}</button>
+            </sc-for>
+          </div>
+          <div class="stsThree" style="display:grid; grid-template-columns:repeat(3,1fr); gap:10px">
+            <div class="stsBin" onClick="{{ dropConv }}" style="{{ binConvStyle }}">
+              <p style="font-size:14.5px; color:#111; margin:0 0 10px; font-weight:500">Convenience &amp; personalisation</p>
+              <sc-for list="{{ binConv }}" as="q" hint-placeholder-count="0">
+                <button onClick="{{ q.back }}" style="{{ q.placedStyle }}">{{ q.short }}</button>
+              </sc-for>
+            </div>
+            <div class="stsBin" onClick="{{ dropComm }}" style="{{ binCommStyle }}">
+              <p style="font-size:14.5px; color:#111; margin:0 0 10px; font-weight:500">Communication gaps</p>
+              <sc-for list="{{ binComm }}" as="q" hint-placeholder-count="0">
+                <button onClick="{{ q.back }}" style="{{ q.placedStyle }}">{{ q.short }}</button>
+              </sc-for>
+            </div>
+            <div class="stsBin" onClick="{{ dropLoyal }}" style="{{ binLoyalStyle }}">
+              <p style="font-size:14.5px; color:#111; margin:0 0 10px; font-weight:500">Loyalty &amp; trust</p>
+              <sc-for list="{{ binLoyal }}" as="q" hint-placeholder-count="0">
+                <button onClick="{{ q.back }}" style="{{ q.placedStyle }}">{{ q.short }}</button>
+              </sc-for>
+            </div>
+          </div>
+          <sc-if value="{{ sortReady }}" hint-placeholder-val="{{ false }}">
+            <button onClick="{{ sortCheck }}" style="font-family:'Hanken Grotesk',system-ui,sans-serif; cursor:pointer; margin-top:18px; background:#111; color:#FFFFFF; border:none; border-radius:30px; padding:11px 22px; font-size:14.5px">Compare with how I coded them</button>
+          </sc-if>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ sortDone }}" hint-placeholder-val="{{ false }}">
+        <div>
+          <p style="font-size:15.5px; line-height:1.6; color:#111; margin:6px 0 18px; max-width:58ch">{{ sortScore }}</p>
+          <div style="display:flex; flex-direction:column; gap:10px">
+            <sc-for list="{{ results }}" as="r" hint-placeholder-count="4">
+              <div style="background:#FFFFFF; border:1px solid #E8E7E4; border-radius:14px; padding:15px 18px">
+                <p style="font-family:'Instrument Serif',serif; font-style:italic; font-size:16.5px; line-height:1.45; color:#111; margin:0 0 9px">{{ r.quote }}</p>
+                <div style="display:flex; flex-wrap:wrap; gap:8px; align-items:center">
+                  <span style="{{ r.markStyle }}">{{ r.mark }}</span>
+                  <span style="font-size:13px; color:#888">{{ r.line }}</span>
+                </div>
+                <sc-if value="{{ r.hasNote }}" hint-placeholder-val="{{ false }}">
+                  <p style="font-size:14px; line-height:1.55; color:#666; margin:10px 0 0; max-width:60ch">{{ r.note }}</p>
+                </sc-if>
+              </div>
+            </sc-for>
+          </div>
+          <button class="stsSkip" onClick="{{ sortReset }}" style="font-family:'Hanken Grotesk',system-ui,sans-serif; background:none; border:none; padding:0; margin-top:16px; cursor:pointer; font-size:13.5px; color:#999">sort it again &rarr;</button>
+        </div>
+      </sc-if>
+    </div>
+
+    <h3 style="font-family:'Instrument Serif',serif; font-weight:400; font-size:24px; letter-spacing:-.2px; margin:38px 0 16px">Three themes rose out of the data</h3>
+    <div class="stsThree" style="display:grid; grid-template-columns:repeat(3,1fr); gap:12px">
+      <div style="border:1px solid #E8E7E4; border-top:3px solid #E4E2DD; border-radius:16px; padding:20px 22px">
+        <span style="font-family:'Instrument Serif',serif; font-size:24px; color:#2A6B62; line-height:1">01</span>
+        <h4 style="font-size:16px; margin:10px 0 8px; letter-spacing:-.2px">Convenience &amp; personalisation</h4>
+        <p style="font-size:14.5px; line-height:1.6; color:#111; margin:0">People want clear product information and a checkout that fits a busy life, without having to be in the shop to find out what's there.</p>
+      </div>
+      <div style="border:1px solid #E8E7E4; border-top:3px solid #E4E2DD; border-radius:16px; padding:20px 22px">
+        <span style="font-family:'Instrument Serif',serif; font-size:24px; color:#2A6B62; line-height:1">02</span>
+        <h4 style="font-size:16px; margin:10px 0 8px; letter-spacing:-.2px">Communication gaps</h4>
+        <p style="font-size:14.5px; line-height:1.6; color:#111; margin:0">The friction lives around the order, not in it: no confirmation, no tracking, no record. The phone carries everything.</p>
+      </div>
+      <div style="border:1px solid #E8E7E4; border-top:3px solid #2A6B62; border-radius:16px; padding:20px 22px">
+        <span style="font-family:'Instrument Serif',serif; font-size:24px; color:#2A6B62; line-height:1">03</span>
+        <h4 style="font-size:16px; margin:10px 0 8px; letter-spacing:-.2px">Loyalty &amp; trust</h4>
+        <p style="font-size:14.5px; line-height:1.6; color:#111; margin:0">People stay for the person behind the counter. The owner's asset is the relationship, and digitising the shop must not flatten it.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 DESIGN STRATEGY -->
+  <section style="max-width:1040px; margin:0; padding:80px clamp(24px,5vw,56px) 0 clamp(28px,7vw,80px)">
+    <div id="strategy" style="scroll-margin-top:90px; display:flex; align-items:baseline; gap:14px; margin-bottom:20px">
+      <span style="font-family:'Instrument Serif',serif; font-size:30px; color:#2A6B62">06</span>
+      <h2 style="font-family:'Instrument Serif',serif; font-weight:400; font-size:28px; letter-spacing:-.3px; margin:0">Every feature traces back to a line of research</h2>
+    </div>
+    <div style="display:flex; flex-wrap:wrap; gap:34px; align-items:flex-start; margin-bottom:26px">
+      <p style="flex:1 1 380px; min-width:280px; font-size:17px; line-height:1.7; color:#111; margin:0">This is the bridge. Before drawing a single screen, I walked each theme through the same chain, so the design came out of the research and not out of my head. Read each row left to right.</p>
+      <div class="stsNote" style="flex:0 0 auto; position:relative; align-self:flex-start; max-width:220px; background:#F7E9BE; color:#111; font-family:'Shantell Sans',cursive; font-size:14.5px; line-height:1.5; padding:22px 18px 16px; border-radius:3px; transform:rotate(2deg); box-shadow:0 10px 22px rgba(60,50,30,.16)">
+        <span style="position:absolute; top:-9px; left:50%; transform:translateX(-50%) rotate(-4deg); width:64px; height:18px; background:rgba(255,255,255,.75); border:1px solid rgba(0,0,0,.05); border-radius:1px"></span>
+        my rule: if a screen can't point back to a finding, it doesn't ship.
+      </div>
+    </div>
+
+    <div class="tvScroll" style="overflow-x:auto">
+      <div style="min-width:760px; display:grid; grid-template-columns:120px 1fr 1fr 1fr 1fr; gap:1px; background:#E8E7E4; border:1px solid #E8E7E4; border-radius:16px; overflow:hidden">
+        <div style="background:#FBFAF8; padding:11px 16px"></div>
+        <div style="background:#FBFAF8; padding:11px 16px; font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:#999">Finding</div>
+        <div style="background:#FBFAF8; padding:11px 16px; font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:#999">Opportunity</div>
+        <div style="background:#FBFAF8; padding:11px 16px; font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:#999">UX decision</div>
+        <div style="background:#F2F7F5; padding:11px 16px; font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:#2A6B62">Feature</div>
+
+        <div style="background:#fff; padding:15px 16px; font-size:13px; color:#888">theme 01<br><span style="color:#111">convenience</span></div>
+        <div style="background:#fff; padding:15px 16px; font-size:14px; line-height:1.5; color:#111">People physically go to check if a product is even in stock.</div>
+        <div style="background:#fff; padding:15px 16px; font-size:14px; line-height:1.5; color:#111">Bring the shop's shelf into the customer's hand.</div>
+        <div style="background:#fff; padding:15px 16px; font-size:14px; line-height:1.5; color:#111">Show real product detail and stock; surface nearby shops first.</div>
+        <div style="background:#fff; padding:15px 16px; font-size:14px; line-height:1.5; color:#111; font-weight:600">Location-based home, rich product pages, one-tap reorder.</div>
+
+        <div style="background:#fff; padding:15px 16px; font-size:13px; color:#888">theme 02<br><span style="color:#111">communication</span></div>
+        <div style="background:#fff; padding:15px 16px; font-size:14px; line-height:1.5; color:#111">Customers call two or three times just to ask "where's my order?"</div>
+        <div style="background:#fff; padding:15px 16px; font-size:14px; line-height:1.5; color:#111">Replace the call-and-hope loop with something they can check.</div>
+        <div style="background:#fff; padding:15px 16px; font-size:14px; line-height:1.5; color:#111">Make order status the default state, not a phone call.</div>
+        <div style="background:#fff; padding:15px 16px; font-size:14px; line-height:1.5; color:#111; font-weight:600">Live order timeline, digital receipts, in-app acceptance.</div>
+
+        <div style="background:#fff; padding:15px 16px; font-size:13px; color:#888">theme 03<br><span style="color:#111">loyalty &amp; trust</span></div>
+        <div style="background:#fff; padding:15px 16px; font-size:14px; line-height:1.5; color:#111">Loyalty lives with the shopkeeper, not the price list.</div>
+        <div style="background:#fff; padding:15px 16px; font-size:14px; line-height:1.5; color:#111">Digitise the shop without flattening the person behind it.</div>
+        <div style="background:#fff; padding:15px 16px; font-size:14px; line-height:1.5; color:#111">Give the owner their own controllable shopfront.</div>
+        <div style="background:#fff; padding:15px 16px; font-size:14px; line-height:1.5; color:#111; font-weight:600">Owner storefront, self-managed catalogue, accept or decline orders.</div>
+      </div>
+    </div>
+
+    <div style="margin-top:20px; border-left:3px solid #2A6B62; padding:6px 0 6px 22px">
+      <p style="font-size:16px; line-height:1.65; color:#111; margin:0; max-width:66ch">Distilled, the whole strategy is three rules the design was not allowed to break: <strong>show it, don't make them ask</strong> · <strong>keep the shop personal</strong> · <strong>make it fast, and nearby-first</strong>.</p>
+    </div>
+  </section>
+
+  <!-- 07 EXPERIENCE -->
+  <section style="max-width:1040px; margin:0; padding:80px clamp(24px,5vw,56px) 0 clamp(28px,7vw,80px)">
+    <div id="experience" style="scroll-margin-top:90px; display:flex; align-items:baseline; gap:14px; margin-bottom:20px">
+      <span style="font-family:'Instrument Serif',serif; font-size:30px; color:#2A6B62">07</span>
+      <h2 style="font-family:'Instrument Serif',serif; font-weight:400; font-size:28px; letter-spacing:-.3px; margin:0">Where the research became screens</h2>
+    </div>
+    <p style="font-size:17px; line-height:1.7; color:#111; margin:0 0 22px; max-width:62ch">Each theme became one screen. Read the finding on the left, see the answer on the right.</p>
+
+    <div style="border:1px solid #E8E7E4; border-radius:16px; background:#FBFAF8; overflow:hidden; margin-bottom:30px; max-width:70ch">
+      <button onClick="{{ toggleSketch }}" aria-label="Toggle wireframes" style="width:100%; display:flex; align-items:center; justify-content:space-between; gap:12px; background:none; border:none; cursor:pointer; padding:16px 20px; text-align:left; color:#2A6B62; font-family:'Hanken Grotesk',system-ui,sans-serif; font-size:14.5px">
+        <span>Go deeper · the low-fidelity wireframes</span>
+        <sc-if value="{{ closedSketch }}" hint-placeholder-val="{{ true }}"><span style="font-size:20px; line-height:1">+</span></sc-if>
+        <sc-if value="{{ openSketch }}" hint-placeholder-val="{{ false }}"><span style="font-size:20px; line-height:1">–</span></sc-if>
+      </button>
+      <sc-if value="{{ openSketch }}" hint-placeholder-val="{{ false }}">
+        <div style="padding:18px 20px 22px; border-top:1px solid #E8E7E4; background:#FFFFFF">
+          <img src="assets/sts/wireframes.png" alt="Low-fidelity wireframes: onboarding, login, verification, location, select location and home page" style="display:block; width:100%; height:auto; border-radius:10px; border:1px solid #E8E7E4">
+          <p style="font-size:13px; color:#888; margin:12px 0 0">onboarding, login, verification, location and home, structured before any high fidelity</p>
+        </div>
+      </sc-if>
+    </div>
+
+    <div style="display:flex; flex-direction:column">
+      <div class="stsJourney" style="display:grid; grid-template-columns:230px 1fr; gap:44px; align-items:center; padding:34px 0; border-top:1px solid #E8E7E4">
+        <div class="stsPhone"><img src="assets/sts/home.png" alt="Home and discovery screen" style="display:block; width:100%; height:auto; border-radius:18px; border:1px solid #E8E7E4"></div>
+        <div>
+          <p style="font-size:13px; letter-spacing:.1em; text-transform:uppercase; color:#999; margin:0 0 12px">theme 01 · convenience</p>
+          <p style="font-family:'Instrument Serif',serif; font-style:italic; font-size:clamp(20px,2.6vw,25px); line-height:1.35; color:#111; margin:0 0 14px; max-width:24ch">"I have to physically go and check if the product is even there."</p>
+          <p style="font-size:16px; line-height:1.65; color:#111; margin:0; max-width:44ch">So the home screen leads with nearby shops and live stock, the shelf, before you leave home.</p>
+        </div>
+      </div>
+      <div class="stsJourney" style="display:grid; grid-template-columns:230px 1fr; gap:44px; align-items:center; padding:34px 0; border-top:1px solid #E8E7E4">
+        <div class="stsPhone"><img src="assets/sts/order-tracking.png" alt="Order tracking timeline screen" style="display:block; width:100%; height:auto; border-radius:18px; border:1px solid #E8E7E4"></div>
+        <div>
+          <p style="font-size:13px; letter-spacing:.1em; text-transform:uppercase; color:#999; margin:0 0 12px">theme 02 · communication</p>
+          <p style="font-family:'Instrument Serif',serif; font-style:italic; font-size:clamp(20px,2.6vw,25px); line-height:1.35; color:#111; margin:0 0 14px; max-width:24ch">"I had to call again just to check where my order was."</p>
+          <p style="font-size:16px; line-height:1.65; color:#111; margin:0; max-width:44ch">So a live order status replaces the call, tracked from placed to delivered.</p>
+        </div>
+      </div>
+      <div class="stsJourney" style="display:grid; grid-template-columns:230px 1fr; gap:44px; align-items:center; padding:34px 0; border-top:1px solid #E8E7E4; border-bottom:1px solid #E8E7E4">
+        <div class="stsPhone"><img src="assets/sts/shop-profile.png" alt="Owner shopfront profile screen" style="display:block; width:100%; height:auto; border-radius:18px; border:1px solid #E8E7E4"></div>
+        <div>
+          <p style="font-size:13px; letter-spacing:.1em; text-transform:uppercase; color:#999; margin:0 0 12px">theme 03 · loyalty &amp; trust</p>
+          <p style="font-family:'Instrument Serif',serif; font-style:italic; font-size:clamp(20px,2.6vw,25px); line-height:1.35; color:#111; margin:0 0 14px; max-width:24ch">"People stay with a shop because of the person behind the counter."</p>
+          <p style="font-size:16px; line-height:1.65; color:#111; margin:0; max-width:44ch">So the owner keeps a real, self-managed storefront, name, photo, prices, never a faceless listing.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROTOTYPE BAND -->
+  <section style="background:#111111; color:#F5F4F2; margin-top:72px">
+    <div class="stsProto" style="max-width:1180px; margin:0; padding:70px clamp(24px,10vw,170px) 70px clamp(28px,7vw,80px); display:grid; grid-template-columns:1fr auto; gap:48px; align-items:center">
+      <div>
+        <p style="font-size:13px; letter-spacing:.1em; text-transform:uppercase; color:#8FBDB4; margin:0 0 16px">see it running</p>
+        <h3 style="font-family:'Instrument Serif',serif; font-weight:400; font-size:clamp(28px,4.2vw,44px); line-height:1.08; letter-spacing:-.5px; margin:0 0 18px; color:#F5F4F2; max-width:16ch">Everything the research asked for, in one flow</h3>
+        <p style="font-size:16.5px; line-height:1.65; color:#B9B4AC; margin:0; max-width:44ch">Nearby shops, live stock, order tracking, and an owner who stays in control, the whole thing in one thumb.</p>
+      </div>
+      <div aria-label="Interactive prototype, customer flow" style="width:270px; max-width:70vw; justify-self:center; border-radius:26px; overflow:hidden; aspect-ratio:342/722; background-image:url(assets/sts/prototype-demo.gif); background-size:561.4% auto; background-position:59.32% 50%; background-repeat:no-repeat; box-shadow:0 34px 80px rgba(0,0,0,.5)"></div>
+    </div>
+  </section>
+
+  <!-- 08 VALIDATION -->
+  <section style="max-width:1040px; margin:0; padding:80px clamp(24px,5vw,56px) 0 clamp(28px,7vw,80px)">
+    <div id="validation" style="scroll-margin-top:90px; display:flex; align-items:baseline; gap:14px; margin-bottom:20px">
+      <span style="font-family:'Instrument Serif',serif; font-size:30px; color:#2A6B62">08</span>
+      <h2 style="font-family:'Instrument Serif',serif; font-weight:400; font-size:28px; letter-spacing:-.3px; margin:0">I took it back to the same people</h2>
+    </div>
+    <p style="font-size:17px; line-height:1.7; color:#111; margin:0 0 26px; max-width:64ch">I tested the prototype with the same participants and a short follow-up survey. The core flow held up. Payment options and order tracking landed best; the clearest ask was to make nearby shops easier to find, which became my first next step.</p>
+    <div class="stsMetrics" style="display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-bottom:26px">
+      <div style="border:1px solid #E8E7E4; border-radius:16px; padding:22px 24px"><div style="font-family:'Instrument Serif',serif; font-size:40px; line-height:1; color:#2A6B62">80%</div><p style="font-size:14.5px; color:#111; margin:10px 0 0; line-height:1.45">liked the flexible payment options</p></div>
+      <div style="border:1px solid #E8E7E4; border-radius:16px; padding:22px 24px"><div style="font-family:'Instrument Serif',serif; font-size:40px; line-height:1; color:#2A6B62">80%</div><p style="font-size:14.5px; color:#111; margin:10px 0 0; line-height:1.45">valued viewing and tracking all orders</p></div>
+      <div style="border:1px solid #E8E7E4; border-radius:16px; padding:22px 24px"><div style="font-family:'Instrument Serif',serif; font-size:40px; line-height:1; color:#2A6B62">60%</div><p style="font-size:14.5px; color:#111; margin:10px 0 0; line-height:1.45">found the navigation easy to follow</p></div>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:12px; max-width:70ch">
+      <div style="border:1px solid #E8E7E4; border-radius:16px; background:#FBFAF8; overflow:hidden">
+        <button onClick="{{ toggleCharts }}" aria-label="Toggle survey charts" style="width:100%; display:flex; align-items:center; justify-content:space-between; gap:12px; background:none; border:none; cursor:pointer; padding:16px 20px; text-align:left; color:#2A6B62; font-family:'Hanken Grotesk',system-ui,sans-serif; font-size:14.5px">
+          <span>Go deeper · the survey charts behind these numbers</span>
+          <sc-if value="{{ closedCharts }}" hint-placeholder-val="{{ true }}"><span style="font-size:20px; line-height:1">+</span></sc-if>
+          <sc-if value="{{ openCharts }}" hint-placeholder-val="{{ false }}"><span style="font-size:20px; line-height:1">–</span></sc-if>
+        </button>
+        <sc-if value="{{ openCharts }}" hint-placeholder-val="{{ false }}">
+          <div class="stsTwo" style="display:grid; grid-template-columns:1fr 1fr; gap:16px; padding:18px 20px 22px; border-top:1px solid #E8E7E4; background:#FFFFFF">
+            <figure style="margin:0"><img src="assets/sts/feedback-liked.png" alt="Chart of most-liked features" style="display:block; width:100%; height:auto; border:1px solid #E8E7E4; border-radius:10px"><figcaption style="font-size:13px; color:#888; margin-top:10px">what people liked most · tap to enlarge</figcaption></figure>
+            <figure style="margin:0"><img src="assets/sts/feedback-improve.png" alt="Chart of features to improve" style="display:block; width:100%; height:auto; border:1px solid #E8E7E4; border-radius:10px"><figcaption style="font-size:13px; color:#888; margin-top:10px">what they'd improve next · tap to enlarge</figcaption></figure>
+          </div>
+        </sc-if>
+      </div>
+      <div style="border:1px solid #E8E7E4; border-radius:16px; background:#FBFAF8; overflow:hidden">
+        <button onClick="{{ toggleUnit }}" aria-label="Toggle build validation" style="width:100%; display:flex; align-items:center; justify-content:space-between; gap:12px; background:none; border:none; cursor:pointer; padding:16px 20px; text-align:left; color:#2A6B62; font-family:'Hanken Grotesk',system-ui,sans-serif; font-size:14.5px">
+          <span>Go deeper · how I validated the build itself</span>
+          <sc-if value="{{ closedUnit }}" hint-placeholder-val="{{ true }}"><span style="font-size:20px; line-height:1">+</span></sc-if>
+          <sc-if value="{{ openUnit }}" hint-placeholder-val="{{ false }}"><span style="font-size:20px; line-height:1">–</span></sc-if>
+        </button>
+        <sc-if value="{{ openUnit }}" hint-placeholder-val="{{ false }}">
+          <div style="padding:18px 20px 22px; border-top:1px solid #E8E7E4; background:#FFFFFF">
+            <p style="font-size:15px; line-height:1.6; color:#111; margin:0 0 18px; max-width:60ch">Beyond user feedback, I checked the prototype against a standard testing ladder, from individual components up to acceptance against the original requirements.</p>
+            <figure style="margin:0; max-width:300px"><img src="assets/sts/unit-testing.png" alt="Unit, integration, system and acceptance testing ladder" style="display:block; width:100%; height:auto; border-radius:10px; border:1px solid #E8E7E4"><figcaption style="font-size:13px; color:#888; margin-top:10px">from unit tests up to acceptance testing (Sneha &amp; Malle, 2017)</figcaption></figure>
+          </div>
+        </sc-if>
+      </div>
+    </div>
+  </section>
+
+  <!-- 09 REFLECTION -->
+  <section style="max-width:1040px; margin:0; padding:80px clamp(24px,5vw,56px) 0 clamp(28px,7vw,80px)">
+    <div id="reflection" style="scroll-margin-top:90px; display:flex; align-items:baseline; gap:14px; margin-bottom:24px">
+      <span style="font-family:'Instrument Serif',serif; font-size:30px; color:#2A6B62">09</span>
+      <h2 style="font-family:'Instrument Serif',serif; font-weight:400; font-size:28px; letter-spacing:-.3px; margin:0">What I'd carry into the next round</h2>
+    </div>
+    <div class="stsThree" style="display:grid; grid-template-columns:repeat(3,1fr); gap:12px">
+      <div style="border:1px solid #E8E7E4; border-radius:16px; padding:22px 24px; background:#F5F4F2">
+        <span style="font-family:'Instrument Serif',serif; font-size:24px; color:#2A6B62; line-height:1">01</span>
+        <p style="font-size:15px; line-height:1.6; color:#111; margin:10px 0 0">The owner's world was the one I understood least at the start. Next time I'd recruit more shop owners and shadow a day behind the counter before designing anything.</p>
+      </div>
+      <div style="border:1px solid #E8E7E4; border-radius:16px; padding:22px 24px">
+        <span style="font-family:'Instrument Serif',serif; font-size:24px; color:#2A6B62; line-height:1">02</span>
+        <p style="font-size:15px; line-height:1.6; color:#111; margin:10px 0 0">Five participants was enough for depth, not for confidence. I'd validate the themes with a wider, quantitative pass before building further.</p>
+      </div>
+      <div style="border:1px solid #E8E7E4; border-radius:16px; padding:22px 24px">
+        <span style="font-family:'Instrument Serif',serif; font-size:24px; color:#2A6B62; line-height:1">03</span>
+        <p style="font-size:15px; line-height:1.6; color:#111; margin:10px 0 0">Nearby-shop discovery tested weakest. That's the first thing I'd redesign and re-test, not the checkout everyone already liked.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10 THE HONEST PART -->
+  <section style="max-width:1040px; margin:0; padding:80px clamp(24px,5vw,56px) 0 clamp(28px,7vw,80px)">
+    <div id="honest" style="scroll-margin-top:90px; display:flex; align-items:baseline; gap:14px; margin-bottom:20px">
+      <span style="font-family:'Instrument Serif',serif; font-size:30px; color:#2A6B62">10</span>
+      <h2 style="font-family:'Instrument Serif',serif; font-weight:400; font-size:28px; letter-spacing:-.3px; margin:0">The honest part</h2>
+    </div>
+    <p style="font-size:17px; line-height:1.7; color:#111; margin:0 0 26px; max-width:62ch">Every project is a series of calls made with incomplete information. These are the three that matter most here, including the one I got wrong.</p>
+    <div class="stsThree" style="display:grid; grid-template-columns:repeat(3,1fr); gap:12px">
+      <div style="border:1px solid #E8E7E4; border-radius:16px; padding:22px 24px; background:#F5F4F2">
+        <span style="font-family:'Instrument Serif',serif; font-size:24px; color:#2A6B62; line-height:1">01</span>
+        <p style="font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:#999; margin:12px 0 8px">what I traded away</p>
+        <p style="font-size:15px; line-height:1.6; color:#111; margin:0">A full product catalogue. Owners do not keep stock data current, and a catalogue nobody updates is worse than none, so I designed around a short list of what is available today. The cost is real: the app cannot tell you about everything in the shop.</p>
+      </div>
+      <div style="border:1px solid #E8E7E4; border-radius:16px; padding:22px 24px">
+        <span style="font-family:'Instrument Serif',serif; font-size:24px; color:#2A6B62; line-height:1">02</span>
+        <p style="font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:#999; margin:12px 0 8px">what I got wrong</p>
+        <p style="font-size:15px; line-height:1.6; color:#111; margin:0">I assumed price comparison would matter, and it was in my first sketches. Not one participant asked for it. What they wanted was to know where their order was, which is a far less interesting feature and a far more useful one.</p>
+      </div>
+      <div style="border:1px solid #E8E7E4; border-radius:16px; padding:22px 24px">
+        <span style="font-family:'Instrument Serif',serif; font-size:24px; color:#2A6B62; line-height:1">03</span>
+        <p style="font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:#999; margin:12px 0 8px">what shipped imperfect</p>
+        <p style="font-size:15px; line-height:1.6; color:#111; margin:0">Order status is updated by hand, by an owner who is already serving three people. It is honest, but it leans on someone remembering. The better version reads the workflow that already exists instead of adding a new one.</p>
+      </div>
+    </div>
+    <p style="font-size:14px; line-height:1.6; color:#888; margin:20px 0 0; max-width:62ch">Numbers and outcomes for client work are under NDA. Happy to walk through them in a conversation.</p>
+  </section>
+
+  <!-- CONTACT -->
+  <section style="max-width:1040px; margin:0; padding:88px clamp(24px,5vw,56px) 88px clamp(28px,7vw,80px); text-align:left">
+    <span style="font-family:'Shantell Sans',cursive; font-size:16px; color:#888">thanks for reading →</span>
+    <h2 style="font-family:'Instrument Serif',serif; font-weight:400; font-size:clamp(32px,5vw,54px); line-height:1.05; letter-spacing:-.8px; margin:14px 0 28px; max-width:16ch">Want to talk through the research?</h2>
+    <div style="display:flex; gap:12px; justify-content:flex-start; flex-wrap:wrap">
+      <a href="mailto:gayatribodke18@gmail.com" class="tvBtn" style="text-decoration:none; font-size:15px; padding:14px 28px; border-radius:30px; background:#111111; color:#FFFFFF">Get in touch</a>
+      <a href="index.html#work" class="tvBtn" style="text-decoration:none; font-size:15px; padding:14px 28px; border-radius:30px; border:1.5px solid #DDDCD9; color:#111111">See more work</a>
+    </div>
+  </section>
+
+  <!-- NEXT CASE STUDY -->
+  <a href="aarogyam.html" class="tvNext" style="display:block; text-decoration:none; color:#111111; border-top:1px solid #E8E7E4; background:#FBFAF8">
+    <div style="max-width:1180px; margin:0; padding:52px clamp(24px,5vw,56px) 52px clamp(28px,7vw,80px); display:flex; align-items:center; justify-content:space-between; gap:24px">
+      <div>
+        <div style="font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:#9a958d; margin-bottom:12px">next case study</div>
+        <div class="tvNextName" style="font-family:'Instrument Serif',serif; font-size:clamp(34px,5vw,52px); line-height:1; letter-spacing:-.5px; transition:color .18s ease">Aarogyam</div>
+      </div>
+      <span class="tvNextArrow" style="font-family:'Instrument Serif',serif; font-size:clamp(34px,5vw,52px); color:#2A6B62; line-height:1">→</span>
+    </div>
+  </a>
+
+  <footer style="">
+    <div class="lpFootArt" aria-hidden="true" style="position:relative; left:50%; transform:translateX(-50%); width:100vw; height:clamp(220px,30vw,340px); overflow:hidden; pointer-events:none">
+      <img src="assets/footer-landscape.png" alt="" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center 88%; display:block">
+      <span class="lpFootFade" style="position:absolute; inset:0; background:linear-gradient(180deg,#FFFFFF 0%,rgba(255,255,255,.7) 26%,rgba(255,255,255,0) 62%)"></span>
+    </div>
+
+    <div style="max-width:1180px; margin:0; padding:24px clamp(24px,5vw,56px) 40px clamp(28px,7vw,80px); display:flex; align-items:center; justify-content:space-between; gap:16px; font-size:12.5px; color:#B0B0B0">
+      <span style="font-family:'Instrument Serif',serif; font-style:italic; font-size:16px; color:#999">Gayatri Bodke</span>
+      <span>© 2026 · Product Designer</span>
+    </div>
+  </footer>
+
+  {{ overlay }}
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const SORT_QUOTES = [
+  { id: 'q1', short: '"Had to call again just to check where my order was"', quote: '"I had to call again just to check where my order was."', theme: 'comm', note: '' },
+  { id: 'q2', short: '"Have to physically go and check if the product is there"', quote: '"I have to physically go and check if the product is even there."', theme: 'conv', note: '' },
+  { id: 'q3', short: '"People stay because of the person behind the counter"', quote: '"People stay with a shop because of the person behind the counter."', theme: 'loyal', note: '' },
+  { id: 'q4', short: '"I\'ll be able to see when it will be delivered"', quote: '"I\'ll be able to see what I am ordering and when it will be delivered."', theme: 'comm', note: 'This is the one that splits people. It sounds like convenience, and partly it is, but the pain underneath is the silence after ordering, so it was coded to communication.' }
+];
+const SORT_THEMES = { conv: 'Convenience & personalisation', comm: 'Communication gaps', loyal: 'Loyalty & trust' };
+
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { open: {}, lightbox: null, guess: null, sorted: {}, picked: null, checked: false, sortSkipped: false };
+    this.rootRef = React.createRef();
+  }
+  componentDidMount() { this.setupZoom(); }
+  componentWillUnmount() {
+    const root = this.rootRef.current;
+    if (root && this._onZoomClick) root.removeEventListener('click', this._onZoomClick);
+    if (this._zoomMo) this._zoomMo.disconnect();
+    if (this._onZoomKey) window.removeEventListener('keydown', this._onZoomKey);
+  }
+  setupZoom() {
+    const root = this.rootRef.current; if (!root) return;
+    const rx = /(research-process|research-onion|research-triangle|thematic-network|wireframes|feedback-liked|feedback-improve|unit-testing)\.(png|jpe?g|webp)/i;
+    this._onZoomClick = (e) => {
+      const img = e.target && e.target.closest ? e.target.closest('img') : null;
+      if (!img) return;
+      const src = img.getAttribute('src') || '';
+      if (rx.test(src)) this.setState({ lightbox: src });
+    };
+    root.addEventListener('click', this._onZoomClick);
+    const mark = () => { root.querySelectorAll('img').forEach(im => { if (rx.test(im.getAttribute('src') || '')) im.style.cursor = 'zoom-in'; }); };
+    mark();
+    this._zoomMo = new MutationObserver(mark);
+    this._zoomMo.observe(root, { childList: true, subtree: true });
+    this._onZoomKey = (e) => { if (e.key === 'Escape' && this.state.lightbox) this.setState({ lightbox: null }); };
+    window.addEventListener('keydown', this._onZoomKey);
+  }
+  renderOverlay() {
+    const src = this.state.lightbox;
+    if (!src) return null;
+    const close = () => this.setState({ lightbox: null });
+    return React.createElement('div', {
+      onClick: close,
+      style: { position: 'fixed', inset: 0, zIndex: 120, background: 'rgba(20,20,18,.86)', backdropFilter: 'blur(5px)', WebkitBackdropFilter: 'blur(5px)', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '5vw', cursor: 'zoom-out' }
+    }, [
+      React.createElement('img', { key: 'img', src, alt: 'Enlarged diagram', style: { maxWidth: '92vw', maxHeight: '88vh', width: 'auto', height: 'auto', borderRadius: '12px', background: '#fff', boxShadow: '0 40px 100px rgba(0,0,0,.55)' } }),
+      React.createElement('button', { key: 'btn', onClick: close, 'aria-label': 'Close', style: { position: 'fixed', top: '20px', right: '24px', width: '42px', height: '42px', borderRadius: '50%', border: 'none', background: 'rgba(255,255,255,.14)', color: '#fff', fontSize: '24px', lineHeight: 1, cursor: 'pointer' } }, '\u00d7'),
+      React.createElement('div', { key: 'hint', style: { position: 'fixed', bottom: '22px', left: '50%', transform: 'translateX(-50%)', fontFamily: "'Hanken Grotesk',system-ui,sans-serif", fontSize: '13px', color: 'rgba(255,255,255,.7)' } }, 'tap anywhere to close')
+    ]);
+  }
+  tog(k) { this.setState(s => ({ open: { ...s.open, [k]: !s.open[k] } })); }
+  drop(theme) {
+    const id = this.state.picked;
+    if (!id) return;
+    this.setState(s => ({ sorted: { ...s.sorted, [id]: theme }, picked: null }));
+  }
+  renderVals() {
+    const open = this.state.open || {};
+    const g = this.state.guess;
+    const sorted = this.state.sorted || {};
+    const picked = this.state.picked;
+    const placedCount = Object.keys(sorted).length;
+    const chip = (on) => 'font-family:\'Hanken Grotesk\',system-ui,sans-serif; cursor:pointer; display:inline-flex; align-items:center; text-align:left; max-width:100%; font-size:13.5px; line-height:1.4; padding:9px 14px; border-radius:14px; color:#111; border:1px solid ' + (on ? '#2A6B62' : '#E8E7E4') + '; background:' + (on ? '#F2F7F5' : '#FFFFFF') + '; box-shadow:' + (on ? '0 4px 12px rgba(42,107,98,.14)' : 'none');
+    const bin = () => 'cursor:' + (picked ? 'pointer' : 'default') + '; border-radius:16px; padding:16px 16px 14px; min-height:118px; border:1px ' + (picked ? 'dashed #2A6B62' : 'solid #E8E7E4') + '; background:' + (picked ? '#F2F7F5' : '#FFFFFF');
+    const placed = 'font-family:\'Hanken Grotesk\',system-ui,sans-serif; cursor:pointer; display:block; width:100%; text-align:left; font-size:13px; line-height:1.4; padding:8px 11px; margin-top:6px; border-radius:11px; border:1px solid #E8E7E4; background:#FBFAF8; color:#111';
+    const inBin = (t) => SORT_QUOTES.filter(q => sorted[q.id] === t).map(q => ({
+      short: q.short, placedStyle: placed,
+      back: (e) => { if (e && e.stopPropagation) e.stopPropagation(); this.setState(s => { const n = { ...s.sorted }; delete n[q.id]; return { sorted: n, checked: false }; }); }
+    }));
+    const right = SORT_QUOTES.filter(q => sorted[q.id] === q.theme).length;
+    const results = SORT_QUOTES.map(q => {
+      const ok = sorted[q.id] === q.theme;
+      return {
+        quote: q.quote,
+        mark: ok ? '✓ same as mine' : 'I coded it differently',
+        markStyle: 'font-size:12px; letter-spacing:.04em; border-radius:30px; padding:4px 11px; white-space:nowrap; color:' + (ok ? '#2A6B62' : '#8A6A2F') + '; background:' + (ok ? '#EAF3F0' : '#F7EFDC'),
+        line: ok ? SORT_THEMES[q.theme] : 'you said ' + SORT_THEMES[sorted[q.id]] + ' · I coded ' + SORT_THEMES[q.theme],
+        hasNote: !!q.note, note: q.note
+      };
+    });
+    return {
+      guessOpen: g === null,
+      guessDone: g !== null,
+      hasVerdict: g === 'a' || g === 'b' || g === 'c',
+      verdict: g === 'b'
+        ? 'That is the one. Not price, not distance: the silence after the order was placed.'
+        : 'Fair guess, and it did come up. But the frustration in almost every conversation was quieter than that: nobody knew what was happening after they ordered.',
+      guessA: () => this.setState({ guess: 'a' }),
+      guessB: () => this.setState({ guess: 'b' }),
+      guessC: () => this.setState({ guess: 'c' }),
+      guessSkip: () => this.setState({ guess: 'skip' }),
+
+      sortOpen: !this.state.checked && !this.state.sortSkipped,
+      sortDone: this.state.checked,
+      sortReady: placedCount === SORT_QUOTES.length,
+      sortHint: picked ? 'Now tap the theme it belongs to.' : 'Tap a quote, then tap a theme. Tap a placed one to take it back.',
+      pool: SORT_QUOTES.filter(q => !sorted[q.id]).map(q => ({
+        short: q.short, style: chip(picked === q.id),
+        pick: () => this.setState(s => ({ picked: s.picked === q.id ? null : q.id }))
+      })),
+      binConv: inBin('conv'), binComm: inBin('comm'), binLoyal: inBin('loyal'),
+      binConvStyle: bin(), binCommStyle: bin(), binLoyalStyle: bin(),
+      dropConv: () => this.drop('conv'), dropComm: () => this.drop('comm'), dropLoyal: () => this.drop('loyal'),
+      sortCheck: () => this.setState({ checked: true, picked: null }),
+      sortSkip: () => this.setState({ sortSkipped: true }),
+      sortReset: () => this.setState({ checked: false, sorted: {}, picked: null }),
+      sortScore: right === SORT_QUOTES.length
+        ? 'Four out of four. That is exactly where they landed in NVivo.'
+        : 'You matched ' + right + ' of 4. The disagreements are the interesting part, because coding is a judgement call, which is the whole reason a codebook exists.',
+      results,
+
+      rootRef: this.rootRef,
+      openMethod: !!open.method, closedMethod: !open.method, toggleMethod: () => this.tog('method'),
+      openOnion: !!open.onion, closedOnion: !open.onion, toggleOnion: () => this.tog('onion'),
+      openBook: !!open.book, closedBook: !open.book, toggleBook: () => this.tog('book'),
+      openSketch: !!open.sketch, closedSketch: !open.sketch, toggleSketch: () => this.tog('sketch'),
+      openCharts: !!open.charts, closedCharts: !open.charts, toggleCharts: () => this.tog('charts'),
+      openUnit: !!open.unit, closedUnit: !open.unit, toggleUnit: () => this.tog('unit'),
+      overlay: this.renderOverlay()
+    };
+  }
+}
+</script>
+</body>
+</html>

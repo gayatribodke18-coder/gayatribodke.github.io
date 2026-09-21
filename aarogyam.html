@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<script>(function(){try{var s=localStorage.getItem('gb-theme');var d=s==='dark'||(!s&&window.matchMedia&&window.matchMedia('(prefers-color-scheme:dark)').matches);if(d){document.documentElement.setAttribute('data-gb-theme','dark');var t=document.createElement('style');t.id='gb-preboot';t.textContent='html,body{background:#15130F!important}body{opacity:0}';(document.head||document.documentElement).appendChild(t);setTimeout(function(){var g=document.getElementById('gb-preboot');if(g&&g.textContent.indexOf('opacity:0')>-1){g.textContent='html,body{background:#15130F}';}},1200);}}catch(e){}})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aarogyam — AI patient intake · Gayatri Bodke</title>
+<meta name="description" content="An AI intake system for a 10,000-patient-a-day OPD, where the patient tells her story once.">
+<meta name="color-scheme" content="light dark">
+<meta property="og:title" content="Aarogyam — AI patient intake · Gayatri Bodke">
+<meta property="og:description" content="An AI intake system for a 10,000-patient-a-day OPD, where the patient tells her story once.">
+<meta property="og:type" content="website">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Hanken+Grotesk:wght@400;500;600;700&family=Shantell+Sans:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { background: #FFFFFF; }
+  a { color: #111111; }
+  a:hover { color: #2A6B62; }
+  ::selection { background: #DDEBE7; }
+  .tvBtn { transition: transform .2s ease; }
+  .tvBtn:hover { transform: translateY(-2px); }
+  .tvNextArrow { transition: transform .2s ease; }
+  .tvNext:hover .tvNextArrow { transform: translateX(7px); }
+  .tvNext:hover .tvNextName { color: #2A6B62; }
+  .tvNavNext { transition: color .18s ease; }
+  .tvNavNext:hover { color: #2A6B62; }
+  .tvScroll::-webkit-scrollbar { height: 10px; }
+  .tvScroll::-webkit-scrollbar-thumb { background: #DDDCD9; border-radius: 20px; }
+  .tvScroll::-webkit-scrollbar-track { background: #F5F4F2; border-radius: 20px; }
+  .csRail::before { content:""; position:absolute; inset:-14px -16px; border-radius:16px; background:rgba(255,255,255,.86); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); opacity:0; transition:opacity .25s ease; z-index:-1; }
+  .csRail:hover::before { opacity: 1; }
+  .csTop:hover { background:#111111 !important; color:#FFFFFF !important; border-color:#111111 !important; }
+  @media (max-width: 1180px) { .csRail { display: none !important; } }
+  @media (max-width: 640px) { .tvNavNext { display: none !important; } }
+  [data-ag] img[src$="hero-review.png"] { aspect-ratio: 1810/2218; }
+  [data-ag] img[src$="handoff-swimlane.svg"] { aspect-ratio: 1460/760; }
+  [data-ag] img[src$="journey-map.svg"] { aspect-ratio: 1500/880; }
+  [data-ag] img[src$="ai-decision-flow.svg"] { aspect-ratio: 1250/1010; }
+  [data-ag] img[src$="personas.svg"] { aspect-ratio: 1480/650; }
+  [data-ag] img[src$="screen-1-login.png"] { aspect-ratio: 1810/1484; }
+  [data-ag] img[src$="screen-2-dashboard.png"] { aspect-ratio: 1810/1656; }
+  [data-ag] img[src$="screen-3-reports.png"] { aspect-ratio: 1810/1480; }
+  [data-ag] img[src$="screen-4-chat.png"] { aspect-ratio: 1810/1682; }
+  [data-ag] img[src$="flow-1-entry.png"] { aspect-ratio: 867/884; }
+  [data-ag] img[src$="flow-2-prepare.png"] { aspect-ratio: 521/1296; }
+  [data-ag] img[src$="flow-3-summary.png"] { aspect-ratio: 615/1617; }
+  @media (max-width: 940px) { [data-ag] .agChunk { grid-template-columns: 1fr !important; } }
+  [data-ag] img[src$="flow-upload-detail.png"] { aspect-ratio: 989/2023; }
+  [data-ag] img[src$="dr-flow-full.png"] { aspect-ratio: 770/1784; }
+  [data-ag] img[src$="dr-1-login.png"] { aspect-ratio: 1810/1360; }
+  [data-ag] img[src$="dr-2-dashboard.png"] { aspect-ratio: 1810/1428; }
+  [data-ag] img[src$="dr-3-summary.png"] { aspect-ratio: 1810/1910; }
+  [data-ag] img[src*="/dr-flow-full"] { width: auto !important; max-width: 100%; max-height: 560px; }
+  [data-ag] img[src*="/flow-1-entry"], [data-ag] img[src*="/flow-2-prepare"], [data-ag] img[src*="/flow-3-summary"], [data-ag] img[src*="/flow-upload-detail"] { width: auto !important; max-width: 100%; max-height: 520px; }
+  [data-ag] .agChunk > div:first-child { justify-self: start; }
+  [data-ag] .agChunk { gap: 36px !important; }
+  [data-ag] .agChunk .agTwo { gap: 22px !important; }
+  [data-ag] div[style*="margin-bottom:40px"] { padding-bottom: 46px; border-bottom: 1px solid #E8E7E4; margin-bottom: 46px !important; }
+  @media (max-width: 900px) {
+    [data-ag] .agTwo { grid-template-columns: 1fr !important; }
+    [data-ag] .agFour { grid-template-columns: 1fr 1fr !important; }
+    [data-ag] .agThree { grid-template-columns: 1fr !important; }
+  }
+  @media (max-width: 620px) {
+    [data-ag] .agFour { grid-template-columns: 1fr !important; }
+  }
+  /* Imagery: text keeps the reading column, visuals break out into full-width bands */
+  [data-ag] .agChunk { display: block !important; }
+  [data-ag] .agBand,
+  [data-ag] .agChunk > div:first-child,
+  [data-ag] .agChunk > div:nth-child(2):has(figure) {
+    margin: 44px 0 0 calc(-1 * clamp(28px, 7vw, 80px)) !important;
+    width: 100vw; max-width: 100vw;
+    background: #FBFAF8 !important;
+    border: 0 !important; border-top: 1px solid #F1EFEA !important; border-bottom: 1px solid #F1EFEA !important;
+    border-radius: 0 !important;
+    padding: 52px clamp(24px, 5vw, 56px) 52px clamp(28px, 7vw, 80px) !important;
+    justify-content: flex-start !important;
+  }
+  [data-ag] .agChunk .agTwo { grid-template-columns: 1fr 1fr !important; gap: 44px !important; max-width: 1180px; }
+  [data-ag] .agChunk figure { max-width: none !important; }
+  [data-ag] .agChunk figure > div, [data-ag] .agBand figure > div {
+    border: 0 !important; border-radius: 0 !important; background: transparent !important; overflow: visible !important;
+  }
+  [data-ag] .agChunk figcaption, [data-ag] .agBand figcaption { font-size: 14px !important; margin-top: 16px !important; max-width: 52ch; }
+  [data-ag] img[src*="/flow-1-entry"], [data-ag] img[src*="/flow-2-prepare"], [data-ag] img[src*="/flow-3-summary"], [data-ag] img[src*="/flow-upload-detail"] { max-height: 600px; }
+  [data-ag] .agChunk > div:nth-child(2):not(:has(figure)) { margin-top: 34px; }
+  [data-ag] div[style*="margin-bottom:40px"] { padding-bottom: 72px !important; margin-bottom: 72px !important; }
+  [data-ag] .agChunk > div:nth-child(2):has(figure) > div > figure, [data-ag] .agChunk > div:nth-child(2):has(figure) > figure { max-width: 880px !important; }
+  [data-ag] .agDuo figure { max-width: 320px !important; flex: 0 1 auto; }
+  [data-ag] .agDuo figure img { max-height: 520px; }
+  [data-ag] figure.agBand { margin-bottom: 44px !important; }
+  [data-ag] figure.agBand > div { border: 0 !important; border-radius: 0 !important; background: transparent !important; padding: 0 !important; }
+  @media (max-width: 860px) { [data-ag] .agChunk .agTwo { grid-template-columns: 1fr !important; gap: 48px !important; } }
+  html[data-gb-theme="dark"] .lpFootArt img { filter: brightness(.55) saturate(.72); }
+  html[data-gb-theme="dark"] .lpFootFade { background: linear-gradient(180deg,#141310 0%,rgba(20,19,16,.72) 26%,rgba(20,19,16,0) 62%) !important; }
+</style>
+<script src="./page-loader.js"></script>
+<script src="./case-confidential.js" data-code="gayatri2026"></script>
+<script src="./case-nav.js"></script>
+<script src="./theme-toggle.js"></script>
+<template id="__bundler_thumbnail">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#FFFFFF"/><rect x="10" y="10" width="80" height="80" rx="16" fill="#F1EEFA"/><text x="50" y="62" font-family="Georgia,serif" font-size="34" fill="#5B4BA8" text-anchor="middle">आ</text></svg>
+</template>
+</helmet>
+<div ref="{{ rootRef }}" data-ag data-screen-label="Aarogyam case study" style="font-family:'Hanken Grotesk',system-ui,sans-serif; background:#FFFFFF; color:#111111; min-height:100vh; overflow-x:clip">
+
+  <!-- PUBLIC TEASER VIEW -->
+  <div data-nda-teaser data-screen-label="Aarogyam · public view">
+    <header style="position:sticky; top:0; z-index:20; background:rgba(255,255,255,.85); backdrop-filter:blur(10px); border-bottom:1px solid #E8E7E4">
+      <div style="max-width:1040px; margin:0; display:flex; align-items:center; justify-content:space-between; padding:15px clamp(24px,5vw,56px) 15px clamp(28px,7vw,80px)">
+        <a href="index.html" style="text-decoration:none; color:#111111; font-size:14px; display:inline-flex; align-items:center; gap:8px">← All work</a>
+        <a href="mailto:gayatribodke18@gmail.com" class="tvBtn" style="text-decoration:none; color:#FFFFFF; background:#111111; padding:9px 18px; border-radius:30px; font-size:13.5px; white-space:nowrap">Get in touch</a>
+      </div>
+    </header>
+
+    <section style="max-width:1040px; margin:0; padding:56px clamp(24px,5vw,56px) 0 clamp(28px,7vw,80px)">
+      <div style="display:flex; align-items:center; gap:12px; flex-wrap:wrap; margin-bottom:20px">
+        <span style="display:inline-flex; align-items:center; gap:7px; font-size:11px; letter-spacing:.09em; text-transform:uppercase; color:#2A6B62"><svg width="11" height="13" viewBox="0 0 14 16" fill="none" stroke="#2A6B62" stroke-width="1.6" aria-hidden="true"><rect x="1" y="6.5" width="12" height="8.5" rx="2"></rect><path d="M3.8 6.5V4.2a3.2 3.2 0 0 1 6.4 0v2.3"></path></svg>Confidential</span>
+        <span style="color:#DDDCD9">/</span>
+        <span style="font-size:13px; color:#888">AjnaLens · AIIMS Delhi OPD</span>
+      </div>
+      <span style="font-family:'Instrument Serif',serif; font-size:40px; letter-spacing:.5px; display:block; margin-bottom:14px">Aarogyam</span>
+      <h1 style="font-family:'Instrument Serif',serif; font-weight:400; font-size:clamp(30px,4.4vw,46px); line-height:1.12; letter-spacing:-.5px; margin:0 0 22px; max-width:24ch">An AI intake system for a 10,000-patient-a-day OPD</h1>
+      <p style="font-size:18px; line-height:1.65; color:#111; margin:0 0 32px; max-width:58ch">A patient explains their problem at registration, again to the nurse, again to the doctor. My work was designing the layer that carries one case through all of them, with AI helping and clinicians still deciding.</p>
+      <div style="display:flex; gap:16px 28px; flex-wrap:wrap; font-size:13.5px; line-height:1.4; color:#111111; padding-top:20px; border-top:1px solid #E8E7E4">
+        <div><div style="color:#999999; font-size:12px; margin-bottom:4px">Role</div>Product Designer</div>
+        <div><div style="color:#999999; font-size:12px; margin-bottom:4px">Surfaces</div>Patient web intake · doctor web console</div>
+        <div><div style="color:#999999; font-size:12px; margin-bottom:4px">I owned</div>Research, UX architecture, user flows, interaction design</div>
+      </div>
+    </section>
+
+    <section style="max-width:1040px; margin:0; padding:34px clamp(24px,5vw,56px) 0 clamp(28px,7vw,80px)">
+      <div style="max-width:760px; background:#F5F7F8; border-radius:18px; padding:24px 26px">
+        <div style="display:flex; align-items:center; gap:9px; margin-bottom:10px">
+          <svg width="14" height="16" viewBox="0 0 14 16" fill="none" stroke="#111111" stroke-width="1.6" aria-hidden="true"><rect x="1" y="6.5" width="12" height="8.5" rx="2"></rect><path d="M3.8 6.5V4.2a3.2 3.2 0 0 1 6.4 0v2.3"></path></svg>
+          <span style="font-size:16px; font-weight:600">Project under NDA</span>
+        </div>
+        <p style="font-size:15.5px; line-height:1.65; color:#666; margin:0 0 20px; max-width:52ch">This project is confidential, so this page is the short version. If you're a hiring manager, reach out and I'll walk you through the full case study.</p>
+        <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap">
+          <a href="mailto:gayatribodke18@gmail.com?subject=Aarogyam%20case%20study" class="tvBtn" style="text-decoration:none; font-size:14.5px; padding:12px 22px; border-radius:30px; background:#111111; color:#FFFFFF">Request the full study</a>
+          <button type="button" data-nda-copy data-email="gayatribodke18@gmail.com" style="font:inherit; font-size:14.5px; display:inline-flex; align-items:center; gap:9px; padding:11px 20px; border-radius:30px; border:1px solid #E1E4E6; background:#FFFFFF; color:#111; cursor:pointer"><span data-nda-copy-label>gayatribodke18@gmail.com</span><svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="#888" stroke-width="1.5" aria-hidden="true"><rect x="5.5" y="5.5" width="9" height="9" rx="2"></rect><path d="M10.5 3.5v-1a1 1 0 0 0-1-1h-7a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h1"></path></svg></button>
+        </div>
+        <div style="margin-top:18px; padding-top:16px; border-top:1px solid #E4E8EA">
+          <a href="#" data-nda-toggle style="font-size:14px; color:#888; text-decoration:none; border-bottom:1px solid #E1E4E6">I have a passcode</a>
+          <form data-nda-form style="display:none; gap:10px; flex-wrap:wrap; align-items:center; margin-top:16px">
+            <input data-nda-input type="password" autocomplete="off" placeholder="Enter passcode" style="flex:1; min-width:200px; font:inherit; font-size:15px; padding:12px 15px; border:1px solid #E1E4E6; border-radius:4px; background:#FFFFFF; color:#111; outline:none">
+            <button type="submit" style="font:inherit; font-size:15px; padding:12px 22px; border-radius:4px; border:1.5px solid #E2DCCE; background:#FFFFFF; color:#111; cursor:pointer">View full study</button>
+            <p data-nda-err style="width:100%; font-size:13.5px; color:#BD5836; margin:2px 0 0; visibility:hidden">That passcode doesn't match. Try again, or email me.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section style="max-width:1040px; margin:0; padding:70px clamp(24px,5vw,56px) 0 clamp(28px,7vw,80px)">
+      <p style="font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:#999; margin:0 0 16px">highlights</p>
+      <h2 style="font-family:'Instrument Serif',serif; font-weight:400; font-size:clamp(24px,3.4vw,34px); line-height:1.18; letter-spacing:-.3px; margin:0 0 18px; max-width:26ch">One patient story, carried across four roles</h2>
+      <p style="font-size:16.5px; line-height:1.7; color:#111; margin:0 0 30px; max-width:60ch">Four people touch one case, patient, nurse, resident and OPD head, and each defines a good outcome differently. The waiting was the symptom; the real problem was information being re-collected at every handoff. So the design captures the story once, in the patient's own words, and re-presents it at the depth each role can act on.</p>
+      <div style="display:flex; flex-direction:column; max-width:760px">
+        <div style="border-top:1px solid #E8E7E4; padding:18px 0; font-size:15.5px; line-height:1.6">Designed the patient intake and the doctor's pre-read as one system, so nothing is asked twice</div>
+        <div style="border-top:1px solid #E8E7E4; padding:18px 0; font-size:15.5px; line-height:1.6">The patient reads back what the system understood, in their own language, and can reject it before a doctor sees it</div>
+        <div style="border-top:1px solid #E8E7E4; padding:18px 0; font-size:15.5px; line-height:1.6">Built for five languages, low literacy, shared phones and a queue that never stops moving</div>
+        <div style="border-top:1px solid #E8E7E4; padding:18px 0; font-size:15.5px; line-height:1.6">Mapped the failure states and the clinician override paths, so AI assists and clinicians decide</div>
+        <div style="border-top:1px solid #E8E7E4; border-bottom:1px solid #E8E7E4; padding:18px 0; font-size:15.5px; line-height:1.6">Set success criteria from the journey outward: time to correct routing, wrong-routing rate, override rate</div>
+      </div>
+    </section>
+
+    <section style="max-width:1040px; margin:0; padding:70px clamp(24px,5vw,56px) 0 clamp(28px,7vw,80px)">
+      <p style="font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:#999; margin:0 0 16px">retrospective</p>
+      <h2 style="font-family:'Instrument Serif',serif; font-weight:400; font-size:clamp(24px,3.4vw,34px); line-height:1.18; letter-spacing:-.3px; margin:0 0 18px; max-width:26ch">Designing for judgement, not automation</h2>
+      <p style="font-size:16.5px; line-height:1.7; color:#111; margin:0 0 18px; max-width:60ch">The hardest decisions here were not about screens. They were about where the system should stop: what it is allowed to conclude, what it must hand to a clinician, and how it behaves when it is unsure. Designing that boundary made the product more trustworthy than a more confident interface would have been.</p>
+      <div style="border-left:3px solid #2A6B62; padding:6px 0 6px 22px; max-width:64ch">
+        <p style="font-size:16px; line-height:1.65; color:#111; margin:0">Success was never getting people to use AI. It was removing repetition and friction while keeping clinical judgement in the loop.</p>
+      </div>
+    </section>
+
+    <section style="max-width:1040px; margin:0; padding:70px clamp(24px,5vw,56px) 88px clamp(28px,7vw,80px)">
+      <h2 style="font-family:'Instrument Serif',serif; font-weight:400; font-size:clamp(26px,4vw,40px); line-height:1.1; letter-spacing:-.5px; margin:0 0 24px; max-width:20ch">Want the full story?</h2>
+      <div style="display:flex; gap:12px; flex-wrap:wrap">
+        <a href="mailto:gayatribodke18@gmail.com?subject=Aarogyam%20case%20study" class="tvBtn" style="text-decoration:none; font-size:15px; padding:14px 26px; border-radius:30px; background:#111111; color:#FFFFFF">Get in touch</a>
+        <a href="sts.html" class="tvBtn" style="text-decoration:none; font-size:15px; padding:14px 26px; border-radius:30px; border:1.5px solid #E2DCCE; color:#111111">Read an open case study</a>
+      </div>
+    </section>
+
+    <footer style="border-top:1px solid #E8E7E4">
+      <div style="max-width:1040px; margin:0; padding:24px clamp(24px,5vw,56px) 40px clamp(28px,7vw,80px); display:flex; align-items:center; justify-content:space-between; gap:16px; font-size:12.5px; color:#999">
+        <span style="font-family:'Instrument Serif',serif; font-style:italic; font-size:16px; color:#888">Gayatri Bodke</span>
+        <span>© 2026 · Product Designer</span>
+      </div>
+    </footer>
+  </div>
+
+  <!-- SECTION RAIL -->
+  <nav class="csRail" aria-label="Jump to section" style="position:fixed; right:30px; top:50%; transform:translateY(-50%); z-index:25; display:flex; flex-direction:column; gap:6px; align-items:flex-end">
+    <a class="railItem" data-nav="context" href="#context" style="display:flex; align-items:center; gap:12px; text-decoration:none"><span class="railLabel" style="font-size:12.5px; color:#9a958d; white-space:nowrap; opacity:0; transform:translateX(6px); transition:opacity .25s ease, transform .25s ease, color .25s ease">Context</span><span class="railTick" style="width:16px; height:2px; border-radius:2px; background:#DDDCD9; transition:width .25s ease, background .25s ease"></span></a>
+    <a class="railItem" data-nav="problem" href="#problem" style="display:flex; align-items:center; gap:12px; text-decoration:none"><span class="railLabel" style="font-size:12.5px; color:#9a958d; white-space:nowrap; opacity:0; transform:translateX(6px); transition:opacity .25s ease, transform .25s ease, color .25s ease">The problem</span><span class="railTick" style="width:16px; height:2px; border-radius:2px; background:#DDDCD9; transition:width .25s ease, background .25s ease"></span></a>
+    <a class="railItem" data-nav="users" href="#users" style="display:flex; align-items:center; gap:12px; text-decoration:none"><span class="railLabel" style="font-size:12.5px; color:#9a958d; white-space:nowrap; opacity:0; transform:translateX(6px); transition:opacity .25s ease, transform .25s ease, color .25s ease">Four users</span><span class="railTick" style="width:16px; height:2px; border-radius:2px; background:#DDDCD9; transition:width .25s ease, background .25s ease"></span></a>
+    <a class="railItem" data-nav="research" href="#research" style="display:flex; align-items:center; gap:12px; text-decoration:none"><span class="railLabel" style="font-size:12.5px; color:#9a958d; white-space:nowrap; opacity:0; transform:translateX(6px); transition:opacity .25s ease, transform .25s ease, color .25s ease">Research</span><span class="railTick" style="width:16px; height:2px; border-radius:2px; background:#DDDCD9; transition:width .25s ease, background .25s ease"></span></a>
+    <a class="railItem" data-nav="architecture" href="#architecture" style="display:flex; align-items:center; gap:12px; text-decoration:none"><span class="railLabel" style="font-size:12.5px; color:#9a958d; white-space:nowrap; opacity:0; transform:translateX(6px); transition:opacity .25s ease, transform .25s ease, color .25s ease">Architecture</span><span class="railTick" style="width:16px; height:2px; border-radius:2px; background:#DDDCD9; transition:width .25s ease, background .25s ease"></span></a>
+    <a class="railItem" data-nav="edges" href="#edges" style="display:flex; align-items:center; gap:12px; text-decoration:none"><span class="railLabel" style="font-size:12.5px; color:#9a958d; white-space:nowrap; opacity:0; transform:translateX(6px); transition:opacity .25s ease, transform .25s ease, color .25s ease">Patient flow</span><span class="railTick" style="width:16px; height:2px; border-radius:2px; background:#DDDCD9; transition:width .25s ease, background .25s ease"></span></a>
+    <a class="railItem" data-nav="handoff" href="#handoff" style="display:flex; align-items:center; gap:12px; text-decoration:none"><span class="railLabel" style="font-size:12.5px; color:#9a958d; white-space:nowrap; opacity:0; transform:translateX(6px); transition:opacity .25s ease, transform .25s ease, color .25s ease">Handoff</span><span class="railTick" style="width:16px; height:2px; border-radius:2px; background:#DDDCD9; transition:width .25s ease, background .25s ease"></span></a>
+    <a class="railItem" data-nav="doctorflow" href="#doctorflow" style="display:flex; align-items:center; gap:12px; text-decoration:none"><span class="railLabel" style="font-size:12.5px; color:#9a958d; white-space:nowrap; opacity:0; transform:translateX(6px); transition:opacity .25s ease, transform .25s ease, color .25s ease">Doctor flow</span><span class="railTick" style="width:16px; height:2px; border-radius:2px; background:#DDDCD9; transition:width .25s ease, background .25s ease"></span></a>
+    <a class="railItem" data-nav="failures" href="#failures" style="display:flex; align-items:center; gap:12px; text-decoration:none"><span class="railLabel" style="font-size:12.5px; color:#9a958d; white-space:nowrap; opacity:0; transform:translateX(6px); transition:opacity .25s ease, transform .25s ease, color .25s ease">Failure states</span><span class="railTick" style="width:16px; height:2px; border-radius:2px; background:#DDDCD9; transition:width .25s ease, background .25s ease"></span></a>
+    <a class="railItem" data-nav="ailogic" href="#ailogic" style="display:flex; align-items:center; gap:12px; text-decoration:none"><span class="railLabel" style="font-size:12.5px; color:#9a958d; white-space:nowrap; opacity:0; transform:translateX(6px); transition:opacity .25s ease, transform .25s ease, color .25s ease">AI boundaries</span><span class="railTick" style="width:16px; height:2px; border-radius:2px; background:#DDDCD9; transition:width .25s ease, background .25s ease"></span></a>
+    <a class="railItem" data-nav="targets" href="#targets" style="display:flex; align-items:center; gap:12px; text-decoration:none"><span class="railLabel" style="font-size:12.5px; color:#9a958d; white-space:nowrap; opacity:0; transform:translateX(6px); transition:opacity .25s ease, transform .25s ease, color .25s ease">Success criteria</span><span class="railTick" style="width:16px; height:2px; border-radius:2px; background:#DDDCD9; transition:width .25s ease, background .25s ease"></span></a>
+    <a class="railItem" data-nav="learnings" href="#learnings" style="display:flex; align-items:center; gap:12px; text-decoration:none"><span class="railLabel" style="font-size:12.5px; color:#9a958d; white-space:nowrap; opacity:0; transform:translateX(6px); transition:opacity .25s ease, transform .25s ease, color .25s ease">Learnings</span><span class="railTick" style="width:16px; height:2px; border-radius:2px; background:#DDDCD9; transition:width .25s ease, background .25s ease"></span></a>
+  </nav>
+
+  <!-- BACK TO TOP -->
+  <a class="csTop" href="#top" aria-label="Back to top" style="position:fixed; right:26px; bottom:26px; z-index:30; display:inline-flex; align-items:center; gap:8px; padding:10px 17px; border-radius:30px; border:1px solid #E8E7E4; background:rgba(255,255,255,.9); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); color:#111111; font-family:'Hanken Grotesk',system-ui,sans-serif; font-size:13.5px; line-height:1; text-decoration:none; cursor:pointer; box-shadow:0 10px 26px rgba(30,30,30,.12); opacity:0; pointer-events:none; transition:opacity .3s ease, background .18s ease, color .18s ease, border-color .18s ease">↑ Top</a>
+
+  <!-- NAV -->
+  <header id="top" style="position:sticky; top:0; z-index:20; background:rgba(255,255,255,.85); backdrop-filter:blur(10px); border-bottom:1px solid #E8E7E4">
+    <div style="max-width:1180px; margin:0; display:flex; align-items:center; justify-content:space-between; padding:15px clamp(24px,5vw,56px) 15px clamp(28px,7vw,80px)">
+      <a href="index.html" style="text-decoration:none; color:#111111; font-size:14px; display:inline-flex; align-items:center; gap:8px">← All work</a>
+      <div style="display:flex; align-items:center; gap:22px">
+        <a href="tvak.html" class="tvNavNext" style="text-decoration:none; color:#111111; font-size:13.5px; white-space:nowrap; display:inline-flex; align-items:center; gap:8px"><span style="color:#9a958d">next</span>TVAK <span style="color:#2A6B62">→</span></a>
+        <a href="mailto:gayatribodke18@gmail.com" class="tvBtn" style="text-decoration:none; color:#FFFFFF; background:#111111; padding:9px 18px; border-radius:30px; font-size:13.5px; white-space:nowrap; display:inline-flex; align-items:center">Get in touch</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section style="max-width:1040px; margin:0; padding:48px clamp(24px,5vw,56px) 26px clamp(28px,7vw,80px)">
+    <div style="display:flex; align-items:center; gap:14px; margin-bottom:22px">
+      <span style="font-family:'Instrument Serif',serif; font-size:44px; letter-spacing:.5px">Aarogyam</span>
+      <span style="font-size:13px; color:#888; background:#F5F4F2; padding:6px 12px; border-radius:30px">AIIMS Delhi OPD</span>
+      <span style="display:inline-flex; align-items:center; gap:7px; font-size:11px; letter-spacing:.09em; text-transform:uppercase; color:#2A6B62; border:1px solid #D6E5E1; padding:6px 12px; border-radius:30px"><svg width="10" height="12" viewBox="0 0 14 16" fill="none" stroke="#2A6B62" stroke-width="1.6" aria-hidden="true"><rect x="1" y="6.5" width="12" height="8.5" rx="2"></rect><path d="M3.8 6.5V4.2a3.2 3.2 0 0 1 6.4 0v2.3"></path></svg>Under NDA</span>
+    </div>
+    <h1 style="font-family:'Instrument Serif',serif; font-weight:400; font-size:clamp(30px,4.4vw,46px); line-height:1.12; letter-spacing:-.5px; margin:0 0 20px; max-width:24ch">An AI intake system for a 10,000-patient-a-day OPD</h1>
+    <p style="font-size:18px; line-height:1.65; color:#111; margin:0 0 30px; max-width:58ch">A patient explains their problem at registration, again to the nurse, again to the doctor. My work was designing the layer that carries one case through all of them, with AI helping and clinicians still deciding.</p>
+    <div style="display:flex; gap:16px 28px; flex-wrap:wrap; font-size:13.5px; line-height:1.4; color:#111111; padding-top:20px; border-top:1px solid #E8E7E4">
+      <div><div style="color:#999999; font-size:12px; margin-bottom:4px">Role</div>Product Designer</div>
+      <div><div style="color:#999999; font-size:12px; margin-bottom:4px">Company</div>AjnaLens</div>
+      <div><div style="color:#999999; font-size:12px; margin-bottom:4px">Surfaces</div>Patient web intake · doctor web console</div>
+      <div><div style="color:#999999; font-size:12px; margin-bottom:4px">Languages</div>English · Hindi · Marathi · Tamil · Bengali</div>
+      <div><div style="color:#999999; font-size:12px; margin-bottom:4px">I owned</div>Research, UX architecture, user flows, interaction design</div>
+    </div>
+  </section>
+
+  <!-- SHORT VERSION -->
+  <section style="max-width:1040px; margin:0; padding:34px clamp(24px,5vw,56px) 0 clamp(28px,7vw,80px)">
+    <div style="background:#F5F4F2; border-radius:20px; padding:28px 30px">
+      <p style="font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:#999; margin:0 0 16px">the short version</p>
+      <div style="display:flex; flex-direction:column; gap:13px">
+        <div style="display:flex; gap:12px; align-items:flex-start"><span style="color:#2A6B62; font-weight:700; line-height:1.5">→</span><span style="font-size:15.5px; line-height:1.6; color:#111">Four people (patient, nurse, resident, OPD head) touch one case, and each one defines a good outcome differently.</span></div>
+        <div style="display:flex; gap:12px; align-items:flex-start"><span style="color:#2A6B62; font-weight:700; line-height:1.5">→</span><span style="font-size:15.5px; line-height:1.6; color:#111">The waiting was the symptom. The real problem was information being re-collected at every handoff.</span></div>
+        <div style="display:flex; gap:12px; align-items:flex-start"><span style="color:#2A6B62; font-weight:700; line-height:1.5">→</span><span style="font-size:15.5px; line-height:1.6; color:#111">So the design captures the story once, in the patient's own words, and re-presents it at the depth each role can act on, with uncertainty and override designed in.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 01 CONTEXT -->
+  <section style="max-width:1040px; margin:0; padding:76px clamp(24px,5vw,56px) 0 clamp(28px,7vw,80px)">
+    <div id="context" style="scroll-margin-top:90px; display:flex; align-items:baseline; gap:14px; margin-bottom:20px">
+      <span style="font-family:'Instrument Serif',serif; font-size:30px; color:#2A6B62">01</span>
+      <h2 style="font-family:'Instrument Serif',serif; font-weight:400; font-size:28px; letter-spacing:-.3px; margin:0">The context</h2>
+    </div>
+    <p style="font-size:19px; line-height:1.6; color:#111; margin:0 0 18px; font-weight:500; max-width:52ch">An OPD at this scale is not a clinic. It is a queue with a clinical process running inside it.</p>
+    <p style="font-size:17px; line-height:1.7; color:#111; margin:0 0 24px; max-width:64ch">AIIMS Delhi's outpatient department sees around 10,000 patients a day, with an average wait of about four and a half hours and roughly 22% of patients ending up in the wrong department first. Everyone in the building already knows this. Nobody has spare minutes to give a new tool.</p>
+    <div class="agThree" style="display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-bottom:24px">
+      <div style="border:1px solid #E8E7E4; border-radius:16px; padding:20px 22px"><div style="font-family:'Instrument Serif',serif; font-size:36px; line-height:1; color:#2A6B62">~10,000</div><p style="font-size:14px; color:#111; margin:10px 0 0; line-height:1.45">patients a day through one OPD</p></div>
+      <div style="border:1px solid #E8E7E4; border-radius:16px; padding:20px 22px"><div style="font-family:'Instrument Serif',serif; font-size:36px; line-height:1; color:#2A6B62">~4.5 hrs</div><p style="font-size:14px; color:#111; margin:10px 0 0; line-height:1.45">average wait before being seen</p></div>
+      <div style="border:1px solid #E8E7E4; border-radius:16px; padding:20px 22px"><div style="font-family:'Instrument Serif',serif; font-size:36px; line-height:1; color:#2A6B62">~22%</div><p style="font-size:14px; color:#111; margin:10px 0 0; line-height:1.45">routed to the wrong department first</p></div>
+    </div>
+    <div style="border-left:3px solid #2A6B62; padding:6px 0 6px 22px">
+      <p style="font-family:'Instrument Serif',serif; font-size:clamp(22px,3.2vw,28px); line-height:1.3; margin:0; max-width:28ch">How might we move a patient's information through the OPD without making the patient, nurse or doctor repeat the same work?</p>
+      <p style="font-size:14px; color:#888; margin:12px 0 0">The design question the whole project answers.</p>
+    </div>
+  </section>
+
+  <!-- 02 THE PROBLEM -->
+  <section style="max-width:1040px; margin:0; padding:80px clamp(24px,5vw,56px) 0 clamp(28px,7vw,80px)">
+    <div id="problem" style="scroll-margin-top:90px; display:flex; align-items:baseline; gap:14px; margin-bottom:20px">
+      <span style="font-family:'Instrument Serif',serif; font-size:30px; color:#2A6B62">02</span>
+      <h2 style="font-family:'Instrument Serif',serif; font-weight:400; font-size:28px; letter-spacing:-.3px; margin:0">The problem wasn't the waiting</h2>
+    </div>
+    <p style="font-size:17px; line-height:1.7; color:#111; margin:0 0 16px; max-width:64ch">The wait is what people complain about. What actually degrades the care is what happens to the information along the way: it is told, written down, interpreted and handed over several times before anyone can act on it.</p>
+    <p style="font-size:17px; line-height:1.7; color:#111; margin:0 0 26px; max-width:64ch">Every handoff is another chance for something to be missed, misread, or asked again. So I mapped the existing route first, and marked where the case thins out.</p>
+    <div class="tvScroll" style="overflow-x:auto">
+      <div style="min-width:640px; display:flex; align-items:center; gap:10px">
+        <div style="flex:1; border:1px solid #E8E7E4; border-radius:14px; padding:16px 18px; font-size:14px; color:#111">Patient explains</div>
+        <span style="color:#C9C6C0">→</span>
+        <div style="flex:1; border:1px solid #E8E7E4; border-radius:14px; padding:16px 18px; font-size:14px; color:#111">Registration writes it down</div>
+        <span style="color:#C9C6C0">→</span>
+        <div style="flex:1; border:1px solid #E8E7E4; border-radius:14px; padding:16px 18px; font-size:14px; color:#111">Nurse asks again</div>
+        <span style="color:#C9C6C0">→</span>
+        <div style="flex:1; border:1px solid #E8E7E4; border-radius:14px; padding:16px 18px; font-size:14px; color:#111">Resident asks again</div>
+        <span style="color:#C9C6C0">→</span>
+        <div style="flex:1; border:1px solid #E8E7E4; border-top:3px solid #2A6B62; border-radius:14px; padding:16px 18px; font-size:14px; color:#111">Doctor acts on what's left</div>
+      </div>
+    </div>
+    <p style="font-size:13.5px; color:#888; margin:14px 0 0">Four retellings before anyone can act, and something thins out at every arrow.</p>
+  </section>
+
+  <!-- 03 FOUR USERS -->
+  <section style="max-width:1040px; margin:0; padding:80px clamp(24px,5vw,56px) 0 clamp(28px,7vw,80px)">
+    <div id="users" style="scroll-margin-top:90px; display:flex; align-items:baseline; gap:14px; margin-bottom:20px">
+      <span style="font-family:'Instrument Serif',serif; font-size:30px; color:#2A6B62">03</span>
+      <h2 style="font-family:'Instrument Serif',serif; font-weight:400; font-size:28px; letter-spacing:-.3px; margin:0">Four users, four definitions of success</h2>
+    </div>
+    <p style="font-size:17px; line-height:1.7; color:#111; margin:0 0 26px; max-width:62ch">The same AI output had to satisfy four people who do not agree on what good looks like.</p>
+    <div class="agFour" style="display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin-bottom:26px">
+      <div style="border:1px solid #E8E7E4; border-top:3px solid #E4E2DD; border-radius:16px; padding:20px 20px; display:flex; flex-direction:column">
+        <p style="font-size:11px; letter-spacing:.09em; text-transform:uppercase; color:#999; margin:0 0 8px">Patient</p>
+        <h3 style="font-size:16px; margin:0 0 6px; letter-spacing:-.2px">Rambai, 58</h3>
+        <p style="font-size:13.5px; line-height:1.5; color:#888; margin:0 0 12px">First AIIMS visit, speaks mostly Bhojpuri.</p>
+        <p style="font-family:'Instrument Serif',serif; font-style:italic; font-size:16px; line-height:1.4; color:#111; margin:0 0 14px">"I just don't want to explain my problem four times."</p>
+        <p style="font-size:13.5px; line-height:1.5; color:#111; margin:auto 0 0"><span style="color:#2A6B62">Needs</span> to explain once, in her own words.</p>
+      </div>
+      <div style="border:1px solid #E8E7E4; border-top:3px solid #E4E2DD; border-radius:16px; padding:20px 20px; display:flex; flex-direction:column">
+        <p style="font-size:11px; letter-spacing:.09em; text-transform:uppercase; color:#999; margin:0 0 8px">Senior nurse</p>
+        <h3 style="font-size:16px; margin:0 0 6px; letter-spacing:-.2px">Suresh</h3>
+        <p style="font-size:13.5px; line-height:1.5; color:#888; margin:0 0 12px">11 years in this OPD. Runs the queue. Selective adopter.</p>
+        <p style="font-family:'Instrument Serif',serif; font-style:italic; font-size:16px; line-height:1.4; color:#111; margin:0 0 14px">"I'll use it if it makes the queue move."</p>
+        <p style="font-size:13.5px; line-height:1.5; color:#111; margin:auto 0 0"><span style="color:#2A6B62">Needs</span> fast review, prioritisation, control.</p>
+      </div>
+      <div style="border:1px solid #E8E7E4; border-top:3px solid #E4E2DD; border-radius:16px; padding:20px 20px; display:flex; flex-direction:column">
+        <p style="font-size:11px; letter-spacing:.09em; text-transform:uppercase; color:#999; margin:0 0 8px">Resident</p>
+        <h3 style="font-size:16px; margin:0 0 6px; letter-spacing:-.2px">Dr. Priya</h3>
+        <p style="font-size:13.5px; line-height:1.5; color:#888; margin:0 0 12px">2nd-year Internal Medicine. Already at capacity.</p>
+        <p style="font-family:'Instrument Serif',serif; font-style:italic; font-size:16px; line-height:1.4; color:#111; margin:0 0 14px">"Don't give me another screen. Give me four minutes back per patient."</p>
+        <p style="font-size:13.5px; line-height:1.5; color:#111; margin:auto 0 0"><span style="color:#2A6B62">Needs</span> a clinical pre-read, not a dashboard.</p>
+      </div>
+      <div style="border:1px solid #E8E7E4; border-top:3px solid #2A6B62; border-radius:16px; padding:20px 20px; display:flex; flex-direction:column">
+        <p style="font-size:11px; letter-spacing:.09em; text-transform:uppercase; color:#999; margin:0 0 8px">OPD head</p>
+        <h3 style="font-size:16px; margin:0 0 6px; letter-spacing:-.2px">Prof. Kulkarni</h3>
+        <p style="font-size:13.5px; line-height:1.5; color:#888; margin:0 0 12px">Department champion. Risk-averse, data-driven.</p>
+        <p style="font-family:'Instrument Serif',serif; font-style:italic; font-size:16px; line-height:1.4; color:#111; margin:0 0 14px">"Show me the reduction in wrong-routing."</p>
+        <p style="font-size:13.5px; line-height:1.5; color:#111; margin:auto 0 0"><span style="color:#2A6B62">Needs</span> traceability, safety, measurable outcomes.</p>
+      </div>
+    </div>
+    <div style="border-left:3px solid #2A6B62; padding:6px 0 6px 22px">
+      <p style="font-family:'Instrument Serif',serif; font-size:clamp(20px,2.9vw,25px); line-height:1.35; margin:0; max-width:34ch">The same AI output could not be designed around one user's definition of "good".</p>
+    </div>
+  </section>
+
+  <!-- 04 RESEARCH -->
+  <section style="max-width:1040px; margin:0; padding:80px clamp(24px,5vw,56px) 0 clamp(28px,7vw,80px)">
+    <div id="research" style="scroll-margin-top:90px; display:flex; align-items:baseline; gap:14px; margin-bottom:20px">
+      <span style="font-family:'Instrument Serif',serif; font-size:30px; color:#2A6B62">04</span>
+      <h2 style="font-family:'Instrument Serif',serif; font-weight:400; font-size:28px; letter-spacing:-.3px; margin:0">What the research changed</h2>
+    </div>
+    <p style="font-size:17px; line-height:1.7; color:#111; margin:0 0 30px; max-width:64ch">I studied how information is collected and handed over today, how nurses prioritise a moving queue, what a doctor actually reads before a consultation, and where language, literacy, connectivity and failure get in the way. Then I wrote down what each finding obliges the design to do.</p>
+
+    <p style="font-size:11px; letter-spacing:.09em; text-transform:uppercase; color:#999; margin:0 0 14px">Before → after</p>
+    <div class="agTwo" style="display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-bottom:18px">
+      <div style="border:1px solid #E8E7E4; border-radius:16px; padding:20px 22px; background:#FBFAF8">
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:12px">
+          <span style="font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:#888; background:#F5F4F2; border:1px solid #E4E2DD; padding:5px 11px; border-radius:30px">before</span>
+          <h4 style="font-size:16px; margin:0; letter-spacing:-.2px">The journey as it runs today</h4>
+        </div>
+        <ul style="margin:0; padding-left:18px; font-size:14.5px; line-height:1.65; color:#111">
+          <li>She tells the same story to the registration desk, the nurse, then the doctor.</li>
+          <li>Nothing written down travels with her, so priority is judged by who is standing closest.</li>
+          <li>The doctor's first two minutes go to reconstructing history, not to assessing it.</li>
+        </ul>
+      </div>
+      <div style="border:1px solid #DDEBE7; border-radius:16px; padding:20px 22px; background:#F2F7F5">
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:12px">
+          <span style="font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:#2A6B62; background:#fff; border:1px solid #DDEBE7; padding:5px 11px; border-radius:30px">after</span>
+          <h4 style="font-size:16px; margin:0; letter-spacing:-.2px">The journey the design proposes</h4>
+        </div>
+        <ul style="margin:0; padding-left:18px; font-size:14.5px; line-height:1.65; color:#111">
+          <li>She describes the problem once, in her own language, while she is already waiting.</li>
+          <li>One record moves with her, so the nurse can prioritise at a glance.</li>
+          <li>The doctor opens a summary she has already approved and starts at the assessment.</li>
+        </ul>
+      </div>
+    </div>
+    <figure class="agBand" style="margin:0 0 34px">
+      <div class="tvScroll">
+        <img src="assets/aarogyam/journey-map.svg" alt="Journey map of the current OPD visit: arrival and registration, waiting, nurse screening, consultation and follow-up, with the patient's actions, emotions and pain points at each stage" style="display:block; width:100%; height:auto; min-width:620px">
+      </div>
+      <figcaption style="font-size:13px; color:#888; margin-top:10px">The "before" journey, mapped stage by stage. The repeated retelling and the blind wait are where the emotional line drops, and that is where the design intervenes.</figcaption>
+    </figure>
+
+    <p style="font-size:11px; letter-spacing:.09em; text-transform:uppercase; color:#999; margin:0 0 14px">What I found, and what it obliged</p>
+    <div class="tvScroll" style="overflow-x:auto; margin-bottom:22px">
+      <div style="min-width:660px; display:grid; grid-template-columns:1fr 1fr; gap:1px; background:#E8E7E4; border:1px solid #E8E7E4; border-radius:16px; overflow:hidden">
+        <div style="background:#FBFAF8; padding:11px 18px; font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:#999">What I found</div>
+        <div style="background:#F2F7F5; padding:11px 18px; font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:#2A6B62">UX implication</div>
+        <div style="background:#fff; padding:15px 18px; font-size:14.5px; line-height:1.5; color:#111">Patients repeat the same story at every stage</div>
+        <div style="background:#fff; padding:15px 18px; font-size:14.5px; line-height:1.5; color:#111; font-weight:600">Capture once, carry it forward</div>
+        <div style="background:#fff; padding:15px 18px; font-size:14.5px; line-height:1.5; color:#111">Wide range of languages and literacy levels</div>
+        <div style="background:#fff; padding:15px 18px; font-size:14.5px; line-height:1.5; color:#111; font-weight:600">Voice first, progressive disclosure</div>
+        <div style="background:#fff; padding:15px 18px; font-size:14.5px; line-height:1.5; color:#111">Nurses manage a queue that never stops moving</div>
+        <div style="background:#fff; padding:15px 18px; font-size:14.5px; line-height:1.5; color:#111; font-weight:600">Prioritisation has to be a glance, not a read</div>
+        <div style="background:#fff; padding:15px 18px; font-size:14.5px; line-height:1.5; color:#111">Doctors are already at cognitive capacity</div>
+        <div style="background:#fff; padding:15px 18px; font-size:14.5px; line-height:1.5; color:#111; font-weight:600">Signal before detail</div>
+        <div style="background:#fff; padding:15px 18px; font-size:14.5px; line-height:1.5; color:#111">The model can be uncertain</div>
+        <div style="background:#fff; padding:15px 18px; font-size:14.5px; line-height:1.5; color:#111; font-weight:600">Make uncertainty visible, and give it a path</div>
+        <div style="background:#fff; padding:15px 18px; font-size:14.5px; line-height:1.5; color:#111">Clinical decisions cannot rest on AI alone</div>
+        <div style="background:#fff; padding:15px 18px; font-size:14.5px; line-height:1.5; color:#111; font-weight:600">Human review and override, always reachable</div>
+      </div>
+    </div>
+    <p style="font-size:11px; letter-spacing:.09em; text-transform:uppercase; color:#999; margin:30px 0 14px">How those implications became the flow</p>
+    <div class="agThree" style="display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-bottom:30px">
+      <a href="#edges" style="text-decoration:none; color:inherit; border:1px solid #E8E7E4; border-radius:16px; padding:18px 20px; display:flex; flex-direction:column">
+        <div style="font-size:12px; letter-spacing:.06em; text-transform:uppercase; color:#999; margin-bottom:8px; font-weight:600">Capture once</div>
+        <p style="font-size:14.5px; line-height:1.6; color:#111; margin:0 0 10px">Identity and department come from the hospital's own appointment record, so the intake starts with context instead of asking for it.</p>
+        <p style="font-size:13px; line-height:1.5; color:#2A6B62; margin-top:auto">→ chunk 01, entry</p>
+      </a>
+      <a href="#edges" style="text-decoration:none; color:inherit; border:1px solid #E8E7E4; border-radius:16px; padding:18px 20px; display:flex; flex-direction:column">
+        <div style="font-size:12px; letter-spacing:.06em; text-transform:uppercase; color:#999; margin-bottom:8px; font-weight:600">Voice first</div>
+        <p style="font-size:14.5px; line-height:1.6; color:#111; margin:0 0 10px">The conversation replaces the form, reports stay optional, and a failed upload loops back into the same step rather than the start.</p>
+        <p style="font-size:13px; line-height:1.5; color:#2A6B62; margin-top:auto">→ chunks 02 and 03, prepare and upload</p>
+      </a>
+      <a href="#edges" style="text-decoration:none; color:inherit; border:1px solid #E8E7E4; border-radius:16px; padding:18px 20px; display:flex; flex-direction:column">
+        <div style="font-size:12px; letter-spacing:.06em; text-transform:uppercase; color:#999; margin-bottom:8px; font-weight:600">Human review</div>
+        <p style="font-size:14.5px; line-height:1.6; color:#111; margin:0 0 10px">Nothing reaches the doctor unapproved: the summary is shown back to the patient, and rejecting it returns her to the conversation.</p>
+        <p style="font-size:13px; line-height:1.5; color:#2A6B62; margin-top:auto">→ chunk 04, summary and handoff</p>
+      </a>
+    </div>
+    <div style="border-left:3px solid #2A6B62; padding:6px 0 6px 22px">
+      <p style="font-family:'Instrument Serif',serif; font-size:clamp(20px,2.9vw,25px); line-height:1.35; margin:0; max-width:34ch">The goal was never to redesign the OPD. It was to fit AI into the workflow that already exists.</p>
+    </div>
+  </section>
+
+  <!-- 05 ARCHITECTURE -->
+  <section style="max-width:1040px; margin:0; padding:80px clamp(24px,5vw,56px) 0 clamp(28px,7vw,80px)">
+    <div id="architecture" style="scroll-margin-top:90px; display:flex; align-items:baseline; gap:14px; margin-bottom:20px">
+      <span style="font-family:'Instrument Serif',serif; font-size:30px; color:#2A6B62">05</span>
+      <h2 style="font-family:'Instrument Serif',serif; font-weight:400; font-size:28px; letter-spacing:-.3px; margin:0">I structured the experience as four layers</h2>
+    </div>
+    <p style="font-size:17px; line-height:1.7; color:#111; margin:0 0 26px; max-width:62ch">Rather than four separate interfaces, I treated it as one case moving through four connected layers. That is the UX architecture.</p>
+    <div class="agFour" style="display:grid; grid-template-columns:repeat(4,1fr); gap:14px">
+      <a href="#edges" style="text-decoration:none; color:inherit; border:1px solid #E8E7E4; border-top:3px solid #E4E2DD; border-radius:16px; padding:18px 18px; display:flex; flex-direction:column">
+        <span style="font-family:'Instrument Serif',serif; font-size:24px; color:#2A6B62; line-height:1">01</span>
+        <div style="font-size:12px; letter-spacing:.06em; text-transform:uppercase; color:#999; margin:9px 0 6px; font-weight:600">Input</div>
+        <div style="font-size:14px; font-weight:600; line-height:1.4; margin-bottom:10px">The patient describes the problem</div>
+        <div style="font-size:12.5px; line-height:1.55; color:#111; margin-bottom:12px">QR → department → questions → reports → review → submit</div>
+        <div style="font-size:12.5px; line-height:1.5; color:#888; margin-top:auto; font-family:'Shantell Sans',cursive">can she finish it standing in a queue?</div>
+      </a>
+      <a href="#ailogic" style="text-decoration:none; color:inherit; border:1px solid #E8E7E4; border-top:3px solid #E4E2DD; border-radius:16px; padding:18px 18px; display:flex; flex-direction:column">
+        <span style="font-family:'Instrument Serif',serif; font-size:24px; color:#2A6B62; line-height:1">02</span>
+        <div style="font-size:12px; letter-spacing:.06em; text-transform:uppercase; color:#999; margin:9px 0 6px; font-weight:600">AI processing</div>
+        <div style="font-size:14px; font-weight:600; line-height:1.4; margin-bottom:10px">The system interprets what she said</div>
+        <div style="font-size:12.5px; line-height:1.55; color:#111; margin-bottom:12px">Language → symptoms → red flags → reports → triage signal</div>
+        <div style="font-size:12.5px; line-height:1.5; color:#888; margin-top:auto; font-family:'Shantell Sans',cursive">where does it stop and hand over?</div>
+      </a>
+      <a href="#doctorflow" style="text-decoration:none; color:inherit; border:1px solid #E8E7E4; border-top:3px solid #E4E2DD; border-radius:16px; padding:18px 18px; display:flex; flex-direction:column">
+        <span style="font-family:'Instrument Serif',serif; font-size:24px; color:#2A6B62; line-height:1">03</span>
+        <div style="font-size:12px; letter-spacing:.06em; text-transform:uppercase; color:#999; margin:9px 0 6px; font-weight:600">Information</div>
+        <div style="font-size:14px; font-weight:600; line-height:1.4; margin-bottom:10px">The same case, at the depth each role needs</div>
+        <div style="font-size:12.5px; line-height:1.55; color:#111; margin-bottom:12px">Patient understands · nurse prioritises · doctor assesses</div>
+        <div style="font-size:12.5px; line-height:1.5; color:#888; margin-top:auto; font-family:'Shantell Sans',cursive">what can each person act on?</div>
+      </a>
+      <a href="#handoff" style="text-decoration:none; color:inherit; border:1px solid #E8E7E4; border-top:3px solid #2A6B62; border-radius:16px; padding:18px 18px; display:flex; flex-direction:column">
+        <span style="font-family:'Instrument Serif',serif; font-size:24px; color:#2A6B62; line-height:1">04</span>
+        <div style="font-size:12px; letter-spacing:.06em; text-transform:uppercase; color:#999; margin:9px 0 6px; font-weight:600">Handoff</div>
+        <div style="font-size:14px; font-weight:600; line-height:1.4; margin-bottom:10px">The case moves without starting again</div>
+        <div style="font-size:12.5px; line-height:1.55; color:#111; margin-bottom:12px">Patient → nurse → doctor, one record</div>
+        <div style="font-size:12.5px; line-height:1.5; color:#888; margin-top:auto; font-family:'Shantell Sans',cursive">what survives the seam?</div>
+      </a>
+    </div>
+  </section>
+
+  <!-- 06 THE PATIENT FLOW -->
+  <section style="max-width:1040px; margin:0; padding:80px clamp(24px,5vw,56px) 0 clamp(28px,7vw,80px)">
+    <div id="edges" style="scroll-margin-top:90px; display:flex; align-items:baseline; gap:14px; margin-bottom:20px">
+      <span style="font-family:'Instrument Serif',serif; font-size:30px; color:#2A6B62">06</span>
+      <h2 style="font-family:'Instrument Serif',serif; font-weight:400; font-size:28px; letter-spacing:-.3px; margin:0">The patient flow, in four chunks</h2>
+    </div>
+    <p style="font-size:17px; line-height:1.7; color:#111; margin:0 0 34px; max-width:64ch">Four moments carried the design weight. Each one: what the flow does, what the patient sees, and why it works that way.</p>
+
+    <!-- CHUNK 01 -->
+    <div style="margin-bottom:40px">
+      <div style="display:flex; align-items:center; gap:12px; flex-wrap:wrap; margin-bottom:10px">
+        <span style="font-family:'Instrument Serif',serif; font-size:22px; width:44px; height:44px; flex:none; border-radius:50%; background:#F5F4F2; color:#2A6B62; border:1px solid #E4E2DD; display:flex; align-items:center; justify-content:center">01</span>
+        <h3 style="font-size:19px; margin:0; letter-spacing:-.2px">Entry and department selection</h3>
+        <span style="font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:#888; background:#F5F4F2; border:1px solid #E4E2DD; padding:5px 11px; border-radius:30px; white-space:nowrap">clinical context first</span>
+      </div>
+      <p style="font-size:13.5px; color:#888; margin:0 0 8px; font-family:'Shantell Sans',cursive">the goal → get the right patient into the right department before the AI says a word</p>
+      <p style="font-size:15.5px; line-height:1.65; color:#111; margin:0 0 20px; max-width:64ch">Login with UHID and OTP, land on the dashboard, choose the OPD, and only then open the department-specific conversation. The context is established by the hospital's own identifiers, not by asking the patient to describe where she belongs.</p>
+      <div class="agChunk" style="display:grid; grid-template-columns:300px 1fr; gap:24px; align-items:start">
+        <div style="border:1px solid #E8E7E4; border-radius:16px; background:#FFFFFF; padding:14px; display:flex; justify-content:center"><img src="assets/aarogyam/flow-1-entry.png" alt="Flow: access application, patient login, authenticate, dashboard overview, then select department (Gynecology, ENT, Dermatology)" style="display:block; width:100%; height:auto"></div>
+        <div class="agTwo" style="display:grid; grid-template-columns:1fr 1fr; gap:14px">
+          <figure style="margin:0"><div style="border:1px solid #E8E7E4; border-radius:14px; overflow:hidden; background:#FBFAF8"><img src="assets/aarogyam/screen-1-login.png" alt="Step 1: enter UHID and the OTP sent to the registered mobile, with a fallback to ask hospital staff if no OTP arrives" style="display:block; width:100%; height:auto"></div><figcaption style="font-size:13px; color:#888; margin-top:10px">Step 1 · verify who you are, with a staff fallback if the OTP never comes.</figcaption></figure>
+          <figure style="margin:0"><div style="border:1px solid #E8E7E4; border-radius:14px; overflow:hidden; background:#FBFAF8"><img src="assets/aarogyam/screen-2-dashboard.png" alt="Step 2: greeting by name with UHID, name, gender and age, then a list of the patient's OPD appointments to give information for" style="display:block; width:100%; height:auto"></div><figcaption style="font-size:13px; color:#888; margin-top:10px">Step 2 · her appointments, in her language. One tap per OPD.</figcaption></figure>
+        </div>
+      </div>
+      <div class="agThree" style="display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:20px">
+        <div style="border:1px solid #E8E7E4; border-radius:16px; padding:20px 22px">
+          <p style="font-size:11px; letter-spacing:.09em; text-transform:uppercase; color:#2A6B62; margin:0 0 8px">UX decision</p>
+          <h4 style="font-size:16px; margin:0 0 8px; letter-spacing:-.2px">Departments shown upfront</h4>
+          <p style="font-size:14.5px; line-height:1.6; color:#111; margin:0 0 10px">Patients need to know where their query belongs before starting a conversation. Showing the available departments upfront makes the next step clear and reduces uncertainty about where to begin.</p>
+          <p style="font-size:14px; line-height:1.55; color:#888; margin:0">Picked from her real appointments, so the first question can already be department-specific.</p>
+        </div>
+        <div style="border:1px solid #E8E7E4; border-radius:16px; padding:20px 22px">
+          <p style="font-size:11px; letter-spacing:.09em; text-transform:uppercase; color:#2A6B62; margin:0 0 8px">UX decision</p>
+          <h4 style="font-size:16px; margin:0 0 8px; letter-spacing:-.2px">Progressive onboarding</h4>
+          <p style="font-size:14.5px; line-height:1.6; color:#111; margin:0 0 10px">The first version explained the product before she had done anything. I moved the guidance into the step where it is needed, which is why each screen carries one line of "here is what this step is".</p>
+          <p style="font-size:14px; line-height:1.55; color:#888; margin:0">A patient waiting in an OPD doesn't need a tutorial. She needs to know what to do next.</p>
+        </div>
+        <div style="border:1px solid #E8E7E4; border-radius:16px; padding:20px 22px">
+          <p style="font-size:11px; letter-spacing:.09em; text-transform:uppercase; color:#2A6B62; margin:0 0 8px">UX decision</p>
+          <h4 style="font-size:16px; margin:0 0 8px; letter-spacing:-.2px">Five languages, not one translation</h4>
+          <p style="font-size:14.5px; line-height:1.6; color:#111; margin:0 0 10px">Language is chosen at the top of the very first screen and holds for the whole journey: English, Hindi, Marathi, Tamil, Bengali. It changed how questions were written and spoken, not just which string was shown.</p>
+          <p style="font-size:14px; line-height:1.55; color:#888; margin:0">A translated clinical term is still a clinical term.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CHUNK 02 -->
+    <div style="margin-bottom:40px">
+      <div style="display:flex; align-items:center; gap:12px; flex-wrap:wrap; margin-bottom:10px"><span style="font-family:'Instrument Serif',serif; font-size:22px; width:44px; height:44px; flex:none; border-radius:50%; background:#F5F4F2; color:#2A6B62; border:1px solid #E4E2DD; display:flex; align-items:center; justify-content:center">02</span>        <h3 style="font-size:19px; margin:0; letter-spacing:-.2px">Medical documents</h3><span style="font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:#888; background:#F5F4F2; border:1px solid #E4E2DD; padding:5px 11px; border-radius:30px; white-space:nowrap">optional, not blocking</span></div>
+      <p style="font-size:13.5px; color:#888; margin:0 0 8px; font-family:'Shantell Sans',cursive">the goal → let reports add context without ever becoming a gate</p>
+      <p style="font-size:15.5px; line-height:1.65; color:#111; margin:0 0 20px; max-width:64ch">Documents make the summary better, so the flow asks for them. The branch is symmetrical: no reports goes straight to the chat, reports go through upload and land in the same conversation. I mapped the upload branch separately because that is the one place in the intake that can genuinely break.</p>
+      <div class="agChunk" style="display:grid; grid-template-columns:1fr; gap:24px; align-items:start">
+        <div class="agDuo" style="display:flex; gap:56px; flex-wrap:wrap; align-items:flex-start"><figure style="margin:0"><img src="assets/aarogyam/flow-2-prepare.png" alt="Flow: attach medical documents? No goes straight to the AI chat; Yes goes to upload, success continues to the chat, failure retries. Both paths converge on one conversation." style="display:block; width:auto; max-width:100%; height:auto"><figcaption style="font-size:14px; color:#888; margin-top:16px">The branch. Both answers end in the same conversation.</figcaption></figure><figure style="margin:0"><img src="assets/aarogyam/flow-upload-detail.png" alt="Flow: start upload, select method, camera permission with denied and granted paths, capture or select, choose document type, initiate upload, success continues to chat, failure shows an error and offers retry back into the upload step" style="display:block; width:auto; max-width:100%; height:auto"><figcaption style="font-size:14px; color:#888; margin-top:16px">The upload branch opened up, including permission refusal and retry.</figcaption></figure></div>
+        <div><figure style="margin:0"><img src="assets/aarogyam/screen-3-reports.png" alt="How would you like to add your report? Choose a file, take a photo, or continue without a report" style="display:block; width:100%; height:auto"><figcaption style="font-size:14px; color:#888; margin-top:16px">The step is labelled optional, and "I have no report, continue" is a first-class button rather than fine print.</figcaption></figure></div>
+      </div>
+      <div style="margin-top:34px"><div class="tvScroll" style="overflow-x:auto; margin-bottom:20px"><div style="min-width:760px; display:flex; align-items:stretch; gap:10px"><div style="flex:1; border:1px solid #E8E7E4; border-radius:14px; padding:16px 18px"><p style="font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:#aaa; margin:0 0 6px">01</p><p style="font-size:14px; line-height:1.5; color:#111; margin:0; font-weight:600">Choose a file, or take a photo</p><p style="font-size:13.5px; line-height:1.5; color:#888; margin:6px 0 0">Camera permission is asked at the point of use, not upfront.</p></div><div style="flex:1; border:1px solid #E8E7E4; border-radius:14px; padding:16px 18px"><p style="font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:#aaa; margin:0 0 6px">02</p><p style="font-size:14px; line-height:1.5; color:#111; margin:0; font-weight:600">Label the document type</p><p style="font-size:13.5px; line-height:1.5; color:#888; margin:6px 0 0">Prescription, lab report, discharge summary or other. The type is what makes it useful downstream.</p></div><div style="flex:1; border:1px solid #E8E7E4; border-radius:14px; padding:16px 18px"><p style="font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:#aaa; margin:0 0 6px">03</p><p style="font-size:14px; line-height:1.5; color:#111; margin:0; font-weight:600">Validated, then attached</p><p style="font-size:13.5px; line-height:1.5; color:#888; margin:6px 0 0">One size limit per file, no cap on how many she brings.</p></div><div style="flex:1; border:1px solid #E8E7E4; border-top:3px solid #2A6B62; border-radius:14px; padding:16px 18px"><p style="font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:#2A6B62; margin:0 0 6px">03b</p><p style="font-size:14px; line-height:1.5; color:#111; margin:0; font-weight:600">Failed → error → retry</p><p style="font-size:13.5px; line-height:1.5; color:#888; margin:6px 0 0">Retry re-enters the upload step, never the beginning.</p></div></div></div></div>
+      <div class="agTwo" style="display:grid; grid-template-columns:1fr 1fr; gap:14px">
+        <div style="border:1px solid #E8E7E4; border-radius:16px; padding:20px 22px"><p style="font-size:11px; letter-spacing:.09em; text-transform:uppercase; color:#2A6B62; margin:0 0 8px">UX decision</p><h4 style="font-size:16px; margin:0 0 8px; letter-spacing:-.2px">Documents support the conversation, they don't gate it</h4><p style="font-size:14.5px; line-height:1.6; color:#111; margin:0 0 10px">A patient with no paperwork must never be stuck at this step. Skipping goes straight to the chat, and the summary is still produced.</p><p style="font-size:14px; line-height:1.55; color:#888; margin:0">Reports enrich the case. They don't authorise it.</p></div>
+        <div style="border:1px solid #E8E7E4; border-radius:16px; padding:20px 22px"><p style="font-size:11px; letter-spacing:.09em; text-transform:uppercase; color:#2A6B62; margin:0 0 8px">UX decision</p><h4 style="font-size:16px; margin:0 0 8px; letter-spacing:-.2px">Failure states live in the main flow</h4><p style="font-size:14.5px; line-height:1.6; color:#111; margin:0 0 10px">A refused camera permission, a file that won't validate or an upload that drops all return to the same step with the work kept, and the patient can still move forward without the document.</p><p style="font-size:14px; line-height:1.55; color:#888; margin:0">Nothing in the intake is allowed to dead-end the visit.</p></div>
+      </div>
+    </div>
+
+    <!-- CHUNK 03 -->
+    <div style="margin-bottom:34px">
+      <div style="display:flex; align-items:center; gap:12px; flex-wrap:wrap; margin-bottom:10px">
+        <span style="font-family:'Instrument Serif',serif; font-size:22px; width:44px; height:44px; flex:none; border-radius:50%; background:#F2F7F5; color:#2A6B62; border:1px solid #DDEBE7; display:flex; align-items:center; justify-content:center">03</span>
+        <h3 style="font-size:19px; margin:0; letter-spacing:-.2px">The AI conversation, and the summary she approves</h3>
+        <span style="font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:#2A6B62; background:#F2F7F5; border:1px solid #DDEBE7; padding:5px 11px; border-radius:30px; white-space:nowrap">AI + human control</span>
+      </div>
+      <p style="font-size:13.5px; color:#888; margin:0 0 8px; font-family:'Shantell Sans',cursive">the goal → nothing reaches the doctor that the patient hasn't agreed with</p>
+      <p style="font-size:15.5px; line-height:1.65; color:#111; margin:0 0 20px; max-width:64ch">Either side can end the conversation. The summary is generated and shown back to her: confirm sends it to the doctor, reject returns her to the conversation rather than submitting something she disagrees with.</p>
+      <div class="agChunk" style="display:grid; grid-template-columns:250px 1fr; gap:24px; align-items:start">
+        <div style="border:1px solid #E8E7E4; border-radius:16px; background:#FFFFFF; padding:14px; display:flex; justify-content:center"><img src="assets/aarogyam/flow-3-summary.png" alt="Flow: who ends the conversation, AI completes automatically or patient confirms end, processing engine, AI-generated summary, patient reviews, retake returns to the chat interface, confirm shares with the doctor, submitted status, back to dashboard" style="display:block; width:100%; height:auto"></div>
+        <div class="agTwo" style="display:grid; grid-template-columns:1fr 1fr; gap:14px">
+          <figure style="margin:0"><div style="border:1px solid #E8E7E4; border-radius:14px; overflow:hidden; background:#FBFAF8"><img src="assets/aarogyam/screen-4-chat.png" alt="Step 4: the assistant explains it will ask a few questions to prepare the doctor, the patient answers by voice, and an end-conversation control sits in the header" style="display:block; width:100%; height:auto"></div><figcaption style="font-size:13px; color:#888; margin-top:10px">Step 4 · she speaks, it listens. "End the conversation" stays visible the whole time.</figcaption></figure>
+          <figure style="margin:0"><div style="border:1px solid #E8E7E4; border-radius:14px; overflow:hidden; background:#FBFAF8"><img src="assets/aarogyam/hero-review.png" alt="Step 5: the generated summary with primary concern, history of present illness, relevant medical history and medications, and two actions: send to the doctor, or say the summary is wrong and tell it again" style="display:block; width:100%; height:auto"></div><figcaption style="font-size:13px; color:#888; margin-top:10px">Step 5 · "send to the doctor" sits beside "this is wrong, let me say it again".</figcaption></figure>
+        </div>
+      </div>
+      <div class="agThree" style="display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:20px">
+        <div style="border:1px solid #E8E7E4; border-radius:16px; padding:20px 22px"><p style="font-size:11px; letter-spacing:.09em; text-transform:uppercase; color:#2A6B62; margin:0 0 8px">UX decision</p><h4 style="font-size:16px; margin:0 0 8px; letter-spacing:-.2px">One question at a time</h4><p style="font-size:14.5px; line-height:1.6; color:#111; margin:0 0 10px">The alternative was a long intake form. The conversation asks one thing, waits, and moves on, so she never has to hold five unanswered questions in her head at once.</p><p style="font-size:14px; line-height:1.55; color:#888; margin:0">A form asks everything at once. A conversation asks what it needs next.</p></div>
+        <div style="border:1px solid #E8E7E4; border-radius:16px; padding:20px 22px">
+          <p style="font-size:11px; letter-spacing:.09em; text-transform:uppercase; color:#2A6B62; margin:0 0 8px">UX decision</p>
+          <h4 style="font-size:16px; margin:0 0 8px; letter-spacing:-.2px">Voice instead of typing</h4>
+          <p style="font-size:14.5px; line-height:1.6; color:#111; margin:0 0 10px">Simplifying a form still leaves the keyboard. The conversation step is listen → speak → the system interprets → she confirms → continue, with text as the fallback.</p>
+          <p style="font-size:14px; line-height:1.55; color:#888; margin:0">The point was never to feel AI-powered. It was to let her describe the problem in her own words.</p>
+        </div>
+        <div style="border:1px solid #E8E7E4; border-radius:16px; padding:20px 22px">
+          <p style="font-size:11px; letter-spacing:.09em; text-transform:uppercase; color:#2A6B62; margin:0 0 8px">UX decision</p>
+          <h4 style="font-size:16px; margin:0 0 8px; letter-spacing:-.2px">The patient approves the summary</h4>
+          <p style="font-size:14.5px; line-height:1.6; color:#111; margin:0 0 10px">The AI writes the clinical summary, she approves it, the doctor receives it. Rejection is a one-tap path back into the conversation, not an error.</p>
+          <p style="font-size:14px; line-height:1.55; color:#888; margin:0">That veto is what makes the handoff trustworthy at both ends.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CHUNK 04 -->
+    <div style="margin-bottom:34px">
+      <div style="display:flex; align-items:center; gap:12px; flex-wrap:wrap; margin-bottom:10px"><span style="font-family:'Instrument Serif',serif; font-size:22px; width:44px; height:44px; flex:none; border-radius:50%; background:#F2F7F5; color:#2A6B62; border:1px solid #DDEBE7; display:flex; align-items:center; justify-content:center">04</span>        <h3 style="font-size:19px; margin:0; letter-spacing:-.2px">Sending it to the doctor</h3><span style="font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:#2A6B62; background:#F2F7F5; border:1px solid #DDEBE7; padding:5px 11px; border-radius:30px; white-space:nowrap">the handoff</span></div>
+      <p style="font-size:13.5px; color:#888; margin:0 0 8px; font-family:'Shantell Sans',cursive">the goal → the intake should end as clinical information, not as a finished form</p>
+      <p style="font-size:15.5px; line-height:1.65; color:#111; margin:0 0 20px; max-width:64ch">Confirming shares the summary with her doctor and returns her to the dashboard. That is the moment the patient experience becomes the doctor's pre-read.</p>
+      <div class="tvScroll" style="overflow-x:auto; margin-bottom:20px"><div style="min-width:760px; display:flex; align-items:stretch; gap:10px"><div style="flex:1; border:1px solid #E8E7E4; border-radius:14px; padding:16px 18px"><p style="font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:#aaa; margin:0 0 6px">01</p><p style="font-size:14px; line-height:1.5; color:#111; margin:0; font-weight:600">Confirm the summary</p><p style="font-size:13.5px; line-height:1.5; color:#888; margin:6px 0 0">The last thing she does is agree with what will be read about her.</p></div><div style="flex:1; border:1px solid #E8E7E4; border-radius:14px; padding:16px 18px"><p style="font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:#aaa; margin:0 0 6px">02</p><p style="font-size:14px; line-height:1.5; color:#111; margin:0; font-weight:600">Shared with the doctor</p><p style="font-size:13.5px; line-height:1.5; color:#888; margin:6px 0 0">Attached to the appointment, with her uploaded documents.</p></div><div style="flex:1; border:1px solid #E8E7E4; border-radius:14px; padding:16px 18px"><p style="font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:#aaa; margin:0 0 6px">03</p><p style="font-size:14px; line-height:1.5; color:#111; margin:0; font-weight:600">Submission confirmed</p><p style="font-size:13.5px; line-height:1.5; color:#888; margin:6px 0 0">Plain language: it has been sent, nothing else is needed now.</p></div><div style="flex:1; border:1px solid #E8E7E4; border-top:3px solid #2A6B62; border-radius:14px; padding:16px 18px"><p style="font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:#2A6B62; margin:0 0 6px">04</p><p style="font-size:14px; line-height:1.5; color:#111; margin:0; font-weight:600">Back to the dashboard</p><p style="font-size:13.5px; line-height:1.5; color:#888; margin:6px 0 0">She can still see the appointment, and add a second OPD if she has one.</p></div></div></div>
+      <div style="border:1px solid #E8E7E4; border-radius:16px; padding:22px 24px; max-width:780px"><p style="font-size:11px; letter-spacing:.09em; text-transform:uppercase; color:#2A6B62; margin:0 0 8px">UX decision</p><h4 style="font-size:16px; margin:0 0 8px; letter-spacing:-.2px">Information travels, so the patient doesn't repeat herself</h4><p style="font-size:14.5px; line-height:1.6; color:#111; margin:0 0 10px">Everything she said, and everything she uploaded, moves into the clinical workflow as one record attached to the appointment. The whole point of the intake is that the story survives the handoff.</p><p style="font-size:14px; line-height:1.55; color:#888; margin:0">The submission is not the end of the flow. It is the beginning of the doctor's.</p></div>
+    </div>
+  </section>
+
+  <!-- 07 HANDOFF -->
+  <section style="max-width:1040px; margin:0; padding:80px clamp(24px,5vw,56px) 0 clamp(28px,7vw,80px)">
+    <div id="handoff" style="scroll-margin-top:90px; display:flex; align-items:baseline; gap:14px; margin-bottom:20px"><span style="font-family:'Instrument Serif',serif; font-size:30px; color:#2A6B62">07</span><h2 style="font-family:'Instrument Serif',serif; font-weight:400; font-size:28px; letter-spacing:-.3px; margin:0">From patient input to clinical action</h2></div>
+    <p style="font-size:19px; line-height:1.6; color:#111; margin:0 0 18px; font-weight:500; max-width:52ch">The patient flow only solves half the problem. The information now has to be useful to the doctor without becoming another workflow to manage.</p>
+    <p style="font-size:17px; line-height:1.7; color:#111; margin:0 0 26px; max-width:64ch">Dr. Priya sees a patient every few minutes. If reading the summary costs more time than taking the history herself, she will not open it twice. So I mapped her side of the workflow before designing a single screen for it, including what she does when the summary is missing or half-formed.</p>
+    <figure class="agBand" style="margin:0 0 34px">
+      <div class="tvScroll"><img src="assets/aarogyam/dr-flow-full.png" alt="Doctor task flow: home dashboard, search and select patient, open the electronic health record, generate the AI clinical summary, report available and report complete decisions with request-diagnostic-report and mark-pending-review branches, review the summary, mark the patient attended, rate the AI response, move on to the next patient" style="display:block; width:auto; max-width:100%; height:auto"></div>
+      <figcaption style="font-size:14px; color:#888; margin-top:16px">The doctor task flow, end to end. Two decision points do most of the work: is the report there, and is it complete · tap to enlarge</figcaption>
+    </figure>
+  </section>
+
+  <!-- 08 DOCTOR FLOW -->
+  <section style="max-width:1040px; margin:0; padding:80px clamp(24px,5vw,56px) 0 clamp(28px,7vw,80px)">
+    <div id="doctorflow" style="scroll-margin-top:90px; display:flex; align-items:baseline; gap:14px; margin-bottom:20px"><span style="font-family:'Instrument Serif',serif; font-size:30px; color:#2A6B62">08</span><h2 style="font-family:'Instrument Serif',serif; font-weight:400; font-size:28px; letter-spacing:-.3px; margin:0">The doctor flow, in three chunks</h2></div>
+
+    <div style="margin-bottom:40px">
+      <div style="display:flex; align-items:center; gap:12px; flex-wrap:wrap; margin-bottom:10px"><span style="font-family:'Instrument Serif',serif; font-size:22px; width:44px; height:44px; flex:none; border-radius:50%; background:#F5F4F2; color:#2A6B62; border:1px solid #E4E2DD; display:flex; align-items:center; justify-content:center">01</span>        <h3 style="font-size:19px; margin:0; letter-spacing:-.2px">Finding the patient</h3><span style="font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:#888; background:#F5F4F2; border:1px solid #E4E2DD; padding:5px 11px; border-radius:30px; white-space:nowrap">two entry points</span></div>
+      <p style="font-size:13.5px; color:#888; margin:0 0 8px; font-family:'Shantell Sans',cursive">the goal → reach the right record in one action, whichever way the day is going</p>
+      <p style="font-size:15.5px; line-height:1.65; color:#111; margin:0 0 20px; max-width:64ch">Verification is by employee code and OTP, the same pattern as the patient side. The dashboard then opens on today's list, split by attended and not attended, with a patient ID search sitting directly above it.</p>
+      <div class="tvScroll" style="overflow-x:auto; margin-bottom:20px"><div style="min-width:760px; display:flex; align-items:stretch; gap:10px"><div style="flex:1; border:1px solid #E8E7E4; border-radius:14px; padding:16px 18px"><p style="font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:#aaa; margin:0 0 6px">01</p><p style="font-size:14px; line-height:1.5; color:#111; margin:0; font-weight:600">Doctor verification</p><p style="font-size:13.5px; line-height:1.5; color:#888; margin:6px 0 0">Employee code, OTP, with a staff fallback.</p></div><div style="flex:1; border:1px solid #E8E7E4; border-radius:14px; padding:16px 18px"><p style="font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:#aaa; margin:0 0 6px">02</p><p style="font-size:14px; line-height:1.5; color:#111; margin:0; font-weight:600">Today's patients</p><p style="font-size:13.5px; line-height:1.5; color:#888; margin:6px 0 0">Attended and not-attended counts, at a glance.</p></div><div style="flex:1; border:1px solid #E8E7E4; border-radius:14px; padding:16px 18px"><p style="font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:#aaa; margin:0 0 6px">03</p><p style="font-size:14px; line-height:1.5; color:#111; margin:0; font-weight:600">Or search by patient ID</p><p style="font-size:13.5px; line-height:1.5; color:#888; margin:6px 0 0">For anyone who isn't on today's list.</p></div><div style="flex:1; border:1px solid #E8E7E4; border-top:3px solid #2A6B62; border-radius:14px; padding:16px 18px"><p style="font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:#2A6B62; margin:0 0 6px">04</p><p style="font-size:14px; line-height:1.5; color:#111; margin:0; font-weight:600">Open the record</p><p style="font-size:13.5px; line-height:1.5; color:#888; margin:6px 0 0">One tap from either route.</p></div></div></div>
+      <div style="max-width:780px; margin-bottom:20px"><p style="font-size:11px; letter-spacing:.09em; text-transform:uppercase; color:#2A6B62; margin:0 0 8px">UX decision</p><h4 style="font-size:16px; margin:0 0 8px; letter-spacing:-.2px">Two ways to reach the patient</h4><p style="font-size:15px; line-height:1.65; color:#111; margin:0; max-width:64ch">The expected path is today's appointment list, but OPD days do not run to plan: patients arrive early, get re-routed, or come back after a test. Direct lookup by ID sits at the same level as the list rather than behind a menu, so neither way is the exception.</p></div>
+      <div class="agChunk" style="display:grid; grid-template-columns:1fr; gap:24px">
+        <div class="agTwo" style="display:grid; grid-template-columns:1fr 1fr; gap:14px">
+          <figure style="margin:0"><img src="assets/aarogyam/dr-1-login.png" alt="Doctor verification screen: employee code and OTP, resend code, and contact hospital staff if no OTP arrives" style="display:block; width:100%; height:auto"><figcaption style="font-size:14px; color:#888; margin-top:16px">Verification · the same OTP pattern the patient sees, so the hospital only supports one login story.</figcaption></figure>
+          <figure style="margin:0"><img src="assets/aarogyam/dr-2-dashboard.png" alt="Doctor dashboard: search by patient ID, today's patients with not-attended and attended counts, and a list of patients with status chips" style="display:block; width:100%; height:auto"><figcaption style="font-size:14px; color:#888; margin-top:16px">Dashboard · the queue as a status list. Not attended first, attended still visible.</figcaption></figure>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-bottom:40px">
+      <div style="display:flex; align-items:center; gap:12px; flex-wrap:wrap; margin-bottom:10px"><span style="font-family:'Instrument Serif',serif; font-size:22px; width:44px; height:44px; flex:none; border-radius:50%; background:#F5F4F2; color:#2A6B62; border:1px solid #E4E2DD; display:flex; align-items:center; justify-content:center">02</span>        <h3 style="font-size:19px; margin:0; letter-spacing:-.2px">Reading the AI summary</h3><span style="font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:#888; background:#F5F4F2; border:1px solid #E4E2DD; padding:5px 11px; border-radius:30px; white-space:nowrap">a pre-read</span></div>
+      <p style="font-size:13.5px; color:#888; margin:0 0 8px; font-family:'Shantell Sans',cursive">the goal → everything she needs before the consultation, in one screen she can scan</p>
+      <p style="font-size:15.5px; line-height:1.65; color:#111; margin:0 0 20px; max-width:64ch">The record opens on the latest summary, with earlier ones listed beside it. Structure is fixed: summary, primary concern, history of present illness, relevant medical history, medications, and the patient's own documents one tap away. Two branches are designed for: no report yet means she can request one, and an incomplete report is marked pending review rather than read as fact.</p>
+      <div style="max-width:780px; margin-bottom:20px"><p style="font-size:11px; letter-spacing:.09em; text-transform:uppercase; color:#2A6B62; margin:0 0 8px">UX decision</p><h4 style="font-size:16px; margin:0 0 8px; letter-spacing:-.2px">A pre-read, not another dashboard</h4><p style="font-size:15px; line-height:1.65; color:#111; margin:0; max-width:64ch">She gets what she needs to walk into the consultation prepared, in the order a clinician reads it, with the AI disclaimer stated plainly. Depth stays available (previous summaries, the original documents) but nothing is shown just because the system knows it.</p></div>
+      <div class="agChunk" style="display:grid; grid-template-columns:1fr; gap:24px">
+        <div><figure style="margin:0"><img src="assets/aarogyam/dr-3-summary.png" alt="Diagnosis summary for a patient: patient details, generated summary, primary concern, history of present illness, relevant medical history, medications, an AI-generated disclaimer, thumbs up and down feedback, and a patient attended button" style="display:block; width:100%; height:auto"><figcaption style="font-size:14px; color:#888; margin-top:16px">The pre-read. Everything above the fold is what she needs before the patient sits down; the documents and older summaries stay one tap away.</figcaption></figure></div>
+      </div>
+    </div>
+
+    <div style="margin-bottom:34px">
+      <div style="display:flex; align-items:center; gap:12px; flex-wrap:wrap; margin-bottom:10px"><span style="font-family:'Instrument Serif',serif; font-size:22px; width:44px; height:44px; flex:none; border-radius:50%; background:#F2F7F5; color:#2A6B62; border:1px solid #DDEBE7; display:flex; align-items:center; justify-content:center">03</span>        <h3 style="font-size:19px; margin:0; letter-spacing:-.2px">Acting on it, and rating it</h3><span style="font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:#2A6B62; background:#F2F7F5; border:1px solid #DDEBE7; padding:5px 11px; border-radius:30px; white-space:nowrap">human judgement</span></div>
+      <p style="font-size:13.5px; color:#888; margin:0 0 8px; font-family:'Shantell Sans',cursive">the goal → close the patient, and tell the system whether it helped</p>
+      <p style="font-size:15.5px; line-height:1.65; color:#111; margin:0 0 20px; max-width:64ch">Marking the patient attended updates the queue for everyone watching it, and the same screen carries a one-tap judgement on whether the AI summary was any good. Both controls sit at the foot of the pre-read above, where the doctor already is.</p>
+      <div class="tvScroll" style="overflow-x:auto; margin-bottom:20px"><div style="min-width:760px; display:flex; align-items:stretch; gap:10px"><div style="flex:1; border:1px solid #E8E7E4; border-radius:14px; padding:16px 18px"><p style="font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:#aaa; margin:0 0 6px">01</p><p style="font-size:14px; line-height:1.5; color:#111; margin:0; font-weight:600">Mark patient attended</p><p style="font-size:13.5px; line-height:1.5; color:#888; margin:6px 0 0">Status flips on the dashboard immediately.</p></div><div style="flex:1; border:1px solid #E8E7E4; border-radius:14px; padding:16px 18px"><p style="font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:#aaa; margin:0 0 6px">02</p><p style="font-size:14px; line-height:1.5; color:#111; margin:0; font-weight:600">Confirmation</p><p style="font-size:13.5px; line-height:1.5; color:#888; margin:6px 0 0">Visible enough to trust, quiet enough to ignore.</p></div><div style="flex:1; border:1px solid #E8E7E4; border-radius:14px; padding:16px 18px"><p style="font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:#aaa; margin:0 0 6px">03</p><p style="font-size:14px; line-height:1.5; color:#111; margin:0; font-weight:600">Rate the AI summary</p><p style="font-size:13.5px; line-height:1.5; color:#888; margin:6px 0 0">Thumbs up or down, no form, no rating scale.</p></div><div style="flex:1; border:1px solid #E8E7E4; border-top:3px solid #2A6B62; border-radius:14px; padding:16px 18px"><p style="font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:#2A6B62; margin:0 0 6px">04</p><p style="font-size:14px; line-height:1.5; color:#111; margin:0; font-weight:600">Next patient</p><p style="font-size:13.5px; line-height:1.5; color:#888; margin:6px 0 0">Straight back to the list.</p></div></div></div>
+      <div style="max-width:780px"><p style="font-size:11px; letter-spacing:.09em; text-transform:uppercase; color:#2A6B62; margin:0 0 8px">UX decision</p><h4 style="font-size:16px; margin:0 0 8px; letter-spacing:-.2px">Human judgement stays in the loop</h4><p style="font-size:15px; line-height:1.65; color:#111; margin:0 0 10px; max-width:64ch">The summary supports the consultation, it does not conclude it. The feedback control is placed at the point where the doctor has just judged the summary against the actual patient, which is the only moment that rating means anything.</p><p style="font-size:14px; line-height:1.55; color:#888; margin:0">If rating the AI costs more than one tap, it will not happen on a 60-patient day.</p></div>
+    </div>
+  </section>
+
+  <!-- 09 FAILURE STATES -->
+  <section style="max-width:1040px; margin:0; padding:80px clamp(24px,5vw,56px) 0 clamp(28px,7vw,80px)">
+    <div id="failures" style="scroll-margin-top:90px; display:flex; align-items:baseline; gap:14px; margin-bottom:20px"><span style="font-family:'Instrument Serif',serif; font-size:30px; color:#2A6B62">09</span><h2 style="font-family:'Instrument Serif',serif; font-weight:400; font-size:28px; letter-spacing:-.3px; margin:0">What happens when it fails</h2></div>
+    <p style="font-size:17px; line-height:1.7; color:#111; margin:0 0 26px; max-width:64ch">A clinical workflow cannot be designed on the happy path. These are the breaks I mapped recovery for, on both sides of the handoff.</p>
+    <div class="agFour" style="display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin-bottom:24px">
+      <div style="border:1px solid #E8E7E4; border-radius:16px; padding:20px 22px"><p style="font-size:11px; letter-spacing:.09em; text-transform:uppercase; color:#999; margin:0 0 8px">Upload fails</p><p style="font-size:14.5px; line-height:1.6; color:#111; margin:0 0 10px; font-weight:600">Error → retry into the same step → or continue without it</p><p style="font-size:14px; line-height:1.55; color:#888; margin:0">A bad photo costs one action, not the whole intake.</p></div>
+      <div style="border:1px solid #E8E7E4; border-radius:16px; padding:20px 22px"><p style="font-size:11px; letter-spacing:.09em; text-transform:uppercase; color:#999; margin:0 0 8px">She leaves mid-way</p><p style="font-size:14.5px; line-height:1.6; color:#111; margin:0 0 10px; font-weight:600">Progress saved → return → resume</p><p style="font-size:14px; line-height:1.55; color:#888; margin:0">A four-hour visit shouldn't reset the intake.</p></div>
+      <div style="border:1px solid #E8E7E4; border-radius:16px; padding:20px 22px"><p style="font-size:11px; letter-spacing:.09em; text-transform:uppercase; color:#999; margin:0 0 8px">No report for the doctor</p><p style="font-size:14.5px; line-height:1.6; color:#111; margin:0 0 10px; font-weight:600">Report not available → request a diagnostic report</p><p style="font-size:14px; line-height:1.55; color:#888; margin:0">The consultation continues the way it always did, with an action instead of an empty screen.</p></div>
+      <div style="border:1px solid #E8E7E4; border-top:3px solid #2A6B62; border-radius:16px; padding:20px 22px"><p style="font-size:11px; letter-spacing:.09em; text-transform:uppercase; color:#999; margin:0 0 8px">Half-formed summary</p><p style="font-size:14.5px; line-height:1.6; color:#111; margin:0 0 10px; font-weight:600">Incomplete → mark pending review → back to the record</p><p style="font-size:14px; line-height:1.55; color:#888; margin:0">An incomplete summary is labelled as incomplete, never presented as the full picture.</p></div>
+    </div>
+    <div style="border-left:3px solid #2A6B62; padding:6px 0 6px 22px">
+      <p style="font-size:16px; line-height:1.65; color:#111; margin:0; max-width:64ch">Every one of these was drawn into the main flow diagram rather than kept in a separate edge-case list, because in a hospital the recovery path is the experience about as often as the happy path is.</p>
+    </div>
+  </section>
+
+  <!-- 10 AI BOUNDARIES -->
+  <section style="max-width:1040px; margin:0; padding:80px clamp(24px,5vw,56px) 0 clamp(28px,7vw,80px)">
+    <div id="ailogic" style="scroll-margin-top:90px; display:flex; align-items:baseline; gap:14px; margin-bottom:20px">
+      <span style="font-family:'Instrument Serif',serif; font-size:30px; color:#2A6B62">10</span>
+      <h2 style="font-family:'Instrument Serif',serif; font-weight:400; font-size:28px; letter-spacing:-.3px; margin:0">What happens between input and clinical action</h2>
+    </div>
+    <p style="font-size:17px; line-height:1.7; color:#111; margin:0 0 26px; max-width:64ch">I didn't treat the model as a box that returns an answer. I mapped where it may interpret, and where a human has to stay in the loop.</p>
+    <figure style="margin:0 0 24px">
+      <div class="tvScroll" style="overflow-x:auto; border:1px solid #E8E7E4; border-radius:18px; background:#FFFFFF; padding:16px; display:flex; justify-content:flex-start"><img src="assets/aarogyam/ai-decision-flow.svg" alt="AI decision flow: patient input, interpretation, red-flag detection, report extraction, triage signal, then human review before clinical action, with a low-confidence branch to review" style="display:block; width:100%; max-width:680px; height:auto"></div>
+      <figcaption style="font-size:13.5px; color:#888; margin-top:12px">Where the system may decide, and where it must stop and ask · tap to enlarge</figcaption>
+    </figure>
+    <div class="agTwo" style="display:grid; grid-template-columns:1fr 1fr; gap:12px">
+      <div style="border:1px solid #E8E7E4; border-radius:18px; padding:24px 26px">
+        <span style="font-family:'Instrument Serif',serif; font-size:24px; color:#2A6B62; line-height:1">01</span>
+        <h3 style="font-size:17px; margin:10px 0 8px; letter-spacing:-.2px">AI assists, it doesn't quietly decide</h3>
+        <p style="font-size:14.5px; line-height:1.6; color:#111; margin:0">The output is a recommendation that supports the workflow. It never replaces the clinical judgement at the end of it.</p>
+      </div>
+      <div style="border:1px solid #E8E7E4; border-radius:18px; padding:24px 26px">
+        <span style="font-family:'Instrument Serif',serif; font-size:24px; color:#2A6B62; line-height:1">02</span>
+        <h3 style="font-size:17px; margin:10px 0 8px; letter-spacing:-.2px">Uncertainty needs a path, not a hiding place</h3>
+        <p style="font-size:14.5px; line-height:1.6; color:#111; margin:0">When the system cannot interpret something confidently, the interface says what happens next instead of smoothing it over.</p>
+      </div>
+    </div>
+    <div style="margin-top:24px; border:1px solid #E4E2DD; background:#F5F4F2; border-radius:18px; padding:24px 26px; display:grid; grid-template-columns:44px 1fr; gap:18px">
+      <span style="font-family:'Instrument Serif',serif; font-size:30px; color:#2A6B62; line-height:1">+</span>
+      <div>
+        <h3 style="font-size:17px; margin:0 0 8px">Override is a feature, not a failure</h3>
+        <p style="font-size:15px; line-height:1.65; color:#111; margin:0 0 12px">If a clinician disagrees with the AI's reading they should be able to change it without fighting the interface: <strong>AI suggests → clinician reviews → clinician overrides → the case moves on</strong>.</p>
+        <p style="font-size:15px; line-height:1.65; color:#111; margin:0">So the expected 10–20% clinician override was never something to design away. A system nobody challenges may not be trusted. It may just be a system people stopped reading.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 11 TARGETS -->
+  <section style="max-width:1040px; margin:0; padding:80px clamp(24px,5vw,56px) 0 clamp(28px,7vw,80px)">
+    <div id="targets" style="scroll-margin-top:90px; display:flex; align-items:baseline; gap:14px; margin-bottom:14px">
+      <span style="font-family:'Instrument Serif',serif; font-size:30px; color:#2A6B62">11</span>
+      <h2 style="font-family:'Instrument Serif',serif; font-weight:400; font-size:28px; letter-spacing:-.3px; margin:0">How we defined success</h2>
+    </div>
+    <p style="font-size:15px; line-height:1.7; color:#666; margin:0 0 26px; max-width:62ch">These are the targets we set to judge the experience, measured from the journey outward rather than from model accuracy inward. They are success criteria, not results we have reported.</p>
+    <div style="display:flex; flex-direction:column; gap:20px">
+      <div>
+        <p style="font-size:13px; letter-spacing:.1em; text-transform:uppercase; color:#999; margin:0 0 12px">Less friction in the intake</p>
+        <div class="agFour" style="display:grid; grid-template-columns:repeat(4,1fr); gap:12px">
+          <div style="border:1px solid #E8E7E4; border-radius:14px; padding:18px 20px"><div style="font-family:'Instrument Serif',serif; font-size:30px; line-height:1; color:#111">&gt;60%</div><p style="font-size:13.5px; color:#888; margin:8px 0 0; line-height:1.45">QR scan → intake started</p></div>
+          <div style="border:1px solid #E8E7E4; border-radius:14px; padding:18px 20px"><div style="font-family:'Instrument Serif',serif; font-size:30px; line-height:1; color:#111">&gt;75%</div><p style="font-size:13.5px; color:#888; margin:8px 0 0; line-height:1.45">intake → submitted</p></div>
+          <div style="border:1px solid #E8E7E4; border-radius:14px; padding:18px 20px"><div style="font-family:'Instrument Serif',serif; font-size:30px; line-height:1; color:#111">&lt;15%</div><p style="font-size:13.5px; color:#888; margin:8px 0 0; line-height:1.45">step-level drop-off</p></div>
+          <div style="border:1px solid #E8E7E4; border-radius:14px; padding:18px 20px"><div style="font-family:'Instrument Serif',serif; font-size:30px; line-height:1; color:#111">&lt;3</div><p style="font-size:13.5px; color:#888; margin:8px 0 0; line-height:1.45">errors per 100 sessions</p></div>
+        </div>
+      </div>
+      <div>
+        <p style="font-size:13px; letter-spacing:.1em; text-transform:uppercase; color:#999; margin:0 0 12px">Faster movement through the OPD</p>
+        <div class="agThree" style="display:grid; grid-template-columns:repeat(3,1fr); gap:12px">
+          <div style="border:1px solid #E8E7E4; border-radius:14px; padding:18px 20px"><div style="font-family:'Instrument Serif',serif; font-size:26px; line-height:1.15; color:#111">~45 → &lt;12 min</div><p style="font-size:13.5px; color:#888; margin:8px 0 0; line-height:1.45">time to correct routing</p></div>
+          <div style="border:1px solid #E8E7E4; border-radius:14px; padding:18px 20px"><div style="font-family:'Instrument Serif',serif; font-size:26px; line-height:1.15; color:#111">~22% → ≤8%</div><p style="font-size:13.5px; color:#888; margin:8px 0 0; line-height:1.45">wrong-routing</p></div>
+          <div style="border:1px solid #E8E7E4; border-radius:14px; padding:18px 20px"><div style="font-family:'Instrument Serif',serif; font-size:26px; line-height:1.15; color:#111">8–12 → ≤4 min</div><p style="font-size:13.5px; color:#888; margin:8px 0 0; line-height:1.45">resident history-taking</p></div>
+        </div>
+      </div>
+      <div>
+        <p style="font-size:13px; letter-spacing:.1em; text-transform:uppercase; color:#2A6B62; margin:0 0 12px">Human and AI together, the ones that matter most</p>
+        <div class="agFour" style="display:grid; grid-template-columns:repeat(4,1fr); gap:12px">
+          <div style="border:1px solid #DDEBE7; background:#F2F7F5; border-radius:14px; padding:18px 20px"><div style="font-family:'Instrument Serif',serif; font-size:30px; line-height:1; color:#2A6B62">10–20%</div><p style="font-size:13.5px; color:#111; margin:8px 0 0; line-height:1.45">clinician override, expected not eliminated</p></div>
+          <div style="border:1px solid #DDEBE7; background:#F2F7F5; border-radius:14px; padding:18px 20px"><div style="font-family:'Instrument Serif',serif; font-size:30px; line-height:1; color:#2A6B62">≥87%</div><p style="font-size:13.5px; color:#111; margin:8px 0 0; line-height:1.45">AI and clinician concordance</p></div>
+          <div style="border:1px solid #DDEBE7; background:#F2F7F5; border-radius:14px; padding:18px 20px"><div style="font-family:'Instrument Serif',serif; font-size:30px; line-height:1; color:#2A6B62">&lt;2 min</div><p style="font-size:13.5px; color:#111; margin:8px 0 0; line-height:1.45">urgent alert acknowledgement</p></div>
+          <div style="border:1px solid #DDEBE7; background:#F2F7F5; border-radius:14px; padding:18px 20px"><div style="font-family:'Instrument Serif',serif; font-size:30px; line-height:1; color:#2A6B62">0</div><p style="font-size:13.5px; color:#111; margin:8px 0 0; line-height:1.45">AI-attributed adverse events</p></div>
+        </div>
+      </div>
+    </div>
+    <div style="margin-top:24px; border-left:3px solid #2A6B62; padding:6px 0 6px 22px">
+      <p style="font-size:16px; line-height:1.65; color:#111; margin:0; max-width:64ch">Success was never getting people to use AI. It was removing repetition and friction while keeping clinical judgement in the loop.</p>
+    </div>
+  </section>
+
+  <!-- 12 LEARNINGS -->
+  <section style="max-width:1040px; margin:0; padding:80px clamp(24px,5vw,56px) 0 clamp(28px,7vw,80px)">
+    <div id="learnings" style="scroll-margin-top:90px; display:flex; align-items:baseline; gap:14px; margin-bottom:24px">
+      <span style="font-family:'Instrument Serif',serif; font-size:30px; color:#2A6B62">12</span>
+      <h2 style="font-family:'Instrument Serif',serif; font-weight:400; font-size:28px; letter-spacing:-.3px; margin:0">What I learned, and what I'd do differently</h2>
+    </div>
+    <div class="agThree" style="display:grid; grid-template-columns:repeat(3,1fr); gap:12px">
+      <div style="background:#F5F4F2; border-radius:18px; padding:26px">
+        <p style="font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:#999; margin:0 0 14px">AI UX is boundary work</p>
+        <p style="font-size:15.5px; line-height:1.65; color:#111; margin:0">The interesting decisions weren't about making AI look impressive. They were about what it may do, where it may be unsure, when it should stop, and who takes over.</p>
+      </div>
+      <div style="background:#F5F4F2; border-radius:18px; padding:26px">
+        <p style="font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:#999; margin:0 0 14px">The hard problems sat between screens</p>
+        <p style="font-size:15.5px; line-height:1.65; color:#111; margin:0">Handoffs, language, uncertainty, failure and trust. None of them belong to a single screen, which is exactly why they get skipped.</p>
+      </div>
+      <div style="background:#F5F4F2; border-radius:18px; padding:26px">
+        <p style="font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:#999; margin:0 0 14px">What I'd do differently</p>
+        <p style="font-size:15.5px; line-height:1.65; color:#111; margin:0">Get into the real OPD earlier and test under actual queue pressure, especially with nurses and with patients who have low digital confidence. That is where the voice and onboarding assumptions would either hold or break.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section style="max-width:1040px; margin:0; padding:88px clamp(24px,5vw,56px) 88px clamp(28px,7vw,80px); text-align:left">
+    <span style="font-family:'Shantell Sans',cursive; font-size:16px; color:#888">thanks for reading →</span>
+    <h2 style="font-family:'Instrument Serif',serif; font-weight:400; font-size:clamp(32px,5vw,54px); line-height:1.05; letter-spacing:-.8px; margin:14px 0 28px; max-width:16ch">Want to talk through it?</h2>
+    <div style="display:flex; gap:12px; justify-content:flex-start; flex-wrap:wrap">
+      <a href="mailto:gayatribodke18@gmail.com" class="tvBtn" style="text-decoration:none; font-size:15px; padding:14px 28px; border-radius:30px; background:#111111; color:#FFFFFF">Get in touch</a>
+      <a href="index.html#work" class="tvBtn" style="text-decoration:none; font-size:15px; padding:14px 28px; border-radius:30px; border:1.5px solid #DDDCD9; color:#111111">See more work</a>
+    </div>
+  </section>
+
+  <!-- NEXT CASE STUDY -->
+  <a href="tvak.html" class="tvNext" style="display:block; text-decoration:none; color:#111111; border-top:1px solid #E8E7E4; background:#FBFAF8">
+    <div style="max-width:1180px; margin:0; padding:52px clamp(24px,5vw,56px) 52px clamp(28px,7vw,80px); display:flex; align-items:center; justify-content:space-between; gap:24px">
+      <div>
+        <div style="font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:#9a958d; margin-bottom:12px">next case study</div>
+        <div class="tvNextName" style="font-family:'Instrument Serif',serif; font-size:clamp(34px,5vw,52px); line-height:1; letter-spacing:-.5px; transition:color .18s ease">TVAK</div>
+      </div>
+      <span class="tvNextArrow" style="font-family:'Instrument Serif',serif; font-size:clamp(34px,5vw,52px); color:#2A6B62; line-height:1">→</span>
+    </div>
+  </a>
+
+  <footer style="">
+    <div class="lpFootArt" aria-hidden="true" style="position:relative; left:50%; transform:translateX(-50%); width:100vw; height:clamp(220px,30vw,340px); overflow:hidden; pointer-events:none">
+      <img src="assets/footer-landscape.png" alt="" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center 88%; display:block">
+      <span class="lpFootFade" style="position:absolute; inset:0; background:linear-gradient(180deg,#FFFFFF 0%,rgba(255,255,255,.7) 26%,rgba(255,255,255,0) 62%)"></span>
+    </div>
+
+    <div style="max-width:1180px; margin:0; padding:24px clamp(24px,5vw,56px) 40px clamp(28px,7vw,80px); display:flex; align-items:center; justify-content:space-between; gap:16px; font-size:12.5px; color:#B0B0B0">
+      <span style="font-family:'Instrument Serif',serif; font-style:italic; font-size:16px; color:#999">Gayatri Bodke</span>
+      <span>© 2026 · Product Designer</span>
+    </div>
+  </footer>
+
+  {{ overlay }}
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { lightbox: null };
+    this.rootRef = React.createRef();
+  }
+  componentDidMount() {
+    const root = this.rootRef.current; if (!root) return;
+    const rx = /(handoff-swimlane|journey-map|ai-decision-flow|personas)\.svg|(hero-review|flow-1-entry|flow-2-prepare|flow-3-summary|flow-upload-detail|dr-flow-full|dr-1-login|dr-2-dashboard|dr-3-summary|screen-1-login|screen-2-dashboard|screen-3-reports|screen-4-chat)\.png/i;
+    this._onClick = (e) => {
+      const img = e.target && e.target.closest ? e.target.closest('img') : null;
+      if (!img) return;
+      const src = img.getAttribute('src') || '';
+      if (rx.test(src)) this.setState({ lightbox: src });
+    };
+    root.addEventListener('click', this._onClick);
+    const mark = () => { root.querySelectorAll('img').forEach(im => { if (rx.test(im.getAttribute('src') || '')) im.style.cursor = 'zoom-in'; }); };
+    mark();
+    this._mo = new MutationObserver(mark);
+    this._mo.observe(root, { childList: true, subtree: true });
+    this._onKey = (e) => { if (e.key === 'Escape' && this.state.lightbox) this.setState({ lightbox: null }); };
+    window.addEventListener('keydown', this._onKey);
+  }
+  componentWillUnmount() {
+    const root = this.rootRef.current;
+    if (root && this._onClick) root.removeEventListener('click', this._onClick);
+    if (this._mo) this._mo.disconnect();
+    if (this._onKey) window.removeEventListener('keydown', this._onKey);
+  }
+  renderOverlay() {
+    const src = this.state.lightbox;
+    if (!src) return null;
+    const close = () => this.setState({ lightbox: null });
+    return React.createElement('div', {
+      onClick: close,
+      style: { position: 'fixed', inset: 0, zIndex: 120, background: 'rgba(20,20,18,.86)', backdropFilter: 'blur(5px)', WebkitBackdropFilter: 'blur(5px)', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '4vw', cursor: 'zoom-out' }
+    }, [
+      React.createElement('img', { key: 'img', src, alt: 'Enlarged diagram', style: { maxWidth: '94vw', maxHeight: '90vh', width: 'auto', height: 'auto', borderRadius: '12px', background: '#fff', boxShadow: '0 40px 100px rgba(0,0,0,.55)' } }),
+      React.createElement('button', { key: 'btn', onClick: close, 'aria-label': 'Close', style: { position: 'fixed', top: '20px', right: '24px', width: '42px', height: '42px', borderRadius: '50%', border: 'none', background: 'rgba(255,255,255,.14)', color: '#fff', fontSize: '24px', lineHeight: 1, cursor: 'pointer' } }, '\u00d7'),
+      React.createElement('div', { key: 'hint', style: { position: 'fixed', bottom: '22px', left: '50%', transform: 'translateX(-50%)', fontFamily: "'Hanken Grotesk',system-ui,sans-serif", fontSize: '13px', color: 'rgba(255,255,255,.7)' } }, 'tap anywhere to close')
+    ]);
+  }
+  renderVals() {
+    return { rootRef: this.rootRef, overlay: this.renderOverlay() };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<script>(function(){try{var s=localStorage.getItem('gb-theme');var d=s==='dark'||(!s&&window.matchMedia&&window.matchMedia('(prefers-color-scheme:dark)').matches);if(d){document.documentElement.setAttribute('data-gb-theme','dark');var t=document.createElement('style');t.id='gb-preboot';t.textContent='html,body{background:#15130F!important}body{opacity:0}';(document.head||document.documentElement).appendChild(t);setTimeout(function(){var g=document.getElementById('gb-preboot');if(g&&g.textContent.indexOf('opacity:0')>-1){g.textContent='html,body{background:#15130F}';}},1200);}}catch(e){}})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mai — AI health companion · Gayatri Bodke</title>
+<meta name="description" content="An AI health companion for women: the research and behaviour-design thinking behind it.">
+<meta name="color-scheme" content="light dark">
+<meta property="og:title" content="Mai — AI health companion · Gayatri Bodke">
+<meta property="og:description" content="An AI health companion for women: the research and behaviour-design thinking behind it.">
+<meta property="og:type" content="website">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Hanken+Grotesk:wght@400;500;600;700&family=Shantell+Sans:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: #FFFFFF; }
+  html { scroll-behavior: smooth; }
+  a { color: #111111; }
+  a:hover { color: #2A6B62; }
+  ::selection { background: #D8EAE5; }
+  .tvBtn { transition: transform .2s ease; }
+  .tvBtn:hover { transform: translateY(-2px); }
+  .tvNavNext:hover { color: #2A6B62 !important; }
+  .tvNext { transition: background .25s ease; }
+  .tvNext:hover { background: #F5F4F2 !important; }
+  .csRail::before { content:""; position:absolute; inset:-14px -16px; border-radius:16px; background:rgba(255,255,255,.86); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); opacity:0; transition:opacity .25s ease; z-index:-1; }
+  .csRail:hover::before { opacity: 1; }
+  .csTop:hover { background:#111111 !important; color:#FFFFFF !important; border-color:#111111 !important; }
+  @media (max-width: 1180px) { .csRail { display: none !important; } }
+  @media (max-width: 640px) { .tvNavNext { display: none !important; } }
+  @media (max-width: 900px) {
+    [data-mai] .maiTwo { grid-template-columns: 1fr !important; gap: 34px !important; }
+    [data-mai] .maiThree { grid-template-columns: 1fr !important; }
+  }
+  @media (max-width: 720px) {
+    [data-mai] section { padding-left: 24px !important; padding-right: 24px !important; }
+    [data-mai] .maiMeta { gap: 18px 26px !important; }
+  }
+  html[data-gb-theme="dark"] .lpFootArt img { filter: brightness(.55) saturate(.72); }
+  html[data-gb-theme="dark"] .lpFootFade { background: linear-gradient(180deg,#141310 0%,rgba(20,19,16,.72) 26%,rgba(20,19,16,0) 62%) !important; }
+</style>
+<script src="./page-loader.js"></script>
+<script src="./case-nav.js"></script>
+<script src="./theme-toggle.js"></script>
+<template id="__bundler_thumbnail">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#FFFFFF"/><rect x="10" y="10" width="80" height="80" rx="16" fill="#FBE7A1"/><text x="50" y="63" font-family="Georgia,serif" font-size="30" fill="#5A4A1A" text-anchor="middle">MAI</text></svg>
+</template>
+</helmet>
+<div data-mai data-screen-label="Mai Case Study" style="font-family:'Hanken Grotesk',system-ui,sans-serif; background:#FFFFFF; color:#111111; min-height:100vh; overflow-x:clip">
+
+  <!-- SECTION RAIL -->
+  <nav class="csRail" aria-label="Jump to section" style="position:fixed; right:30px; top:50%; transform:translateY(-50%); z-index:25; display:flex; flex-direction:column; gap:6px; align-items:flex-end">
+    <a class="railItem" data-nav="context" href="#context" style="display:flex; align-items:center; gap:12px; text-decoration:none"><span class="railLabel" style="font-size:12.5px; color:#9a958d; white-space:nowrap; opacity:0; transform:translateX(6px); transition:opacity .25s ease, transform .25s ease, color .25s ease">Context</span><span class="railTick" style="width:16px; height:2px; border-radius:2px; background:#DDDCD9; transition:width .25s ease, background .25s ease"></span></a>
+    <a class="railItem" data-nav="problem" href="#problem" style="display:flex; align-items:center; gap:12px; text-decoration:none"><span class="railLabel" style="font-size:12.5px; color:#9a958d; white-space:nowrap; opacity:0; transform:translateX(6px); transition:opacity .25s ease, transform .25s ease, color .25s ease">The problem</span><span class="railTick" style="width:16px; height:2px; border-radius:2px; background:#DDDCD9; transition:width .25s ease, background .25s ease"></span></a>
+    <a class="railItem" data-nav="approach" href="#approach" style="display:flex; align-items:center; gap:12px; text-decoration:none"><span class="railLabel" style="font-size:12.5px; color:#9a958d; white-space:nowrap; opacity:0; transform:translateX(6px); transition:opacity .25s ease, transform .25s ease, color .25s ease">Approach</span><span class="railTick" style="width:16px; height:2px; border-radius:2px; background:#DDDCD9; transition:width .25s ease, background .25s ease"></span></a>
+    <a class="railItem" data-nav="decision" href="#decision" style="display:flex; align-items:center; gap:12px; text-decoration:none"><span class="railLabel" style="font-size:12.5px; color:#9a958d; white-space:nowrap; opacity:0; transform:translateX(6px); transition:opacity .25s ease, transform .25s ease, color .25s ease">A decision</span><span class="railTick" style="width:16px; height:2px; border-radius:2px; background:#DDDCD9; transition:width .25s ease, background .25s ease"></span></a>
+    <a class="railItem" data-nav="share" href="#share" style="display:flex; align-items:center; gap:12px; text-decoration:none"><span class="railLabel" style="font-size:12.5px; color:#9a958d; white-space:nowrap; opacity:0; transform:translateX(6px); transition:opacity .25s ease, transform .25s ease, color .25s ease">What I can share</span><span class="railTick" style="width:16px; height:2px; border-radius:2px; background:#DDDCD9; transition:width .25s ease, background .25s ease"></span></a>
+    <a class="railItem" data-nav="headed" href="#headed" style="display:flex; align-items:center; gap:12px; text-decoration:none"><span class="railLabel" style="font-size:12.5px; color:#9a958d; white-space:nowrap; opacity:0; transform:translateX(6px); transition:opacity .25s ease, transform .25s ease, color .25s ease">Where it's headed</span><span class="railTick" style="width:16px; height:2px; border-radius:2px; background:#DDDCD9; transition:width .25s ease, background .25s ease"></span></a>
+  </nav>
+
+  <!-- BACK TO TOP -->
+  <a class="csTop" href="#top" aria-label="Back to top" style="position:fixed; right:26px; bottom:26px; z-index:30; display:inline-flex; align-items:center; gap:8px; padding:10px 17px; border-radius:30px; border:1px solid #E8E7E4; background:rgba(255,255,255,.9); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); color:#111111; font-size:13.5px; line-height:1; text-decoration:none; cursor:pointer; box-shadow:0 10px 26px rgba(36,31,24,.12); opacity:0; pointer-events:none; transition:opacity .3s ease, background .18s ease, color .18s ease, border-color .18s ease">↑ Top</a>
+
+  <!-- NAV -->
+  <header id="top" style="position:sticky; top:0; z-index:20; background:rgba(255,255,255,.85); backdrop-filter:blur(10px); border-bottom:1px solid #E8E7E4">
+    <div style="max-width:1180px; margin:0; display:flex; align-items:center; justify-content:space-between; gap:16px; padding:15px clamp(24px,5vw,56px) 15px clamp(28px,7vw,80px)">
+      <a href="index.html" style="text-decoration:none; color:#111111; font-size:14px; display:inline-flex; align-items:center; gap:8px">← All work</a>
+      <div style="display:flex; align-items:center; gap:22px">
+        <a href="sts.html" class="tvNavNext" style="text-decoration:none; color:#111111; font-size:13.5px; white-space:nowrap; display:inline-flex; align-items:center; gap:8px"><span style="color:#888">next</span> STS →</a>
+        <a href="mailto:gayatribodke18@gmail.com" class="tvBtn" style="text-decoration:none; color:#FFFFFF; background:#111111; padding:9px 18px; border-radius:30px; font-size:13.5px; white-space:nowrap">Get in touch</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section style="max-width:1040px; margin:0; padding:80px clamp(24px,5vw,56px) 0 clamp(28px,7vw,80px)">
+    <div style="display:flex; align-items:center; gap:12px; flex-wrap:wrap; margin-bottom:22px">
+      <span style="font-size:11.5px; letter-spacing:.1em; text-transform:uppercase; color:#2A6B62">Mai · 2026</span>
+      <span style="width:4px; height:4px; border-radius:50%; background:#DDDCD9"></span>
+      <span style="font-size:11.5px; letter-spacing:.1em; text-transform:uppercase; color:#888">Women's health · behaviour design</span>
+      <span style="display:inline-flex; align-items:center; gap:7px; font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:#8A6417; background:#FDF8ED; border:1px solid #EFE0BD; padding:4px 10px; border-radius:30px">Under NDA · overview only</span>
+    </div>
+    <h1 style="font-family:'Instrument Serif',serif; font-weight:400; font-size:clamp(40px,6.4vw,76px); line-height:1.02; letter-spacing:-1.4px; margin:0 0 24px; max-width:19ch; text-wrap:pretty">An AI health companion that nudges, without nagging.</h1>
+    <p style="font-size:18.5px; line-height:1.7; color:#444; margin:0 0 38px; max-width:60ch">A smartband and companion app built to make healthier daily habits feel effortless. I lead the UX: turning field research into gentle, low-friction interactions people actually keep using.</p>
+    <div class="maiMeta" style="display:flex; flex-wrap:wrap; gap:22px 56px; padding-top:26px; border-top:1px solid #E8E7E4">
+      <div>
+        <div style="font-size:11px; letter-spacing:.09em; text-transform:uppercase; color:#aaa; margin-bottom:6px">Role</div>
+        <div style="font-size:15.5px">UX designer &amp; researcher</div>
+      </div>
+      <div>
+        <div style="font-size:11px; letter-spacing:.09em; text-transform:uppercase; color:#aaa; margin-bottom:6px">Team</div>
+        <div style="font-size:15.5px">Product, engineering, clinical</div>
+      </div>
+      <div>
+        <div style="font-size:11px; letter-spacing:.09em; text-transform:uppercase; color:#aaa; margin-bottom:6px">Status</div>
+        <div style="font-size:15.5px">In active development</div>
+      </div>
+      <div>
+        <div style="font-size:11px; letter-spacing:.09em; text-transform:uppercase; color:#aaa; margin-bottom:6px">Focus</div>
+        <div style="font-size:15.5px">Habit design, onboarding, notifications</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE SHORT VERSION -->
+  <section style="max-width:1040px; margin:0; padding:52px clamp(24px,5vw,56px) 0 clamp(28px,7vw,80px)">
+    <div style="background:#F5F4F2; border-radius:20px; padding:34px 36px">
+      <p style="font-size:11px; letter-spacing:.09em; text-transform:uppercase; color:#2A6B62; margin:0 0 16px">The short version</p>
+      <div class="maiThree" style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:26px 34px">
+        <div>
+          <p style="font-size:13px; color:#888; margin:0 0 6px">what it is</p>
+          <p style="font-size:16px; line-height:1.6; margin:0">A wearable plus companion app for everyday wellbeing, aimed at women who have given up on trackers that only measure.</p>
+        </div>
+        <div>
+          <p style="font-size:13px; color:#888; margin:0 0 6px">what I own</p>
+          <p style="font-size:16px; line-height:1.6; margin:0">Discovery research, the onboarding and notification models, and the prototypes we test each cycle.</p>
+        </div>
+        <div>
+          <p style="font-size:13px; color:#888; margin:0 0 6px">what is different</p>
+          <p style="font-size:16px; line-height:1.6; margin:0">Setup unfolds as you use the product instead of gating it, and every message has to earn the interruption.</p>
+        </div>
+      </div>
+      <p style="font-size:14.5px; line-height:1.6; color:#888; margin:22px 0 0; max-width:70ch">The product is still in development, so screens and specifics stay under wraps. What follows is the thinking, not the finished artefacts. Happy to walk a hiring team through the full story in a call.</p>
+    </div>
+  </section>
+
+  <!-- 01 CONTEXT -->
+  <section style="max-width:1040px; margin:0; padding:80px clamp(24px,5vw,56px) 0 clamp(28px,7vw,80px)">
+    <div id="context" style="display:flex; align-items:center; gap:14px; margin-bottom:22px; scroll-margin-top:90px">
+      <span style="font-family:'Instrument Serif',serif; font-size:24px; color:#2A6B62">01</span>
+      <h2 style="font-family:'Instrument Serif',serif; font-weight:400; font-size:clamp(28px,4vw,42px); line-height:1.1; letter-spacing:-.6px; margin:0">The context</h2>
+    </div>
+    <p style="font-size:17px; line-height:1.75; margin:0 0 20px; max-width:66ch">Mai sits inside a healthcare portfolio at AjnaLens. The hardware team had a smartband. The brief for design was the other half: the part that decides whether someone wears it in week six.</p>
+    <p style="font-size:17px; line-height:1.75; color:#444; margin:0; max-width:66ch">I joined at discovery, which meant the product definition was still moving. That was the useful part. Research could still change what we built rather than only how it looked.</p>
+  </section>
+
+  <!-- 02 PROBLEM -->
+  <section style="max-width:1040px; margin:0; padding:80px clamp(24px,5vw,56px) 0 clamp(28px,7vw,80px)">
+    <div id="problem" style="display:flex; align-items:center; gap:14px; margin-bottom:22px; scroll-margin-top:90px">
+      <span style="font-family:'Instrument Serif',serif; font-size:24px; color:#2A6B62">02</span>
+      <h2 style="font-family:'Instrument Serif',serif; font-weight:400; font-size:clamp(28px,4vw,42px); line-height:1.1; letter-spacing:-.6px; margin:0">The problem</h2>
+    </div>
+    <p style="font-family:'Instrument Serif',serif; font-size:clamp(24px,3.2vw,34px); line-height:1.22; letter-spacing:-.4px; margin:0 0 22px; max-width:26ch">Most health wearables ask for effort people do not have.</p>
+    <p style="font-size:17px; line-height:1.75; color:#444; margin:0; max-width:66ch">Trackers are good at measuring and bad at motivating. They pile on numbers, streaks and alerts until checking your health becomes another thing to feel guilty about. The brief was to design for the opposite: help someone build one or two small habits, then quietly get out of the way.</p>
+  </section>
+
+  <!-- 03 APPROACH -->
+  <section style="max-width:1040px; margin:0; padding:80px clamp(24px,5vw,56px) 0 clamp(28px,7vw,80px)">
+    <div id="approach" style="display:flex; align-items:center; gap:14px; margin-bottom:22px; scroll-margin-top:90px">
+      <span style="font-family:'Instrument Serif',serif; font-size:24px; color:#2A6B62">03</span>
+      <h2 style="font-family:'Instrument Serif',serif; font-weight:400; font-size:clamp(28px,4vw,42px); line-height:1.1; letter-spacing:-.6px; margin:0">The approach</h2>
+    </div>
+    <p style="font-size:17px; line-height:1.75; margin:0 0 30px; max-width:66ch">Research first, then design for the smallest nudge that works.</p>
+    <div class="maiThree" style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:18px">
+      <div style="border:1px solid #E8E7E4; border-radius:16px; padding:26px 26px 28px; background:#FBFAF8">
+        <p style="font-size:11px; letter-spacing:.09em; text-transform:uppercase; color:#2A6B62; margin:0 0 10px">Listen</p>
+        <p style="font-size:15.5px; line-height:1.65; margin:0">Interviews and diary studies on what makes people abandon a tracker, and what quietly keeps them coming back.</p>
+      </div>
+      <div style="border:1px solid #E8E7E4; border-radius:16px; padding:26px 26px 28px; background:#FBFAF8">
+        <p style="font-size:11px; letter-spacing:.09em; text-transform:uppercase; color:#2A6B62; margin:0 0 10px">Frame</p>
+        <p style="font-size:15.5px; line-height:1.65; margin:0">Turning those signals into behaviour principles: reduce guilt, celebrate small wins, make the next action obvious.</p>
+      </div>
+      <div style="border:1px solid #E8E7E4; border-radius:16px; padding:26px 26px 28px; background:#FBFAF8">
+        <p style="font-size:11px; letter-spacing:.09em; text-transform:uppercase; color:#2A6B62; margin:0 0 10px">Prototype</p>
+        <p style="font-size:15.5px; line-height:1.65; margin:0">Testing the on-wrist and in-app moments together, so a nudge feels like a nudge and never an alarm.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 A DECISION -->
+  <section style="max-width:1040px; margin:0; padding:80px clamp(24px,5vw,56px) 0 clamp(28px,7vw,80px)">
+    <div id="decision" style="display:flex; align-items:center; gap:14px; margin-bottom:22px; scroll-margin-top:90px">
+      <span style="font-family:'Instrument Serif',serif; font-size:24px; color:#2A6B62">04</span>
+      <h2 style="font-family:'Instrument Serif',serif; font-weight:400; font-size:clamp(28px,4vw,42px); line-height:1.1; letter-spacing:-.6px; margin:0">A decision I am working through</h2>
+    </div>
+    <p style="font-family:'Instrument Serif',serif; font-size:clamp(23px,3vw,32px); line-height:1.22; letter-spacing:-.4px; margin:0 0 28px; max-width:26ch">Onboarding that unfolds, not a form to fill.</p>
+    <div class="maiTwo" style="display:grid; grid-template-columns:minmax(0,1.1fr) minmax(0,1fr); gap:44px; align-items:start">
+      <div>
+        <div style="margin-bottom:24px">
+          <p style="font-size:11px; letter-spacing:.09em; text-transform:uppercase; color:#aaa; margin:0 0 7px">Challenge</p>
+          <p style="font-size:16px; line-height:1.7; color:#444; margin:0; max-width:56ch">A product like this wants a lot of context to be useful. Asking for all of it up front, as one long health questionnaire, is friction at the exact moment someone is deciding whether to bother at all. It reads as a chore and pushes people to drop off before they ever feel a benefit.</p>
+        </div>
+        <div style="margin-bottom:24px">
+          <p style="font-size:11px; letter-spacing:.09em; text-transform:uppercase; color:#2A6B62; margin:0 0 7px">Decision</p>
+          <p style="font-size:16px; line-height:1.7; margin:0; max-width:56ch">Design onboarding as something that unfolds. Collect only what is needed to take the first step, then ask for each new detail in the moment it becomes relevant, always with a plain reason for why it helps. Setup becomes part of using the app, not a gate in front of it.</p>
+        </div>
+        <div>
+          <p style="font-size:11px; letter-spacing:.09em; text-transform:uppercase; color:#aaa; margin:0 0 7px">Why it matters</p>
+          <p style="font-size:16px; line-height:1.7; color:#444; margin:0; max-width:56ch">It lowers cognitive load on day one, builds trust by explaining each ask rather than demanding it, and lets the product personalise gradually as the relationship grows.</p>
+        </div>
+        <p style="font-size:15px; line-height:1.6; margin:26px 0 0"><a href="https://medium.com/@gayatribodke18/when-everything-is-important-the-answer-isnt-ask-less-e4387d170d8f" target="_blank" rel="noopener noreferrer" style="color:#2A6B62">I wrote this decision up in full →</a></p>
+      </div>
+      <div style="border:1px solid #E8E7E4; border-radius:18px; padding:26px 28px 28px; background:#FBFAF8">
+        <p style="font-size:13px; color:#888; margin:0 0 20px">the concept, not the screens</p>
+        <p style="font-size:11px; letter-spacing:.09em; text-transform:uppercase; color:#aaa; margin:0 0 10px">Traditional onboarding</p>
+        <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap; padding:14px 16px; border-radius:12px; border:1px dashed #DDDCD9; color:#888; font-size:13.5px">
+          <span style="padding:3px 10px; border-radius:20px; background:#F1ECE1">long form</span>
+          <span>→</span><span style="padding:3px 10px; border-radius:20px; background:#F1ECE1">more questions</span>
+          <span>→</span><span style="padding:3px 10px; border-radius:20px; background:#F1ECE1">finally, the app</span>
+        </div>
+        <p style="font-size:12.5px; color:#999; margin:8px 0 0">everything asked before any value</p>
+        <div style="height:1px; background:#E8E7E4; margin:22px 0"></div>
+        <p style="font-size:11px; letter-spacing:.09em; text-transform:uppercase; color:#2A6B62; margin:0 0 12px">Progressive onboarding</p>
+        <div style="display:flex; flex-direction:column; gap:10px">
+          <div style="display:flex; gap:12px; align-items:flex-start; padding:12px 15px; border-radius:12px; background:#F1F7F5; border:1px solid #D8EAE5">
+            <span style="flex:0 0 auto; width:21px; height:21px; border-radius:50%; background:#2A6B62; color:#FFFFFF; font-size:11px; display:flex; align-items:center; justify-content:center; margin-top:1px">1</span>
+            <span style="font-size:14px; line-height:1.5">the one thing needed to start, then straight into the app</span>
+          </div>
+          <div style="display:flex; gap:12px; align-items:flex-start; padding:12px 15px; border-radius:12px; background:#F1F7F5; border:1px solid #D8EAE5">
+            <span style="flex:0 0 auto; width:21px; height:21px; border-radius:50%; background:#2A6B62; color:#FFFFFF; font-size:11px; display:flex; align-items:center; justify-content:center; margin-top:1px">2</span>
+            <span style="font-size:14px; line-height:1.5">each new detail asked in context, with a reason for why it helps</span>
+          </div>
+          <div style="display:flex; gap:12px; align-items:flex-start; padding:12px 15px; border-radius:12px; background:#F1F7F5; border:1px solid #D8EAE5">
+            <span style="flex:0 0 auto; width:21px; height:21px; border-radius:50%; background:#2A6B62; color:#FFFFFF; font-size:11px; display:flex; align-items:center; justify-content:center; margin-top:1px">3</span>
+            <span style="font-size:14px; line-height:1.5">the product personalises as trust grows over time</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 WHAT I CAN SHARE -->
+  <section style="max-width:1040px; margin:0; padding:80px clamp(24px,5vw,56px) 0 clamp(28px,7vw,80px)">
+    <div id="share" style="display:flex; align-items:center; gap:14px; margin-bottom:22px; scroll-margin-top:90px">
+      <span style="font-family:'Instrument Serif',serif; font-size:24px; color:#2A6B62">05</span>
+      <h2 style="font-family:'Instrument Serif',serif; font-weight:400; font-size:clamp(28px,4vw,42px); line-height:1.1; letter-spacing:-.6px; margin:0">What I can share</h2>
+    </div>
+    <div class="maiTwo" style="display:grid; grid-template-columns:1fr 1fr; gap:34px; max-width:80ch">
+      <div>
+        <p style="font-size:11px; letter-spacing:.09em; text-transform:uppercase; color:#2A6B62; margin:0 0 14px">Open to talk about</p>
+        <ul style="margin:0; padding-left:20px; font-size:16px; line-height:1.8">
+          <li>The research approach and how it shaped decisions</li>
+          <li>The behaviour-design principles behind the product</li>
+          <li>My role across research, UX and prototyping</li>
+        </ul>
+      </div>
+      <div>
+        <p style="font-size:11px; letter-spacing:.09em; text-transform:uppercase; color:#aaa; margin:0 0 14px">Stays under wraps</p>
+        <ul style="margin:0; padding-left:20px; font-size:16px; line-height:1.8; color:#888">
+          <li>Final screens and visual design</li>
+          <li>Proprietary features and metrics</li>
+          <li>Brand and go-to-market details</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 WHERE IT'S HEADED -->
+  <section style="max-width:1040px; margin:0; padding:80px clamp(24px,5vw,56px) 0 clamp(28px,7vw,80px)">
+    <div id="headed" style="display:flex; align-items:center; gap:14px; margin-bottom:22px; scroll-margin-top:90px">
+      <span style="font-family:'Instrument Serif',serif; font-size:24px; color:#2A6B62">06</span>
+      <h2 style="font-family:'Instrument Serif',serif; font-weight:400; font-size:clamp(28px,4vw,42px); line-height:1.1; letter-spacing:-.6px; margin:0">Where it is headed</h2>
+    </div>
+    <p style="font-size:17px; line-height:1.75; color:#444; margin:0 0 20px; max-width:66ch">The work continues through rounds of testing and refinement. Two pieces of the thinking are already written up: how onboarding asks for a lot without feeling invasive, and what a health notification owes the person reading it.</p>
+    <p style="font-size:15.5px; margin:0"><a href="articles.html" style="color:#2A6B62">Read both →</a></p>
+  </section>
+
+  <!-- CONTACT -->
+  <section style="max-width:1040px; margin:0; padding:96px clamp(24px,5vw,56px) 96px clamp(28px,7vw,80px)">
+    <p style="font-size:11px; letter-spacing:.09em; text-transform:uppercase; color:#888; margin:0">Get in touch</p>
+    <h2 style="font-family:'Instrument Serif',serif; font-weight:400; font-size:clamp(32px,5vw,54px); line-height:1.05; letter-spacing:-.8px; margin:14px 0 28px; max-width:18ch">Want the full walkthrough?</h2>
+    <p style="font-size:17px; line-height:1.7; color:#444; margin:0 0 30px; max-width:52ch">I am happy to talk through the research and the design decisions behind this one in a call.</p>
+    <div style="display:flex; gap:12px; flex-wrap:wrap">
+      <a href="mailto:gayatribodke18@gmail.com?subject=Mai%20case%20study" class="tvBtn" style="text-decoration:none; font-size:15px; padding:14px 28px; border-radius:30px; background:#111111; color:#FFFFFF">Get in touch</a>
+      <a href="index.html#work" class="tvBtn" style="text-decoration:none; font-size:15px; padding:14px 28px; border-radius:30px; border:1.5px solid #DDDCD9; color:#111111">See more work</a>
+    </div>
+  </section>
+
+  <!-- NEXT CASE STUDY -->
+  <a href="sts.html" class="tvNext" style="display:block; text-decoration:none; color:#111111; border-top:1px solid #E8E7E4; background:#FBFAF8">
+    <div style="max-width:1180px; margin:0; padding:52px clamp(24px,5vw,56px) 52px clamp(28px,7vw,80px); display:flex; align-items:center; justify-content:space-between; gap:24px">
+      <div>
+        <p style="font-size:11px; letter-spacing:.09em; text-transform:uppercase; color:#888; margin:0 0 10px">Next case study</p>
+        <p style="font-family:'Instrument Serif',serif; font-size:clamp(26px,3.4vw,38px); line-height:1.1; letter-spacing:-.5px; margin:0">STS</p>
+        <p style="font-size:15.5px; line-height:1.6; color:#444; margin:10px 0 0; max-width:48ch">A school transport system where parents, drivers and the school office finally see the same trip.</p>
+      </div>
+      <span style="font-size:26px; color:#888">→</span>
+    </div>
+  </a>
+
+  <footer style="">
+    <div class="lpFootArt" aria-hidden="true" style="position:relative; left:50%; transform:translateX(-50%); width:100vw; height:clamp(220px,30vw,340px); overflow:hidden; pointer-events:none">
+      <img src="assets/footer-landscape.png" alt="" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center 88%; display:block">
+      <span class="lpFootFade" style="position:absolute; inset:0; background:linear-gradient(180deg,#FFFFFF 0%,rgba(255,255,255,.7) 26%,rgba(255,255,255,0) 62%)"></span>
+    </div>
+
+    <div style="max-width:1180px; margin:0; padding:26px clamp(24px,5vw,56px) 42px clamp(28px,7vw,80px); display:flex; align-items:center; justify-content:space-between; gap:16px; font-size:12.5px; color:#999">
+      <span style="font-family:'Instrument Serif',serif; font-style:italic; font-size:16px; color:#888">Gayatri Bodke</span>
+      <span>© 2026 · Product Designer</span>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+</body>
+</html>

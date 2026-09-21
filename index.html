@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<script>(function(){try{var s=localStorage.getItem('gb-theme');var d=s==='dark'||(!s&&window.matchMedia&&window.matchMedia('(prefers-color-scheme:dark)').matches);if(d){document.documentElement.setAttribute('data-gb-theme','dark');var t=document.createElement('style');t.id='gb-preboot';t.textContent='html,body{background:#15130F!important}body{opacity:0}';(document.head||document.documentElement).appendChild(t);setTimeout(function(){var g=document.getElementById('gb-preboot');if(g&&g.textContent.indexOf('opacity:0')>-1){g.textContent='html,body{background:#15130F}';}},1200);}}catch(e){}})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gayatri Bodke — Product Designer</title>
+<meta name="description" content="Product designer working on healthcare and AI products. Case studies, writing and research notes.">
+<meta name="color-scheme" content="light dark">
+<meta property="og:title" content="Gayatri Bodke — Product Designer">
+<meta property="og:description" content="Product designer working on healthcare and AI products. Case studies, writing and research notes.">
+<meta property="og:type" content="website">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Hanken+Grotesk:wght@400;500;600;700&family=Shantell+Sans:ital,wght@0,400;0,500;1,400&family=Caveat:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: #FFFFFF; }
+  html { scroll-behavior: smooth; }
+  a { color: #111111; }
+  a:hover { color: #4E4187; }
+  ::selection { background: #FBE7A1; }
+  .lpLife figure { transition: transform .3s cubic-bezier(.2,.7,.3,1); }
+  .lpLife figure:hover { transform: translateY(-4px); }
+  .lpWriteRow { transition: padding-left .25s ease; }
+  .lpWriteRow:hover { padding-left: 8px; }
+  .lpMaiTagA { transition: opacity .2s ease; }
+  .lpMai:hover .lpMaiTagA { opacity: 0; }
+  .lpMai:hover .lpMaiTagB { opacity: 1 !important; }
+  .hCard { transition: transform .35s cubic-bezier(.2,.7,.3,1); }
+  .hCard:hover { transform: translateY(-6px); }
+  .hCard:hover .hShot { transform: scale(1.04); }
+  .hShot { transition: transform .5s cubic-bezier(.2,.7,.3,1); }
+  .hRow { transition: padding-left .25s ease; }
+  .hRow:hover { padding-left: 10px; }
+  .hDoRow .hDoTool { opacity: 0; transition: opacity .2s ease; }
+  .hDoRow:hover .hDoTool { opacity: 1; }
+  @media (hover: none) { .hDoRow .hDoTool { opacity: 1; } }
+  .hTool { transition: background .2s ease, border-color .2s ease; }
+  .hTool:hover { background: #F5F4F2 !important; border-color: #DDDCD9; }
+  .rv { opacity: 0; transform: translateY(26px); transition: opacity .8s cubic-bezier(.2,.7,.3,1), transform .8s cubic-bezier(.2,.7,.3,1); }
+  .rv.in { opacity: 1; transform: none; }
+  .lpHeroCard, .lpPortrait { will-change: transform; }
+  .lpPortrait, .lpPortrait img, .gbIn { backface-visibility: hidden; }
+  .lpAtmo { opacity: var(--gb-atmo, 1); }
+  @keyframes gbRise { from { transform: translateY(108%); } to { transform: translateY(0); } }
+  @keyframes gbUp { from { opacity:0; transform: translateY(16px); } to { opacity:1; transform:none; } }
+  @keyframes gbWipe { from { clip-path: inset(100% 0 0 0); } to { clip-path: inset(0 0 0 0); } }
+  .gbIn { animation-fill-mode: both !important; animation-timing-function: cubic-bezier(.22,1,.36,1) !important; }
+  .gbCta { transition: transform .25s ease, box-shadow .25s ease, background .25s ease, color .25s ease; }
+  .gbCta:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(17,17,17,.16); }
+  .gbCta:hover .gbDown { transform: translateY(2px); }
+  .gbDown { transition: transform .25s ease; }
+  .gbCtaGhost:hover { background:#111111; color:#FFFFFF; }
+  .lpPortrait:hover img { transform: scale(1.02); }
+  .lpPortrait img { transition: transform .4s cubic-bezier(.2,.7,.3,1); }
+  .gbHand { transition: transform .4s ease; }
+  .lpHeroRow:hover .gbHand { transform: rotate(-8deg); }
+  @keyframes gbPen { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
+  .gbPen { stroke-dasharray: 1; stroke-dashoffset: 1; animation-fill-mode: forwards !important; animation-timing-function: cubic-bezier(.65,0,.35,1) !important; }
+  .lpHeroSec:not(.heroGo) .gbIn, .lpHeroSec:not(.heroGo) .gbPen { animation-play-state: paused !important; }
+  .lpHeroSec.heroReset .gbIn, .lpHeroSec.heroReset .gbPen { animation: none !important; }
+  .gbLbl { font-family: 'Caveat', cursive; font-size: 28px; line-height: 1; color: #111111; white-space: nowrap; }
+  html[data-gb-theme="dark"] .gbLbl { color: #F0EAE0; }
+  .gbNavTheme { display: inline-flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 50%; border: 1px solid #E8E7E4; background: transparent; color: #666666; cursor: pointer; transition: color .2s ease, border-color .2s ease; }
+  .gbNavTheme:hover { color: #111111; border-color: #111111; }
+  .gbReplay { position: fixed; left: 22px; bottom: 22px; z-index: 70; padding: 8px 15px; border-radius: 30px; border: 1px solid #E8E7E4; background: #FFFFFF; color: #111111; font: 500 12.5px 'Hanken Grotesk', sans-serif; cursor: pointer; }
+  [data-hero-intro="skip"] .gbIn { animation: gbFade .25s ease both !important; }
+  [data-hero-intro="quick"] .gbPen, [data-hero-intro="skip"] .gbPen { animation: none !important; stroke-dashoffset: 0 !important; }
+  @media (prefers-reduced-motion: reduce) {
+    .gbIn { animation: gbFade .3s ease both !important; }
+    .gbPen { animation: none !important; stroke-dashoffset: 0 !important; }
+  }
+  @keyframes gbSettle { from { transform: scale(1.08); } to { transform: scale(1); } }
+  @keyframes gbFade { from { opacity: 0; } to { opacity: 1; } }
+  [data-hero-intro="quick"] .gbIn { animation: gbFade .4s ease both !important; }
+  [data-lp] a:focus-visible, [data-lp] button:focus-visible { outline: 2px solid #111111; outline-offset: 3px; border-radius: 40px; }
+  @media (prefers-reduced-motion: reduce) { .gbIn { animation: none !important; opacity: 1 !important; transform: none !important; filter: none !important; clip-path: none !important; } }
+  @media (max-width: 900px) { [data-lp] .gbHand2 { position: static !important; margin: 0 0 14px !important; } }
+  @keyframes lpArrowIn { from { opacity: 0; transform: translate(-10px, -4px); } to { opacity: 1; transform: none; } }
+  .lpArrow { opacity: 0; animation: lpArrowIn 1s cubic-bezier(.2,.7,.3,1) forwards; }
+  .lpArrow1 { animation-delay: .45s; }
+  .lpArrow2 { animation-delay: .95s; }
+  @media (prefers-reduced-motion: reduce) {
+    .rv { opacity: 1 !important; transform: none !important; transition: none !important; }
+    .lpHeroCard, .lpPortrait { transform: none !important; }
+    .lpArrow { opacity: 1 !important; animation: none !important; }
+  }
+  .pRow { transition: background .35s ease; }
+  .pRow:hover .hShot { transform: translateY(-8px); }
+  .pRow .pRowCta { transition: border-color .25s ease; }
+  .pRow:hover .pRowCta { border-color: #111111; }
+  .lpNav { transition: padding .42s cubic-bezier(.2,.7,.3,1), border-color .3s ease, background .3s ease; }
+  .lpNav.scrolled { border-bottom-color: #E8E7E4; }
+  .lpNavInner { transition: padding .42s cubic-bezier(.2,.7,.3,1), max-width .42s cubic-bezier(.2,.7,.3,1), border-radius .42s ease, box-shadow .42s ease, background .42s ease; }
+  .lpNav.cmp { background: transparent !important; backdrop-filter: none !important; -webkit-backdrop-filter: none !important; border-bottom-color: transparent !important; padding: 10px 24px 14px; }
+  .lpNav.cmp .lpNavInner { background: #FBFAF8; border-radius: 40px; box-shadow: 0 8px 26px rgba(17,17,17,.1); padding: 13px 30px !important; max-width: 1060px !important; }
+  html[data-gb-theme="dark"] .lpNav.cmp .lpNavInner { background: #1C1A16; box-shadow: 0 10px 30px rgba(0,0,0,.5); }
+  .lpNav.cmp nav { gap: 26px !important; }
+  .lpNavLink { position: relative; }
+  .lpNav nav:hover .lpNavLink { opacity: .4; }
+  .lpNav nav .lpNavLink:hover, .lpNav nav .lpNavLink.active { opacity: 1; }
+  .lpNavLink::after { content: ""; position: absolute; left: 0; right: 0; bottom: -4px; height: 1px; background: #111111; transform: scaleX(0); transform-origin: right; transition: transform .35s cubic-bezier(.2,.7,.3,1); }
+  .lpNavLink:hover::after, .lpNavLink.active::after { transform: scaleX(1); transform-origin: left; }
+  .lpNavLink:hover, .lpNavLink.active { color: #111111 !important; }
+  .lpNavCv::after { background: #4E4187; transform: scaleX(1); transform-origin: left; }
+  .lpNavCv:hover::after { transform-origin: right; }
+  html[data-gb-theme="dark"] .lpNavLink::after { background: #F0EAE0; }
+  html[data-gb-theme="dark"] .lpNavLink:hover, html[data-gb-theme="dark"] .lpNavLink.active { color: #F0EAE0 !important; }
+  html[data-gb-theme="dark"] .lpNavCv::after { background: #C6B4F0; }
+  html[data-gb-theme="dark"] .lpWwmMark { background-image: linear-gradient(#4A3F1C, #4A3F1C) !important; }
+  .lpWwmMark { background-image: linear-gradient(#FBE7A1, #FBE7A1); background-size: 100% .42em; background-position: 0 88%; background-repeat: no-repeat; }
+  .lpTop.on { opacity: 1 !important; pointer-events: auto !important; }
+  html[data-gb-theme="dark"] .lpFootArt img { filter: brightness(.55) saturate(.72); }
+  html[data-gb-theme="dark"] .lpFootFade { background: linear-gradient(180deg,#141310 0%,rgba(20,19,16,.72) 26%,rgba(20,19,16,0) 62%) !important; }
+  .lpTop:hover { background: #111111 !important; color: #FFFFFF !important; border-color: #111111 !important; }
+  @media (max-width: 900px) {
+    [data-lp] .lpBento { grid-template-columns: 1fr !important; }
+    [data-lp] .lpBento > div { grid-column: auto !important; }
+    [data-lp] .hGrid { grid-template-columns: 1fr !important; }
+    [data-lp] .pRow { grid-template-columns: 1fr !important; gap: 28px !important; padding: 34px 0 40px !important; }
+    [data-lp] .pRow > div:last-child { min-height: 300px !important; }
+    [data-lp] .lpHeroSec { height: auto !important; min-height: 0 !important; padding: 18px 0 64px !important; }
+    [data-lp] .lpHeroRow { grid-template-columns: 1fr !important; gap: 18px !important; }
+    [data-lp] .lpHeroRow > * { grid-column: 1 !important; grid-row: auto !important; }
+    [data-lp] .lpPortrait { width: 78% !important; max-width: 300px !important; justify-self: end !important; order: 3; }
+    [data-lp] .lpHeroName { order: 2; }
+    [data-lp] .lpHeroHiya { order: 1; }
+    [data-lp] .gbLbl1 { order: 4; justify-self: end; margin: 2px 6px 0 0 !important; }
+    [data-lp] .lpHeroBody { order: 5; }
+    [data-lp] .lpHeroLines { display: none !important; }
+    [data-lp] .gbLbl { position: static !important; }
+    [data-lp] .gbCta { width: 100% !important; justify-content: center !important; }
+    [data-lp] .lpBand { height: 46% !important; }
+    [data-lp] .lpExp { grid-template-columns: 1fr !important; gap: 6px !important; }
+    [data-lp] .lpWwm { grid-template-columns: 1fr !important; gap: 30px !important; }
+    [data-lp] .lpWwmSticky { position: static !important; }
+    [data-lp] .hDo { grid-template-columns: 1fr 1fr !important; }
+    [data-lp] .lpLife { grid-template-columns: 1fr 1fr !important; }
+    [data-lp] .lpLife > figure > div { height: 300px !important; }
+  }
+  @media (max-width: 760px) {
+    [data-lp] header > div { flex-direction: column !important; align-items: flex-start !important; gap: 12px !important; padding: 16px 22px !important; }
+    [data-lp] header nav { flex-wrap: wrap !important; gap: 10px 20px !important; }
+    [data-lp] section { padding-left: 22px !important; padding-right: 22px !important; }
+    [data-lp] section > div[style*="padding:0 40px"] { padding-left: 0 !important; padding-right: 0 !important; }
+    [data-lp] .hGrid { gap: 44px 0 !important; }
+    [data-lp] .hCard > div:first-child { height: 250px !important; }
+    [data-lp] .lpExp { grid-template-columns: 1fr !important; }
+  }
+  @media (max-width: 440px) {
+    [data-lp] .lpLife { grid-template-columns: 1fr !important; }
+    [data-lp] .lpLife > figure { grid-column: auto !important; }
+    [data-lp] .lpLife > figure > div { height: 240px !important; }
+    [data-lp] .hDo { grid-template-columns: 1fr !important; }
+  }
+</style>
+<template id="__bundler_thumbnail">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#FFFFFF"/><rect x="8" y="8" width="84" height="84" fill="none" stroke="#E8E7E4"/><text x="50" y="64" font-family="Georgia,serif" font-style="italic" font-size="46" fill="#4E4187" text-anchor="middle">G</text></svg>
+</template>
+<script src="./page-loader.js"></script>
+<script src="./theme-toggle.js"></script>
+</helmet>
+<div data-lp data-screen-label="Landing" style="font-family:'Hanken Grotesk',system-ui,sans-serif; background:#FFFFFF; color:#111111; min-height:100vh; overflow-x:clip">
+
+  <!-- TOP BAR -->
+  <div class="lpAtmo" aria-hidden="true" style="position:fixed; inset:0; z-index:-1; pointer-events:none; background:#FFFFFF"></div>
+
+  <header id="top" class="lpNav" style="position:sticky; top:0; z-index:40; background:rgba(255,255,255,.88); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); border-bottom:1px solid transparent">
+    <div class="lpNavInner" style="display:flex; align-items:center; justify-content:space-between; gap:20px; padding:20px 40px; max-width:1180px; margin:0 auto">
+      <a href="#top" style="display:flex; align-items:center; gap:0; text-decoration:none; color:#111111">
+        <span style="font-size:11px; letter-spacing:.17em; text-transform:uppercase; font-weight:600">Gayatri Bodke</span>
+      </a>
+      <nav style="display:flex; align-items:center; gap:30px">
+        <a class="lpNavLink" data-sec="work" href="#work" style="font-size:11px; letter-spacing:.17em; text-transform:uppercase; text-decoration:none; color:#666666; transition:color .25s ease, opacity .25s ease">Work</a>
+        <a class="lpNavLink" href="about.html" style="font-size:11px; letter-spacing:.17em; text-transform:uppercase; text-decoration:none; color:#666666; transition:color .25s ease, opacity .25s ease">About</a>
+        <a class="lpNavLink" href="articles.html" style="font-size:11px; letter-spacing:.17em; text-transform:uppercase; text-decoration:none; color:#666666; transition:color .25s ease, opacity .25s ease">Writing</a>
+        <a class="lpNavLink" data-sec="connect" href="#connect" style="font-size:11px; letter-spacing:.17em; text-transform:uppercase; text-decoration:none; color:#666666; transition:color .25s ease, opacity .25s ease">Contact</a>
+        <a class="lpNavLink lpNavCv" href="Gayatri-Bodke-Resume.pdf" target="_blank" rel="noopener noreferrer" style="font-size:11px; letter-spacing:.17em; text-transform:uppercase; text-decoration:none; color:#111111; transition:color .25s ease, opacity .25s ease">Resume</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 01 HERO -->
+  <section class="lpHeroSec" data-hero-intro="{{ heroIntroMode }}" style="position:relative; display:flex; align-items:center; height:100dvh; min-height:720px; overflow:hidden">
+    <div class="lpHeroWrap" style="position:relative; width:100%; max-width:1180px; margin:0 auto; padding:0 40px">
+
+      <svg class="lpHeroLines" aria-hidden="true" viewBox="0 0 1100 600" preserveAspectRatio="none" style="position:absolute; left:40px; top:0; width:calc(100% - 80px); height:100%; overflow:visible; pointer-events:none; z-index:2; color:#111111">
+        <defs>
+          <mask id="gbDrawMask1" maskUnits="userSpaceOnUse" x="-400" y="-400" width="3000" height="3000">
+            <path class="gbPen gbL1m" pathLength="1" d="" stroke="#FFFFFF" stroke-width="44" stroke-linecap="round" fill="none" style="animation:gbPen .8s 1.7s"></path>
+          </mask>
+          <mask id="gbDrawMask2" maskUnits="userSpaceOnUse" x="-400" y="-400" width="3000" height="3000">
+            <path class="gbPen gbL2m" pathLength="1" d="" stroke="#FFFFFF" stroke-width="44" stroke-linecap="round" fill="none" style="animation:gbPen .65s 2.55s"></path>
+          </mask>
+        </defs>
+        <g mask="url(#gbDrawMask1)">
+          <path class="gbL1" d="" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-dasharray="2 10"></path>
+          <path class="gbH1 gbIn" style="animation:gbFade .3s 2.45s" d="M -11 -6 L 0 0 L -11 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </g>
+        <g mask="url(#gbDrawMask2)">
+          <path class="gbL2" d="" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-dasharray="2 10"></path>
+          <path class="gbH2 gbIn" style="animation:gbFade .3s 3.15s" d="M -11 -6 L 0 0 L -11 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </g>
+      </svg>
+
+      <div class="lpHeroRow" style="display:grid; grid-template-columns:1fr auto; gap:0 64px; align-items:center">
+
+        <div class="lpHeroHiya" style="grid-column:1; grid-row:1; align-self:end">
+          <sc-if value="{{ showStatusPill }}" hint-placeholder-val="{{ true }}">
+            <div class="gbIn" style="display:inline-flex; align-items:center; gap:8px; white-space:nowrap; padding:6px 13px; border-radius:30px; background:#FBE7A1; color:#5A4A1A; font-size:12.5px; margin-bottom:22px; animation:gbUp .8s .1s">
+              <span style="width:7px; height:7px; border-radius:50%; background:#4E4187; display:inline-block"></span>
+              Open to product design roles
+            </div>
+          </sc-if>
+          <div class="gbIn" style="font-family:'Instrument Serif',serif; font-style:italic; font-size:clamp(28px,3.2vw,44px); line-height:1; margin:0 0 4px; animation:gbUp .8s .25s">
+            <span class="lpWwmMark" style="padding:0 4px">Hiya,</span>
+          </div>
+        </div>
+
+        <h1 class="lpHeroName" style="grid-column:1; grid-row:2; font-family:'Instrument Serif',serif; font-weight:400; font-size:clamp(44px,7vw,110px); line-height:.98; letter-spacing:-.035em; margin:0">
+          <span style="display:block; overflow:hidden"><span class="gbIn" style="display:block; animation:gbRise .95s .4s">I'm</span></span>
+          <span style="display:block; overflow:hidden; padding-bottom:.06em"><span class="gbIn gbName" style="display:inline-block; animation:gbRise .95s .55s">Gayatri.</span></span>
+        </h1>
+
+        <div class="lpPortrait gbIn" style="grid-column:2; grid-row:1 / span 3; position:relative; width:{{ portraitMax }}; max-width:38vw; justify-self:end; overflow:hidden; border-radius:28px; animation:gbWipe 1.1s .95s">
+          <img src="assets/portrait.webp" alt="Portrait of Gayatri" class="gbIn" style="display:block; width:100%; aspect-ratio:420/600; object-fit:cover; object-position:top; border-radius:28px; animation:gbSettle 1.6s .95s">
+        </div>
+
+        <div class="lpHeroBody" style="grid-column:1; grid-row:3; align-self:start; padding-top:34px">
+          <p class="gbIntro gbIn" style="font-family:'Instrument Serif',serif; font-size:clamp(22px,2.2vw,28px); line-height:1.28; letter-spacing:-.4px; margin:0 0 46px; max-width:560px; text-wrap:pretty; animation:gbUp .9s .85s">A product designer who starts with <em style="font-style:italic; color:#4E4187">research</em>, turning what people actually need into products they find clear and easy to trust.</p>
+          <div style="display:flex; gap:12px; flex-wrap:wrap; align-items:center">
+            <a class="gbCta gbIn" href="#work" style="display:inline-flex; align-items:center; gap:10px; height:56px; padding:0 30px; border-radius:40px; background:#111111; color:#FFFFFF; border:1.5px solid #111111; text-decoration:none; font-size:15px; font-weight:500; white-space:nowrap; animation:gbUp .7s 1.1s">
+              See my work
+              <svg class="gbDown" width="17" height="17" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 2v12M3 9l5 5 5-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+            </a>
+            <a class="gbCta gbCtaGhost gbIn" href="Gayatri-Bodke-Resume.pdf" target="_blank" rel="noopener noreferrer" style="display:inline-flex; align-items:center; gap:10px; height:56px; padding:0 30px; border-radius:40px; background:transparent; color:#111111; border:1.5px solid #111111; text-decoration:none; font-size:15px; font-weight:500; white-space:nowrap; animation:gbUp .7s 1.2s">
+              Resume
+              <svg width="17" height="17" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 12L12 4M5.5 4H12v6.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="gbLbl gbLbl1 gbHand gbIn" aria-hidden="true" style="position:absolute; z-index:3; transform:rotate(-6deg); animation:gbUp .7s 2.05s"><span class="lpWwmMark" style="padding:0 5px">that's me</span></div>
+      <div class="gbLbl gbLbl2 gbIn" aria-hidden="true" style="position:absolute; z-index:3; transform:rotate(-3deg); animation:gbUp .7s 2.85s"><span class="lpWwmMark" style="padding:0 5px">the short version</span></div>
+    </div>
+
+    <sc-if value="{{ showReplay }}" hint-placeholder-val="{{ false }}">
+      <button class="gbReplay" type="button" onClick="{{ replayIntro }}">Replay intro</button>
+    </sc-if>
+  </section>
+
+  <!-- 02 SELECTED WORK -->
+  <section id="work" style="max-width:1180px; margin:0 auto; padding:0 40px; scroll-margin-top:88px">
+    <div style="display:flex; align-items:baseline; justify-content:space-between; gap:20px; border-top:1px solid #E8E7E4; padding-top:20px; margin-bottom:34px">
+      <h2 style="font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:#666666; margin:0; font-weight:500">Selected projects</h2>
+      <span style="font-family:'Shantell Sans',cursive; font-size:15px; color:#666666">the four I'd pick out first</span>
+    </div>
+
+
+    <a href="aarogyam.html" class="pRow" style="text-decoration:none; color:inherit; display:grid; grid-template-columns:.46fr .54fr; gap:34px 56px; align-items:start; border-top:1px solid #E8E7E4; padding:46px 0 52px">
+      <div>
+        <h3 style="font-family:'Instrument Serif',serif; font-weight:400; font-size:clamp(34px,4vw,50px); line-height:1.02; letter-spacing:-1.2px; margin:0">Aarogyam</h3>
+        <p style="font-family:'Instrument Serif',serif; font-size:clamp(24px,2.8vw,34px); line-height:1.05; letter-spacing:-.6px; color:#888888; margin:2px 0 26px">(under NDA)</p>
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:10px 14px; font-size:11px; letter-spacing:.15em; text-transform:uppercase; color:#111111; margin-bottom:6px">
+          <span>Product designer</span>
+          <span style="font-size:10.5px; letter-spacing:.08em; color:#666666; background:#E4E2DD; padding:4px 9px; border-radius:30px; white-space:nowrap">NDA</span>
+        </div>
+        <div style="font-size:11px; letter-spacing:.15em; text-transform:uppercase; color:#666666; margin-bottom:22px">Clinical AI · patient &amp; doctor flows</div>
+        <p style="font-size:16px; line-height:1.7; color:#666666; margin:0 0 14px; max-width:42ch">An AI intake system for an OPD that sees 10,000 patients a day, where the patient tells her story once and it travels with her.</p>
+        <p style="font-size:16px; line-height:1.7; color:#666666; margin:0 0 20px; max-width:42ch">I ran the discovery, mapped the intake and the doctor handoff, and designed both sides of the product.</p>
+        <span class="pRowCta" style="display:inline-block; font-size:11px; letter-spacing:.17em; text-transform:uppercase; color:#111111; border-bottom:1px solid #E8E7E4; padding-bottom:3px">Read the case study</span>
+      </div>
+      <div style="position:relative; background:#F5F4F2; border-radius:6px; height:370px; display:flex; align-items:flex-end; justify-content:center; padding:0 40px; overflow:hidden">
+        <span class="hShot" style="display:block; width:100%; max-width:300px; height:312px; border-radius:10px 10px 0 0; overflow:hidden; box-shadow:0 20px 48px rgba(36,31,24,.18)"><img src="assets/aarogyam/screen-2-dashboard.png" alt="Aarogyam patient intake in Hindi" style="display:block; width:100%; height:100%; object-fit:cover; object-position:top"></span>
+        <span style="position:absolute; right:18px; bottom:14px; font-size:10.5px; letter-spacing:.15em; text-transform:uppercase; color:#666666">2025</span>
+      </div>
+    </a>
+
+    <a href="tvak.html" class="pRow" style="text-decoration:none; color:inherit; display:grid; grid-template-columns:.46fr .54fr; gap:34px 56px; align-items:start; border-top:1px solid #E8E7E4; padding:46px 0 52px">
+      <div>
+        <h3 style="font-family:'Instrument Serif',serif; font-weight:400; font-size:clamp(34px,4vw,50px); line-height:1.02; letter-spacing:-1.2px; margin:0">TVAK</h3>
+        <p style="font-family:'Instrument Serif',serif; font-size:clamp(24px,2.8vw,34px); line-height:1.05; letter-spacing:-.6px; color:#888888; margin:2px 0 26px">(under NDA)</p>
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:10px 14px; font-size:11px; letter-spacing:.15em; text-transform:uppercase; color:#111111; margin-bottom:6px">
+          <span>Product designer</span>
+          <span style="font-size:10.5px; letter-spacing:.08em; color:#666666; background:#E4E2DD; padding:4px 9px; border-radius:30px; white-space:nowrap">NDA</span>
+        </div>
+        <div style="font-size:11px; letter-spacing:.15em; text-transform:uppercase; color:#666666; margin-bottom:22px">AI screening · care handoff</div>
+        <p style="font-size:16px; line-height:1.7; color:#666666; margin:0 0 14px; max-width:42ch">One skin-screening result that a patient, an ASHA worker and a PHC doctor all have to trust, each for a different reason.</p>
+        <p style="font-size:16px; line-height:1.7; color:#666666; margin:0 0 20px; max-width:42ch">Three views of the same diagnosis, and a way for a doctor to say the model got it wrong.</p>
+        <span class="pRowCta" style="display:inline-block; font-size:11px; letter-spacing:.17em; text-transform:uppercase; color:#111111; border-bottom:1px solid #E8E7E4; padding-bottom:3px">Read the case study</span>
+      </div>
+      <div style="position:relative; background:#F2EFFA; border-radius:6px; height:370px; display:flex; align-items:flex-end; justify-content:center; padding:0 40px; overflow:hidden">
+        <span class="hShot" style="display:flex; align-items:flex-end; gap:0">
+          <span style="display:block; width:150px; height:252px; border-radius:10px 10px 0 0; overflow:hidden; margin-right:-28px; box-shadow:0 14px 32px rgba(36,31,24,.14)"><img src="assets/tvak/screen-patient.png" alt="TVAK patient report" style="display:block; width:100%; height:100%; object-fit:cover; object-position:top"></span>
+          <span style="position:relative; z-index:2; display:block; width:196px; height:312px; border-radius:12px 12px 0 0; overflow:hidden; box-shadow:0 20px 44px rgba(36,31,24,.2)"><img src="assets/tvak/screen-doctor.png" alt="TVAK doctor view of the AI skin report" style="display:block; width:100%; height:100%; object-fit:cover; object-position:top"></span>
+        </span>
+        <span style="position:absolute; right:18px; bottom:14px; font-size:10.5px; letter-spacing:.15em; text-transform:uppercase; color:#666666">2025</span>
+      </div>
+    </a>
+
+    <a href="mai.html" class="pRow" style="text-decoration:none; color:inherit; display:grid; grid-template-columns:.46fr .54fr; gap:34px 56px; align-items:start; border-top:1px solid #E8E7E4; padding:46px 0 52px">
+      <div>
+        <h3 style="font-family:'Instrument Serif',serif; font-weight:400; font-size:clamp(34px,4vw,50px); line-height:1.02; letter-spacing:-1.2px; margin:0">MAI</h3>
+        <p style="font-family:'Instrument Serif',serif; font-size:clamp(24px,2.8vw,34px); line-height:1.05; letter-spacing:-.6px; color:#888888; margin:2px 0 26px">(in progress)</p>
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:10px 14px; font-size:11px; letter-spacing:.15em; text-transform:uppercase; color:#111111; margin-bottom:6px">
+          <span>Product designer</span>
+          <span style="font-size:10.5px; letter-spacing:.08em; color:#5A4A1A; background:#FBE7A1; padding:4px 9px; border-radius:30px; white-space:nowrap">In progress</span>
+        </div>
+        <div style="font-size:11px; letter-spacing:.15em; text-transform:uppercase; color:#666666; margin-bottom:22px">Women's health · behaviour design</div>
+        <p style="font-size:16px; line-height:1.7; color:#666666; margin:0 0 14px; max-width:42ch">An AI health companion for women, and the product I spend most of my week inside.</p>
+        <p style="font-size:16px; line-height:1.7; color:#666666; margin:0 0 20px; max-width:42ch">Under NDA, so this one is the thinking rather than the screens: onboarding, tone, and what a health notification owes you.</p>
+        <span class="pRowCta" style="display:inline-block; font-size:11px; letter-spacing:.17em; text-transform:uppercase; color:#111111; border-bottom:1px solid #E8E7E4; padding-bottom:3px">Read the case study</span>
+      </div>
+      <div style="position:relative; background:#FBE7A1; border-radius:6px; height:370px; display:flex; align-items:flex-end; justify-content:center; padding:0 40px; overflow:hidden">
+        <span style="align-self:center; text-align:center"><span style="display:block; font-family:'Instrument Serif',serif; font-size:64px; line-height:1; letter-spacing:1px; color:#3F3410">MAI</span><span style="display:block; font-family:'Shantell Sans',cursive; font-size:15px; color:#8A7430; margin-top:12px">read the overview →</span></span>
+        <span style="position:absolute; right:18px; bottom:14px; font-size:10.5px; letter-spacing:.15em; text-transform:uppercase; color:#666666">2026</span>
+      </div>
+    </a>
+
+    <a href="sts.html" class="pRow" style="text-decoration:none; color:inherit; display:grid; grid-template-columns:.46fr .54fr; gap:34px 56px; align-items:start; border-top:1px solid #E8E7E4; padding:46px 0 52px">
+      <div>
+        <h3 style="font-family:'Instrument Serif',serif; font-weight:400; font-size:clamp(34px,4vw,50px); line-height:1.02; letter-spacing:-1.2px; margin:0">STS</h3>
+        <p style="font-family:'Instrument Serif',serif; font-size:clamp(24px,2.8vw,34px); line-height:1.05; letter-spacing:-.6px; color:#888888; margin:2px 0 26px">(dissertation)</p>
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:10px 14px; font-size:11px; letter-spacing:.15em; text-transform:uppercase; color:#111111; margin-bottom:6px">
+          <span>Researcher &amp; designer</span>
+          <span style="font-size:10.5px; letter-spacing:.08em; color:#3E7C63; background:#DFF0E6; padding:4px 9px; border-radius:30px; white-space:nowrap">Open</span>
+        </div>
+        <div style="font-size:11px; letter-spacing:.15em; text-transform:uppercase; color:#666666; margin-bottom:22px">Discovery research · local retail</div>
+        <p style="font-size:16px; line-height:1.7; color:#666666; margin:0 0 14px; max-width:42ch">Months of interviews on why people stay loyal to their corner shop, and what an app owes that trust.</p>
+        <p style="font-size:16px; line-height:1.7; color:#666666; margin:0 0 20px; max-width:42ch">Coded in NVivo, turned into themes, then into a shopping app that does not flatten the relationship it is built on.</p>
+        <span class="pRowCta" style="display:inline-block; font-size:11px; letter-spacing:.17em; text-transform:uppercase; color:#111111; border-bottom:1px solid #E8E7E4; padding-bottom:3px">Read the case study</span>
+      </div>
+      <div style="position:relative; background:#F6E9EC; border-radius:6px; height:370px; display:flex; align-items:flex-end; justify-content:center; padding:0 40px; overflow:hidden">
+        <span class="hShot" style="display:flex; align-items:flex-end; gap:0">
+          <span style="display:block; width:150px; height:252px; border-radius:10px 10px 0 0; overflow:hidden; margin-right:-28px; box-shadow:0 14px 32px rgba(36,31,24,.14)"><img src="assets/sts/store.png" alt="An STS store profile" style="display:block; width:100%; height:100%; object-fit:cover; object-position:top"></span>
+          <span style="position:relative; z-index:2; display:block; width:196px; height:312px; border-radius:12px 12px 0 0; overflow:hidden; box-shadow:0 20px 44px rgba(36,31,24,.2)"><img src="assets/sts/home.png" alt="The STS shopping app home screen" style="display:block; width:100%; height:100%; object-fit:cover; object-position:top"></span>
+        </span>
+        <span style="position:absolute; right:18px; bottom:14px; font-size:10.5px; letter-spacing:.15em; text-transform:uppercase; color:#666666">2023</span>
+      </div>
+    </a>
+
+  </section>
+
+  <!-- 03 WRITING -->
+  <section id="writing" style="max-width:1180px; margin:0 auto; padding:80px 40px 0; scroll-margin-top:88px">
+    <div style="display:flex; align-items:baseline; justify-content:space-between; gap:20px; border-top:1px solid #E8E7E4; padding-top:20px; margin-bottom:8px">
+      <h2 style="font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:#666666; margin:0; font-weight:500">Writing</h2>
+      <div style="display:flex; align-items:baseline; gap:20px">
+        <a href="https://medium.com/@gayatribodke18" target="_blank" rel="noopener noreferrer" style="font-size:13px; color:#666666; text-decoration:none">Medium ↗</a>
+        <a href="articles.html" style="font-size:13px; color:#666666; text-decoration:none">All writing →</a>
+      </div>
+    </div>
+    <a href="https://medium.com/@gayatribodke18/when-everything-is-important-the-answer-isnt-ask-less-e4387d170d8f" target="_blank" rel="noopener noreferrer" class="lpWriteRow" style="text-decoration:none; color:inherit; display:block; border-top:1px solid #E4E2DD; padding:28px 0">
+      <div style="display:flex; align-items:baseline; gap:14px; flex-wrap:wrap; margin-bottom:10px; font-size:12.5px; color:#666666">
+        <span>Mai</span><span style="color:#DDDCD9">·</span><span>Onboarding · progressive disclosure</span>
+      </div>
+      <p style="font-family:'Instrument Serif',serif; font-size:clamp(22px,2.8vw,30px); line-height:1.24; letter-spacing:-.3px; margin:0 0 10px; max-width:30ch">When everything is important, the answer isn't “ask less”</p>
+      <p style="font-size:15.5px; line-height:1.6; color:#666666; margin:0; max-width:56ch">How progressive onboarding let a women's health product ask for a lot without feeling invasive.</p>
+    </a>
+    
+  </section>
+
+  <!-- 04 WHERE I WORKED -->
+  <section style="max-width:1180px; margin:0 auto; padding:80px 40px 0">
+    <div style="display:flex; align-items:baseline; justify-content:space-between; gap:20px; border-top:1px solid #E8E7E4; padding-top:20px; margin-bottom:8px">
+      <h2 style="font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:#666666; margin:0; font-weight:500">Where I worked</h2>
+      <a class="lpNavLink" href="about.html" style="font-size:11px; letter-spacing:.17em; text-transform:uppercase; text-decoration:none; color:#666666; transition:color .25s ease">More about me ↗</a>
+    </div>
+      <div class="lpExp" style="display:grid; grid-template-columns:180px 1fr; gap:0 40px; align-items:baseline; border-top:1px solid #E4E2DD; padding:17px 0">
+        <div style="font-size:11px; letter-spacing:.15em; text-transform:uppercase; color:#666666">Dec 2025 — Present</div>
+        <div style="display:flex; align-items:baseline; justify-content:space-between; gap:16px; flex-wrap:wrap"><span style="font-size:16.5px">Product Designer</span><span style="font-size:13.5px; color:#666666">AjnaLens, Thane</span></div>
+      </div>
+      <div class="lpExp" style="display:grid; grid-template-columns:180px 1fr; gap:0 40px; align-items:baseline; border-top:1px solid #E4E2DD; padding:17px 0">
+        <div style="font-size:11px; letter-spacing:.15em; text-transform:uppercase; color:#666666">Sep 2025 — Dec 2025</div>
+        <div style="display:flex; align-items:baseline; justify-content:space-between; gap:16px; flex-wrap:wrap"><span style="font-size:16.5px">UX Design Intern</span><span style="font-size:13.5px; color:#666666">AjnaLens, Thane</span></div>
+      </div>
+      <div class="lpExp" style="display:grid; grid-template-columns:180px 1fr; gap:0 40px; align-items:baseline; border-top:1px solid #E4E2DD; padding:17px 0">
+        <div style="font-size:11px; letter-spacing:.15em; text-transform:uppercase; color:#666666">Oct 2023 — Feb 2024</div>
+        <div style="display:flex; align-items:baseline; justify-content:space-between; gap:16px; flex-wrap:wrap"><span style="font-size:16.5px">Head of Strategic Growth &amp; Automation</span><span style="font-size:13.5px; color:#666666">YourTalent Consultancy, Rotterdam</span></div>
+      </div>
+      <div class="lpExp" style="display:grid; grid-template-columns:180px 1fr; gap:0 40px; align-items:baseline; border-top:1px solid #E4E2DD; padding:17px 0">
+        <div style="font-size:11px; letter-spacing:.15em; text-transform:uppercase; color:#666666">Jun 2023 — Oct 2023</div>
+        <div style="display:flex; align-items:baseline; justify-content:space-between; gap:16px; flex-wrap:wrap"><span style="font-size:16.5px">Customer Retention Advisor</span><span style="font-size:13.5px; color:#666666">Foundever, Sheffield</span></div>
+      </div>
+  </section>
+
+  <!-- 09 CONNECT -->
+  <section id="connect" style="max-width:1080px; margin:0 auto; padding:40px 40px 0; scroll-margin-top:88px">
+    <div style="border-top:1px solid #E8E7E4; padding:92px 0 104px; position:relative">
+      <div style="position:relative">
+        <div style="display:inline-flex; align-items:center; gap:8px; white-space:nowrap; padding:6px 14px; border-radius:30px; background:#FBE7A1; color:#5A4A1A; font-size:12.5px; letter-spacing:.04em; margin-bottom:30px">
+          <span style="width:7px; height:7px; border-radius:50%; background:#4E4187; display:inline-block"></span>
+          Open to product design roles
+        </div>
+        <h2 style="font-family:'Instrument Serif',serif; font-weight:400; font-size:clamp(34px,5.6vw,66px); line-height:1.02; letter-spacing:-1px; margin:0 0 44px; max-width:14ch">Let's talk.</h2>
+        <div style="display:flex; align-items:flex-end; justify-content:space-between; gap:22px 40px; flex-wrap:wrap; border-top:1px solid #DDDCD9; padding-top:26px; max-width:780px">
+          <a href="mailto:gayatribodke18@gmail.com" style="display:inline-block; font-family:'Instrument Serif',serif; font-style:italic; font-size:clamp(24px,3.4vw,40px); line-height:1.1; letter-spacing:-.3px; color:#111111; text-decoration:none; border-bottom:2px solid #FBE7A1; padding-bottom:4px" style-hover="border-bottom-color:#4E4187">Get in touch</a>
+          <div style="display:flex; gap:28px; font-size:11px; letter-spacing:.17em; text-transform:uppercase; padding-bottom:8px">
+            <a class="lpNavLink" href="https://www.linkedin.com/in/gayatri-bodke" target="_blank" rel="noopener noreferrer" style="text-decoration:none; color:#111111; transition:color .25s ease">LinkedIn ↗</a>
+            <a class="lpNavLink" href="https://medium.com/@gayatribodke18" target="_blank" rel="noopener noreferrer" style="text-decoration:none; color:#111111; transition:color .25s ease">Medium ↗</a>
+            <a class="lpNavLink" href="Gayatri-Bodke-Resume.pdf" target="_blank" rel="noopener noreferrer" style="text-decoration:none; color:#111111; transition:color .25s ease">Resume ↗</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="lpFootArt" aria-hidden="true" style="position:relative; left:50%; transform:translateX(-50%); width:100vw; height:clamp(220px,30vw,340px); overflow:hidden; pointer-events:none">
+      <img src="assets/footer-landscape.png" alt="" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center 88%; display:block">
+      <span class="lpFootFade" style="position:absolute; inset:0; background:linear-gradient(180deg,#FFFFFF 0%,rgba(255,255,255,.7) 26%,rgba(255,255,255,0) 62%)"></span>
+    </div>
+    <div style="padding:26px 0 40px; display:flex; align-items:center; justify-content:space-between; gap:16px; font-size:12.5px; color:#888888">
+      <span style="font-family:'Instrument Serif',serif; font-style:italic; font-size:16px; color:#666666">Gayatri Bodke</span>
+      <span>© 2026 · Product Designer</span>
+    </div>
+  </section>
+
+  <a class="lpTop" href="#top" aria-label="Back to top" style="position:fixed; right:26px; bottom:26px; z-index:30; display:inline-flex; align-items:center; gap:8px; padding:10px 17px; border-radius:30px; border:1px solid #E8E7E4; background:rgba(251,247,240,.92); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); color:#111111; font-size:13.5px; line-height:1; text-decoration:none; cursor:pointer; box-shadow:0 10px 26px rgba(36,31,24,.12); opacity:0; pointer-events:none; transition:opacity .3s ease, background .18s ease, color .18s ease, border-color .18s ease">↑ Top</a>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;portraitWidth&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:420,&quot;min&quot;:300,&quot;max&quot;:480,&quot;step&quot;:10,&quot;unit&quot;:&quot;px&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Hero&quot;},&quot;showStatusPill&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Hero&quot;},&quot;introOncePerSession&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Hero&quot;},&quot;showReplay&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Hero&quot;}}">class Component extends DCLogic {
+  componentDidMount() {
+    this._sec = document.querySelector('[data-lp] .lpHeroSec');
+    let force = false;
+    try { force = new URLSearchParams(location.search).get('intro') === '1'; } catch (e) {}
+    try {
+      const nv = (performance.getEntriesByType('navigation')[0] || {}).type;
+      if (nv === 'reload' || nv === 'navigate' || nv === 'back_forward') sessionStorage.removeItem('hero-intro-seen');
+    } catch (e) {}
+    const once = this.props.introOncePerSession ?? false;
+    let seen = false;
+    if (once) {
+      try {
+        seen = sessionStorage.getItem('hero-intro-seen') === '1';
+        sessionStorage.setItem('hero-intro-seen', '1');
+      } catch (e) {}
+    }
+    if (force) seen = false;
+    if (seen) this.setState({ heroIntroMode: 'quick' });
+    this.startHero(seen);
+    this._heroSafety = setTimeout(() => {
+      const s = this._sec || document.querySelector('[data-lp] .lpHeroSec');
+      if (s && !s.classList.contains('heroGo')) { s.classList.add('heroGo'); this.layoutLines(); }
+    }, 2500);
+    // coming back from an internal page (incl. the browser's back cache):
+    // run the intro again from the top instead of showing a settled hero
+    this._onShow = (e) => {
+      if (e && e.persisted) this.replayIntro();
+    };
+    window.addEventListener('pageshow', this._onShow);
+    this._layout = () => this.layoutLines();
+    window.addEventListener('resize', this._layout);
+    this._layout();
+    [200, 700, 1500, 2600].forEach((ms) => setTimeout(this._layout, ms));
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(this._layout);
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const targets = document.querySelectorAll('[data-lp] .pRow, [data-lp] .lpWriteRow, [data-lp] .lpBento > div, [data-lp] .lpWwm > div, [data-lp] .lpLife figure, [data-lp] #connect > div');
+    if (!reduce && 'IntersectionObserver' in window) {
+      targets.forEach(el => el.classList.add('rv'));
+      this._io = new IntersectionObserver((entries, obs) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); }
+        });
+      }, { rootMargin: '0px 0px -12% 0px', threshold: 0.08 });
+      targets.forEach(el => this._io.observe(el));
+    }
+    this._raf = null;
+    this._parallax = () => {
+      this._raf = null;
+      const y = window.scrollY;
+      const card = document.querySelector('.lpHeroCard');
+      const por = document.querySelector('.lpPortrait');
+      if (card) card.style.transform = 'translateY(' + (-y * 0.09).toFixed(1) + 'px)';
+      if (por) por.style.transform = 'translateY(' + (-y * 0.03).toFixed(1) + 'px)';
+    };
+    this._safety = () => {
+      document.querySelectorAll('[data-lp] .rv:not(.in)').forEach(el => {
+        const r = el.getBoundingClientRect();
+        if (r.top < window.innerHeight + 200) el.classList.add('in');
+      });
+    };
+    window.addEventListener('load', this._safety);
+    this._safetyT = setTimeout(this._safety, 1600);
+    this._safetyT2 = setTimeout(this._safety, 4000);
+    let last = window.scrollY;
+    this._onScroll = () => {
+      const y = window.scrollY;
+      const btn = document.querySelector('.lpTop');
+      if (btn) btn.classList.toggle('on', y > 600);
+      if (this._safety) this._safety();
+      document.documentElement.style.setProperty('--gb-atmo', Math.max(0, 1 - y / 1100).toFixed(3));
+      const nav = document.querySelector('.lpNav');
+      if (nav) {
+        nav.classList.toggle('scrolled', y > 8);
+        nav.classList.toggle('cmp', y > 70);
+      }
+      const links = document.querySelectorAll('.lpNavLink[data-sec]');
+      let current = '';
+      links.forEach(l => {
+        const el = document.getElementById(l.dataset.sec);
+        if (el && el.getBoundingClientRect().top <= 140) current = l.dataset.sec;
+      });
+      links.forEach(l => l.classList.toggle('active', l.dataset.sec === current));
+      if (!reduce && y < 1200 && this._raf === null) this._raf = requestAnimationFrame(this._parallax);
+      last = y;
+    };
+    window.addEventListener('scroll', this._onScroll, { passive: true });
+    this._onScroll();
+  }
+  componentWillUnmount() {
+    if (this._safety) this._safety();
+    clearTimeout(this._safetyT); clearTimeout(this._safetyT2);
+    window.removeEventListener('load', this._safety);
+    if (this._io) this._io.disconnect();
+    window.removeEventListener('scroll', this._onScroll);
+    window.removeEventListener('resize', this._layout);
+    window.removeEventListener('pageshow', this._onShow);
+  }
+  layoutLines() {
+    const sec = this._sec || document.querySelector('[data-lp] .lpHeroSec');
+    if (!sec) return;
+    const wrap = sec.querySelector('.lpHeroWrap');
+    const svg = sec.querySelector('.lpHeroLines');
+    const name = sec.querySelector('.gbName');
+    const photo = sec.querySelector('.lpPortrait');
+    const intro = sec.querySelector('.gbIntro');
+    const l1 = sec.querySelector('.gbLbl1');
+    const l2 = sec.querySelector('.gbLbl2');
+    if (!wrap || !svg || !name || !photo || !intro || !l1 || !l2) return;
+    const narrow = window.innerWidth < 900;
+    const row = sec.querySelector('.lpHeroRow');
+    if (narrow) {
+      svg.style.display = 'none';
+      [l1, l2].forEach((el) => { el.style.position = 'static'; el.style.left = ''; el.style.top = ''; el.style.margin = ''; });
+      if (l1.parentNode !== row) row.insertBefore(l1, photo.nextSibling);
+      if (l2.parentNode !== intro.parentNode) intro.parentNode.insertBefore(l2, intro);
+      l2.style.margin = '0 0 12px';
+      return;
+    }
+    if (l1.parentNode !== wrap) wrap.appendChild(l1);
+    if (l2.parentNode !== wrap) wrap.appendChild(l2);
+    svg.style.display = '';
+    const wb = wrap.getBoundingClientRect();
+    const pad = 40;
+    const rel = (el) => {
+      const r = el.getBoundingClientRect();
+      return { l: r.left - wb.left - pad, t: r.top - wb.top, r: r.right - wb.left - pad, b: r.bottom - wb.top, w: r.width, h: r.height };
+    };
+    const W = wb.width - pad * 2, H = wb.height;
+    svg.setAttribute('viewBox', '0 0 ' + W.toFixed(1) + ' ' + H.toFixed(1));
+    const n = rel(name), p = rel(photo), i = rel(intro);
+
+    const s1x = n.r + 12, s1y = n.t + n.h * 0.26;
+    const e1x = p.l - 16, e1y = p.t + p.h * 0.40;
+    const c1ax = s1x + 46, c1ay = n.t - 58;
+    const c1bx = e1x - 120, c1by = e1y - 150;
+    const d1 = 'M ' + s1x + ' ' + s1y + ' C ' + c1ax + ' ' + c1ay + ', ' + c1bx + ' ' + c1by + ', ' + e1x + ' ' + e1y;
+
+    let endX = i.r, endY = i.b - 12;
+    try {
+      const rg = document.createRange();
+      rg.selectNodeContents(intro);
+      const rects = Array.from(rg.getClientRects()).filter((r) => r.width > 0);
+      const lines = [];
+      rects.forEach((r) => {
+        const row = lines.find((L) => Math.abs(L.top - r.top) < 6);
+        if (row) { row.right = Math.max(row.right, r.right); row.bottom = Math.max(row.bottom, r.bottom); }
+        else lines.push({ top: r.top, bottom: r.bottom, right: r.right });
+      });
+      const last = lines[lines.length - 1];
+      if (last) { endX = last.right - wb.left - pad; endY = (last.top + last.bottom) / 2 - wb.top; }
+    } catch (e) {}
+    const s2y = endY + 4;
+    const e2x = endX + 18, e2y = endY;
+    const s2x = Math.min(p.l - 12, e2x + 300);
+    const dx = s2x - e2x;
+    const c2ax = s2x - dx * 0.30, c2ay = s2y + 22;
+    const c2bx = e2x + dx * 0.30, c2by = e2y + 22;
+    const d2 = 'M ' + s2x + ' ' + s2y + ' C ' + c2ax + ' ' + c2ay + ', ' + c2bx + ' ' + c2by + ', ' + e2x + ' ' + e2y;
+
+    const ang = (ax, ay, bx, by) => (Math.atan2(by - ay, bx - ax) * 180 / Math.PI).toFixed(2);
+    sec.querySelectorAll('.gbL1, .gbL1m').forEach((el) => el.setAttribute('d', d1));
+    sec.querySelectorAll('.gbL2, .gbL2m').forEach((el) => el.setAttribute('d', d2));
+    sec.querySelector('.gbH1').setAttribute('transform', 'translate(' + e1x + ',' + e1y + ') rotate(' + ang(c1bx, c1by, e1x, e1y) + ')');
+    sec.querySelector('.gbH2').setAttribute('transform', 'translate(' + e2x + ',' + e2y + ') rotate(' + ang(c2bx, c2by, e2x, e2y) + ')');
+
+    l1.style.position = 'absolute';
+    l1.style.margin = '0';
+    l1.style.left = (pad + s1x + (e1x - s1x) * 0.44) + 'px';
+    l1.style.top = (Math.min(c1ay, c1by) - 26) + 'px';
+    l2.style.position = 'absolute';
+    l2.style.margin = '0';
+    l2.style.left = (pad + e2x + 34) + 'px';
+    l2.style.top = (endY + 22) + 'px';
+  }
+
+  replayIntro() {
+    const sec = this._sec || document.querySelector('[data-lp] .lpHeroSec');
+    if (!sec) return;
+    this.setState({ heroIntroMode: 'full' });
+    sec.classList.add('heroReset');
+    sec.classList.remove('heroGo');
+    void sec.offsetWidth;
+    requestAnimationFrame(() => {
+      sec.classList.remove('heroReset');
+      void sec.offsetWidth;
+      requestAnimationFrame(() => { sec.classList.add('heroGo'); this.layoutLines(); });
+    });
+  }
+
+  startHero(seen) {
+    let done = false;
+    const go = () => {
+      if (done) return;
+      done = true;
+      const sec = this._sec || document.querySelector('[data-lp] .lpHeroSec');
+      if (sec) sec.classList.add('heroGo');
+      this.layoutLines();
+      if (!seen && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) this.bindHeroSkip();
+    };
+    const loaderGone = new Promise((res) => {
+      const check = () => {
+        if (!document.querySelector('[data-gb-loader]:not([data-gb-loader-hidden])')) res();
+        else setTimeout(check, 80);
+      };
+      check();
+    });
+    const assets = [loaderGone];
+    if (document.fonts && document.fonts.ready) assets.push(document.fonts.ready);
+    assets.push(new Promise((res) => { const i = new Image(); i.onload = i.onerror = res; i.src = 'assets/portrait.webp'; }));
+    const fallback = setTimeout(go, 1200);
+    Promise.all(assets).then(() => { clearTimeout(fallback); go(); }).catch(() => { clearTimeout(fallback); go(); });
+  }
+
+  bindHeroSkip() {
+    this._heroSkip = () => { this.unbindHeroSkip(); this.setState({ heroIntroMode: 'skip' }); };
+    ['wheel', 'touchstart', 'pointerdown', 'keydown'].forEach((e) => window.addEventListener(e, this._heroSkip, { once: true, passive: true }));
+    this._heroSkipT = setTimeout(() => this.unbindHeroSkip(), 5200);
+  }
+
+  unbindHeroSkip() {
+    clearTimeout(this._heroSkipT);
+    if (this._heroSkip) ['wheel', 'touchstart', 'pointerdown', 'keydown'].forEach((e) => window.removeEventListener(e, this._heroSkip));
+    this._heroSkip = null;
+  }
+
+  renderVals() {
+    const w = this.props.portraitWidth ?? 420;
+    return {
+      heroIntroMode: (this.state && this.state.heroIntroMode) || 'full',
+      portraitMax: w + 'px',
+      showStatusPill: this.props.showStatusPill ?? true,
+      showReplay: this.props.showReplay ?? true,
+      replayIntro: () => this.replayIntro(),
+      toggleTheme: () => { if (window.__gbTheme) window.__gbTheme.set(!window.__gbTheme.isDark()); }
+    };
+  }
+}</script>
+</body>
+</html>

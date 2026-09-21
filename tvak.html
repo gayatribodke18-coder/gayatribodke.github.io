@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8">
+<script>(function(){try{var s=localStorage.getItem('gb-theme');var d=s==='dark'||(!s&&window.matchMedia&&window.matchMedia('(prefers-color-scheme:dark)').matches);if(d){document.documentElement.setAttribute('data-gb-theme','dark');var t=document.createElement('style');t.id='gb-preboot';t.textContent='html,body{background:#15130F!important}body{opacity:0}';(document.head||document.documentElement).appendChild(t);setTimeout(function(){var g=document.getElementById('gb-preboot');if(g&&g.textContent.indexOf('opacity:0')>-1){g.textContent='html,body{background:#15130F}';}},1200);}}catch(e){}})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TVAK — AI skin screening · Gayatri Bodke</title>
+<meta name="description" content="One skin-screening result that a patient, an ASHA worker and a PHC doctor all have to trust.">
+<meta name="color-scheme" content="light dark">
+<meta property="og:title" content="TVAK — AI skin screening · Gayatri Bodke">
+<meta property="og:description" content="One skin-screening result that a patient, an ASHA worker and a PHC doctor all have to trust.">
+<meta property="og:type" content="website">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Hanken+Grotesk:wght@400;500;600;700&family=Shantell+Sans:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { background: #FFFFFF; }
+  a { color: #111111; }
+  a:hover { color: #2A6B62; }
+  ::selection { background: #DDEBE7; }
+  @keyframes gb-float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-14px); } }
+  .heroDevice { animation: gb-float 5.5s ease-in-out infinite; }
+  @media (prefers-reduced-motion: reduce) { .heroDevice { animation: none !important; } }
+  @media (max-width: 900px) {
+    [data-tv] .tvHero { grid-template-columns: 1fr !important; gap: 40px !important; }
+    [data-tv] .tvHeroDevice { order: -1; }
+  }
+  .tvBtn { transition: transform .2s ease; }
+  .tvBtn:hover { transform: translateY(-2px); }
+  .tvNextArrow { transition: transform .2s ease; }
+  .tvNext:hover .tvNextArrow { transform: translateX(7px); }
+  .tvNext:hover .tvNextName { color: #2A6B62; }
+  .tvNavNext { transition: color .18s ease; }
+  .tvNavNext:hover { color: #2A6B62; }
+  .tvScroll::-webkit-scrollbar { height: 10px; }
+  .tvScroll::-webkit-scrollbar-thumb { background: #DDDCD9; border-radius: 20px; }
+  .tvScroll::-webkit-scrollbar-track { background: #F5F4F2; border-radius: 20px; }
+  @media (max-width: 640px) {
+    .tvNavNext { display: none !important; }
+  }
+  @media (max-width: 820px) {
+    [data-tv] .tvCtx { grid-template-columns: 1fr !important; }
+    [data-tv] .tvTwo { grid-template-columns: 1fr !important; }
+    [data-tv] .tvThree { grid-template-columns: 1fr !important; }
+    [data-tv] .tvMetrics { grid-template-columns: 1fr 1fr !important; }
+    [data-tv] .tvFrag { flex-direction: column !important; }
+    [data-tv] .tvFragArrow { transform: rotate(90deg) !important; }
+    [data-tv] .tvScreenRow { grid-template-columns: 1fr !important; justify-items: center !important; }
+    [data-tv] .tvScreenRow > div { order: initial !important; }
+    [data-tv] .tvScreenRow > div:first-child { order: -1 !important; }
+    [data-tv] .tvDecGrid { grid-template-columns: 1fr !important; }
+    [data-tv] .tvChunkHead { flex-wrap: wrap !important; }
+    [data-tv] .tvSteps { grid-template-columns: 1fr !important; }
+    [data-tv] .tvLayers { grid-template-columns: 1fr 1fr !important; }
+    [data-tv] .tvThreeScreens { grid-template-columns: 1fr !important; justify-items: center !important; }
+  }
+  .csRail::before { content:""; position:absolute; inset:-14px -16px; border-radius:16px; background:rgba(255,255,255,.86); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); opacity:0; transition:opacity .25s ease; z-index:-1; }
+  .csRail:hover::before { opacity:1; }
+  .csTop:hover { background:#111111 !important; color:#FFFFFF !important; border-color:#111111 !important; }
+  [data-tv] img[src$="flow-1-capture-diagram.png"] { aspect-ratio: 953/845; }
+  [data-tv] img[src$="flow-3-hierarchy-diagram.png"] { aspect-ratio: 1655/1487; }
+  [data-tv] img[src$="screen-hero.png"] { aspect-ratio: 360/804; }
+  @media (max-width: 1180px) { .csRail { display:none !important; } }
+  html[data-gb-theme="dark"] .lpFootArt img { filter: brightness(.55) saturate(.72); }
+  html[data-gb-theme="dark"] .lpFootFade { background: linear-gradient(180deg,#141310 0%,rgba(20,19,16,.72) 26%,rgba(20,19,16,0) 62%) !important; }
+</style>
+<script src="./page-loader.js"></script>
+<script src="./case-confidential.js" data-code="gayatri2026"></script>
+<script src="./case-nav.js"></script>
+<script src="./theme-toggle.js"></script>
+<template id="__bundler_thumbnail">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#FFFFFF"/><rect x="10" y="10" width="80" height="80" rx="16" fill="#F5F4F2"/><text x="50" y="63" font-family="Georgia,serif" font-size="24" letter-spacing="1.5" fill="#111" text-anchor="middle">TVAK</text></svg>
+</template>
+</helmet>
+<div data-tv data-screen-label="TVAK case study" style="font-family:'Hanken Grotesk',system-ui,sans-serif; background:#FFFFFF; color:#111111; min-height:100vh; overflow-x:clip">
+
+  <!-- PUBLIC TEASER VIEW -->
+  <div data-nda-teaser data-screen-label="TVAK · public view">
+    <header style="position:sticky; top:0; z-index:20; background:rgba(255,255,255,.85); backdrop-filter:blur(10px); border-bottom:1px solid #E8E7E4">
+      <div style="max-width:1040px; margin:0; display:flex; align-items:center; justify-content:space-between; padding:15px clamp(24px,5vw,56px) 15px clamp(28px,7vw,80px)">
+        <a href="index.html" style="text-decoration:none; color:#111111; font-size:14px; display:inline-flex; align-items:center; gap:8px">← All work</a>
+        <a href="mailto:gayatribodke18@gmail.com" class="tvBtn" style="text-decoration:none; color:#FFFFFF; background:#111111; padding:9px 18px; border-radius:30px; font-size:13.5px; white-space:nowrap">Get in touch</a>
+      </div>
+    </header>
+
+    <section style="max-width:1040px; margin:0; padding:56px clamp(24px,5vw,56px) 0 clamp(28px,7vw,80px)">
+      <div style="display:flex; align-items:center; gap:12px; flex-wrap:wrap; margin-bottom:20px">
+        <span style="display:inline-flex; align-items:center; gap:7px; font-size:11px; letter-spacing:.09em; text-transform:uppercase; color:#2A6B62"><svg width="11" height="13" viewBox="0 0 14 16" fill="none" stroke="#2A6B62" stroke-width="1.6" aria-hidden="true"><rect x="1" y="6.5" width="12" height="8.5" rx="2"></rect><path d="M3.8 6.5V4.2a3.2 3.2 0 0 1 6.4 0v2.3"></path></svg>Confidential</span>
+        <span style="color:#DDDCD9">/</span>
+        <span style="font-size:13px; color:#888">AjnaLens · now Indus Derma</span>
+      </div>
+      <span style="font-family:'Instrument Serif',serif; font-size:40px; letter-spacing:.5px; display:block; margin-bottom:14px">TVAK</span>
+      <h1 style="font-family:'Instrument Serif',serif; font-weight:400; font-size:clamp(30px,4.4vw,46px); line-height:1.12; letter-spacing:-.5px; margin:0 0 22px; max-width:22ch">One AI skin result that three different people have to trust</h1>
+      <p style="font-size:18px; line-height:1.65; color:#111; margin:0 0 32px; max-width:56ch">A skin-screening app for Indian users. The interesting part wasn't the prediction. It was connecting a patient, an ASHA worker and a PHC doctor around the same result, in three very different settings.</p>
+      <div style="display:flex; gap:16px 28px; flex-wrap:wrap; font-size:13.5px; line-height:1.4; color:#111111; padding-top:20px; border-top:1px solid #E8E7E4">
+        <div><div style="color:#999999; font-size:12px; margin-bottom:4px">Role</div>Product Designer</div>
+        <div><div style="color:#999999; font-size:12px; margin-bottom:4px">Users</div>Patient · ASHA worker · PHC doctor</div>
+        <div><div style="color:#999999; font-size:12px; margin-bottom:4px">I owned</div>Research, user flows, interaction design</div>
+      </div>
+    </section>
+
+    <section style="max-width:1040px; margin:0; padding:34px clamp(24px,5vw,56px) 0 clamp(28px,7vw,80px)">
+      <div style="max-width:760px; background:#F5F7F8; border-radius:18px; padding:24px 26px">
+        <div style="display:flex; align-items:center; gap:9px; margin-bottom:10px">
+          <svg width="14" height="16" viewBox="0 0 14 16" fill="none" stroke="#111111" stroke-width="1.6" aria-hidden="true"><rect x="1" y="6.5" width="12" height="8.5" rx="2"></rect><path d="M3.8 6.5V4.2a3.2 3.2 0 0 1 6.4 0v2.3"></path></svg>
+          <span style="font-size:16px; font-weight:600">Project under NDA</span>
+        </div>
+        <p style="font-size:15.5px; line-height:1.65; color:#666; margin:0 0 20px; max-width:52ch">This project is confidential, so this page is the short version. If you're a hiring manager, reach out and I'll walk you through the full case study.</p>
+        <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap">
+          <a href="mailto:gayatribodke18@gmail.com?subject=TVAK%20case%20study" class="tvBtn" style="text-decoration:none; font-size:14.5px; padding:12px 22px; border-radius:30px; background:#111111; color:#FFFFFF">Request the full study</a>
+          <button type="button" data-nda-copy data-email="gayatribodke18@gmail.com" style="font:inherit; font-size:14.5px; display:inline-flex; align-items:center; gap:9px; padding:11px 20px; border-radius:30px; border:1px solid #E1E4E6; background:#FFFFFF; color:#111; cursor:pointer"><span data-nda-copy-label>gayatribodke18@gmail.com</span><svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="#888" stroke-width="1.5" aria-hidden="true"><rect x="5.5" y="5.5" width="9" height="9" rx="2"></rect><path d="M10.5 3.5v-1a1 1 0 0 0-1-1h-7a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h1"></path></svg></button>
+        </div>
+        <div style="margin-top:18px; padding-top:16px; border-top:1px solid #E4E8EA">
+          <a href="#" data-nda-toggle style="font-size:14px; color:#888; text-decoration:none; border-bottom:1px solid #E1E4E6">I have a passcode</a>
+          <form data-nda-form style="display:none; gap:10px; flex-wrap:wrap; align-items:center; margin-top:16px">
+            <input data-nda-input type="password" autocomplete="off" placeholder="Enter passcode" style="flex:1; min-width:200px; font:inherit; font-size:15px; padding:12px 15px; border:1px solid #E1E4E6; border-radius:4px; background:#FFFFFF; color:#111; outline:none">
+            <button type="submit" style="font:inherit; font-size:15px; padding:12px 22px; border-radius:4px; border:1.5px solid #E2DCCE; background:#FFFFFF; color:#111; cursor:pointer">View full study</button>
+            <p data-nda-err style="width:100%; font-size:13.5px; color:#BD5836; margin:2px 0 0; visibility:hidden">That passcode doesn't match. Try again, or email me.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section style="max-width:1040px; margin:0; padding:70px clamp(24px,5vw,56px) 0 clamp(28px,7vw,80px)">
+      <p style="font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:#999; margin:0 0 16px">highlights</p>
+      <h2 style="font-family:'Instrument Serif',serif; font-weight:400; font-size:clamp(24px,3.4vw,34px); line-height:1.18; letter-spacing:-.3px; margin:0 0 18px; max-width:26ch">One result, three people, three settings</h2>
+      <p style="font-size:16.5px; line-height:1.7; color:#111; margin:0 0 30px; max-width:60ch">A patient at home, an ASHA worker in the field and a PHC doctor at a desk all act on the same skin result, and in the real system information gets lost at every handoff. My research was about understanding why before touching anything.</p>
+      <div style="display:flex; flex-direction:column; max-width:760px">
+        <div style="border-top:1px solid #E8E7E4; padding:18px 0; font-size:15.5px; line-height:1.6">Mapped how a case actually travels between patient, ASHA worker and PHC doctor, and where it breaks</div>
+        <div style="border-top:1px solid #E8E7E4; padding:18px 0; font-size:15.5px; line-height:1.6">Designed one result that re-presents itself at the depth each person can act on, in their own language</div>
+        <div style="border-top:1px solid #E8E7E4; padding:18px 0; font-size:15.5px; line-height:1.6">Designed the capture step around real conditions: poor light, low-end phones, patchy connectivity</div>
+        <div style="border-top:1px solid #E8E7E4; border-bottom:1px solid #E8E7E4; padding:18px 0; font-size:15.5px; line-height:1.6">Built the flow to fail safely, so an uncertain result routes to a person instead of asserting an answer</div>
+      </div>
+    </section>
+
+    <section style="max-width:1040px; margin:0; padding:70px clamp(24px,5vw,56px) 0 clamp(28px,7vw,80px)">
+      <p style="font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:#999; margin:0 0 16px">retrospective</p>
+      <h2 style="font-family:'Instrument Serif',serif; font-weight:400; font-size:clamp(24px,3.4vw,34px); line-height:1.18; letter-spacing:-.3px; margin:0 0 18px; max-width:26ch">The prediction was the easy part</h2>
+      <p style="font-size:16.5px; line-height:1.7; color:#111; margin:0 0 18px; max-width:60ch">What decided whether TVAK worked was not model accuracy. It was whether a result written for one reader still made sense to the next one, and whether the system was honest when it did not know. Designing the handoffs and the uncertain cases is what turned a prediction into something three people could act on together.</p>
+      <div style="border-left:3px solid #2A6B62; padding:6px 0 6px 22px; max-width:64ch">
+        <p style="font-size:16px; line-height:1.65; color:#111; margin:0">A screening result is only as useful as the weakest handoff it has to survive.</p>
+      </div>
+    </section>
+
+    <section style="max-width:1040px; margin:0; padding:70px clamp(24px,5vw,56px) 88px clamp(28px,7vw,80px)">
+      <h2 style="font-family:'Instrument Serif',serif; font-weight:400; font-size:clamp(26px,4vw,40px); line-height:1.1; letter-spacing:-.5px; margin:0 0 24px; max-width:20ch">Want the full story?</h2>
+      <div style="display:flex; gap:12px; flex-wrap:wrap">
+        <a href="mailto:gayatribodke18@gmail.com?subject=TVAK%20case%20study" class="tvBtn" style="text-decoration:none; font-size:15px; padding:14px 26px; border-radius:30px; background:#111111; color:#FFFFFF">Get in touch</a>
+        <a href="sts.html" class="tvBtn" style="text-decoration:none; font-size:15px; padding:14px 26px; border-radius:30px; border:1.5px solid #E2DCCE; color:#111111">Read an open case study</a>
+      </div>
+    </section>
+
+    <footer style="border-top:1px solid #E8E7E4">
+      <div style="max-width:1040px; margin:0; padding:24px clamp(24px,5vw,56px) 40px clamp(28px,7vw,80px); display:flex; align-items:center; justify-content:space-between; gap:16px; font-size:12.5px; color:#999">
+        <span style="font-family:'Instrument Serif',serif; font-style:italic; font-size:16px; color:#888">Gayatri Bodke</span>
+        <span>© 2026 · Product Designer</span>
+      </div>
+    </footer>
+  </div>
+
+  <!-- SECTION RAIL -->
+  <nav class="csRail" aria-label="Jump to section" style="position:fixed; right:30px; top:50%; transform:translateY(-50%); z-index:25; display:flex; flex-direction:column; gap:6px; align-items:flex-end">
+    <a class="railItem" data-nav="context" href="#context" style="display:flex; align-items:center; gap:12px; text-decoration:none"><span class="railLabel" style="font-size:12.5px; color:#9a958d; white-space:nowrap; opacity:0; transform:translateX(6px); transition:opacity .25s ease, transform .25s ease, color .25s ease">Context</span><span class="railTick" style="width:16px; height:2px; border-radius:2px; background:#DDDCD9; transition:width .25s ease, background .25s ease"></span></a>
+    <a class="railItem" data-nav="problem" href="#problem" style="display:flex; align-items:center; gap:12px; text-decoration:none"><span class="railLabel" style="font-size:12.5px; color:#9a958d; white-space:nowrap; opacity:0; transform:translateX(6px); transition:opacity .25s ease, transform .25s ease, color .25s ease">The problem</span><span class="railTick" style="width:16px; height:2px; border-radius:2px; background:#DDDCD9; transition:width .25s ease, background .25s ease"></span></a>
+    <a class="railItem" data-nav="system" href="#system" style="display:flex; align-items:center; gap:12px; text-decoration:none"><span class="railLabel" style="font-size:12.5px; color:#9a958d; white-space:nowrap; opacity:0; transform:translateX(6px); transition:opacity .25s ease, transform .25s ease, color .25s ease">The system</span><span class="railTick" style="width:16px; height:2px; border-radius:2px; background:#DDDCD9; transition:width .25s ease, background .25s ease"></span></a>
+    <a class="railItem" data-nav="research" href="#research" style="display:flex; align-items:center; gap:12px; text-decoration:none"><span class="railLabel" style="font-size:12.5px; color:#9a958d; white-space:nowrap; opacity:0; transform:translateX(6px); transition:opacity .25s ease, transform .25s ease, color .25s ease">Research</span><span class="railTick" style="width:16px; height:2px; border-radius:2px; background:#DDDCD9; transition:width .25s ease, background .25s ease"></span></a>
+    <a class="railItem" data-nav="challenge" href="#challenge" style="display:flex; align-items:center; gap:12px; text-decoration:none"><span class="railLabel" style="font-size:12.5px; color:#9a958d; white-space:nowrap; opacity:0; transform:translateX(6px); transition:opacity .25s ease, transform .25s ease, color .25s ease">UX challenge</span><span class="railTick" style="width:16px; height:2px; border-radius:2px; background:#DDDCD9; transition:width .25s ease, background .25s ease"></span></a>
+    <a class="railItem" data-nav="decisions" href="#decisions" style="display:flex; align-items:center; gap:12px; text-decoration:none"><span class="railLabel" style="font-size:12.5px; color:#9a958d; white-space:nowrap; opacity:0; transform:translateX(6px); transition:opacity .25s ease, transform .25s ease, color .25s ease">UX decisions</span><span class="railTick" style="width:16px; height:2px; border-radius:2px; background:#DDDCD9; transition:width .25s ease, background .25s ease"></span></a>
+    <a class="railItem" data-nav="flows" href="#flows" style="display:flex; align-items:center; gap:12px; text-decoration:none"><span class="railLabel" style="font-size:12.5px; color:#9a958d; white-space:nowrap; opacity:0; transform:translateX(6px); transition:opacity .25s ease, transform .25s ease, color .25s ease">Flows</span><span class="railTick" style="width:16px; height:2px; border-radius:2px; background:#DDDCD9; transition:width .25s ease, background .25s ease"></span></a>
+    <a class="railItem" data-nav="success" href="#success" style="display:flex; align-items:center; gap:12px; text-decoration:none"><span class="railLabel" style="font-size:12.5px; color:#9a958d; white-space:nowrap; opacity:0; transform:translateX(6px); transition:opacity .25s ease, transform .25s ease, color .25s ease">Success</span><span class="railTick" style="width:16px; height:2px; border-radius:2px; background:#DDDCD9; transition:width .25s ease, background .25s ease"></span></a>
+    <a class="railItem" data-nav="learnings" href="#learnings" style="display:flex; align-items:center; gap:12px; text-decoration:none"><span class="railLabel" style="font-size:12.5px; color:#9a958d; white-space:nowrap; opacity:0; transform:translateX(6px); transition:opacity .25s ease, transform .25s ease, color .25s ease">Learnings</span><span class="railTick" style="width:16px; height:2px; border-radius:2px; background:#DDDCD9; transition:width .25s ease, background .25s ease"></span></a>
+  </nav>
+
+  <!-- BACK TO TOP -->
+  <a class="csTop" href="#top" aria-label="Back to top" style="position:fixed; right:26px; bottom:26px; z-index:30; display:inline-flex; align-items:center; gap:8px; padding:10px 17px; border-radius:30px; border:1px solid #E8E7E4; background:rgba(255,255,255,.9); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); color:#111111; font-family:'Hanken Grotesk',system-ui,sans-serif; font-size:13.5px; line-height:1; text-decoration:none; cursor:pointer; box-shadow:0 10px 26px rgba(30,30,30,.12); opacity:0; pointer-events:none; transition:opacity .3s ease, background .18s ease, color .18s ease, border-color .18s ease">↑ Top</a>
+
+  <!-- NAV -->
+  <header id="top" style="position:sticky; top:0; z-index:20; background:rgba(255,255,255,.85); backdrop-filter:blur(10px); border-bottom:1px solid #E8E7E4">
+    <div style="max-width:1040px; margin:0; display:flex; align-items:center; justify-content:space-between; padding:15px clamp(24px,5vw,56px) 15px clamp(28px,7vw,80px)">
+      <a href="index.html" style="text-decoration:none; color:#111111; font-size:14px; display:inline-flex; align-items:center; gap:8px">← All work</a>
+      <div style="display:flex; align-items:center; gap:22px">
+        <a href="mai.html" class="tvNavNext" style="text-decoration:none; color:#111111; font-size:13.5px; white-space:nowrap; display:inline-flex; align-items:center; gap:8px"><span style="color:#9a958d">next</span>MAI <span style="color:#2A6B62">→</span></a>
+        <a href="mailto:gayatribodke18@gmail.com" class="tvBtn" style="text-decoration:none; color:#FFFFFF; background:#111111; padding:9px 18px; border-radius:30px; font-size:13.5px; white-space:nowrap; display:inline-flex; align-items:center">Get in touch</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section style="max-width:1180px; margin:0; padding:48px clamp(24px,5vw,56px) 26px clamp(28px,7vw,80px)">
+    <div class="tvHero" style="display:grid; grid-template-columns:1.15fr .85fr; gap:48px; align-items:center">
+    <div>
+    <div style="display:flex; align-items:center; gap:14px; margin-bottom:24px">
+      <span style="font-family:'Instrument Serif',serif; font-size:44px; letter-spacing:1px">TVAK</span>
+      <span style="font-size:13px; color:#888; background:#F5F4F2; padding:6px 12px; border-radius:30px">now Indus Derma</span>
+      <span style="display:inline-flex; align-items:center; gap:7px; font-size:11px; letter-spacing:.09em; text-transform:uppercase; color:#2A6B62; border:1px solid #D6E5E1; padding:6px 12px; border-radius:30px"><svg width="10" height="12" viewBox="0 0 14 16" fill="none" stroke="#2A6B62" stroke-width="1.6" aria-hidden="true"><rect x="1" y="6.5" width="12" height="8.5" rx="2"></rect><path d="M3.8 6.5V4.2a3.2 3.2 0 0 1 6.4 0v2.3"></path></svg>Under NDA</span>
+    </div>
+    <h1 style="font-family:'Instrument Serif',serif; font-weight:400; font-size:clamp(30px,4.4vw,46px); line-height:1.12; letter-spacing:-.5px; margin:0 0 20px; max-width:22ch">One AI skin result that had to work for three very different people</h1>
+    <p style="font-size:18px; line-height:1.65; color:#111; margin:0 0 30px; max-width:56ch">A skin-screening app for Indian users. The interesting part wasn't the prediction. It was connecting a patient, a frontline health worker and a doctor without losing the case between them.</p>
+    <div style="display:flex; gap:16px 28px; flex-wrap:wrap; font-size:13.5px; line-height:1.4; color:#111111; padding-top:20px; border-top:1px solid #E8E7E4">
+      <div><div style="color:#999999; font-size:12px; margin-bottom:4px">Role</div>Product Designer</div>
+      <div><div style="color:#999999; font-size:12px; margin-bottom:4px">Company</div>AjnaLens</div>
+      <div><div style="color:#999999; font-size:12px; margin-bottom:4px">Clinical partner</div>AIIMS dermatology panel</div>
+      <div><div style="color:#999999; font-size:12px; margin-bottom:4px">Timeline</div>Dec 2025 – present</div>
+      <div><div style="color:#999999; font-size:12px; margin-bottom:4px">I owned</div>Research, UX decisions, flows and interaction architecture</div>
+    </div>
+    </div>
+      <div class="tvHeroDevice" style="display:flex; justify-content:center; align-items:center">
+        <div style="position:relative">
+          <div style="position:absolute; inset:-14% -18%; background:radial-gradient(58% 52% at 50% 42%, rgba(107,74,168,.18), transparent 72%); filter:blur(10px); z-index:0"></div>
+          <img src="assets/tvak/screen-hero.png" alt="TVAK first screen — AI-Powered Skin Health for All, your AI companion for quick, confident skin health checks" class="heroDevice" style="position:relative; z-index:1; display:block; width:auto; max-width:min(252px,62vw); height:auto; max-height:min(520px,56vh); border-radius:26px; box-shadow:0 40px 90px rgba(50,30,80,.28)">
+          <div style="position:absolute; z-index:2; bottom:26px; right:-16px; background:#FFFFFF; border:1px solid #E8E7E4; box-shadow:0 12px 30px rgba(30,30,30,.12); border-radius:30px; padding:8px 15px; display:flex; align-items:center; gap:8px">
+            <span style="width:8px; height:8px; border-radius:50%; background:#2A6B62"></span>
+            <span style="font-family:'Shantell Sans',cursive; font-size:13px; color:#111; white-space:nowrap">a first look, in your hand</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SHORT VERSION -->
+  <section style="max-width:1040px; margin:0; padding:18px clamp(24px,5vw,56px) 0 clamp(28px,7vw,80px)">
+    <div style="background:#F5F4F2; border-radius:20px; padding:28px 30px">
+      <p style="font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:#999; margin:0 0 16px">the short version</p>
+      <div style="display:flex; flex-direction:column; gap:13px">
+        <div style="display:flex; gap:12px; align-items:flex-start"><span style="color:#2A6B62; font-weight:700; line-height:1.5">→</span><span style="font-size:15.5px; line-height:1.6; color:#111">Three people (patient, ASHA worker, PHC doctor) touch one case in completely different settings.</span></div>
+        <div style="display:flex; gap:12px; align-items:flex-start"><span style="color:#2A6B62; font-weight:700; line-height:1.5">→</span><span style="font-size:15.5px; line-height:1.6; color:#111">In the real system, information gets lost at each handoff. My research was about understanding why before touching anything.</span></div>
+        <div style="display:flex; gap:12px; align-items:flex-start"><span style="color:#2A6B62; font-weight:700; line-height:1.5">→</span><span style="font-size:15.5px; line-height:1.6; color:#111">The design carries the same result across all three, in each person's language, and is built to fail safely.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 01 CONTEXT -->
+  <section style="max-width:1040px; margin:0; padding:76px clamp(24px,5vw,56px) 0 clamp(28px,7vw,80px)">
+    <div id="context" style="scroll-margin-top:90px; display:flex; align-items:baseline; gap:14px; margin-bottom:20px">
+      <span style="font-family:'Instrument Serif',serif; font-size:30px; color:#2A6B62">01</span>
+      <h2 style="font-family:'Instrument Serif',serif; font-weight:400; font-size:28px; letter-spacing:-.3px; margin:0">The context</h2>
+    </div>
+    <p style="font-size:19px; line-height:1.6; color:#111; margin:0 0 18px; font-weight:500; max-width:52ch">Skin is the one condition you can see from across the room, and still the hardest one to get looked at.</p>
+    <p style="font-size:17px; line-height:1.7; color:#111; margin:0 0 16px; max-width:64ch">In much of India, that first look happens late or not at all. Dermatologists cluster in cities, and a person who notices something on their skin often doesn't know if it is serious, whether to travel for it, or who to ask.</p>
+    <p style="font-size:17px; line-height:1.7; color:#111; margin:0 0 24px; max-width:64ch">The first person they reach is not a specialist. It is an ASHA worker on a household visit, or a doctor at a primary health centre with a queue outside. That chain already works, in its own way. Anything digital enters it as a guest.</p>
+    <div style="border-left:3px solid #2A6B62; padding:6px 0 6px 22px">
+      <p style="font-family:'Instrument Serif',serif; font-size:clamp(22px,3.2vw,28px); line-height:1.3; margin:0; max-width:26ch">Could an AI first look reach people earlier without pulling the existing chain apart?</p>
+      <p style="font-size:14px; color:#888; margin:12px 0 0">The question underneath every decision that follows.</p>
+    </div>
+  </section>
+
+  <!-- 02 THE PROBLEM -->
+  <section style="max-width:1040px; margin:0; padding:80px clamp(24px,5vw,56px) 0 clamp(28px,7vw,80px)">
+    <div id="problem" style="scroll-margin-top:90px; display:flex; align-items:baseline; gap:14px; margin-bottom:20px">
+      <span style="font-family:'Instrument Serif',serif; font-size:30px; color:#2A6B62">02</span>
+      <h2 style="font-family:'Instrument Serif',serif; font-weight:400; font-size:28px; letter-spacing:-.3px; margin:0">The problem</h2>
+    </div>
+    <p style="font-size:19px; line-height:1.6; color:#111; margin:0 0 18px; font-weight:500; max-width:52ch">Most skin conditions have no single test. Diagnosis starts with someone looking at the skin and making a judgement.</p>
+    <p style="font-size:17px; line-height:1.7; color:#111; margin:0; max-width:64ch">TVAK puts that first look in the patient's hand. Photograph the skin, get a probable condition and a clear next step. The team trained its own model for Indian and regional skin conditions. My job was the experience around that result.</p>
+  </section>
+
+  <!-- 02 THE SYSTEM -->
+  <section style="max-width:1040px; margin:0; padding:80px clamp(24px,5vw,56px) 0 clamp(28px,7vw,80px)">
+    <div id="system" style="scroll-margin-top:90px; display:flex; align-items:baseline; gap:14px; margin-bottom:20px">
+      <span style="font-family:'Instrument Serif',serif; font-size:30px; color:#2A6B62">03</span>
+      <h2 style="font-family:'Instrument Serif',serif; font-weight:400; font-size:28px; letter-spacing:-.3px; margin:0">The system I was designing for</h2>
+    </div>
+    <p style="font-size:17px; line-height:1.7; color:#111; margin:0 0 30px; max-width:62ch">One case can pass through three people who never share a room, a screen or a vocabulary. Before designing anything, I had to hold all three in view at once.</p>
+
+    <!-- three contexts, compact comparison -->
+    <div class="tvCtx" style="display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-bottom:26px">
+      <div style="border:1px solid #E8E7E4; border-radius:18px; overflow:hidden">
+        <div style="background:#F5F4F2; padding:15px 20px; display:flex; align-items:center; gap:10px"><span style="width:16px; height:16px; border-radius:50%; background:#D8D4CD"></span><strong style="font-size:15px">Patient</strong></div>
+        <div style="padding:18px 20px; display:flex; flex-direction:column; gap:14px">
+          <div><p style="font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:#aaa; margin:0 0 3px">Needs to</p><p style="font-size:14.5px; color:#111; margin:0">Understand what's happening</p></div>
+          <div><p style="font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:#aaa; margin:0 0 3px">Reads best in</p><p style="font-size:14.5px; color:#111; margin:0">Simple, plain language</p></div>
+          <div><p style="font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:#aaa; margin:0 0 3px">Gets</p><p style="font-size:14.5px; color:#111; margin:0">Reassurance and the right escalation</p></div>
+        </div>
+      </div>
+      <div style="border:1px solid #E8E7E4; border-radius:18px; overflow:hidden">
+        <div style="background:#F5F4F2; padding:15px 20px; display:flex; align-items:center; gap:10px"><span style="width:16px; height:16px; border-radius:50%; background:#B0ACA4"></span><strong style="font-size:15px">ASHA / CHW</strong></div>
+        <div style="padding:18px 20px; display:flex; flex-direction:column; gap:14px">
+          <div><p style="font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:#aaa; margin:0 0 3px">Needs to</p><p style="font-size:14.5px; color:#111; margin:0">Know what to do next</p></div>
+          <div><p style="font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:#aaa; margin:0 0 3px">Reads best in</p><p style="font-size:14.5px; color:#111; margin:0">Actionable guidance</p></div>
+          <div><p style="font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:#aaa; margin:0 0 3px">Gets</p><p style="font-size:14.5px; color:#111; margin:0">Referral decision support</p></div>
+        </div>
+      </div>
+      <div style="border:1px solid #E8E7E4; border-radius:18px; overflow:hidden">
+        <div style="background:#F5F4F2; padding:15px 20px; display:flex; align-items:center; gap:10px"><span style="width:16px; height:16px; border-radius:50%; background:#6E6A63"></span><strong style="font-size:15px">PHC doctor</strong></div>
+        <div style="padding:18px 20px; display:flex; flex-direction:column; gap:14px">
+          <div><p style="font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:#aaa; margin:0 0 3px">Needs to</p><p style="font-size:14.5px; color:#111; margin:0">Assess the case</p></div>
+          <div><p style="font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:#aaa; margin:0 0 3px">Reads best in</p><p style="font-size:14.5px; color:#111; margin:0">Clinical context</p></div>
+          <div><p style="font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:#aaa; margin:0 0 3px">Gets</p><p style="font-size:14.5px; color:#111; margin:0">Review and clinical judgement</p></div>
+        </div>
+      </div>
+    </div>
+
+    <p style="font-family:'Instrument Serif',serif; font-style:italic; font-size:22px; line-height:1.45; color:#111; margin:0 0 10px; max-width:34ch">The same case had to stay consistent. The experience could not be identical.</p>
+    <p style="font-size:14px; color:#888; margin:0">Built for everyday Indian users too, not only frontline workers. The patient is a real user, not a data source.</p>
+  </section>
+
+  <!-- 03 RESEARCH -->
+  <section style="max-width:1040px; margin:0; padding:80px clamp(24px,5vw,56px) 0 clamp(28px,7vw,80px)">
+    <div id="research" style="scroll-margin-top:90px; display:flex; align-items:baseline; gap:14px; margin-bottom:20px">
+      <span style="font-family:'Instrument Serif',serif; font-size:30px; color:#2A6B62">04</span>
+      <h2 style="font-family:'Instrument Serif',serif; font-weight:400; font-size:28px; letter-spacing:-.3px; margin:0">What the research revealed</h2>
+    </div>
+    <p style="font-size:17px; line-height:1.7; color:#111; margin:0 0 26px; max-width:60ch">I studied how existing skin and health apps work: where the data comes from, how doctors are involved, how results are scored.</p>
+
+    <p style="font-size:13px; letter-spacing:.1em; text-transform:uppercase; color:#999; margin:0 0 14px">what kept coming up</p>
+    <div class="tvThree" style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:30px">
+      <div style="background:#F5F4F2; border-radius:12px; padding:16px 18px; font-size:14.5px; color:#111">Manual logs and paper registers</div>
+      <div style="background:#F5F4F2; border-radius:12px; padding:16px 18px; font-size:14.5px; color:#111">Limited clinical grounding</div>
+      <div style="background:#F5F4F2; border-radius:12px; padding:16px 18px; font-size:14.5px; color:#111">Low multilingual coverage</div>
+      <div style="background:#F5F4F2; border-radius:12px; padding:16px 18px; font-size:14.5px; color:#111">Text-heavy for low-literacy users</div>
+      <div style="background:#F5F4F2; border-radius:12px; padding:16px 18px; font-size:14.5px; color:#111">Information fragmented across roles</div>
+      <div style="background:#F5F4F2; border-radius:12px; padding:16px 18px; font-size:14.5px; color:#111">Referral delays and connectivity gaps</div>
+    </div>
+
+    <div style="border-left:3px solid #2A6B62; padding:6px 0 6px 22px; margin:0 0 8px">
+      <p style="font-family:'Instrument Serif',serif; font-size:clamp(22px,3.2vw,28px); line-height:1.3; margin:0; max-width:24ch">Don't disturb the existing workflow. Understand it first, then fit the technology into it.</p>
+      <p style="font-size:14px; color:#888; margin:12px 0 0">The research goal I kept the whole project honest against.</p>
+    </div>
+    <p style="font-size:17px; line-height:1.7; color:#111; margin:22px 0 0">An ASHA already looks at skin and already decides whether to refer. The technology had to sit inside that, not on top of it.</p>
+
+    <!-- research to decision bridge -->
+    <div style="margin-top:34px">
+      <p style="font-size:13px; letter-spacing:.1em; text-transform:uppercase; color:#999; margin:0 0 14px">how each finding became a decision</p>
+      <div class="tvScroll" style="overflow-x:auto">
+        <div style="min-width:660px; display:grid; grid-template-columns:1fr 1fr 1fr; gap:1px; background:#E8E7E4; border:1px solid #E8E7E4; border-radius:16px; overflow:hidden">
+          <div style="background:#FBFAF8; padding:11px 16px; font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:#999">Research finding</div>
+          <div style="background:#FBFAF8; padding:11px 16px; font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:#999">UX implication</div>
+          <div style="background:#F2F7F5; padding:11px 16px; font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:#2A6B62">Decision</div>
+
+          <div style="background:#fff; padding:15px 16px; font-size:14px; line-height:1.5; color:#111">Information fragmented across roles</div>
+          <div style="background:#fff; padding:15px 16px; font-size:14px; line-height:1.5; color:#111">Each role downstream ends up rebuilding the case</div>
+          <div style="background:#fff; padding:15px 16px; font-size:14px; line-height:1.5; color:#111; font-weight:600">Keep the case together across handoffs</div>
+
+          <div style="background:#fff; padding:15px 16px; font-size:14px; line-height:1.5; color:#111">Different health-literacy levels</div>
+          <div style="background:#fff; padding:15px 16px; font-size:14px; line-height:1.5; color:#111">One screen cannot serve patient, worker and doctor at once</div>
+          <div style="background:#fff; padding:15px 16px; font-size:14px; line-height:1.5; color:#111; font-weight:600">Adapt the information depth to each role</div>
+
+          <div style="background:#fff; padding:15px 16px; font-size:14px; line-height:1.5; color:#111">Referral delays</div>
+          <div style="background:#fff; padding:15px 16px; font-size:14px; line-height:1.5; color:#111">Escalation is treated as an afterthought</div>
+          <div style="background:#fff; padding:15px 16px; font-size:14px; line-height:1.5; color:#111; font-weight:600">Make referral part of the main journey</div>
+
+          <div style="background:#fff; padding:15px 16px; font-size:14px; line-height:1.5; color:#111">Connectivity and input limits</div>
+          <div style="background:#fff; padding:15px 16px; font-size:14px; line-height:1.5; color:#111">A poor photo quietly becomes a poor result</div>
+          <div style="background:#fff; padding:15px 16px; font-size:14px; line-height:1.5; color:#111; font-weight:600">Design failure and recovery into the core flow</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 THE UX CHALLENGE -->
+  <section style="max-width:1040px; margin:80px 0 0; padding:0 clamp(24px,5vw,56px) 0 clamp(28px,7vw,80px)">
+    <div id="challenge" style="scroll-margin-top:90px; display:flex; align-items:baseline; gap:14px; margin-bottom:20px">
+      <span style="font-family:'Instrument Serif',serif; font-size:30px; color:#2A6B62">05</span>
+      <h2 style="font-family:'Instrument Serif',serif; font-weight:400; font-size:28px; letter-spacing:-.3px; margin:0">The UX challenge: connecting three contexts</h2>
+    </div>
+    <p style="font-size:19px; line-height:1.55; color:#111; margin:0 0 30px; max-width:30ch; font-family:'Instrument Serif',serif">How do you connect three people in different contexts, and keep the information understandable, useful and safe?</p>
+
+    <!-- fragmentation diagram -->
+    <div style="background:#F5F4F2; border-radius:20px; padding:38px 30px 30px">
+      <div class="tvFrag" style="display:flex; align-items:center; justify-content:center; gap:0; margin-bottom:22px">
+        <div style="text-align:center; flex:none">
+          <div style="width:96px; height:96px; border-radius:20px; background:#fff; border:1.5px solid #E4E2DD; display:flex; align-items:center; justify-content:center; margin:0 auto"><div style="width:30px; height:30px; border-radius:50%; background:#D8D4CD"></div></div>
+          <div style="font-size:13.5px; margin-top:10px; color:#111">Patient</div>
+        </div>
+        <div class="tvFragArrow" style="flex:1; min-width:40px; height:2px; background:repeating-linear-gradient(90deg,#C9C6C0,#C9C6C0 6px,transparent 6px,transparent 12px); position:relative; margin:0 4px 22px"></div>
+        <div style="text-align:center; flex:none">
+          <div style="width:96px; height:96px; border-radius:20px; background:#fff; border:1.5px solid #E4E2DD; display:flex; align-items:center; justify-content:center; margin:0 auto"><div style="width:30px; height:30px; border-radius:50%; background:#B0ACA4"></div></div>
+          <div style="font-size:13.5px; margin-top:10px; color:#111">ASHA / CHW</div>
+        </div>
+        <div class="tvFragArrow" style="flex:1; min-width:40px; height:2px; background:repeating-linear-gradient(90deg,#C9C6C0,#C9C6C0 6px,transparent 6px,transparent 12px); position:relative; margin:0 4px 22px"></div>
+        <div style="text-align:center; flex:none">
+          <div style="width:96px; height:96px; border-radius:20px; background:#fff; border:1.5px solid #E4E2DD; display:flex; align-items:center; justify-content:center; margin:0 auto"><div style="width:30px; height:30px; border-radius:50%; background:#6E6A63"></div></div>
+          <div style="font-size:13.5px; margin-top:10px; color:#111">PHC doctor</div>
+        </div>
+      </div>
+      <p style="text-align:center; font-size:14px; color:#999; margin:0; font-family:'Shantell Sans',cursive">at every arrow, a bit of the case falls out</p>
+    </div>
+
+    <p style="font-size:17px; line-height:1.7; color:#111; margin:26px 0 0; max-width:62ch">The model gives one result. But the patient, the ASHA and the doctor cannot read the same screen. Reframing it as one result travelling across handoffs, rather than a prediction firing once, is what made the rest of the design fall into place.</p>
+    <p style="font-family:'Instrument Serif',serif; font-style:italic; font-size:20px; line-height:1.5; color:#111; margin:20px 0 0">One underlying result had to work in three places, without anyone downstream rebuilding the case from scratch.</p>
+  </section>
+
+  <!-- FOUR LAYERS OVERVIEW -->
+  <section style="max-width:1040px; margin:80px 0 0; padding:0 clamp(24px,5vw,56px) 0 clamp(28px,7vw,80px)">
+    <div style="max-width:1040px; margin:0 26px">
+      <p style="font-size:13px; letter-spacing:.1em; text-transform:uppercase; color:#999; margin:0 0 10px">the shape of the work</p>
+      <h2 style="font-family:'Instrument Serif',serif; font-weight:400; font-size:28px; letter-spacing:-.3px; margin:0 0 12px">The experience had four layers</h2>
+      <p style="font-size:16px; line-height:1.65; color:#111; margin:0; max-width:60ch">Not a framework, just the four connected parts I worked across. This is the map; the evidence for each one follows below.</p>
+    </div>
+
+    <div class="tvLayers" style="display:grid; grid-template-columns:repeat(4,1fr); gap:14px">
+      <a href="#flow01" style="text-decoration:none; color:inherit; border:1px solid #E8E7E4; border-top:3px solid #E4E2DD; border-radius:16px; padding:18px 18px; display:flex; flex-direction:column">
+        <span style="font-family:'Instrument Serif',serif; font-size:24px; color:#2A6B62; line-height:1">01</span>
+        <div style="font-size:12px; letter-spacing:.06em; text-transform:uppercase; color:#999; margin:9px 0 6px; font-weight:600">User interaction</div>
+        <div style="font-size:14px; font-weight:600; line-height:1.4; margin-bottom:10px">Getting a usable case into the system</div>
+        <div style="font-size:12.5px; line-height:1.55; color:#111; margin-bottom:12px">Capture, symptoms, validation, retry</div>
+        <div style="font-size:12.5px; line-height:1.5; color:#888; margin-top:auto; font-family:'Shantell Sans',cursive">Can the user get a usable case in?</div>
+      </a>
+      <a href="#flow02" style="text-decoration:none; color:inherit; border:1px solid #E8E7E4; border-top:3px solid #E4E2DD; border-radius:16px; padding:18px 18px; display:flex; flex-direction:column">
+        <span style="font-family:'Instrument Serif',serif; font-size:24px; color:#2A6B62; line-height:1">02</span>
+        <div style="font-size:12px; letter-spacing:.06em; text-transform:uppercase; color:#999; margin:9px 0 6px; font-weight:600">AI / system logic</div>
+        <div style="font-size:14px; font-weight:600; line-height:1.4; margin-bottom:10px">Turning the input into a usable result</div>
+        <div style="font-size:12.5px; line-height:1.55; color:#111; margin-bottom:12px">AI prediction, clinical database, clinical context</div>
+        <div style="font-size:12.5px; line-height:1.5; color:#888; margin-top:auto; font-family:'Shantell Sans',cursive">How does input become clinical context?</div>
+      </a>
+      <a href="#flow03" style="text-decoration:none; color:inherit; border:1px solid #E8E7E4; border-top:3px solid #E4E2DD; border-radius:16px; padding:18px 18px; display:flex; flex-direction:column">
+        <span style="font-family:'Instrument Serif',serif; font-size:24px; color:#2A6B62; line-height:1">03</span>
+        <div style="font-size:12px; letter-spacing:.06em; text-transform:uppercase; color:#999; margin:9px 0 6px; font-weight:600">Information experience</div>
+        <div style="font-size:14px; font-weight:600; line-height:1.4; margin-bottom:10px">Making the same result useful for different people</div>
+        <div style="font-size:12.5px; line-height:1.55; color:#111; margin-bottom:12px">Patient, ASHA / CHW, PHC doctor</div>
+        <div style="font-size:12.5px; line-height:1.5; color:#888; margin-top:auto; font-family:'Shantell Sans',cursive">How should each user act on the same result?</div>
+      </a>
+      <a href="#flow04" style="text-decoration:none; color:inherit; border:1px solid #E8E7E4; border-top:3px solid #E4E2DD; border-radius:16px; padding:18px 18px; display:flex; flex-direction:column">
+        <span style="font-family:'Instrument Serif',serif; font-size:24px; color:#2A6B62; line-height:1">04</span>
+        <div style="font-size:12px; letter-spacing:.06em; text-transform:uppercase; color:#999; margin:9px 0 6px; font-weight:600">Workflow / handoff</div>
+        <div style="font-size:14px; font-weight:600; line-height:1.4; margin-bottom:10px">Moving the case through the healthcare system</div>
+        <div style="font-size:12.5px; line-height:1.55; color:#111; margin-bottom:12px">ASHA / CHW, referral, PHC doctor, clinical review</div>
+        <div style="font-size:12.5px; line-height:1.5; color:#888; margin-top:auto; font-family:'Shantell Sans',cursive">How does the case move without losing context?</div>
+      </a>
+    </div>
+
+    <p style="font-family:'Instrument Serif',serif; font-style:italic; font-size:clamp(19px,2.6vw,23px); line-height:1.5; color:#111; margin:28px auto 0; max-width:58ch; text-align:left">I wasn't designing one screen or one user journey. I was connecting these four layers so the case could move from input to action without losing context.</p>
+  </section>
+
+  <!-- 05 DECISIONS -->
+  <section style="max-width:1040px; margin:0; padding:80px clamp(24px,5vw,56px) 0 clamp(28px,7vw,80px)">
+    <div id="decisions" style="scroll-margin-top:90px; display:flex; align-items:baseline; gap:14px; margin-bottom:24px">
+      <span style="font-family:'Instrument Serif',serif; font-size:30px; color:#2A6B62">06</span>
+      <h2 style="font-family:'Instrument Serif',serif; font-weight:400; font-size:28px; letter-spacing:-.3px; margin:0">UX decisions</h2>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:16px">
+
+      <div style="border:1px solid #E8E7E4; border-radius:18px; padding:26px 28px">
+        <div style="display:flex; align-items:baseline; gap:14px; margin-bottom:18px">
+          <span style="font-family:'Instrument Serif',serif; font-size:30px; color:#2A6B62; line-height:1">01</span>
+          <h3 style="font-size:18px; margin:0; letter-spacing:-.2px">Don't make the CHW interpret the AI</h3>
+        </div>
+        <div class="tvDecGrid" style="display:grid; grid-template-columns:1fr 1fr; gap:18px 28px">
+          <div><p style="font-size:11px; letter-spacing:.09em; text-transform:uppercase; color:#aaa; margin:0 0 5px">What I found</p><p style="font-size:14.5px; line-height:1.55; color:#111; margin:0">The ASHA/CHW works from experience and referral protocols, not technical model outputs.</p></div>
+          <div><p style="font-size:11px; letter-spacing:.09em; text-transform:uppercase; color:#999; margin:0 0 5px">UX decision</p><p style="font-size:14.5px; line-height:1.55; color:#222; margin:0">Interpreting the AI is not her job.</p></div>
+          <div><p style="font-size:11px; letter-spacing:.09em; text-transform:uppercase; color:#aaa; margin:0 0 5px">Why</p><p style="font-size:14.5px; line-height:1.55; color:#111; margin:0">The product should support her existing role, not add a new clinical responsibility.</p></div>
+          <div><p style="font-size:11px; letter-spacing:.09em; text-transform:uppercase; color:#999; margin:0 0 5px">Where it appears</p><p style="font-size:14.5px; line-height:1.55; color:#222; margin:0">The result becomes plain condition information, care guidance and a referral direction.</p></div>
+        </div>
+      </div>
+
+      <div style="border:1px solid #E8E7E4; border-radius:18px; padding:26px 28px">
+        <div style="display:flex; align-items:baseline; gap:14px; margin-bottom:18px">
+          <span style="font-family:'Instrument Serif',serif; font-size:30px; color:#2A6B62; line-height:1">02</span>
+          <h3 style="font-size:18px; margin:0; letter-spacing:-.2px">Keep the case together across handoffs</h3>
+        </div>
+        <div class="tvDecGrid" style="display:grid; grid-template-columns:1fr 1fr; gap:18px 28px">
+          <div><p style="font-size:11px; letter-spacing:.09em; text-transform:uppercase; color:#aaa; margin:0 0 5px">What I found</p><p style="font-size:14.5px; line-height:1.55; color:#111; margin:0">Information gets fragmented when a case moves between people.</p></div>
+          <div><p style="font-size:11px; letter-spacing:.09em; text-transform:uppercase; color:#999; margin:0 0 5px">UX decision</p><p style="font-size:14.5px; line-height:1.55; color:#222; margin:0">The case travels with the patient instead of being rebuilt at each stage.</p></div>
+          <div><p style="font-size:11px; letter-spacing:.09em; text-transform:uppercase; color:#aaa; margin:0 0 5px">Why</p><p style="font-size:14.5px; line-height:1.55; color:#111; margin:0">The PHC doctor should receive the context already collected, not start again.</p></div>
+          <div><p style="font-size:11px; letter-spacing:.09em; text-transform:uppercase; color:#999; margin:0 0 5px">Where it appears</p><p style="font-size:14.5px; line-height:1.55; color:#222; margin:0">Images, symptoms and case info carry forward into the doctor's view.</p></div>
+        </div>
+      </div>
+
+      <div style="border:1px solid #E8E7E4; border-radius:18px; padding:26px 28px">
+        <div style="display:flex; align-items:baseline; gap:14px; margin-bottom:18px">
+          <span style="font-family:'Instrument Serif',serif; font-size:30px; color:#2A6B62; line-height:1">03</span>
+          <h3 style="font-size:18px; margin:0; letter-spacing:-.2px">Same result, different depth</h3>
+        </div>
+        <div class="tvDecGrid" style="display:grid; grid-template-columns:1fr 1fr; gap:18px 28px">
+          <div><p style="font-size:11px; letter-spacing:.09em; text-transform:uppercase; color:#aaa; margin:0 0 5px">What I found</p><p style="font-size:14.5px; line-height:1.55; color:#111; margin:0">Patient, CHW and doctor have different responsibilities and health-literacy levels.</p></div>
+          <div><p style="font-size:11px; letter-spacing:.09em; text-transform:uppercase; color:#999; margin:0 0 5px">UX decision</p><p style="font-size:14.5px; line-height:1.55; color:#222; margin:0">Don't show everyone the same screen.</p></div>
+          <div><p style="font-size:11px; letter-spacing:.09em; text-transform:uppercase; color:#aaa; margin:0 0 5px">Why</p><p style="font-size:14.5px; line-height:1.55; color:#111; margin:0">The underlying information can stay consistent while the depth changes to fit each role.</p></div>
+          <div><p style="font-size:11px; letter-spacing:.09em; text-transform:uppercase; color:#999; margin:0 0 5px">Where it appears</p><p style="font-size:14.5px; line-height:1.55; color:#222; margin:0">Patient gets simpler language, CHW gets actionable guidance, doctor gets clinical depth.</p></div>
+        </div>
+      </div>
+
+      <div style="border:1px solid #E8E7E4; border-radius:18px; padding:26px 28px">
+        <div style="display:flex; align-items:baseline; gap:14px; margin-bottom:18px">
+          <span style="font-family:'Instrument Serif',serif; font-size:30px; color:#2A6B62; line-height:1">04</span>
+          <h3 style="font-size:18px; margin:0; letter-spacing:-.2px">Design uncertainty into the main journey</h3>
+        </div>
+        <div class="tvDecGrid" style="display:grid; grid-template-columns:1fr 1fr; gap:18px 28px">
+          <div><p style="font-size:11px; letter-spacing:.09em; text-transform:uppercase; color:#aaa; margin:0 0 5px">What I found</p><p style="font-size:14.5px; line-height:1.55; color:#111; margin:0">Poor images, low confidence and connectivity gaps can all block a reliable result.</p></div>
+          <div><p style="font-size:11px; letter-spacing:.09em; text-transform:uppercase; color:#999; margin:0 0 5px">UX decision</p><p style="font-size:14.5px; line-height:1.55; color:#222; margin:0">Treat failure and uncertainty as normal paths, not hidden edge cases.</p></div>
+          <div><p style="font-size:11px; letter-spacing:.09em; text-transform:uppercase; color:#aaa; margin:0 0 5px">Why</p><p style="font-size:14.5px; line-height:1.55; color:#111; margin:0">Here, a failure with no clear next step can stop the whole journey.</p></div>
+          <div><p style="font-size:11px; letter-spacing:.09em; text-transform:uppercase; color:#999; margin:0 0 5px">Where it appears</p><p style="font-size:14.5px; line-height:1.55; color:#222; margin:0">Retry, refusal, referral and escalation are explicitly mapped in the flow.</p></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 06 FLOWS -->
+  <section style="max-width:1040px; margin:0; padding:80px clamp(24px,5vw,56px) 0 clamp(28px,7vw,80px)">
+    <div id="flows" style="scroll-margin-top:90px; display:flex; align-items:baseline; gap:14px; margin-bottom:20px">
+      <span style="font-family:'Instrument Serif',serif; font-size:30px; color:#2A6B62">07</span>
+      <h2 style="font-family:'Instrument Serif',serif; font-weight:400; font-size:28px; letter-spacing:-.3px; margin:0">Flows &amp; interaction architecture</h2>
+    </div>
+    <p style="font-size:17px; line-height:1.7; color:#111; margin:0; max-width:62ch">Four moments carried the real design weight. Each is a different kind of problem, so each is drawn differently.</p>
+  </section>
+
+  <!-- flow chunks -->
+  <section style="max-width:1040px; margin:28px 0 0; padding:0 clamp(24px,5vw,56px) 0 clamp(28px,7vw,80px)">
+
+    <!-- FLOW 01 · INTERACTION -->
+    <div id="flow01" style="scroll-margin-top:80px; margin-bottom:54px">
+      <div class="tvChunkHead" style="display:flex; align-items:center; gap:12px; margin-bottom:14px">
+        <span style="font-family:'Instrument Serif',serif; font-size:22px; width:44px; height:44px; flex:none; border-radius:50%; background:#F5F4F2; color:#2A6B62; border:1px solid #E4E2DD; display:flex; align-items:center; justify-content:center">01</span>
+        <h3 style="font-size:19px; margin:0; letter-spacing:-.2px">Getting a usable case into the system</h3>
+        <span style="font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:#888; background:#F5F4F2; border:1px solid #E4E2DD; padding:5px 11px; border-radius:30px; white-space:nowrap">interaction</span>
+      </div>
+      <p style="font-size:13.5px; color:#888; margin:0 0 8px; font-family:'Shantell Sans',cursive">the question &rarr; can the user get a usable case in?</p>
+      <p style="font-size:15.5px; line-height:1.65; color:#111; margin:0 0 20px; max-width:64ch">Before the AI runs, the worker has to get one clean case in, attached to the right patient. Most of the tap-to-tap interaction lives here.</p>
+
+      <div class="tvSteps" style="display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-bottom:20px">
+        <div style="border:1px solid #E8E7E4; border-radius:14px; padding:16px 18px">
+          <div style="font-family:'Instrument Serif',serif; font-size:20px; color:#2A6B62; margin-bottom:6px">1</div>
+          <div style="font-size:14.5px; font-weight:600; margin-bottom:4px">Find or add the patient</div>
+          <p style="font-size:13.5px; line-height:1.55; color:#111; margin:0">Everything captured next stays attached to one record.</p>
+        </div>
+        <div style="border:1px solid #E8E7E4; border-radius:14px; padding:16px 18px">
+          <div style="font-family:'Instrument Serif',serif; font-size:20px; color:#2A6B62; margin-bottom:6px">2</div>
+          <div style="font-size:14.5px; font-weight:600; margin-bottom:4px">Camera or gallery</div>
+          <p style="font-size:13.5px; line-height:1.55; color:#111; margin:0">Permission is asked up front, not mid-task. Symptoms can be typed or spoken.</p>
+        </div>
+        <div style="border:1px solid #E8E7E4; border-radius:14px; padding:16px 18px">
+          <div style="font-family:'Instrument Serif',serif; font-size:20px; color:#2A6B62; margin-bottom:6px">3</div>
+          <div style="font-size:14.5px; font-weight:600; margin-bottom:4px">Two-photo quality gate</div>
+          <p style="font-size:13.5px; line-height:1.55; color:#111; margin:0">Zoomed-out and zoomed-in, each retried with a specific reason.</p>
+        </div>
+      </div>
+
+      <div style="border:1px solid #E8E7E4; border-radius:16px; background:#fff; padding:20px 16px; display:flex; justify-content:center"><img src="assets/tvak/flow-1-capture-diagram.png" alt="Flow: start case, capture skin images, add symptoms, then an input quality gate. A good image continues to submit case and AI analysis; a poor image explains the error and loops back to capture." style="display:block; width:100%; max-width:620px"></div>
+      <div class="tvTwo" style="display:grid; grid-template-columns:1fr 1fr; gap:20px 28px; margin-top:16px">
+        <div><p style="font-size:11px; letter-spacing:.09em; text-transform:uppercase; color:#aaa; margin:0 0 5px">What's happening</p><p style="font-size:14.5px; line-height:1.6; color:#111; margin:0">The worker finds or creates the patient, picks camera or gallery, and the app checks framing and whether skin is visible before it accepts a photo.</p></div>
+        <div><p style="font-size:11px; letter-spacing:.09em; text-transform:uppercase; color:#999; margin:0 0 5px">UX decision</p><p style="font-size:14.5px; line-height:1.6; color:#222; margin:0">Catch a weak input at capture, not after a wrong result. Voice input keeps the same step usable for low-literacy users.</p></div>
+      </div>
+    </div>
+
+    <!-- FLOW 02 · SYSTEM LOGIC -->
+    <div id="flow02" style="scroll-margin-top:80px; margin-bottom:54px">
+      <div class="tvChunkHead" style="display:flex; align-items:center; gap:12px; margin-bottom:14px">
+        <span style="font-family:'Instrument Serif',serif; font-size:22px; width:44px; height:44px; flex:none; border-radius:50%; background:#F5F4F2; color:#2A6B62; border:1px solid #E4E2DD; display:flex; align-items:center; justify-content:center">02</span>
+        <h3 style="font-size:19px; margin:0; letter-spacing:-.2px">From image to clinical context</h3>
+        <span style="font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:#888; background:#F5F4F2; border:1px solid #E4E2DD; padding:5px 11px; border-radius:30px; white-space:nowrap">system logic</span>
+      </div>
+      <p style="font-size:13.5px; color:#888; margin:0 0 8px; font-family:'Shantell Sans',cursive">the question &rarr; how does the system turn that input into clinical context?</p>
+      <p style="font-size:15.5px; line-height:1.65; color:#111; margin:0 0 22px; max-width:64ch">Not a screen flow. This is what the product does with an input, and where responsibility for the clinical meaning actually sits.</p>
+
+      <div class="tvScroll" style="overflow-x:auto; border:1px solid #E8E7E4; border-radius:16px; background:#fff; padding:14px"><img src="assets/tvak/flow-2-system-diagram.png" alt="System logic: valid case (two skin images plus symptoms) is normalized, the AI skin model predicts top likely conditions, those are matched to a validated AIIMS clinical database record for clinical information (severity, contagion, care level, home-care and treatment info), and the combined AI prediction plus validated clinical information drives a user-specific experience and role outputs." style="display:block; height:360px; width:auto; max-width:none"></div>
+
+      <div style="margin-top:16px; border-left:3px solid #2A6B62; padding:4px 0 4px 20px">
+        <p style="font-size:15.5px; line-height:1.65; color:#111; margin:0; max-width:64ch">The model proposes likely conditions with a confidence figure. It does not decide how serious the case is. Severity, contagion and care guidance are attached from the validated AIIMS database, so the clinical meaning always comes from a clinical source.</p>
+      </div>
+    </div>
+
+    <!-- FLOW 03 · INFORMATION HIERARCHY -->
+    <div id="flow03" style="scroll-margin-top:80px; margin-bottom:54px">
+      <div class="tvChunkHead" style="display:flex; align-items:center; gap:12px; margin-bottom:14px">
+        <span style="font-family:'Instrument Serif',serif; font-size:22px; width:44px; height:44px; flex:none; border-radius:50%; background:#F5F4F2; color:#2A6B62; border:1px solid #E4E2DD; display:flex; align-items:center; justify-content:center">03</span>
+        <h3 style="font-size:19px; margin:0; letter-spacing:-.2px">One result, different actions</h3>
+        <span style="font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:#888; background:#F5F4F2; border:1px solid #E4E2DD; padding:5px 11px; border-radius:30px; white-space:nowrap">information hierarchy</span>
+      </div>
+      <p style="font-size:13.5px; color:#888; margin:0 0 8px; font-family:'Shantell Sans',cursive">the question &rarr; how should different users understand and act on the same result?</p>
+      <p style="font-size:15.5px; line-height:1.65; color:#111; margin:0 0 22px; max-width:64ch">One result, three depths. The same case, shown at the level each person can actually act on.</p>
+
+      <div style="border:1px solid #E8E7E4; border-radius:16px; background:#fff; padding:20px 16px; margin-bottom:26px; display:flex; justify-content:center"><img src="assets/tvak/flow-3-hierarchy-diagram.png" alt="Information hierarchy: one skin case (images plus symptoms) becomes an AI predicted condition, then validated clinical context, which splits into three views of the same underlying result at different information depth. Patient understands (simple condition info, plain-language explanation, what to do next, seek help); ASHA/CHW acts (probable condition, relevant care information, contagion/guidance, refer or continue); PHC doctor assesses (case context, predicted conditions, clinical information, review AI and judgement)." style="display:block; width:100%; max-width:680px"></div>
+
+      <div class="tvThreeScreens" style="display:grid; grid-template-columns:repeat(3,1fr); gap:22px; align-items:start">
+        <div style="justify-self:center; width:100%; max-width:250px">
+          <div class="tvScroll" style="width:100%; height:430px; overflow-y:auto; border-radius:28px; border:7px solid #1B1B1B; background:#fff; box-shadow:0 22px 48px -28px rgba(30,30,30,.5)"><img src="assets/tvak/screen-patient.png" alt="Patient result screen with the case summary, ranked conditions in plain language and an AI-generated disclaimer" style="width:100%; display:block"></div>
+          <div style="text-align:center; font-size:13px; color:#666; margin-top:12px; font-weight:600">Patient view</div>
+        </div>
+        <div style="justify-self:center; width:100%; max-width:250px">
+          <div class="tvScroll" style="width:100%; height:430px; overflow-y:auto; border-radius:28px; border:7px solid #1B1B1B; background:#fff; box-shadow:0 22px 48px -28px rgba(30,30,30,.5)"><img src="assets/tvak/screen-chw.png" alt="ASHA / CHW result screen with ranked probable conditions, contagion flags and patient education guidance" style="width:100%; display:block"></div>
+          <div style="text-align:center; font-size:13px; color:#666; margin-top:12px; font-weight:600">ASHA / CHW view</div>
+        </div>
+        <div style="justify-self:center; width:100%; max-width:250px">
+          <div class="tvScroll" style="width:100%; height:430px; overflow-y:auto; border-radius:28px; border:7px solid #1B1B1B; background:#fff; box-shadow:0 22px 48px -28px rgba(30,30,30,.5)"><img src="assets/tvak/screen-doctor.png" alt="PHC doctor result screen with the full case carried over, treatment plan, and a correct or wrong verification" style="width:100%; display:block"></div>
+          <div style="text-align:center; font-size:13px; color:#666; margin-top:12px; font-weight:600">PHC doctor view</div>
+        </div>
+      </div>
+
+      <div style="margin-top:24px; border:1px solid #E4E2DD; background:#F5F4F2; border-radius:18px; padding:24px 26px; display:grid; grid-template-columns:44px 1fr; gap:18px">
+        <span style="font-family:'Instrument Serif',serif; font-size:30px; color:#2A6B62; line-height:1">+</span>
+        <div>
+          <h4 style="font-size:17px; margin:0 0 8px">The doctor has the final say</h4>
+          <p style="font-size:15px; line-height:1.65; color:#111; margin:0">The doctor's view ends in a <strong>Correct</strong> or <strong>Wrong</strong> choice before submit. The clinical decision stays with the clinician, and each response becomes structured feedback that can support future evaluation of the model. No automatic retraining, just a clear place for a clinician to decide.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- FLOW 04 · WORKFLOW / HANDOFF -->
+    <div id="flow04" style="scroll-margin-top:80px; margin-bottom:22px">
+      <div class="tvChunkHead" style="display:flex; align-items:center; gap:12px; margin-bottom:14px">
+        <span style="font-family:'Instrument Serif',serif; font-size:22px; width:44px; height:44px; flex:none; border-radius:50%; background:#F5F4F2; color:#2A6B62; border:1px solid #E4E2DD; display:flex; align-items:center; justify-content:center">04</span>
+        <h3 style="font-size:19px; margin:0; letter-spacing:-.2px">Keeping the case intact across the handoff</h3>
+        <span style="font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:#888; background:#F5F4F2; border:1px solid #E4E2DD; padding:5px 11px; border-radius:30px; white-space:nowrap">workflow / handoff</span>
+      </div>
+      <p style="font-size:13.5px; color:#888; margin:0 0 8px; font-family:'Shantell Sans',cursive">the question &rarr; how does the case move between people without losing context?</p>
+      <p style="font-size:15.5px; line-height:1.65; color:#111; margin:0 0 20px; max-width:64ch">When the worker refers, the whole case has to reach the PHC doctor intact, not get re-typed. This is one journey cropped from the larger map: the referral seam.</p>
+
+      <div class="tvScroll" style="overflow-x:auto; border:1px solid #E8E7E4; border-radius:16px; background:#fff; padding:14px"><img src="assets/tvak/flow-4-handoff-crop.png" alt="Handoff workflow: input captured, AI analysis with a retry path on failure, then a report the worker acts on by educating the patient or referring to the primary healthcare centre" style="display:block; height:220px; width:auto; max-width:none"></div>
+
+      <div style="margin-top:18px; border:1.5px solid #E4E2DD; border-radius:16px; overflow:hidden">
+        <div style="background:#F0EFEC; padding:12px 18px; font-size:12px; letter-spacing:.07em; text-transform:uppercase; color:#111">ASHA → PHC · what travels with the case</div>
+        <div style="display:flex; flex-wrap:wrap; gap:8px; padding:16px 18px">
+          <span style="font-size:13px; color:#111; background:#F7F6F4; border:1px solid #E4E2DD; border-radius:30px; padding:7px 14px">Both photos</span>
+          <span style="font-size:13px; color:#111; background:#F7F6F4; border:1px solid #E4E2DD; border-radius:30px; padding:7px 14px">Symptom input</span>
+          <span style="font-size:13px; color:#111; background:#F7F6F4; border:1px solid #E4E2DD; border-radius:30px; padding:7px 14px">Ranked probable conditions</span>
+          <span style="font-size:13px; color:#111; background:#F7F6F4; border:1px solid #E4E2DD; border-radius:30px; padding:7px 14px">Clinical context</span>
+          <span style="font-size:13px; color:#111; background:#F7F6F4; border:1px solid #E4E2DD; border-radius:30px; padding:7px 14px">The worker's action</span>
+        </div>
+      </div>
+
+      <div class="tvTwo" style="display:grid; grid-template-columns:1fr 1fr; gap:20px 28px; margin-top:16px">
+        <div><p style="font-size:11px; letter-spacing:.09em; text-transform:uppercase; color:#aaa; margin:0 0 5px">What's happening</p><p style="font-size:14.5px; line-height:1.6; color:#111; margin:0">The worker acts on the report: educate the patient, or refer. On referral the case moves to the PHC doctor.</p></div>
+        <div><p style="font-size:11px; letter-spacing:.09em; text-transform:uppercase; color:#999; margin:0 0 5px">UX decision</p><p style="font-size:14.5px; line-height:1.6; color:#222; margin:0">The doctor opens a complete case, not a blank form. Nothing captured upstream is asked for twice. (Decision 02)</p></div>
+      </div>
+    </div>
+
+    <p style="font-size:13px; color:#999; margin:8px 0 0; text-align:center">These four are cropped from one much larger flow. <a href="assets/tvak/flow-detailed.png" target="_blank" rel="noopener noreferrer" style="color:#2A6B62">Open the full flow ↗</a></p>
+  </section>
+
+  <!-- 07 SUCCESS -->
+  <section style="max-width:1040px; margin:0; padding:80px clamp(24px,5vw,56px) 0 clamp(28px,7vw,80px)">
+    <div id="success" style="scroll-margin-top:90px; display:flex; align-items:baseline; gap:14px; margin-bottom:14px">
+      <span style="font-family:'Instrument Serif',serif; font-size:30px; color:#2A6B62">08</span>
+      <h2 style="font-family:'Instrument Serif',serif; font-weight:400; font-size:28px; letter-spacing:-.3px; margin:0">How we defined success</h2>
+    </div>
+    <p style="font-size:15px; line-height:1.7; color:#666; margin:0 0 26px; max-width:60ch">These are targets we set to decide whether the product was good enough to trust, not results we've hit. Writing them down early kept "safe" and "usable" from becoming opinions.</p>
+    <div style="display:flex; flex-direction:column; gap:12px">
+      <div style="border:1px solid #E4E2DD; background:#F5F4F2; border-radius:16px; padding:24px 26px">
+        <div style="font-size:12px; letter-spacing:.1em; text-transform:uppercase; color:#2A6B62; margin-bottom:8px">Safety — the one that matters most</div>
+        <div style="font-size:18px; color:#111; font-weight:600; margin-bottom:4px">Sensitivity for severe / urgent conditions</div>
+        <p style="font-size:14.5px; line-height:1.55; color:#111; margin:0">Missing a serious case is the failure we most needed to design against.</p>
+      </div>
+      <div class="tvMetrics" style="display:grid; grid-template-columns:repeat(2,1fr); gap:12px">
+        <div style="border:1px solid #E8E7E4; border-radius:14px; padding:20px"><div style="font-size:12.5px; color:#999; margin-bottom:8px">Adoption</div><div style="font-size:15px; color:#111; line-height:1.5">Activation · scan completion · retention</div></div>
+        <div style="border:1px solid #E8E7E4; border-radius:14px; padding:20px"><div style="font-size:12.5px; color:#999; margin-bottom:8px">Input quality</div><div style="font-size:15px; color:#111; line-height:1.5">Image rejection rate · scan retry rate</div></div>
+        <div style="border:1px solid #E8E7E4; border-radius:14px; padding:20px"><div style="font-size:12.5px; color:#999; margin-bottom:8px">Model performance</div><div style="font-size:15px; color:#111; line-height:1.5">Top-1 accuracy · top-3 accuracy</div></div>
+        <div style="border:1px solid #E8E7E4; border-radius:14px; padding:20px"><div style="font-size:12.5px; color:#999; margin-bottom:8px">Product usefulness</div><div style="font-size:15px; color:#111; line-height:1.5">Summary download · cost per scan</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 08 LEARNINGS -->
+  <section style="max-width:1040px; margin:0; padding:80px clamp(24px,5vw,56px) 0 clamp(28px,7vw,80px)">
+    <div id="learnings" style="scroll-margin-top:90px; display:flex; align-items:baseline; gap:14px; margin-bottom:24px">
+      <span style="font-family:'Instrument Serif',serif; font-size:30px; color:#2A6B62">09</span>
+      <h2 style="font-family:'Instrument Serif',serif; font-weight:400; font-size:28px; letter-spacing:-.3px; margin:0">What I learned / what I'd do differently</h2>
+    </div>
+    <div class="tvTwo" style="display:grid; grid-template-columns:1fr 1fr; gap:20px">
+      <div style="background:#F5F4F2; border-radius:18px; padding:26px 26px">
+        <p style="font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:#999; margin:0 0 14px">what I learned</p>
+        <p style="font-size:15.5px; line-height:1.65; color:#111; margin:0 0 12px">Designing across contexts is different from designing individual screens. The hard part was the handoff, not one individual view.</p>
+        <p style="font-size:15.5px; line-height:1.65; color:#111; margin:0">Working with AI also changed how I think about UX. Designing for uncertainty is as important as designing for a successful prediction.</p>
+      </div>
+      <div style="background:#F5F4F2; border-radius:18px; padding:26px 26px">
+        <p style="font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:#999; margin:0 0 14px">what I'd do differently</p>
+        <p style="font-size:15.5px; line-height:1.65; color:#111; margin:0 0 12px">Get in front of real ASHA workers earlier. My personas and workflow understanding came from research, published material and journey mapping, not direct fieldwork. That's the biggest validation gap I'd close.</p>
+        <p style="font-size:15.5px; line-height:1.65; color:#111; margin:0">I'd also test whether the confidence language stays clear after translation into Indian languages before committing to it.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section style="max-width:1040px; margin:0; padding:88px clamp(24px,5vw,56px) 88px clamp(28px,7vw,80px); text-align:left">
+    <span style="font-family:'Shantell Sans',cursive; font-size:16px; color:#888">thanks for reading →</span>
+    <h2 style="font-family:'Instrument Serif',serif; font-weight:400; font-size:clamp(32px,5vw,54px); line-height:1.05; letter-spacing:-.8px; margin:14px 0 28px; max-width:16ch">Want to talk through it?</h2>
+    <div style="display:flex; gap:12px; justify-content:flex-start; flex-wrap:wrap">
+      <a href="mailto:gayatribodke18@gmail.com" class="tvBtn" style="text-decoration:none; font-size:15px; padding:14px 28px; border-radius:30px; background:#111111; color:#FFFFFF">Get in touch</a>
+      <a href="index.html#work" class="tvBtn" style="text-decoration:none; font-size:15px; padding:14px 28px; border-radius:30px; border:1.5px solid #DDDCD9; color:#111111">See more work</a>
+    </div>
+  </section>
+
+  <!-- NEXT CASE STUDY -->
+  <a href="mai.html" class="tvNext" style="display:block; text-decoration:none; color:#111111; border-top:1px solid #E8E7E4; background:#FBFAF8">
+    <div style="max-width:1040px; margin:0; padding:52px clamp(24px,5vw,56px) 52px clamp(28px,7vw,80px); display:flex; align-items:center; justify-content:space-between; gap:24px">
+      <div>
+        <div style="font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:#9a958d; margin-bottom:12px">next case study</div>
+        <div class="tvNextName" style="font-family:'Instrument Serif',serif; font-size:clamp(34px,5vw,52px); line-height:1; letter-spacing:-.5px; transition:color .18s ease">MAI</div>
+      </div>
+      <span class="tvNextArrow" style="font-family:'Instrument Serif',serif; font-size:clamp(34px,5vw,52px); color:#2A6B62; line-height:1">→</span>
+    </div>
+  </a>
+
+  <footer style="">
+    <div class="lpFootArt" aria-hidden="true" style="position:relative; left:50%; transform:translateX(-50%); width:100vw; height:clamp(220px,30vw,340px); overflow:hidden; pointer-events:none">
+      <img src="assets/footer-landscape.png" alt="" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center 88%; display:block">
+      <span class="lpFootFade" style="position:absolute; inset:0; background:linear-gradient(180deg,#FFFFFF 0%,rgba(255,255,255,.7) 26%,rgba(255,255,255,0) 62%)"></span>
+    </div>
+
+    <div style="max-width:1040px; margin:0; padding:24px clamp(24px,5vw,56px) 40px clamp(28px,7vw,80px); display:flex; align-items:center; justify-content:space-between; gap:16px; font-size:12.5px; color:#B0B0B0">
+      <span style="font-family:'Instrument Serif',serif; font-style:italic; font-size:16px; color:#999">Gayatri Bodke</span>
+      <span>© 2026 · Product Designer</span>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+</body>
+</html>

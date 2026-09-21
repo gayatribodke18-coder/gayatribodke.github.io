@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<script>(function(){try{var s=localStorage.getItem('gb-theme');var d=s==='dark'||(!s&&window.matchMedia&&window.matchMedia('(prefers-color-scheme:dark)').matches);if(d){document.documentElement.setAttribute('data-gb-theme','dark');var t=document.createElement('style');t.id='gb-preboot';t.textContent='html,body{background:#15130F!important}body{opacity:0}';(document.head||document.documentElement).appendChild(t);setTimeout(function(){var g=document.getElementById('gb-preboot');if(g&&g.textContent.indexOf('opacity:0')>-1){g.textContent='html,body{background:#15130F}';}},1200);}}catch(e){}})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Writing · Gayatri Bodke</title>
+<meta name="description" content="Research notes and design decisions, written when the thinking is worth keeping.">
+<meta name="color-scheme" content="light dark">
+<meta property="og:title" content="Writing · Gayatri Bodke">
+<meta property="og:description" content="Research notes and design decisions, written when the thinking is worth keeping.">
+<meta property="og:type" content="website">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Hanken+Grotesk:wght@400;500;600;700&family=Shantell+Sans:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: #FFFFFF; }
+  a { color: #241F18; }
+  a:hover { color: #BD5836; }
+  ::selection { background: #FBE7A1; }
+  .arBtn { transition: transform .2s ease; }
+  .arBtn:hover { transform: translateY(-2px); }
+  .arRow { transition: padding-left .25s ease; }
+  .arRow:hover { padding-left: 10px; }
+  @media (max-width: 720px) { [data-arx] .arMeta { grid-template-columns: 1fr !important; gap: 6px !important; } }
+  html[data-gb-theme="dark"] .lpFootArt img { filter: brightness(.55) saturate(.72); }
+  html[data-gb-theme="dark"] .lpFootFade { background: linear-gradient(180deg,#141310 0%,rgba(20,19,16,.72) 26%,rgba(20,19,16,0) 62%) !important; }
+</style>
+<script src="./page-loader.js"></script>
+<script src="./theme-toggle.js"></script>
+<template id="__bundler_thumbnail">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#FFFFFF"/><rect x="14" y="14" width="72" height="72" rx="10" fill="#FBE7A1"/><text x="50" y="64" font-family="Georgia,serif" font-size="36" fill="#BD5836" text-anchor="middle">A</text></svg>
+</template>
+</helmet>
+<div data-arx data-screen-label="Articles" style="font-family:'Hanken Grotesk',system-ui,sans-serif; background:#FFFFFF; color:#241F18; min-height:100vh; overflow-x:clip">
+
+  <header style="position:sticky; top:0; z-index:20; background:rgba(255,255,255,.88); backdrop-filter:blur(10px); border-bottom:1px solid #EDE7DA">
+    <div style="max-width:1080px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; gap:16px; padding:15px 40px">
+      <a href="index.html" style="text-decoration:none; font-size:14px; display:inline-flex; align-items:center; gap:8px">← Home</a>
+      <div style="display:flex; align-items:center; gap:22px">
+        <a href="index.html#work" style="text-decoration:none; font-size:11px; letter-spacing:.17em; text-transform:uppercase; color:#6F665A">Work</a>
+        <a href="about.html" style="text-decoration:none; font-size:11px; letter-spacing:.17em; text-transform:uppercase; color:#6F665A">About</a>
+        <span style="font-size:11px; letter-spacing:.17em; text-transform:uppercase; color:#241F18">Writing</span>
+      <a href="mailto:gayatribodke18@gmail.com" class="arBtn" style="text-decoration:none; color:#FFFFFF; background:#241F18; padding:9px 18px; border-radius:30px; font-size:13.5px; white-space:nowrap">Get in touch</a>
+      </div>
+    </div>
+  </header>
+
+  <section style="max-width:1080px; margin:0 auto; padding:64px 40px 0">
+    <h1 style="font-family:'Instrument Serif',serif; font-weight:400; font-size:clamp(36px,6vw,68px); line-height:1.02; letter-spacing:-1.2px; margin:0 0 20px; max-width:16ch">Articles</h1>
+    <p style="font-size:18px; line-height:1.7; color:#6F665A; margin:0; max-width:52ch">Research notes, design decisions I had to argue for, and things I have presented at work. Written when the thinking is worth keeping.</p>
+    <a href="https://medium.com/@gayatribodke18" target="_blank" rel="noopener noreferrer" style="display:inline-block; margin-top:18px; font-size:14px; color:#6F665A; text-decoration:none; border-bottom:1px solid #E2DCCE; padding-bottom:2px">Some of these also live on Medium ↗</a>
+  </section>
+
+  <section style="max-width:1080px; margin:0 auto; padding:44px 40px 0">
+    <div style="display:flex; align-items:baseline; justify-content:space-between; gap:20px; border-top:1px solid #EDE7DA; padding-top:22px; margin-bottom:8px">
+      <h2 style="font-family:'Instrument Serif',serif; font-weight:400; font-size:clamp(20px,2.4vw,26px); margin:0; letter-spacing:-.3px">All writing</h2>
+      <span style="font-size:13px; color:#9C907A">01</span>
+    </div>
+
+    <a href="https://medium.com/@gayatribodke18/when-everything-is-important-the-answer-isnt-ask-less-e4387d170d8f" target="_blank" rel="noopener noreferrer" class="arRow" style="text-decoration:none; color:inherit; display:block; border-top:1px solid #F1ECE1; padding:28px 0">
+      <div class="arMeta" style="display:grid; grid-template-columns:auto 1fr auto; gap:18px; align-items:baseline; margin-bottom:12px">
+        <span style="font-size:13px; color:#9C907A">Mai</span>
+        <span style="font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:#BD5836">Onboarding · progressive disclosure</span>
+        <span style="font-size:13px; color:#9C907A">8 min</span>
+      </div>
+      <h3 style="font-family:'Instrument Serif',serif; font-weight:400; font-size:clamp(24px,3.4vw,36px); line-height:1.14; letter-spacing:-.5px; margin:0 0 12px; max-width:22ch">When everything is important, the answer isn't "ask less"</h3>
+      <p style="font-size:16px; line-height:1.65; color:#6F665A; margin:0; max-width:56ch">A woman downloads an app to track her period, and the product needs to understand far more than her cycle. How progressive onboarding made that feel manageable instead of invasive.</p>
+    </a>
+
+    
+  </section>
+
+  <section style="max-width:1080px; margin:0 auto; padding:56px 40px 0">
+    <div style="border-top:1px solid #EDE7DA; padding-top:26px; display:flex; align-items:baseline; gap:12px; flex-wrap:wrap">
+      <span style="font-family:'Shantell Sans',cursive; font-size:16px; color:#9C907A">more on the way</span>
+      <p style="font-size:15.5px; line-height:1.65; color:#6F665A; margin:0; max-width:52ch">Next up: notes from the OPD work, and what research actually changes once a product is live.</p>
+    </div>
+  </section>
+
+  <section style="max-width:1080px; margin:0 auto; padding:70px 40px 88px">
+    <h2 style="font-family:'Instrument Serif',serif; font-weight:400; font-size:clamp(30px,4.6vw,50px); line-height:1.05; letter-spacing:-.8px; margin:0 0 26px; max-width:18ch">Want to talk about any of it?</h2>
+    <div style="display:flex; gap:12px; flex-wrap:wrap">
+      <a href="mailto:gayatribodke18@gmail.com" class="arBtn" style="text-decoration:none; font-size:15px; padding:14px 28px; border-radius:30px; background:#241F18; color:#FFFFFF">Get in touch</a>
+      <a href="index.html#work" class="arBtn" style="text-decoration:none; font-size:15px; padding:14px 28px; border-radius:30px; border:1.5px solid #E2DCCE; color:#241F18">See the work</a>
+    </div>
+  </section>
+
+  <footer style="">
+    <div class="lpFootArt" aria-hidden="true" style="position:relative; left:50%; transform:translateX(-50%); width:100vw; height:clamp(220px,30vw,340px); overflow:hidden; pointer-events:none">
+      <img src="assets/footer-landscape.png" alt="" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center 88%; display:block">
+      <span class="lpFootFade" style="position:absolute; inset:0; background:linear-gradient(180deg,#FFFFFF 0%,rgba(255,255,255,.7) 26%,rgba(255,255,255,0) 62%)"></span>
+    </div>
+
+    <div style="max-width:1080px; margin:0 auto; padding:24px 40px 40px; display:flex; align-items:center; justify-content:space-between; gap:16px; font-size:12.5px; color:#B0A896">
+      <span style="font-family:'Instrument Serif',serif; font-style:italic; font-size:16px; color:#9C907A">Gayatri Bodke</span>
+      <span>© 2026 · Product Designer</span>
+    </div>
+  </footer>
+
+</div>
+
+</x-dc>
+</body>
+</html>
