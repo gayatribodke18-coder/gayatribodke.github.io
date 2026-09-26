@@ -19,6 +19,8 @@
     '#E4E8EA': '#322D25', '#E1E4E6': '#3A342A', '#D6E5E1': '#2A3C38',
     '#F5F7F8': '#1C1A16', '#F1F7F5': '#17251F', '#D8EAE5': '#26433C',
     '#EFE0BD': '#3B3220', '#FBE7A1': '#F3DB8F',
+    '#F2F7F5': '#17251F', '#EAF3F0': '#17251F', '#DDEBE7': '#2A3C38', '#F7EFDC': '#272013',
+    '#F1EFEA': '#241F19', '#F0EFEC': '#241F19', '#F7F6F4': '#1C1A16', '#C9C6C0': '#5A5347', '#D8D4CD': '#3A342A',
     // ink
     '#241F18': '#F0EAE0', '#111111': '#F0EAE0', '#444444': '#C9C0B2', '#666666': '#B3A996',
     '#3F3410': '#3F3410', '#5A4A1A': '#5A4A1A', '#6B5A22': '#6B5A22', '#8A7430': '#8A7430',
@@ -113,6 +115,8 @@
     '[data-nda-toggle]:hover { color:#241F18 !important; }',
     'html[data-gb-theme="dark"] [data-nda-toggle]:hover { color:#F0EAE0 !important; }',
     '[data-nda-chip]:hover { transform:translateY(-2px); border-color:#B4AA96 !important; }',
+    'html[data-gb-theme="dark"] .stsNote { color:#3F3410 !important; }',
+    'html[data-gb-theme="dark"] .csRail::before { background:rgba(28,26,22,.92) !important; }',
     'a[href]:not([class]):hover { text-decoration: underline; text-underline-offset: 3px; }',
     '.tvBtn, .lpBtn, .hCard, .arCard { transition: transform .2s ease, background .2s ease, color .2s ease, border-color .2s ease; }',
     '.tvBtn:hover, .lpBtn:hover { transform: translateY(-2px); }',
@@ -150,6 +154,7 @@
     for (var i = 0; i < nodes.length; i++) {
       var el = nodes[i];
       if (el.classList && el.classList.contains('gbThemeBtn')) continue;
+      if (el.closest && el.closest('[data-gb-keep]')) continue;
       var cur = el.getAttribute('style');
       if (dark) {
         if (el.__gbDark === cur) continue;
@@ -177,6 +182,8 @@
     dark = next;
     document.documentElement.setAttribute('data-gb-theme', dark ? 'dark' : 'light');
     try { localStorage.setItem('gb-theme', dark ? 'dark' : 'light'); } catch (e) {}
+    var pre = document.getElementById('gb-preboot');
+    if (pre && pre.__gbReleased) pre.textContent = dark ? 'html,body{background:#15130F}' : '';
     paint();
     var btn = document.querySelector('.gbThemeBtn');
     if (btn) {
@@ -207,6 +214,7 @@
       var reveal = function () {
         if (released) return;
         released = true;
+        pre.__gbReleased = true;
         pre.textContent = dark ? 'html,body{background:#15130F}' : '';
         document.body.style.transition = 'opacity .2s ease';
         document.body.style.opacity = '1';
