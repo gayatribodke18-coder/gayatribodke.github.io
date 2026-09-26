@@ -3,12 +3,12 @@
 <html>
 <head>
 <meta charset="utf-8">
-<script>(function(){try{var s=localStorage.getItem('gb-theme');var d=s==='dark'||(!s&&window.matchMedia&&window.matchMedia('(prefers-color-scheme:dark)').matches);if(d){document.documentElement.setAttribute('data-gb-theme','dark');var t=document.createElement('style');t.id='gb-preboot';t.textContent='html,body{background:#15130F!important}body{opacity:0}';(document.head||document.documentElement).appendChild(t);setTimeout(function(){var g=document.getElementById('gb-preboot');if(g&&g.textContent.indexOf('opacity:0')>-1){g.textContent='html,body{background:#15130F}';}},1200);}}catch(e){}})();</script>
+<script>(function(){try{var h=document.documentElement,s=localStorage.getItem('gb-theme');var d=s==='dark'||(!s&&window.matchMedia&&window.matchMedia('(prefers-color-scheme:dark)').matches);if(d)h.setAttribute('data-gb-theme','dark');var bg=d?'#15130F':'#FFFFFF',ink=d?'#F0EAE0':'#241F18',ln=d?'#322D25':'#EDE7DA',ac=d?'#B5A6EC':'#4E4187',hd=document.head||h;var f=document.createElement('link');f.rel='stylesheet';f.href='https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Hanken+Grotesk:wght@400;500;600;700&family=Shantell+Sans:ital,wght@0,400;0,500;1,400&display=swap';hd.appendChild(f);var t=document.createElement('style');t.id='gb-preboot';t.textContent='html,body{background:'+bg+'!important}@keyframes gbLoadUp{to{transform:translateY(0)}}@keyframes gbLoadBar{to{transform:scaleX(1)}}[data-gb-loader-hidden]{opacity:0!important;visibility:hidden!important;pointer-events:none!important}';hd.appendChild(t);var r=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;var nv=false;try{nv=sessionStorage.getItem('gb-nav')==='1';sessionStorage.removeItem('gb-nav')}catch(e){}var l=document.createElement('div');l.setAttribute('data-gb-loader','');l.style.cssText='position:fixed;inset:0;z-index:9999;background:'+bg+';display:flex;align-items:center;justify-content:center;transition:opacity .24s ease,visibility .24s ease';l.innerHTML='<div style="overflow:hidden;padding:0 6px"><div style="font-family:\'Instrument Serif\',Georgia,serif;font-size:clamp(30px,5vw,54px);letter-spacing:-.5px;color:'+ink+';line-height:1.1;'+(nv?'':'transform:translateY(102%);animation:gbLoadUp .5s cubic-bezier(.22,1,.36,1) forwards')+'">Indus Derma</div><div style="height:2px;margin-top:12px;background:'+ln+';overflow:hidden"><div style="height:100%;width:100%;background:'+ac+';transform:scaleX(0);transform-origin:left;animation:gbLoadBar '+(r?'.16s':'.62s')+' cubic-bezier(.4,0,.2,1) forwards"></div></div></div>';h.appendChild(l);window.__gbLoaderT0=Date.now();setTimeout(function(){if(l.parentNode){h.setAttribute('data-gb-ready','');l.setAttribute('data-gb-loader-hidden','');setTimeout(function(){if(l.parentNode)l.parentNode.removeChild(l)},300)}},3000);}catch(e){}})();</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>TVAK — AI skin screening · Gayatri Bodke</title>
+<title>Indus Derma — AI skin screening · Gayatri Bodke</title>
 <meta name="description" content="One skin-screening result that a patient, an ASHA worker and a PHC doctor all have to trust.">
 <meta name="color-scheme" content="light dark">
-<meta property="og:title" content="TVAK — AI skin screening · Gayatri Bodke">
+<meta property="og:title" content="Indus Derma — AI skin screening · Gayatri Bodke">
 <meta property="og:description" content="One skin-screening result that a patient, an ASHA worker and a PHC doctor all have to trust.">
 <meta property="og:type" content="website">
 <script src="./support.js"></script>
@@ -78,13 +78,13 @@
 <script src="./case-nav.js"></script>
 <script src="./theme-toggle.js"></script>
 <template id="__bundler_thumbnail">
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#FFFFFF"/><rect x="10" y="10" width="80" height="80" rx="16" fill="#F5F4F2"/><text x="50" y="63" font-family="Georgia,serif" font-size="24" letter-spacing="1.5" fill="#111" text-anchor="middle">TVAK</text></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#FFFFFF"/><rect x="10" y="10" width="80" height="80" rx="16" fill="#F5F4F2"/><text x="50" y="63" font-family="Georgia,serif" font-size="24" letter-spacing="1.5" fill="#111" text-anchor="middle">ID</text></svg>
 </template>
 </helmet>
-<div data-tv data-screen-label="TVAK case study" style="font-family:'Hanken Grotesk',system-ui,sans-serif; background:#FFFFFF; color:#111111; min-height:100vh; overflow-x:clip">
+<div data-tv data-screen-label="Indus Derma case study" style="font-family:'Hanken Grotesk',system-ui,sans-serif; background:#FFFFFF; color:#111111; min-height:100vh; overflow-x:clip">
 
   <!-- PUBLIC TEASER VIEW -->
-  <div data-nda-teaser data-screen-label="TVAK · public view">
+  <div data-nda-teaser data-screen-label="Indus Derma · public view">
     <header style="position:sticky; top:0; z-index:20; background:rgba(255,255,255,.85); backdrop-filter:blur(10px); border-bottom:1px solid #E8E7E4">
       <div style="max-width:1040px; margin:0; display:flex; align-items:center; justify-content:space-between; padding:15px clamp(24px,5vw,56px) 15px clamp(28px,7vw,80px)">
         <a href="index.html" style="text-decoration:none; color:#111111; font-size:14px; display:inline-flex; align-items:center; gap:8px">← All work</a>
@@ -98,7 +98,7 @@
         <span style="color:#DDDCD9">/</span>
         <span style="font-size:13px; color:#888">AjnaLens · now Indus Derma</span>
       </div>
-      <span style="font-family:'Instrument Serif',serif; font-size:40px; letter-spacing:.5px; display:block; margin-bottom:14px">TVAK</span>
+      <span style="font-family:'Instrument Serif',serif; font-size:40px; letter-spacing:.5px; display:block; margin-bottom:14px">Indus Derma</span>
       <h1 style="font-family:'Instrument Serif',serif; font-weight:400; font-size:clamp(30px,4.4vw,46px); line-height:1.12; letter-spacing:-.5px; margin:0 0 22px; max-width:22ch">One AI skin result that three different people have to trust</h1>
       <p style="font-size:18px; line-height:1.65; color:#111; margin:0 0 32px; max-width:56ch">A skin-screening app for Indian users. The interesting part wasn't the prediction. It was connecting a patient, an ASHA worker and a PHC doctor around the same result, in three very different settings.</p>
       <div style="display:flex; gap:16px 28px; flex-wrap:wrap; font-size:13.5px; line-height:1.4; color:#111111; padding-top:20px; border-top:1px solid #E8E7E4">
@@ -116,7 +116,7 @@
         </div>
         <p style="font-size:15.5px; line-height:1.65; color:#666; margin:0 0 20px; max-width:52ch">This project is confidential, so this page is the short version. If you're a hiring manager, reach out and I'll walk you through the full case study.</p>
         <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap">
-          <a href="mailto:gayatribodke18@gmail.com?subject=TVAK%20case%20study" class="tvBtn" style="text-decoration:none; font-size:14.5px; padding:12px 22px; border-radius:30px; background:#111111; color:#FFFFFF">Request the full study</a>
+          <button type="button" data-nda-request data-project="Indus Derma" class="tvBtn" style="font:inherit; border:none; cursor:pointer; white-space:nowrap; flex-shrink:0; text-decoration:none; font-size:14.5px; padding:12px 22px; border-radius:30px; background:#111111; color:#FFFFFF">Request the full study</button>
           <button type="button" data-nda-copy data-email="gayatribodke18@gmail.com" style="font:inherit; font-size:14.5px; display:inline-flex; align-items:center; gap:9px; padding:11px 20px; border-radius:30px; border:1px solid #E1E4E6; background:#FFFFFF; color:#111; cursor:pointer"><span data-nda-copy-label>gayatribodke18@gmail.com</span><svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="#888" stroke-width="1.5" aria-hidden="true"><rect x="5.5" y="5.5" width="9" height="9" rx="2"></rect><path d="M10.5 3.5v-1a1 1 0 0 0-1-1h-7a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h1"></path></svg></button>
         </div>
         <div style="margin-top:18px; padding-top:16px; border-top:1px solid #E4E8EA">
@@ -145,7 +145,7 @@
     <section style="max-width:1040px; margin:0; padding:70px clamp(24px,5vw,56px) 0 clamp(28px,7vw,80px)">
       <p style="font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:#999; margin:0 0 16px">retrospective</p>
       <h2 style="font-family:'Instrument Serif',serif; font-weight:400; font-size:clamp(24px,3.4vw,34px); line-height:1.18; letter-spacing:-.3px; margin:0 0 18px; max-width:26ch">The prediction was the easy part</h2>
-      <p style="font-size:16.5px; line-height:1.7; color:#111; margin:0 0 18px; max-width:60ch">What decided whether TVAK worked was not model accuracy. It was whether a result written for one reader still made sense to the next one, and whether the system was honest when it did not know. Designing the handoffs and the uncertain cases is what turned a prediction into something three people could act on together.</p>
+      <p style="font-size:16.5px; line-height:1.7; color:#111; margin:0 0 18px; max-width:60ch">What decided whether Indus Derma worked was not model accuracy. It was whether a result written for one reader still made sense to the next one, and whether the system was honest when it did not know. Designing the handoffs and the uncertain cases is what turned a prediction into something three people could act on together.</p>
       <div style="border-left:3px solid #2A6B62; padding:6px 0 6px 22px; max-width:64ch">
         <p style="font-size:16px; line-height:1.65; color:#111; margin:0">A screening result is only as useful as the weakest handoff it has to survive.</p>
       </div>
@@ -154,10 +154,29 @@
     <section style="max-width:1040px; margin:0; padding:70px clamp(24px,5vw,56px) 88px clamp(28px,7vw,80px)">
       <h2 style="font-family:'Instrument Serif',serif; font-weight:400; font-size:clamp(26px,4vw,40px); line-height:1.1; letter-spacing:-.5px; margin:0 0 24px; max-width:20ch">Want the full story?</h2>
       <div style="display:flex; gap:12px; flex-wrap:wrap">
-        <a href="mailto:gayatribodke18@gmail.com?subject=TVAK%20case%20study" class="tvBtn" style="text-decoration:none; font-size:15px; padding:14px 26px; border-radius:30px; background:#111111; color:#FFFFFF">Get in touch</a>
+        <a href="mailto:gayatribodke18@gmail.com?subject=Indus Derma%20case%20study" class="tvBtn" style="text-decoration:none; font-size:15px; padding:14px 26px; border-radius:30px; background:#111111; color:#FFFFFF">Get in touch</a>
         <a href="sts.html" class="tvBtn" style="text-decoration:none; font-size:15px; padding:14px 26px; border-radius:30px; border:1.5px solid #E2DCCE; color:#111111">Read an open case study</a>
       </div>
     </section>
+
+  <!-- NEXT CASE STUDY -->
+    <a href="mai.html" class="tvNext" style="display:block; text-decoration:none; color:#111111; border-top:1px solid #E8E7E4; background:#FBFAF8">
+      <div style="max-width:1040px; margin:0; padding:52px clamp(24px,5vw,56px) 52px clamp(28px,7vw,80px); display:flex; align-items:center; justify-content:space-between; gap:24px">
+        <div>
+          <div style="font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:#9a958d; margin-bottom:12px">next case study</div>
+          <div class="tvNextName" style="font-family:'Instrument Serif',serif; font-size:clamp(34px,5vw,52px); line-height:1; letter-spacing:-.5px; transition:color .18s ease">MAI</div>
+        </div>
+        <span class="tvNextArrow" style="font-family:'Instrument Serif',serif; font-size:clamp(34px,5vw,52px); color:#2A6B62; line-height:1">→</span>
+      </div>
+    </a>
+    <nav aria-label="More case studies" style="background:#FBFAF8">
+      <div style="max-width:1040px; margin:0; padding:0 clamp(24px,5vw,56px) 48px clamp(28px,7vw,80px); display:flex; flex-wrap:wrap; align-items:baseline; gap:10px 26px">
+        <span style="font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:#9a958d">also read</span>
+        <a href="sts.html" class="tvNavNext" style="font-size:15px; color:#111111; text-decoration:none">STS</a>
+        <a href="aarogyam.html" class="tvNavNext" style="font-size:15px; color:#111111; text-decoration:none">Aarogyam</a>
+        <a href="index.html#work" class="tvNavNext" style="font-size:15px; color:#9a958d; text-decoration:none">all work →</a>
+      </div>
+    </nav>
 
     <footer style="border-top:1px solid #E8E7E4">
       <div style="max-width:1040px; margin:0; padding:24px clamp(24px,5vw,56px) 40px clamp(28px,7vw,80px); display:flex; align-items:center; justify-content:space-between; gap:16px; font-size:12.5px; color:#999">
@@ -199,7 +218,7 @@
     <div class="tvHero" style="display:grid; grid-template-columns:1.15fr .85fr; gap:48px; align-items:center">
     <div>
     <div style="display:flex; align-items:center; gap:14px; margin-bottom:24px">
-      <span style="font-family:'Instrument Serif',serif; font-size:44px; letter-spacing:1px">TVAK</span>
+      <span style="font-family:'Instrument Serif',serif; font-size:44px; letter-spacing:1px">Indus Derma</span>
       <span style="font-size:13px; color:#888; background:#F5F4F2; padding:6px 12px; border-radius:30px">now Indus Derma</span>
       <span style="display:inline-flex; align-items:center; gap:7px; font-size:11px; letter-spacing:.09em; text-transform:uppercase; color:#2A6B62; border:1px solid #D6E5E1; padding:6px 12px; border-radius:30px"><svg width="10" height="12" viewBox="0 0 14 16" fill="none" stroke="#2A6B62" stroke-width="1.6" aria-hidden="true"><rect x="1" y="6.5" width="12" height="8.5" rx="2"></rect><path d="M3.8 6.5V4.2a3.2 3.2 0 0 1 6.4 0v2.3"></path></svg>Under NDA</span>
     </div>
@@ -216,7 +235,7 @@
       <div class="tvHeroDevice" style="display:flex; justify-content:center; align-items:center">
         <div style="position:relative">
           <div style="position:absolute; inset:-14% -18%; background:radial-gradient(58% 52% at 50% 42%, rgba(107,74,168,.18), transparent 72%); filter:blur(10px); z-index:0"></div>
-          <img src="assets/tvak/screen-hero.png" alt="TVAK first screen — AI-Powered Skin Health for All, your AI companion for quick, confident skin health checks" class="heroDevice" style="position:relative; z-index:1; display:block; width:auto; max-width:min(252px,62vw); height:auto; max-height:min(520px,56vh); border-radius:26px; box-shadow:0 40px 90px rgba(50,30,80,.28)">
+          <img src="assets/tvak/screen-hero.png" alt="Indus Derma first screen — AI-Powered Skin Health for All, your AI companion for quick, confident skin health checks" class="heroDevice" style="position:relative; z-index:1; display:block; width:auto; max-width:min(252px,62vw); height:auto; max-height:min(520px,56vh); border-radius:26px; box-shadow:0 40px 90px rgba(50,30,80,.28)">
           <div style="position:absolute; z-index:2; bottom:26px; right:-16px; background:#FFFFFF; border:1px solid #E8E7E4; box-shadow:0 12px 30px rgba(30,30,30,.12); border-radius:30px; padding:8px 15px; display:flex; align-items:center; gap:8px">
             <span style="width:8px; height:8px; border-radius:50%; background:#2A6B62"></span>
             <span style="font-family:'Shantell Sans',cursive; font-size:13px; color:#111; white-space:nowrap">a first look, in your hand</span>
@@ -260,7 +279,7 @@
       <h2 style="font-family:'Instrument Serif',serif; font-weight:400; font-size:28px; letter-spacing:-.3px; margin:0">The problem</h2>
     </div>
     <p style="font-size:19px; line-height:1.6; color:#111; margin:0 0 18px; font-weight:500; max-width:52ch">Most skin conditions have no single test. Diagnosis starts with someone looking at the skin and making a judgement.</p>
-    <p style="font-size:17px; line-height:1.7; color:#111; margin:0; max-width:64ch">TVAK puts that first look in the patient's hand. Photograph the skin, get a probable condition and a clear next step. The team trained its own model for Indian and regional skin conditions. My job was the experience around that result.</p>
+    <p style="font-size:17px; line-height:1.7; color:#111; margin:0; max-width:64ch">Indus Derma puts that first look in the patient's hand. Photograph the skin, get a probable condition and a clear next step. The team trained its own model for Indian and regional skin conditions. My job was the experience around that result.</p>
   </section>
 
   <!-- 02 THE SYSTEM -->
@@ -688,6 +707,14 @@
       <span class="tvNextArrow" style="font-family:'Instrument Serif',serif; font-size:clamp(34px,5vw,52px); color:#2A6B62; line-height:1">→</span>
     </div>
   </a>
+  <nav aria-label="More case studies" style="background:#FBFAF8">
+    <div style="max-width:1040px; margin:0; padding:0 clamp(24px,5vw,56px) 48px clamp(28px,7vw,80px); display:flex; flex-wrap:wrap; align-items:baseline; gap:10px 26px">
+      <span style="font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:#9a958d">also read</span>
+      <a href="sts.html" class="tvNavNext" style="font-size:15px; color:#111111; text-decoration:none">STS</a>
+      <a href="aarogyam.html" class="tvNavNext" style="font-size:15px; color:#111111; text-decoration:none">Aarogyam</a>
+      <a href="index.html#work" class="tvNavNext" style="font-size:15px; color:#9a958d; text-decoration:none">all work →</a>
+    </div>
+  </nav>
 
   <footer style="">
     <div class="lpFootArt" aria-hidden="true" style="position:relative; left:50%; transform:translateX(-50%); width:100vw; height:clamp(220px,30vw,340px); overflow:hidden; pointer-events:none">

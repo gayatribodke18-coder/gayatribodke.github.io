@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<script>(function(){try{var s=localStorage.getItem('gb-theme');var d=s==='dark'||(!s&&window.matchMedia&&window.matchMedia('(prefers-color-scheme:dark)').matches);if(d){document.documentElement.setAttribute('data-gb-theme','dark');var t=document.createElement('style');t.id='gb-preboot';t.textContent='html,body{background:#15130F!important}body{opacity:0}';(document.head||document.documentElement).appendChild(t);setTimeout(function(){var g=document.getElementById('gb-preboot');if(g&&g.textContent.indexOf('opacity:0')>-1){g.textContent='html,body{background:#15130F}';}},1200);}}catch(e){}})();</script>
+<script>(function(){try{var h=document.documentElement,s=localStorage.getItem('gb-theme');var d=s==='dark'||(!s&&window.matchMedia&&window.matchMedia('(prefers-color-scheme:dark)').matches);if(d)h.setAttribute('data-gb-theme','dark');var bg=d?'#15130F':'#FFFFFF',ink=d?'#F0EAE0':'#241F18',ln=d?'#322D25':'#EDE7DA',ac=d?'#B5A6EC':'#4E4187',hd=document.head||h;var f=document.createElement('link');f.rel='stylesheet';f.href='https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Hanken+Grotesk:wght@400;500;600;700&family=Shantell+Sans:ital,wght@0,400;0,500;1,400&display=swap';hd.appendChild(f);var t=document.createElement('style');t.id='gb-preboot';t.textContent='html,body{background:'+bg+'!important}@keyframes gbLoadUp{to{transform:translateY(0)}}@keyframes gbLoadBar{to{transform:scaleX(1)}}[data-gb-loader-hidden]{opacity:0!important;visibility:hidden!important;pointer-events:none!important}';hd.appendChild(t);var r=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;var nv=false;try{nv=sessionStorage.getItem('gb-nav')==='1';sessionStorage.removeItem('gb-nav')}catch(e){}var l=document.createElement('div');l.setAttribute('data-gb-loader','');l.style.cssText='position:fixed;inset:0;z-index:9999;background:'+bg+';display:flex;align-items:center;justify-content:center;transition:opacity .24s ease,visibility .24s ease';l.innerHTML='<div style="overflow:hidden;padding:0 6px"><div style="font-family:\'Instrument Serif\',Georgia,serif;font-size:clamp(30px,5vw,54px);letter-spacing:-.5px;color:'+ink+';line-height:1.1;'+(nv?'':'transform:translateY(102%);animation:gbLoadUp .5s cubic-bezier(.22,1,.36,1) forwards')+'">Mai</div><div style="height:2px;margin-top:12px;background:'+ln+';overflow:hidden"><div style="height:100%;width:100%;background:'+ac+';transform:scaleX(0);transform-origin:left;animation:gbLoadBar '+(r?'.16s':'.62s')+' cubic-bezier(.4,0,.2,1) forwards"></div></div></div>';h.appendChild(l);window.__gbLoaderT0=Date.now();setTimeout(function(){if(l.parentNode){h.setAttribute('data-gb-ready','');l.setAttribute('data-gb-loader-hidden','');setTimeout(function(){if(l.parentNode)l.parentNode.removeChild(l)},300)}},3000);}catch(e){}})();</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Mai — AI health companion · Gayatri Bodke</title>
 <meta name="description" content="An AI health companion for women: the research and behaviour-design thinking behind it.">
@@ -284,6 +284,14 @@
       <span style="font-size:26px; color:#888">→</span>
     </div>
   </a>
+  <nav aria-label="More case studies" style="background:#FBFAF8">
+    <div style="max-width:1180px; margin:0; padding:0 clamp(24px,5vw,56px) 48px clamp(28px,7vw,80px); display:flex; flex-wrap:wrap; align-items:baseline; gap:10px 26px">
+      <span style="font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:#9a958d">also read</span>
+      <a href="aarogyam.html" class="tvNavNext" style="font-size:15px; color:#111111; text-decoration:none">Aarogyam</a>
+      <a href="tvak.html" class="tvNavNext" style="font-size:15px; color:#111111; text-decoration:none">Indus Derma</a>
+      <a href="index.html#work" class="tvNavNext" style="font-size:15px; color:#9a958d; text-decoration:none">all work →</a>
+    </div>
+  </nav>
 
   <footer style="">
     <div class="lpFootArt" aria-hidden="true" style="position:relative; left:50%; transform:translateX(-50%); width:100vw; height:clamp(220px,30vw,340px); overflow:hidden; pointer-events:none">

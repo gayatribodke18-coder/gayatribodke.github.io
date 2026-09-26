@@ -21,20 +21,20 @@ Netlify, Vercel and Cloudflare Pages work the same way: drop this folder in, no 
 | `index.html` | Home — hero, selected work, writing, how I work, outside of work, contact |
 | `about.html` | About — how I work, tools, outside of work |
 | `aarogyam.html` | Aarogyam case study (passcode gated) |
-| `tvak.html` | TVAK case study (passcode gated) |
+| `tvak.html` | Indus Derma case study (passcode gated) |
 | `mai.html` | Mai case study (NDA overview) |
 | `sts.html` | STS case study (open) |
 | `articles.html` | Writing index |
 | `article-onboarding.html` | Progressive onboarding article (also published on Medium) |
 | `Gayatri-Bodke-Resume.pdf` | Resume, opens in a new tab |
 
-Case studies link in a loop: Aarogyam → TVAK → Mai → STS → Aarogyam.
+Case studies link in a loop: Aarogyam → Indus Derma → Mai → STS → Aarogyam.
 
 ## Shared files
 
 - `support.js`, `page-loader.js` — page runtime and transitions, needed by every page
 - `case-nav.js` — side rail and back-to-top on case studies
-- `case-confidential.js` — passcode gate on the NDA case studies (code: `gayatri2026`)
+- `case-confidential.js` — passcode gate on the NDA case studies (code rotates monthly: `gayatri-` + month + year, e.g. `gayatri-sep26`; current and previous month both work; access lasts 14 days per browser). "Request the full study" opens a form: the request is emailed to gayatribodke18@gmail.com via FormSubmit and the visitor gets the passcode by auto-reply. The very first request triggers a one-time FormSubmit activation email; click it to switch the form on.
 - `theme-toggle.js` — light/dark switch, remembered per visitor
 - `assets/` — all images
 

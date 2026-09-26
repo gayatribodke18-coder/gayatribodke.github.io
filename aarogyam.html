@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<script>(function(){try{var s=localStorage.getItem('gb-theme');var d=s==='dark'||(!s&&window.matchMedia&&window.matchMedia('(prefers-color-scheme:dark)').matches);if(d){document.documentElement.setAttribute('data-gb-theme','dark');var t=document.createElement('style');t.id='gb-preboot';t.textContent='html,body{background:#15130F!important}body{opacity:0}';(document.head||document.documentElement).appendChild(t);setTimeout(function(){var g=document.getElementById('gb-preboot');if(g&&g.textContent.indexOf('opacity:0')>-1){g.textContent='html,body{background:#15130F}';}},1200);}}catch(e){}})();</script>
+<script>(function(){try{var h=document.documentElement,s=localStorage.getItem('gb-theme');var d=s==='dark'||(!s&&window.matchMedia&&window.matchMedia('(prefers-color-scheme:dark)').matches);if(d)h.setAttribute('data-gb-theme','dark');var bg=d?'#15130F':'#FFFFFF',ink=d?'#F0EAE0':'#241F18',ln=d?'#322D25':'#EDE7DA',ac=d?'#B5A6EC':'#4E4187',hd=document.head||h;var f=document.createElement('link');f.rel='stylesheet';f.href='https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Hanken+Grotesk:wght@400;500;600;700&family=Shantell+Sans:ital,wght@0,400;0,500;1,400&display=swap';hd.appendChild(f);var t=document.createElement('style');t.id='gb-preboot';t.textContent='html,body{background:'+bg+'!important}@keyframes gbLoadUp{to{transform:translateY(0)}}@keyframes gbLoadBar{to{transform:scaleX(1)}}[data-gb-loader-hidden]{opacity:0!important;visibility:hidden!important;pointer-events:none!important}';hd.appendChild(t);var r=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;var nv=false;try{nv=sessionStorage.getItem('gb-nav')==='1';sessionStorage.removeItem('gb-nav')}catch(e){}var l=document.createElement('div');l.setAttribute('data-gb-loader','');l.style.cssText='position:fixed;inset:0;z-index:9999;background:'+bg+';display:flex;align-items:center;justify-content:center;transition:opacity .24s ease,visibility .24s ease';l.innerHTML='<div style="overflow:hidden;padding:0 6px"><div style="font-family:\'Instrument Serif\',Georgia,serif;font-size:clamp(30px,5vw,54px);letter-spacing:-.5px;color:'+ink+';line-height:1.1;'+(nv?'':'transform:translateY(102%);animation:gbLoadUp .5s cubic-bezier(.22,1,.36,1) forwards')+'">Aarogyam</div><div style="height:2px;margin-top:12px;background:'+ln+';overflow:hidden"><div style="height:100%;width:100%;background:'+ac+';transform:scaleX(0);transform-origin:left;animation:gbLoadBar '+(r?'.16s':'.62s')+' cubic-bezier(.4,0,.2,1) forwards"></div></div></div>';h.appendChild(l);window.__gbLoaderT0=Date.now();setTimeout(function(){if(l.parentNode){h.setAttribute('data-gb-ready','');l.setAttribute('data-gb-loader-hidden','');setTimeout(function(){if(l.parentNode)l.parentNode.removeChild(l)},300)}},3000);}catch(e){}})();</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Aarogyam — AI patient intake · Gayatri Bodke</title>
 <meta name="description" content="An AI intake system for a 10,000-patient-a-day OPD, where the patient tells her story once.">
@@ -147,7 +147,7 @@
         </div>
         <p style="font-size:15.5px; line-height:1.65; color:#666; margin:0 0 20px; max-width:52ch">This project is confidential, so this page is the short version. If you're a hiring manager, reach out and I'll walk you through the full case study.</p>
         <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap">
-          <a href="mailto:gayatribodke18@gmail.com?subject=Aarogyam%20case%20study" class="tvBtn" style="text-decoration:none; font-size:14.5px; padding:12px 22px; border-radius:30px; background:#111111; color:#FFFFFF">Request the full study</a>
+          <button type="button" data-nda-request data-project="Aarogyam" class="tvBtn" style="font:inherit; border:none; cursor:pointer; white-space:nowrap; flex-shrink:0; text-decoration:none; font-size:14.5px; padding:12px 22px; border-radius:30px; background:#111111; color:#FFFFFF">Request the full study</button>
           <button type="button" data-nda-copy data-email="gayatribodke18@gmail.com" style="font:inherit; font-size:14.5px; display:inline-flex; align-items:center; gap:9px; padding:11px 20px; border-radius:30px; border:1px solid #E1E4E6; background:#FFFFFF; color:#111; cursor:pointer"><span data-nda-copy-label>gayatribodke18@gmail.com</span><svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="#888" stroke-width="1.5" aria-hidden="true"><rect x="5.5" y="5.5" width="9" height="9" rx="2"></rect><path d="M10.5 3.5v-1a1 1 0 0 0-1-1h-7a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h1"></path></svg></button>
         </div>
         <div style="margin-top:18px; padding-top:16px; border-top:1px solid #E4E8EA">
@@ -191,6 +191,25 @@
       </div>
     </section>
 
+  <!-- NEXT CASE STUDY -->
+    <a href="tvak.html" class="tvNext" style="display:block; text-decoration:none; color:#111111; border-top:1px solid #E8E7E4; background:#FBFAF8">
+      <div style="max-width:1180px; margin:0; padding:52px clamp(24px,5vw,56px) 52px clamp(28px,7vw,80px); display:flex; align-items:center; justify-content:space-between; gap:24px">
+        <div>
+          <div style="font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:#9a958d; margin-bottom:12px">next case study</div>
+          <div class="tvNextName" style="font-family:'Instrument Serif',serif; font-size:clamp(34px,5vw,52px); line-height:1; letter-spacing:-.5px; transition:color .18s ease">Indus Derma</div>
+        </div>
+        <span class="tvNextArrow" style="font-family:'Instrument Serif',serif; font-size:clamp(34px,5vw,52px); color:#2A6B62; line-height:1">→</span>
+      </div>
+    </a>
+    <nav aria-label="More case studies" style="background:#FBFAF8">
+      <div style="max-width:1180px; margin:0; padding:0 clamp(24px,5vw,56px) 48px clamp(28px,7vw,80px); display:flex; flex-wrap:wrap; align-items:baseline; gap:10px 26px">
+        <span style="font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:#9a958d">also read</span>
+        <a href="mai.html" class="tvNavNext" style="font-size:15px; color:#111111; text-decoration:none">Mai</a>
+        <a href="sts.html" class="tvNavNext" style="font-size:15px; color:#111111; text-decoration:none">STS</a>
+        <a href="index.html#work" class="tvNavNext" style="font-size:15px; color:#9a958d; text-decoration:none">all work →</a>
+      </div>
+    </nav>
+
     <footer style="border-top:1px solid #E8E7E4">
       <div style="max-width:1040px; margin:0; padding:24px clamp(24px,5vw,56px) 40px clamp(28px,7vw,80px); display:flex; align-items:center; justify-content:space-between; gap:16px; font-size:12.5px; color:#999">
         <span style="font-family:'Instrument Serif',serif; font-style:italic; font-size:16px; color:#888">Gayatri Bodke</span>
@@ -223,7 +242,7 @@
     <div style="max-width:1180px; margin:0; display:flex; align-items:center; justify-content:space-between; padding:15px clamp(24px,5vw,56px) 15px clamp(28px,7vw,80px)">
       <a href="index.html" style="text-decoration:none; color:#111111; font-size:14px; display:inline-flex; align-items:center; gap:8px">← All work</a>
       <div style="display:flex; align-items:center; gap:22px">
-        <a href="tvak.html" class="tvNavNext" style="text-decoration:none; color:#111111; font-size:13.5px; white-space:nowrap; display:inline-flex; align-items:center; gap:8px"><span style="color:#9a958d">next</span>TVAK <span style="color:#2A6B62">→</span></a>
+        <a href="tvak.html" class="tvNavNext" style="text-decoration:none; color:#111111; font-size:13.5px; white-space:nowrap; display:inline-flex; align-items:center; gap:8px"><span style="color:#9a958d">next</span>Indus Derma <span style="color:#2A6B62">→</span></a>
         <a href="mailto:gayatribodke18@gmail.com" class="tvBtn" style="text-decoration:none; color:#FFFFFF; background:#111111; padding:9px 18px; border-radius:30px; font-size:13.5px; white-space:nowrap; display:inline-flex; align-items:center">Get in touch</a>
       </div>
     </div>
@@ -743,11 +762,19 @@
     <div style="max-width:1180px; margin:0; padding:52px clamp(24px,5vw,56px) 52px clamp(28px,7vw,80px); display:flex; align-items:center; justify-content:space-between; gap:24px">
       <div>
         <div style="font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:#9a958d; margin-bottom:12px">next case study</div>
-        <div class="tvNextName" style="font-family:'Instrument Serif',serif; font-size:clamp(34px,5vw,52px); line-height:1; letter-spacing:-.5px; transition:color .18s ease">TVAK</div>
+        <div class="tvNextName" style="font-family:'Instrument Serif',serif; font-size:clamp(34px,5vw,52px); line-height:1; letter-spacing:-.5px; transition:color .18s ease">Indus Derma</div>
       </div>
       <span class="tvNextArrow" style="font-family:'Instrument Serif',serif; font-size:clamp(34px,5vw,52px); color:#2A6B62; line-height:1">→</span>
     </div>
   </a>
+  <nav aria-label="More case studies" style="background:#FBFAF8">
+    <div style="max-width:1180px; margin:0; padding:0 clamp(24px,5vw,56px) 48px clamp(28px,7vw,80px); display:flex; flex-wrap:wrap; align-items:baseline; gap:10px 26px">
+      <span style="font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:#9a958d">also read</span>
+      <a href="mai.html" class="tvNavNext" style="font-size:15px; color:#111111; text-decoration:none">Mai</a>
+      <a href="sts.html" class="tvNavNext" style="font-size:15px; color:#111111; text-decoration:none">STS</a>
+      <a href="index.html#work" class="tvNavNext" style="font-size:15px; color:#9a958d; text-decoration:none">all work →</a>
+    </div>
+  </nav>
 
   <footer style="">
     <div class="lpFootArt" aria-hidden="true" style="position:relative; left:50%; transform:translateX(-50%); width:100vw; height:clamp(220px,30vw,340px); overflow:hidden; pointer-events:none">
@@ -800,7 +827,7 @@ class Component extends DCLogic {
     if (!src) return null;
     const close = () => this.setState({ lightbox: null });
     return React.createElement('div', {
-      onClick: close,
+      onClick: close, 'data-gb-keep': '',
       style: { position: 'fixed', inset: 0, zIndex: 120, background: 'rgba(20,20,18,.86)', backdropFilter: 'blur(5px)', WebkitBackdropFilter: 'blur(5px)', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '4vw', cursor: 'zoom-out' }
     }, [
       React.createElement('img', { key: 'img', src, alt: 'Enlarged diagram', style: { maxWidth: '94vw', maxHeight: '90vh', width: 'auto', height: 'auto', borderRadius: '12px', background: '#fff', boxShadow: '0 40px 100px rgba(0,0,0,.55)' } }),
