@@ -269,7 +269,7 @@
     if (resends >= MAX_RESENDS) {
       wait.innerHTML = 'Still nothing? Email me at <a href="mailto:' + INBOX + '?subject=' + encodeURIComponent(project + ' case study passcode') + '" style="color:inherit">' + INBOX + '</a>.';
     } else {
-      var left = COOLDOWN;
+      var left = Math.max(0, COOLDOWN - Math.floor((Date.now() - (+f.dataset.at || Date.now())) / 1000));
       var tick = function () {
         if (left > 0) { wait.textContent = "Didn't get it? You can resend in " + left + 's'; left--; return; }
         clearInterval(f.__gbTimer);
@@ -282,13 +282,12 @@
     again.addEventListener('click', function () {
       again.disabled = true;
       again.textContent = 'Sending…';
-      fetch('https://formsubmit.co/ajax/' + INBOX, { method: 'POST', headers: { Accept: 'application/json' }, body: new FormData(f) })
-        .then(function (r) { if (!r.ok) throw new Error(r.status); })
-        .then(function () { f.dataset.resends = resends + 1; sent(f, email, project); })
-        .catch(function () { again.disabled = false; again.textContent = 'Resend passcode'; wait.textContent = "That didn't go through. Try again."; });
+      prep(f, project, resends + 1);
+      f.submit();
     });
     box.querySelector('[data-req-change]').addEventListener('click', function () {
       clearInterval(f.__gbTimer);
+      try { sessionStorage.removeItem(REQ); } catch (x) {}
       box.remove();
       f.dataset.resends = 0;
       fields.forEach(function (n) { n.style.display = n.name === '_honey' ? 'none' : ''; });
@@ -301,6 +300,43 @@
       if (f.__gbSyncClear) f.__gbSyncClear();
       f.email.focus();
     });
+  }
+  /* FormSubmit only sends the passcode email (autoresponse) for a normal form post with its robot
+     check on, not for background (AJAX) sends. So the form posts for real, FormSubmit shows its
+     check, then sends the visitor back here; we remember the request to restore the sent state. */
+  var REQ = 'gb-req-' + STUDY;
+  var RETURNED = /[?&]requested=1/.test(location.search);
+  if (RETURNED) { try { history.replaceState(null, '', location.pathname + location.search.replace(/[?&]requested=1/, '').replace(/^&/, '?') + location.hash); } catch (x) {} }
+  /* Back from FormSubmit: restore the request and show the sent state with the resend timer. */
+  function restore(box, project) {
+    if (!RETURNED || !box) return;
+    var saved = null;
+    try { saved = JSON.parse(sessionStorage.getItem(REQ) || 'null'); } catch (x) {}
+    box.style.display = 'flex';
+    if (saved) {
+      box.name.value = saved.name; box.email.value = saved.email; box.company.value = saved.company || '';
+      box.dataset.resends = saved.resends || 0;
+      box.dataset.at = saved.at;
+      sent(box, saved.email, project);
+    } else if (!box.querySelector('[data-req-sent]')) {
+      box.insertAdjacentHTML('afterbegin', '<p data-req-sent style="font-size:15px; line-height:1.6; color:#111111; margin:0 0 6px"><span style="color:#2A6B62">Request sent.</span> The passcode is on its way to your inbox. If it isn’t there in a few minutes, check spam.</p>');
+    }
+    clearTimeout(restore.t);
+    restore.t = setTimeout(function () { window.scrollTo(0, Math.max(0, box.getBoundingClientRect().top + window.scrollY - 160)); }, 150);
+  }
+  function prep(f, project, resends) {
+    var name = f.name.value.trim(), email = f.email.value.trim(), first = name.split(' ')[0];
+    f.action = 'https://formsubmit.co/' + INBOX;
+    f.method = 'POST';
+    var back = location.href.split('#')[0].replace(/[?&]requested=1/, '');
+    f._next.value = back + (back.indexOf('?') > -1 ? '&' : '?') + 'requested=1';
+    f._subject.value = (resends ? 'Passcode request (resend) · ' : 'Passcode request · ') + project + ' · ' + name;
+    f._autoresponse.value = 'Hi ' + first + ',\n\nThanks for asking to see the ' + project + ' case study.\n\n' +
+      'Your passcode: ' + CODE + '\n\n' +
+      'It works until the end of next month and keeps the study unlocked on your browser for ' + ACCESS_DAYS + ' days.\n\n' +
+      'Open the case study, choose "I have a passcode" and enter it. This code is for the ' + project + ' case study only.\n\n' +
+      'Happy to walk you through the work on a call too. Just reply to this email.\n\nGayatri\n' + INBOX;
+    try { sessionStorage.setItem(REQ, JSON.stringify({ name: name, email: email, company: f.company.value, resends: resends || 0, at: Date.now() })); } catch (x) {}
   }
   function wireRequest() {
     document.querySelectorAll('[data-nda-request]').forEach(function (btn) {
@@ -330,7 +366,7 @@
         '<input name="_honey" tabindex="-1" autocomplete="off" style="display:none">' +
         '<div style="display:flex; align-items:center; gap:14px; flex-wrap:wrap; margin-top:4px">' +
           '<button type="submit" class="tvBtn" style="font:inherit; font-size:14.5px; padding:12px 22px; border-radius:30px; border:none; background:#111111; color:#FFFFFF; cursor:pointer; white-space:nowrap; flex-shrink:0">Send me the passcode</button>' +
-          '<span style="font-size:13.5px; color:#888888">It arrives by email in a few minutes.</span>' +
+          '<span style="font-size:13.5px; color:#888888">After a quick robot check, it arrives by email.</span>' +
         '</div>' +
         '<p data-req-msg style="font-size:13.5px; line-height:1.55; color:#BD5836; margin:2px 0 0; display:none"></p>';
       row.parentElement.insertBefore(f, row.nextSibling);
@@ -370,11 +406,12 @@
         f.style.display = open ? 'none' : 'flex';
         if (!open) f.querySelector('input').focus();
       });
-      [['_subject', ''], ['_template', 'table'], ['_captcha', 'false'], ['_autoresponse', ''], ['project', project], ['page', location.href.split('?')[0]]].forEach(function (p) {
+      [['_subject', ''], ['_template', 'table'], ['_next', ''], ['_autoresponse', ''], ['project', project], ['page', location.href.split('?')[0]]].forEach(function (p) {
         var h = document.createElement('input');
         h.type = 'hidden'; h.name = p[0]; h.value = p[1];
         f.appendChild(h);
       });
+      restore(f, project);
       f.addEventListener('submit', function (e) {
         if (f._honey && f._honey.value) { e.preventDefault(); return; }
         var msg = f.querySelector('[data-req-msg]');
@@ -386,38 +423,13 @@
           msg.style.display = 'block';
           return;
         }
-        var first = name.split(' ')[0];
-        f._subject.value = 'Passcode request · ' + project + ' · ' + name;
-        f._autoresponse.value = 'Hi ' + first + ',\n\nThanks for asking to see the ' + project + ' case study.\n\n' +
-          'Your passcode: ' + CODE + '\n\n' +
-          'It works until the end of next month and keeps the study unlocked on your browser for ' + ACCESS_DAYS + ' days.\n\n' +
-          'Open the case study, choose "I have a passcode" and enter it. This code is for the ' + project + ' case study only.\n\n' +
-          'Happy to walk you through the work on a call too. Just reply to this email.\n\nGayatri\n' + INBOX;
-        e.preventDefault();
-        send.disabled = true;
+        prep(f, project, 0);
         send.textContent = 'Sending…';
+        setBtn(send, false);
         msg.style.display = 'none';
-        var fail = function () {
-          send.textContent = 'Send me the passcode';
-          f.__gbReady();
-          msg.innerHTML = 'That didn\'t go through. Please email me at <a href="mailto:' + INBOX + '?subject=' + encodeURIComponent(project + ' case study passcode') + '" style="color:inherit">' + INBOX + '</a>.';
-          msg.style.display = 'block';
-        };
-        fetch('https://formsubmit.co/ajax/' + INBOX, { method: 'POST', headers: { Accept: 'application/json' }, body: new FormData(f) })
-          .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json().catch(function () { return {}; }); })
-          .then(function () { sent(f, email, project); })
-          .catch(fail);
+        // no preventDefault: the browser posts to FormSubmit
       });
     });
-    /* Back from FormSubmit (after its robot check): confirm and tidy the URL. */
-    if (/[?&]requested=1/.test(location.search)) {
-      var box = document.querySelector('[data-nda-reqform]');
-      if (box) {
-        box.style.display = 'flex';
-        box.innerHTML = '<p style="font-size:15px; line-height:1.6; color:#111111; margin:0"><span style="color:#2A6B62">Request sent.</span> The passcode is on its way to your inbox. If it isn\'t there in a few minutes, check spam.</p>';
-      }
-      try { history.replaceState(null, '', location.pathname + location.search.replace(/[?&]requested=1/, '').replace(/^&/, '?') + location.hash); } catch (x) {}
-    }
   }
 
   /* The page content renders after this script runs, so wait for the teaser to exist. */
