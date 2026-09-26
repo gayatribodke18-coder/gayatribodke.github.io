@@ -13,7 +13,7 @@
     '#F1EEFA': '#201E2B', '#F2EFFA': '#201E2B', '#F6E9EC': '#271C20',
     '#FDF8ED': '#272013', '#DFF0E6': '#172C22', '#525659': '#2A2C2E',
     // lines
-    '#EDE7DA': '#322D25', '#E8E7E4': '#322D25', '#E8E2D6': '#322D25',
+    '#EDE7DA': '#322D25', '#E4D7C6': '#3A342A', '#E8E7E4': '#322D25', '#E8E2D6': '#322D25',
     '#E4E2DD': '#322D25', '#E2DCCE': '#3A342A', '#DDD6C6': '#3A342A',
     '#DDDCD9': '#3A342A', '#D5CBB8': '#413A2E',
     '#E4E8EA': '#322D25', '#E1E4E6': '#3A342A', '#D6E5E1': '#2A3C38',
@@ -22,7 +22,7 @@
     '#F2F7F5': '#17251F', '#EAF3F0': '#17251F', '#DDEBE7': '#2A3C38', '#F7EFDC': '#272013',
     '#F1EFEA': '#241F19', '#F0EFEC': '#241F19', '#F7F6F4': '#1C1A16', '#C9C6C0': '#5A5347', '#D8D4CD': '#3A342A',
     // ink
-    '#241F18': '#F0EAE0', '#111111': '#F0EAE0', '#444444': '#C9C0B2', '#666666': '#B3A996',
+    '#241F18': '#F0EAE0', '#111111': '#F0EAE0', '#222222': '#E6DFD3', '#444444': '#C9C0B2', '#666666': '#B3A996',
     '#3F3410': '#3F3410', '#5A4A1A': '#5A4A1A', '#6B5A22': '#6B5A22', '#8A7430': '#8A7430',
     '#8A6417': '#D8B26A',
     // muted
@@ -110,8 +110,15 @@
     'html[data-gb-theme="dark"] [stroke="#111111"], html[data-gb-theme="dark"] [stroke="#241F18"] { stroke:#F0EAE0; }',
     'html[data-gb-theme="dark"] [fill="#111111"], html[data-gb-theme="dark"] [fill="#241F18"] { fill:#F0EAE0; }',
     '[data-nda-copy], [data-nda-form] button[type="submit"], [data-nda-toggle], [data-nda-chip] { transition: background .18s ease, color .18s ease, border-color .18s ease, transform .18s ease; }',
-    '[data-nda-copy]:hover, [data-nda-form] button[type="submit"]:hover { background:#241F18 !important; color:#FFFFFF !important; border-color:#241F18 !important; }',
-    'html[data-gb-theme="dark"] [data-nda-copy]:hover, html[data-gb-theme="dark"] [data-nda-form] button[type="submit"]:hover { background:#F0EAE0 !important; color:#15130F !important; border-color:#F0EAE0 !important; }',
+    '[data-nda-copy]:hover, [data-nda-reqform] button[type="submit"]:not(:disabled):hover, [data-nda-form] button[type="submit"]:not(:disabled):hover { background:#241F18 !important; color:#FFFFFF !important; border-color:#241F18 !important; }',
+    'html[data-gb-theme="dark"] [data-nda-copy]:hover, [data-nda-reqform] button[type="submit"]:not(:disabled):hover, html[data-gb-theme="dark"] [data-nda-form] button[type="submit"]:not(:disabled):hover { background:#F0EAE0 !important; color:#15130F !important; border-color:#F0EAE0 !important; }',
+    '[data-nda-reqform] input, [data-nda-form] input { transition: border-color .15s ease, box-shadow .15s ease; cursor: text; }',
+    '[data-nda-reqform] input:hover, [data-nda-form] input:hover { border-color:#B4AA96 !important; }',
+    '[data-nda-reqform] input:focus, [data-nda-form] input:focus { border-color:#2A6B62 !important; box-shadow:0 0 0 3px rgba(42,107,98,.16) !important; }',
+    'html[data-gb-theme="dark"] [data-nda-reqform] input:focus, html[data-gb-theme="dark"] [data-nda-form] input:focus { border-color:#7CC6B6 !important; box-shadow:0 0 0 3px rgba(124,198,182,.22) !important; }',
+    '[data-clear] { transition: background .15s ease, color .15s ease; }',
+    '[data-clear]:hover { background:#E8E2D6 !important; color:#241F18 !important; }',
+    'html[data-gb-theme="dark"] [data-clear]:hover { background:#3A342A !important; color:#F0EAE0 !important; }',
     '[data-nda-toggle]:hover { color:#241F18 !important; }',
     'html[data-gb-theme="dark"] [data-nda-toggle]:hover { color:#F0EAE0 !important; }',
     '[data-nda-chip]:hover { transform:translateY(-2px); border-color:#B4AA96 !important; }',
@@ -123,6 +130,14 @@
     'html[data-gb-theme="dark"] .hTool:hover { background:#241F19 !important; border-color:#3A342A !important; }',
     'html[data-gb-theme="dark"] .tvScroll::-webkit-scrollbar-thumb { background:#3A342A; }',
     'html[data-gb-theme="dark"] .tvScroll::-webkit-scrollbar-track { background:#1C1A16; }',
+    'html.gbTheming, html.gbTheming *, html.gbTheming *::before, html.gbTheming *::after { transition: background-color .45s ease, color .45s ease, border-color .45s ease, fill .45s ease, stroke .45s ease, box-shadow .45s ease !important; }',
+    /* floating buttons: solid fill, no background blur. The blur sampled the photos behind and left a light fringe on the pill's edge. */
+    '.lpTop, .csTop, .gbTopBtn, .gbThemeBtn { backdrop-filter:none !important; -webkit-backdrop-filter:none !important; background-clip:padding-box !important; }',
+    '.lpTop, .csTop, .gbTopBtn { background-color:#FFFFFF !important; }',
+    'html[data-gb-theme="dark"] .lpTop, html[data-gb-theme="dark"] .csTop, html[data-gb-theme="dark"] .gbTopBtn { background-color:#1C1A16 !important; border-color:#3A342A !important; color:#F0EAE0 !important; box-shadow:0 10px 26px rgba(0,0,0,.45) !important; }',
+    '.lpTop:hover, .csTop:hover, .gbTopBtn:hover { background-color:#111111 !important; color:#FFFFFF !important; border-color:#111111 !important; }',
+    'html[data-gb-theme="dark"] .lpTop:hover, html[data-gb-theme="dark"] .csTop:hover, html[data-gb-theme="dark"] .gbTopBtn:hover { background-color:#F0EAE0 !important; color:#15130F !important; border-color:#F0EAE0 !important; }',
+    'html[data-gb-theme="dark"] .gbThemeBtn { background-color:#1C1A16 !important; }',
     '.gbThemeBtn { position:fixed; right:26px; bottom:80px; z-index:60; width:42px; height:42px; display:flex; align-items:center; justify-content:center; border-radius:50%; border:1px solid #EDE7DA; background:rgba(255,255,255,.92); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); color:#6F665A; cursor:pointer; box-shadow:0 10px 26px rgba(36,31,24,.12); transition:transform .18s ease, color .18s ease, border-color .18s ease; }',
     '.gbThemeBtn:hover { transform:translateY(-2px); color:#241F18; border-color:#E2DCCE; }',
     'html[data-gb-theme="dark"] .gbThemeBtn { border-color:#3A342A; background:rgba(28,26,22,.92); color:#A79B89; box-shadow:0 10px 26px rgba(0,0,0,.4); }',
@@ -158,7 +173,8 @@
       var cur = el.getAttribute('style');
       if (dark) {
         if (el.__gbDark === cur) continue;
-        if (el.__gbLight === undefined) el.__gbLight = cur;
+        // the page changed this element while dark (a form opened, a label moved): remember its new light state
+        el.__gbLight = el.__gbLight === undefined ? cur : lighten(el, cur);
         var next = darken(cur);
         if (next !== cur) el.setAttribute('style', next);
         el.__gbDark = next;
@@ -178,7 +194,14 @@
     requestAnimationFrame(function () { queued = false; paint(); });
   }
 
-  function setTheme(next) {
+  var fadeT = null;
+  function setTheme(next, animate) {
+    if (animate && !(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches)) {
+      var root = document.documentElement;
+      root.classList.add('gbTheming');
+      clearTimeout(fadeT);
+      fadeT = setTimeout(function () { root.classList.remove('gbTheming'); }, 520);
+    }
     dark = next;
     document.documentElement.setAttribute('data-gb-theme', dark ? 'dark' : 'light');
     try { localStorage.setItem('gb-theme', dark ? 'dark' : 'light'); } catch (e) {}
@@ -202,7 +225,7 @@
     var btn = document.createElement('button');
     btn.className = 'gbThemeBtn';
     btn.type = 'button';
-    btn.addEventListener('click', function () { setTheme(!dark); });
+    btn.addEventListener('click', function () { setTheme(!dark, true); });
     document.body.appendChild(btn);
 
     setTheme(dark);
@@ -242,6 +265,27 @@
       gate();
     }
 
+    // keep every tab and back/forward page on the visitor's latest choice
+    var sync = function () {
+      var want = dark;
+      try { var v = localStorage.getItem('gb-theme'); if (v === 'dark' || v === 'light') want = v === 'dark'; } catch (e) {}
+      if (want !== dark) setTheme(want);
+      var pre2 = document.getElementById('gb-preboot');
+      if (pre2 && !dark) pre2.textContent = '';
+    };
+    window.addEventListener('pageshow', sync);
+    window.addEventListener('focus', sync);
+    document.addEventListener('visibilitychange', function () { if (!document.hidden) sync(); });
+    window.addEventListener('storage', function (e) { if (e.key === 'gb-theme') sync(); });
+
+    // "back to top" links point at a sticky header, which the browser treats as already in view
+    document.addEventListener('click', function (e) {
+      var a = e.target.closest && e.target.closest('a[href="#top"], .lpTop, .csTop, .gbTopBtn');
+      if (!a) return;
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
     new MutationObserver(schedule).observe(document.body, {
       childList: true, subtree: true, attributes: true, attributeFilter: ['style']
     });
@@ -252,7 +296,7 @@
   }
 
   document.documentElement.setAttribute('data-gb-theme', dark ? 'dark' : 'light');
-  window.__gbTheme = { set: setTheme, isDark: function () { return dark; } };
+  window.__gbTheme = { set: function (v) { setTheme(v, true); }, isDark: function () { return dark; } };
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);
   else boot();
 })();

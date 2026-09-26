@@ -87,6 +87,14 @@
   mount();
   wireExit();
 
+  /* Coming back with the browser's Back button restores the page as it was left, exit screen included. Clear it. */
+  window.addEventListener('pageshow', function () {
+    document.querySelectorAll('[data-gb-exit]').forEach(function (n) { n.remove(); });
+    var l = document.querySelector('[data-gb-loader]');
+    if (l) l.remove();
+    ready();
+  });
+
   /* Exit transition: fade to the destination's name (static) before navigating. The next page's
      head loader shows the same name without re-animating it, so it reads as one continuous screen. */
   function wireExit() {
@@ -98,6 +106,8 @@
     if (/\.pdf$/i.test(href)) return;
     e.preventDefault();
     var out = document.createElement('div');
+    out.setAttribute('data-gb-exit', '');
+    out.setAttribute('data-gb-keep', '');
     out.style.cssText = 'position:fixed; inset:0; z-index:9999; background:' + (isDark() ? '#15130F' : '#FFFFFF') + '; opacity:0; transition:opacity .14s ease';
     styleEl();
     var nm = nameFrom(href);

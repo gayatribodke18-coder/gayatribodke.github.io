@@ -34,7 +34,7 @@ Case studies link in a loop: Aarogyam → Indus Derma → Mai → STS → Aarogy
 
 - `support.js`, `page-loader.js` — page runtime and transitions, needed by every page
 - `case-nav.js` — side rail and back-to-top on case studies
-- `case-confidential.js` — passcode gate on the NDA case studies (code rotates monthly: `gayatri-` + month + year, e.g. `gayatri-sep26`; current and previous month both work; access lasts 14 days per browser). "Request the full study" opens a form: the request is emailed to gayatribodke18@gmail.com via FormSubmit and the visitor gets the passcode by auto-reply. The very first request triggers a one-time FormSubmit activation email; click it to switch the form on.
+- `case-confidential.js` — passcode gate on the NDA case studies. One code per study, rotating monthly: `aarogyam-sep26` for Aarogyam, `indus-sep26` for Indus Derma (the month and year change each month; current and previous month both work). Unlocking one study does not unlock the other; access lasts 14 days per study.
 - `theme-toggle.js` — light/dark switch, remembered per visitor
 - `assets/` — all images
 

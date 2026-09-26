@@ -108,8 +108,7 @@
   .lpNavLink::after { content: ""; position: absolute; left: 0; right: 0; bottom: -4px; height: 1px; background: #111111; transform: scaleX(0); transform-origin: right; transition: transform .35s cubic-bezier(.2,.7,.3,1); }
   .lpNavLink:hover::after, .lpNavLink.active::after { transform: scaleX(1); transform-origin: left; }
   .lpNavLink:hover, .lpNavLink.active { color: #111111 !important; }
-  .lpNavCv::after { background: #4E4187; transform: scaleX(1); transform-origin: left; }
-  .lpNavCv:hover::after { transform-origin: right; }
+  .lpNavCv::after { background: #4E4187; }
   html[data-gb-theme="dark"] .lpNavLink::after { background: #F0EAE0; }
   html[data-gb-theme="dark"] .lpNavLink:hover, html[data-gb-theme="dark"] .lpNavLink.active { color: #F0EAE0 !important; }
   html[data-gb-theme="dark"] .lpNavCv::after { background: #C6B4F0; }
@@ -178,8 +177,8 @@
       </a>
       <nav style="display:flex; align-items:center; gap:30px">
         <a class="lpNavLink" data-sec="work" href="#work" style="font-size:11px; letter-spacing:.17em; text-transform:uppercase; text-decoration:none; color:#666666; transition:color .25s ease, opacity .25s ease">Work</a>
-        <a class="lpNavLink" href="about.html" style="font-size:11px; letter-spacing:.17em; text-transform:uppercase; text-decoration:none; color:#666666; transition:color .25s ease, opacity .25s ease">About</a>
-        <a class="lpNavLink" href="articles.html" style="font-size:11px; letter-spacing:.17em; text-transform:uppercase; text-decoration:none; color:#666666; transition:color .25s ease, opacity .25s ease">Writing</a>
+        <a class="lpNavLink" data-sec="about" href="about.html" style="font-size:11px; letter-spacing:.17em; text-transform:uppercase; text-decoration:none; color:#666666; transition:color .25s ease, opacity .25s ease">About</a>
+        <a class="lpNavLink" data-sec="writing" href="articles.html" style="font-size:11px; letter-spacing:.17em; text-transform:uppercase; text-decoration:none; color:#666666; transition:color .25s ease, opacity .25s ease">Writing</a>
         <a class="lpNavLink" data-sec="connect" href="#connect" style="font-size:11px; letter-spacing:.17em; text-transform:uppercase; text-decoration:none; color:#666666; transition:color .25s ease, opacity .25s ease">Contact</a>
         <a class="lpNavLink lpNavCv" href="Gayatri-Bodke-Resume.pdf" target="_blank" rel="noopener noreferrer" style="font-size:11px; letter-spacing:.17em; text-transform:uppercase; text-decoration:none; color:#111111; transition:color .25s ease, opacity .25s ease">Resume</a>
       </nav>
@@ -233,7 +232,7 @@
         </div>
 
         <div class="lpHeroBody" style="grid-column:1; grid-row:3; align-self:start; padding-top:34px">
-          <p class="gbIntro gbIn" style="font-family:'Instrument Serif',serif; font-size:clamp(22px,2.2vw,28px); line-height:1.28; letter-spacing:-.4px; margin:0 0 46px; max-width:560px; text-wrap:pretty; animation:gbUp .9s .85s">A product designer who starts with <em style="font-style:italic; color:#4E4187">research</em>, turning what people actually need into products they find clear and easy to trust.</p>
+          <p class="gbIntro gbIn" style="font-family:'Instrument Serif',serif; font-size:clamp(22px,2.2vw,28px); line-height:1.28; letter-spacing:-.4px; margin:0 0 58px; max-width:560px; text-wrap:pretty; animation:gbUp .9s .85s">A product designer who starts with <em style="font-style:italic; color:#4E4187">research</em>, turning what people actually need into products they find clear and easy to trust.</p>
           <div style="display:flex; gap:12px; flex-wrap:wrap; align-items:center">
             <a class="gbCta gbIn" href="#work" style="display:inline-flex; align-items:center; gap:10px; height:56px; padding:0 30px; border-radius:40px; background:#111111; color:#FFFFFF; border:1.5px solid #111111; text-decoration:none; font-size:15px; font-weight:500; white-space:nowrap; animation:gbUp .7s 1.1s">
               See my work
@@ -368,7 +367,7 @@
   </section>
 
   <!-- 04 WHERE I WORKED -->
-  <section style="max-width:1180px; margin:0 auto; padding:80px 40px 0">
+  <section id="about" style="max-width:1180px; margin:0 auto; padding:80px 40px 0; scroll-margin-top:88px">
     <div style="display:flex; align-items:baseline; justify-content:space-between; gap:20px; border-top:1px solid #E8E7E4; padding-top:20px; margin-bottom:8px">
       <h2 style="font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:#666666; margin:0; font-weight:500">Where I worked</h2>
       <a class="lpNavLink" href="about.html" style="font-size:11px; letter-spacing:.17em; text-transform:uppercase; text-decoration:none; color:#666666; transition:color .25s ease">More about me ↗</a>
@@ -457,7 +456,7 @@
     this._layout = () => this.layoutLines();
     window.addEventListener('resize', this._layout);
     this._layout();
-    [200, 700, 1500, 2600].forEach((ms) => setTimeout(this._layout, ms));
+    [200, 700, 1500, 2600, 3900].forEach((ms) => setTimeout(this._layout, ms));
     if (document.fonts && document.fonts.ready) document.fonts.ready.then(this._layout);
     const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const targets = document.querySelectorAll('[data-lp] .pRow, [data-lp] .lpWriteRow, [data-lp] .lpBento > div, [data-lp] .lpWwm > div, [data-lp] .lpLife figure, [data-lp] #connect > div');
@@ -596,8 +595,42 @@
     l1.style.top = (Math.min(c1ay, c1by) - 26) + 'px';
     l2.style.position = 'absolute';
     l2.style.margin = '0';
-    l2.style.left = (pad + e2x + 34) + 'px';
-    l2.style.top = (endY + 22) + 'px';
+    // sit beside the buttons, never on top of them
+    const ghost = sec.querySelector('.gbCtaGhost');
+    const g = ghost ? rel(ghost) : null;
+    const lw = l2.offsetWidth, lh = l2.offsetHeight;
+    let lx = pad + e2x + 34, ly = endY + 22;
+    // under the dotted line, above the buttons; push the buttons down if there isn't room
+    lx = pad + e2x + (s2x - e2x) * 0.28;
+    ly = endY + 24;
+    // the intro slides up on load, so measure where the buttons come to rest
+    if (g) {
+      let t = 0;
+      for (let n = ghost; n && n !== wrap; n = n.parentElement) { const m = getComputedStyle(n).transform; if (m && m !== 'none') t += new DOMMatrix(m).m42; }
+      ly = Math.min(ly, g.t - t - lh - 10);
+    }
+    // preferred: label beside the Resume button, the dotted line rising from it to just after the sentence's full stop
+    if (g) {
+      let t = 0;
+      for (let n = ghost; n && n !== wrap; n = n.parentElement) { const m = getComputedStyle(n).transform; if (m && m !== 'none') t += new DOMMatrix(m).m42; }
+      const gt = g.t - t;
+      const bx = g.r + 30, by = gt + (g.h - lh) / 2;
+      const room = p.l - 24;
+      const sx = bx + lw * 0.62, sy = by - 8;
+      const ex = e2x, ey = endY + 6;
+      const c1x = Math.min(room - 6, sx + 36), c1y = sy - 34;
+      const c2x = Math.min(room - 6, ex + 70), c2y = ey + 26;
+      const fits = bx + lw <= room && sy - ey > 34 && Math.max(c1x, c2x, sx) < room;
+      if (fits) {
+        lx = pad + bx; ly = by;
+        const d3 = 'M ' + sx + ' ' + sy + ' C ' + c1x + ' ' + c1y + ', ' + c2x + ' ' + c2y + ', ' + ex + ' ' + ey;
+        sec.querySelectorAll('.gbL2, .gbL2m').forEach((el) => el.setAttribute('d', d3));
+        sec.querySelector('.gbH2').setAttribute('transform', 'translate(' + ex + ',' + ey + ') rotate(' + ang(c2x, c2y, ex, ey) + ')');
+        sec.dataset.gbLbl2 = 'beside';
+      } else sec.dataset.gbLbl2 = 'above';
+    }
+    l2.style.left = lx + 'px';
+    l2.style.top = ly + 'px';
   }
 
   replayIntro() {
