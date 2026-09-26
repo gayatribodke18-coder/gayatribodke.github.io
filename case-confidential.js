@@ -6,8 +6,8 @@
           [data-nda-toggle] reveals [data-nda-form] with [data-nda-input] / [data-nda-err]
           [data-nda-copy] with data-email — click to copy the address
           [data-nda-request] data-project="Name" — opens a request form; the visitor gets the
-          passcode by auto-reply (FormSubmit). The first ever submission sends an activation
-          email to the inbox below; click it once and requests start arriving. */
+          request by email (FormSubmit); Gayatri replies with the code by hand. The first ever
+          submission sends an activation email to the inbox below; click it once. */
 (function () {
   /* Passcodes rotate every month: "aarogyam-sep26" in September 2026, "aarogyam-oct26" in October…
      The current and previous month's code both work, so a code sent on the 30th still works next week.
@@ -255,89 +255,27 @@
       box.style.cssText = 'display:flex; flex-direction:column; gap:12px';
       f.appendChild(box);
     }
-    var resends = +(f.dataset.resends || 0);
+    var first = (f.name.value.trim().split(' ')[0]) || '';
     box.innerHTML =
-      '<p style="font-size:15px; line-height:1.6; color:#111111; margin:0"><span style="color:#2A6B62">' + (resends ? 'Sent again.' : 'Request sent.') + '</span> The passcode is on its way to <strong style="font-weight:600">' + esc(email) + '</strong>. It can take a few minutes, and sometimes lands in spam.</p>' +
+      '<p style="font-size:15px; line-height:1.6; color:#111111; margin:0"><span style="color:#2A6B62">Thanks' + (first ? ', ' + esc(first) : '') + '.</span> I\u2019ll email the ' + esc(project) + ' passcode to <strong style="font-weight:600">' + esc(email) + '</strong> shortly, usually within a day.</p>' +
       '<div style="display:flex; align-items:center; gap:10px 22px; flex-wrap:wrap; font-size:14px; color:#888888">' +
-        '<span data-req-wait></span>' +
-        '<button type="button" data-req-resend style="' + LINK + '; display:none">Resend passcode</button>' +
+        '<span>Need it sooner? You can also reach out to me on <a href="https://www.linkedin.com/in/gayatri-bodke" target="_blank" rel="noopener noreferrer" style="color:inherit">LinkedIn \u2197</a></span>' +
         '<button type="button" data-req-change style="' + LINK + '">Use a different email</button>' +
       '</div>';
-    var wait = box.querySelector('[data-req-wait]');
-    var again = box.querySelector('[data-req-resend]');
-    clearInterval(f.__gbTimer);
-    if (resends >= MAX_RESENDS) {
-      wait.innerHTML = 'Still nothing? Email me at <a href="mailto:' + INBOX + '?subject=' + encodeURIComponent(project + ' case study passcode') + '" style="color:inherit">' + INBOX + '</a>.';
-    } else {
-      var left = Math.max(0, COOLDOWN - Math.floor((Date.now() - (+f.dataset.at || Date.now())) / 1000));
-      var tick = function () {
-        if (left > 0) { wait.textContent = "Didn't get it? You can resend in " + left + 's'; left--; return; }
-        clearInterval(f.__gbTimer);
-        wait.textContent = "Didn't get it?";
-        again.style.display = '';
-      };
-      tick();
-      f.__gbTimer = setInterval(tick, 1000);
-    }
-    again.addEventListener('click', function () {
-      again.disabled = true;
-      again.textContent = 'Sending…';
-      prep(f, project, resends + 1);
-      f.submit();
-    });
     box.querySelector('[data-req-change]').addEventListener('click', function () {
-      clearInterval(f.__gbTimer);
-      try { sessionStorage.removeItem(REQ); } catch (x) {}
       box.remove();
-      f.dataset.resends = 0;
       fields.forEach(function (n) { n.style.display = n.name === '_honey' ? 'none' : ''; });
-      if (f.__gbSyncClear) f.__gbSyncClear();
       var m = f.querySelector('[data-req-msg]'); if (m) m.style.display = 'none';
       var send = f.querySelector('button[type="submit"]');
-      send.textContent = 'Send me the passcode';
-      f.__gbReady();
+      send.textContent = 'Request passcode';
       f.email.value = '';
       if (f.__gbSyncClear) f.__gbSyncClear();
+      f.__gbReady();
       f.email.focus();
     });
   }
-  /* FormSubmit only sends the passcode email (autoresponse) for a normal form post with its robot
-     check on, not for background (AJAX) sends. So the form posts for real, FormSubmit shows its
-     check, then sends the visitor back here; we remember the request to restore the sent state. */
-  var REQ = 'gb-req-' + STUDY;
-  var RETURNED = /[?&]requested=1/.test(location.search);
-  if (RETURNED) { try { history.replaceState(null, '', location.pathname + location.search.replace(/[?&]requested=1/, '').replace(/^&/, '?') + location.hash); } catch (x) {} }
-  /* Back from FormSubmit: restore the request and show the sent state with the resend timer. */
-  function restore(box, project) {
-    if (!RETURNED || !box) return;
-    var saved = null;
-    try { saved = JSON.parse(sessionStorage.getItem(REQ) || 'null'); } catch (x) {}
-    box.style.display = 'flex';
-    if (saved) {
-      box.name.value = saved.name; box.email.value = saved.email; box.company.value = saved.company || '';
-      box.dataset.resends = saved.resends || 0;
-      box.dataset.at = saved.at;
-      sent(box, saved.email, project);
-    } else if (!box.querySelector('[data-req-sent]')) {
-      box.insertAdjacentHTML('afterbegin', '<p data-req-sent style="font-size:15px; line-height:1.6; color:#111111; margin:0 0 6px"><span style="color:#2A6B62">Request sent.</span> The passcode is on its way to your inbox. If it isn’t there in a few minutes, check spam.</p>');
-    }
-    clearTimeout(restore.t);
-    restore.t = setTimeout(function () { window.scrollTo(0, Math.max(0, box.getBoundingClientRect().top + window.scrollY - 160)); }, 150);
-  }
-  function prep(f, project, resends) {
-    var name = f.name.value.trim(), email = f.email.value.trim(), first = name.split(' ')[0];
-    f.action = 'https://formsubmit.co/' + INBOX;
-    f.method = 'POST';
-    var back = location.href.split('#')[0].replace(/[?&]requested=1/, '');
-    f._next.value = back + (back.indexOf('?') > -1 ? '&' : '?') + 'requested=1';
-    f._subject.value = (resends ? 'Passcode request (resend) · ' : 'Passcode request · ') + project + ' · ' + name;
-    f._autoresponse.value = 'Hi ' + first + ',\n\nThanks for asking to see the ' + project + ' case study.\n\n' +
-      'Your passcode: ' + CODE + '\n\n' +
-      'It works until the end of next month and keeps the study unlocked on your browser for ' + ACCESS_DAYS + ' days.\n\n' +
-      'Open the case study, choose "I have a passcode" and enter it. This code is for the ' + project + ' case study only.\n\n' +
-      'Happy to walk you through the work on a call too. Just reply to this email.\n\nGayatri\n' + INBOX;
-    try { sessionStorage.setItem(REQ, JSON.stringify({ name: name, email: email, company: f.company.value, resends: resends || 0, at: Date.now() })); } catch (x) {}
-  }
+  var RETURNED = false;
+  function restore() {}
   function wireRequest() {
     document.querySelectorAll('[data-nda-request]').forEach(function (btn) {
       if (btn.__gbReq) return;
@@ -365,8 +303,8 @@
         '</div>' +
         '<input name="_honey" tabindex="-1" autocomplete="off" style="display:none">' +
         '<div style="display:flex; align-items:center; gap:14px; flex-wrap:wrap; margin-top:4px">' +
-          '<button type="submit" class="tvBtn" style="font:inherit; font-size:14.5px; padding:12px 22px; border-radius:30px; border:none; background:#111111; color:#FFFFFF; cursor:pointer; white-space:nowrap; flex-shrink:0">Send me the passcode</button>' +
-          '<span style="font-size:13.5px; color:#888888">After a quick robot check, it arrives by email.</span>' +
+          '<button type="submit" class="tvBtn" style="font:inherit; font-size:14.5px; padding:12px 22px; border-radius:30px; border:none; background:#111111; color:#FFFFFF; cursor:pointer; white-space:nowrap; flex-shrink:0">Request passcode</button>' +
+          '<span style="font-size:13.5px; color:#888888">I\u2019ll email it to you, usually within a day.</span>' +
         '</div>' +
         '<p data-req-msg style="font-size:13.5px; line-height:1.55; color:#BD5836; margin:2px 0 0; display:none"></p>';
       row.parentElement.insertBefore(f, row.nextSibling);
@@ -406,7 +344,7 @@
         f.style.display = open ? 'none' : 'flex';
         if (!open) f.querySelector('input').focus();
       });
-      [['_subject', ''], ['_template', 'table'], ['_next', ''], ['_autoresponse', ''], ['project', project], ['page', location.href.split('?')[0]]].forEach(function (p) {
+      [['_subject', ''], ['_template', 'table'], ['_captcha', 'false'], ['passcode_to_send', CODE], ['project', project], ['page', location.href.split('?')[0]]].forEach(function (p) {
         var h = document.createElement('input');
         h.type = 'hidden'; h.name = p[0]; h.value = p[1];
         f.appendChild(h);
@@ -423,11 +361,20 @@
           msg.style.display = 'block';
           return;
         }
-        prep(f, project, 0);
+        e.preventDefault();
+        f._subject.value = 'Passcode request · ' + project + ' · ' + name;
         send.textContent = 'Sending…';
         setBtn(send, false);
         msg.style.display = 'none';
-        // no preventDefault: the browser posts to FormSubmit
+        fetch('https://formsubmit.co/ajax/' + INBOX, { method: 'POST', headers: { Accept: 'application/json' }, body: new FormData(f) })
+          .then(function (r) { if (!r.ok) throw new Error(r.status); })
+          .then(function () { sent(f, email, project); })
+          .catch(function () {
+            send.textContent = 'Request passcode';
+            f.__gbReady();
+            msg.innerHTML = 'That didn\u2019t go through. Please email me at <a href="mailto:' + INBOX + '?subject=' + encodeURIComponent(project + ' case study passcode') + '" style="color:inherit">' + INBOX + '</a>.';
+            msg.style.display = 'block';
+          });
       });
     });
   }
@@ -452,7 +399,7 @@
   }
 
   window.addEventListener('pageshow', function () {
-    document.querySelectorAll('[data-nda-reqform] button[type="submit"]').forEach(function (b) { b.disabled = false; b.textContent = 'Send me the passcode'; });
+    document.querySelectorAll('[data-nda-reqform] button[type="submit"]').forEach(function (b) { b.disabled = false; b.textContent = 'Request passcode'; });
   });
 
   if (document.body) mount();
